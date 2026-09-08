@@ -17,7 +17,7 @@
   .wrap{max-width:920px;margin:0 auto;padding:22px 16px 70px}
 
   /* ---------- Banner ---------- */
-  .banner{background:linear-gradient(135deg,#3a4a5c,#232e3a 60%,#1a222b);color:#fff;border-radius:20px;padding:28px 26px;position:relative;overflow:hidden}
+  .banner{background:linear-gradient(135deg,rgba(35,46,58,.86),rgba(26,34,43,.93) 60%,rgba(20,26,32,.96)),url("images/hero-nanhu.jpg") center 42%/cover no-repeat;color:#fff;border-radius:20px;padding:28px 26px;position:relative;overflow:hidden}
   .banner h1{font-size:30px;letter-spacing:2px}
   .banner .sub{margin-top:8px;opacity:.95;font-size:14.5px}
   .banner .slogan{margin-top:14px;display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:999px;font-size:14px}
@@ -69,6 +69,18 @@
   .badge.b{background:#e3ebf4;color:var(--mo-d)}
   .spot .body .s{font-size:13px;color:var(--muted);margin-top:3px}
   .spot .arrow{color:var(--gold);font-size:18px;flex:0 0 auto}
+  .spot .ph{width:96px;height:68px;flex:0 0 auto;border-radius:10px;overflow:hidden;background:#e9e5dd}
+  .spot .ph img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* ---------- Photos ---------- */
+  .mphoto{margin:0 0 14px;border-radius:12px;overflow:hidden;background:#eee}
+  .mphoto img{width:100%;display:block}
+  .mphoto .cap{font-size:12px;color:var(--muted);padding:6px 10px;background:var(--cream)}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(206px,1fr));gap:12px}
+  .gallery figure{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .gallery img{width:100%;height:148px;object-fit:cover;display:block}
+  .gallery figcaption{font-size:11.5px;color:var(--muted);padding:8px 10px;line-height:1.65}
+  .gallery figcaption b{color:var(--mo-d);display:block;font-size:13.5px;margin-bottom:2px}
 
   /* ---------- Restaurant list ---------- */
   .rest{margin-top:14px}
@@ -148,6 +160,9 @@
     .day-head .route{width:100%;text-align:left;margin-left:0}
     .timeblock{grid-template-columns:1fr;gap:2px}
     .slot{margin-bottom:2px}
+    .spot .ph{width:74px;height:54px}
+    .gallery{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+    .gallery img{height:112px}
     .tier{grid-template-columns:1fr;gap:2px}
     .modal-head{padding:14px 16px}
     .modal-body{padding:16px}
@@ -174,6 +189,7 @@
     <a href="#traffic">交通</a>
     <a href="#stay">住宿</a>
     <a href="#checkin">拍照机位</a>
+    <a href="#gallery">图集</a>
     <a href="#tips">避坑</a>
     <a href="#source">信息来源</a>
   </nav>
@@ -222,27 +238,27 @@
         </div>
 
         <div class="spot" data-modal="spot-nanhu" data-tone="d1">
-          <div class="ic">🌫️</div>
+          <div class="ph"><img src="images/nanhu.jpg" alt="宏村南湖与画桥" loading="lazy"></div>
           <div class="body"><div class="t">南湖 + 画桥<span class="badge g">必玩</span></div><div class="s">进村第一眼 · 清晨 6–7 点晨雾水墨感最强</div></div>
           <div class="arrow">›</div>
         </div>
         <div class="spot" data-modal="spot-yuezhao" data-tone="d1">
-          <div class="ic">🏮</div>
+          <div class="ph"><img src="images/yuezhao.jpg" alt="宏村月沼" loading="lazy"></div>
           <div class="body"><div class="t">月沼<span class="badge g">必玩</span></div><div class="s">牛形水系的「牛胃」· 黄昏蓝调 + 夜间灯笼倒影</div></div>
           <div class="arrow">›</div>
         </div>
         <div class="spot" data-modal="spot-chengzhitang" data-tone="d1">
-          <div class="ic">🪵</div>
+          <div class="ph"><img src="images/chengzhi-tang.jpg" alt="宏村承志堂" loading="lazy"></div>
           <div class="body"><div class="t">承志堂<span class="badge g">必玩</span></div><div class="s">「民间故宫」· 徽派木雕巅峰 · 避开 10:00–14:00 团队</div></div>
           <div class="arrow">›</div>
         </div>
         <div class="spot" data-modal="spot-shuizhen" data-tone="d1">
-          <div class="ic">💧</div>
+          <div class="ph"><img src="images/nanhu-2.jpg" alt="宏村南湖徽派建筑倒影" loading="lazy"></div>
           <div class="body"><div class="t">水圳 + 南湖书院<span class="badge o">必打卡</span></div><div class="s">顺着水圳走，读懂 800 年的牛形水系</div></div>
           <div class="arrow">›</div>
         </div>
         <div class="spot" data-modal="spot-leigang" data-tone="d1">
-          <div class="ic">⛰️</div>
+          <div class="ph"><img src="images/hongcun-village.jpg" alt="宏村古村全景" loading="lazy"></div>
           <div class="body"><div class="t">雷岗山观景台<span class="badge o">必体验</span></div><div class="s">20 分钟登顶俯瞰全村 · 日出前 / 日落前</div></div>
           <div class="arrow">›</div>
         </div>
@@ -300,12 +316,12 @@
         </div>
 
         <div class="spot" data-modal="spot-taichuan" data-tone="d2">
-          <div class="ic">🍁</div>
+          <div class="ph"><img src="images/tachuan-1.jpg" alt="塔川秋色" loading="lazy"></div>
           <div class="body"><div class="t">塔川秋色<span class="badge g">必打卡</span></div><div class="s">距宏村 2km · 中国三大秋色之一 · 11 月最佳</div></div>
           <div class="arrow">›</div>
         </div>
         <div class="spot" data-modal="spot-mukeng" data-tone="d2">
-          <div class="ic">🎋</div>
+          <div class="ph"><img src="images/mukeng-2.jpg" alt="木坑竹海" loading="lazy"></div>
           <div class="body"><div class="t">木坑竹海<span class="badge o">必体验</span></div><div class="s">距宏村 4km · 《卧虎藏龙》竹林斗剑取景地 · 人少安静</div></div>
           <div class="arrow">›</div>
         </div>
@@ -315,7 +331,7 @@
           <div class="arrow">›</div>
         </div>
         <div class="spot" data-modal="spot-xidi" data-tone="d2">
-          <div class="ic">🏛️</div>
+          <div class="ph"><img src="images/xidi.jpg" alt="西递古村" loading="lazy"></div>
           <div class="body"><div class="t">西递古村（5A / 世界遗产）<span class="badge g">必玩</span></div><div class="s">牌坊群 + 胡文光刺史坊 + 敬爱堂 · 半天</div></div>
           <div class="arrow">›</div>
         </div>
@@ -372,7 +388,7 @@
         </div>
 
         <div class="spot" data-modal="spot-chengkan" data-tone="d3">
-          <div class="ic">☯️</div>
+          <div class="ph"><img src="images/chengkan.jpg" alt="呈坎古村" loading="lazy"></div>
           <div class="body"><div class="t">呈坎八卦村<span class="badge g">必玩</span></div><div class="s">「江南第一村」· 罗东舒祠 · 商业化程度低</div></div>
           <div class="arrow">›</div>
         </div>
@@ -382,12 +398,12 @@
           <div class="arrow">›</div>
         </div>
         <div class="spot" data-modal="spot-yuliang" data-tone="d3">
-          <div class="ic">🌊</div>
+          <div class="ph"><img src="images/yuliang.jpg" alt="渔梁坝" loading="lazy"></div>
           <div class="body"><div class="t">渔梁坝<span class="badge o">必打卡</span></div><div class="s">唐代水利工程 · 练江边可踩石过河</div></div>
           <div class="arrow">›</div>
         </div>
         <div class="spot" data-modal="spot-tunxi" data-tone="d3">
-          <div class="ic">🍢</div>
+          <div class="ph"><img src="images/tunxi.jpg" alt="屯溪老街" loading="lazy"></div>
           <div class="body"><div class="t">屯溪老街 / 黎阳 in 巷<span class="badge o">必打卡</span></div><div class="s">免费 · 最后一顿 + 伴手礼 · 离黄山北站最近</div></div>
           <div class="arrow">›</div>
         </div>
@@ -491,6 +507,32 @@
     </div>
   </section>
 
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>📷 实拍图集 <span class="tag">先看一眼</span></h2>
+    <div class="card">
+      <div class="gallery">
+        <figure><img src="images/hero-nanhu.jpg" alt="宏村南湖" loading="lazy"><figcaption><b>宏村南湖</b>清晨的南湖与画桥，宏村最经典的第一眼。图：Wikimedia Commons · CC BY-SA 4.0</figcaption></figure>
+        <figure><img src="images/yuezhao.jpg" alt="宏村月沼" loading="lazy"><figcaption><b>宏村月沼</b>半月形水面被白墙黛瓦环抱，牛形水系的「牛胃」。图：Wikimedia Commons · CC BY-SA 4.0</figcaption></figure>
+        <figure><img src="images/nanhu.jpg" alt="南湖倒影" loading="lazy"><figcaption><b>南湖倒影</b>白墙黛瓦的倒影，是「中国画里的乡村」的标准构图。图：Wikimedia Commons · CC BY-SA 4.0</figcaption></figure>
+        <figure><img src="images/nanhu-2.jpg" alt="南湖徽派建筑" loading="lazy"><figcaption><b>南湖徽派建筑</b>湖边马头墙与水面倒影。图：TourNews 徽州古城·宏村自由行攻略</figcaption></figure>
+        <figure><img src="images/chengzhi-tang.jpg" alt="承志堂" loading="lazy"><figcaption><b>承志堂</b>「民间故宫」，徽派木雕巅峰。图：Wikimedia Commons · CC BY 3.0</figcaption></figure>
+        <figure><img src="images/hongcun-village.jpg" alt="宏村古村全景" loading="lazy"><figcaption><b>宏村古村全景</b>皖南古村落（西递与宏村，世界文化遗产）。图：Wikimedia Commons · CC BY-SA 3.0 igo</figcaption></figure>
+        <figure><img src="images/tachuan-1.jpg" alt="塔川" loading="lazy"><figcaption><b>塔川</b>距宏村 2 公里，中国三大秋色之一。图：中国摄影报景区资料</figcaption></figure>
+        <figure><img src="images/tachuan-2.jpg" alt="塔川村落" loading="lazy"><figcaption><b>塔川村落</b>白墙黛瓦掩映在山林间。图：中国摄影报景区资料</figcaption></figure>
+        <figure><img src="images/mukeng-1.jpg" alt="木坑竹海" loading="lazy"><figcaption><b>木坑竹海</b>《卧虎藏龙》竹林斗剑取景地。图：中国摄影报景区资料</figcaption></figure>
+        <figure><img src="images/mukeng-2.jpg" alt="木坑竹海" loading="lazy"><figcaption><b>木坑竹海</b>漫山竹林、游客不多，夏天最凉快。图：中国摄影报景区资料</figcaption></figure>
+        <figure><img src="images/xidi.jpg" alt="西递古村" loading="lazy"><figcaption><b>西递古村</b>与宏村齐名的世界遗产，更清静。图：Wikimedia Commons · CC BY-SA 2.0</figcaption></figure>
+        <figure><img src="images/chengkan.jpg" alt="呈坎" loading="lazy"><figcaption><b>呈坎</b>按《易经》八卦布局的「江南第一村」。图：Wikimedia Commons · CC BY-SA 3.0</figcaption></figure>
+        <figure><img src="images/yuliang.jpg" alt="渔梁坝" loading="lazy"><figcaption><b>渔梁坝</b>练江上的唐代水利工程，可踩石过河。图：Wikimedia Commons · CC BY-SA 4.0</figcaption></figure>
+        <figure><img src="images/tunxi.jpg" alt="屯溪老街" loading="lazy"><figcaption><b>屯溪老街</b>最后一顿与伴手礼都在这条街。图：Wikimedia Commons · 公有领域</figcaption></figure>
+        <figure><img src="images/chouguiyu.jpg" alt="臭鳜鱼" loading="lazy"><figcaption><b>臭鳜鱼</b>徽菜头牌，闻着臭吃着香。图：Wikimedia Commons · CC BY-SA 4.0</figcaption></figure>
+        <figure><img src="images/maodoufu-shiyi.jpg" alt="发酵豆腐（示意）" loading="lazy"><figcaption><b>发酵豆腐（示意）</b>毛豆腐是徽州发酵豆腐，此图为同类发酵豆腐示意，非宏村实拍。图：Wikimedia Commons · CC0</figcaption></figure>
+      </div>
+      <p style="margin-top:14px;font-size:13px;color:var(--muted)">📎 图片均来自 Wikimedia Commons 自由许可图库与中国摄影报景区资料，已按许可要求署名。<b>说明：</b>毛豆腐一图为同类发酵豆腐示意，非宏村实拍；民宿为老宅改造，公开图库无可靠实拍，故未配图。</p>
+    </div>
+  </section>
+
   <!-- Source tiers -->
   <section id="source">
     <h2>📚 信息来源与可信度 <span class="tag">怎么看这份攻略</span></h2>
@@ -527,6 +569,7 @@
 const MODALS = {
   /* ---------- Day 1 景点 ---------- */
   "spot-nanhu": {
+    img:["images/nanhu.jpg","宏村南湖 · 图：Wikimedia Commons（CC BY-SA 4.0）"],
     tone:"d1", ic:"🌫️", t:"南湖 + 画桥", s:"进村第一眼 · 清晨 6–7 点最美",
     tag:["必玩","宏村地标"],
     rows:[["位置","宏村村口，进村必经"],["最佳时间","清晨 6–7 点 / 傍晚 17:00–18:30"],["建议时长","40–60 分钟"]],
@@ -542,6 +585,7 @@ const MODALS = {
     src:[["官方·黟县徽黄西递旅游开发有限公司（门票政策）","https://www.chinaxidi.com.cn/run_href.html?typeid=110&page=1"],["搜狐·安徽宏村漫游指南（机位与时间）","https://www.sohu.com/a/866292507_115776"],["康辉·宏村经典路线推荐（动线逻辑）","http://www.029558.com/content/detail/25490"]]
   },
   "spot-yuezhao": {
+    img:["images/yuezhao.jpg","宏村月沼 · 图：Wikimedia Commons（CC BY-SA 4.0）"],
     tone:"d1", ic:"🏮", t:"月沼", s:"牛形水系的「牛胃」· 黄昏蓝调 + 夜灯倒影",
     tag:["必玩","夜景"],
     rows:[["位置","村中心"],["最佳时间","日落前后蓝调 / 20:00 后灯笼亮起"],["建议时长","30–60 分钟"]],
@@ -557,6 +601,7 @@ const MODALS = {
     src:[["康辉·宏村经典路线（月沼黄金半小时）","http://www.029558.com/content/detail/22112"],["搜狐·宏村漫游指南（月沼星夜机位）","https://www.sohu.com/a/866292507_115776"]]
   },
   "spot-chengzhitang": {
+    img:["images/chengzhi-tang.jpg","承志堂 · 图：Wikimedia Commons（CC BY 3.0）"],
     tone:"d1", ic:"🪵", t:"承志堂", s:"「民间故宫」· 徽派木雕巅峰",
     tag:["必玩","人文"],
     rows:[["位置","村中主巷"],["最佳时间","避开 10:00–14:00 团队高峰"],["建议时长","40–60 分钟"]],
@@ -572,6 +617,7 @@ const MODALS = {
     src:[["搜狐·宏村漫游指南（承志堂构图技巧）","https://www.sohu.com/a/866292507_115776"],["康辉·宏村美食与路线","http://m.029558.com/content/detail/18687"]]
   },
   "spot-shuizhen": {
+    img:["images/nanhu-2.jpg","南湖徽派建筑倒影 · 图：TourNews 徽州古城·宏村自由行攻略"],
     tone:"d1", ic:"💧", t:"水圳 + 南湖书院", s:"顺着水圳走，读懂 800 年牛形水系",
     tag:["必打卡","小众"],
     rows:[["位置","贯穿全村"],["建议时长","40–60 分钟"],["玩法","沿水圳慢走，别赶"]],
@@ -587,6 +633,7 @@ const MODALS = {
     src:[["搜狐·宏村漫游指南（小巷光影路线）","https://www.sohu.com/a/866292507_115776"],["康辉·宏村经典路线","http://www.029558.com/content/detail/25490"]]
   },
   "spot-leigang": {
+    img:["images/hongcun-village.jpg","宏村古村 · 图：Wikimedia Commons（CC BY-SA 3.0 igo）"],
     tone:"d1", ic:"⛰️", t:"雷岗山观景台", s:"20 分钟登顶俯瞰全村 · 日出 / 日落",
     tag:["必体验","全景"],
     rows:[["登顶时间","约 20 分钟"],["最佳时间","日出前 / 日落前"],["门票","免费"]],
@@ -617,6 +664,7 @@ const MODALS = {
 
   /* ---------- Day 2 景点 ---------- */
   "spot-taichuan": {
+    img:["images/tachuan-1.jpg","塔川 · 图：中国摄影报景区资料"],
     tone:"d2", ic:"🍁", t:"塔川秋色", s:"距宏村 2km · 中国三大秋色之一",
     tag:["必打卡","秋色"],
     rows:[["位置","黟县宏村镇塔川村，距宏村约 2km"],["门票","约 40 元/人"],["最佳时间","11 月初乌桕转红，日出前到"]],
@@ -632,6 +680,7 @@ const MODALS = {
     src:[["中国摄影报·黟县塔川景区（门票 40 元 / 拍点）","http://byz.cppfoto.com/Scenic/detail.aspx?id=2479"],["康辉·徽州古村全规划","http://www.029558.com/content/detail/22112"]]
   },
   "spot-mukeng": {
+    img:["images/mukeng-2.jpg","木坑竹海 · 图：中国摄影报景区资料"],
     tone:"d2", ic:"🎋", t:"木坑竹海", s:"距宏村 4km · 《卧虎藏龙》竹林斗剑取景地",
     tag:["必体验","避暑"],
     rows:[["位置","距宏村约 4km，距塔川 1.5km"],["门票","30 元/人"],["建议时长","半天，四季皆宜"]],
@@ -662,6 +711,7 @@ const MODALS = {
     src:[["永安旅游·卢村参观攻略（门票与开放信息）","https://www.wingontravel.com/discovery/scenic-lu-village-98219"],["TourNews·徽州古城宏村自由行攻略","https://tournews.tw/huizhou-hongcun-travel-guide/"]]
   },
   "spot-xidi": {
+    img:["images/xidi.jpg","西递古村 · 图：Wikimedia Commons（CC BY-SA 2.0）"],
     tone:"d2", ic:"🏛️", t:"西递古村（5A / 世界遗产）", s:"牌坊群 + 胡文光刺史坊 + 敬爱堂",
     tag:["必玩","世界遗产"],
     rows:[["位置","黟县西递镇，距宏村约 20km"],["门票","全票 104 元/人，半票 52 元"],["建议时长","半天"]],
@@ -692,6 +742,7 @@ const MODALS = {
 
   /* ---------- Day 3 景点 ---------- */
   "spot-chengkan": {
+    img:["images/chengkan.jpg","呈坎古村 · 图：Wikimedia Commons（CC BY-SA 3.0）"],
     tone:"d3", ic:"☯️", t:"呈坎八卦村", s:"「江南第一村」· 罗东舒祠",
     tag:["必玩","小众"],
     rows:[["位置","黄山市徽州区，黄山北站西南约 30 分钟"],["门票","全票 107 元，半票 53 元"],["建议时长","2–3 小时"]],
@@ -722,6 +773,7 @@ const MODALS = {
     src:[["合肥本地宝·徽州古城已取消大门禁","https://m.hf.bendibao.com/tour/92778.shtm"],["黄山发布·黄山北站到徽州古城公交","https://m.thepaper.cn/newsDetail_forward_30574432"],["燕赵老年报·歙县景区免票政策","http://yzlnb.sjzdaily.com.cn/yzlnbpaper/pc/content/202607/03/content_249548.html"]]
   },
   "spot-yuliang": {
+    img:["images/yuliang.jpg","渔梁坝 · 图：Wikimedia Commons（CC BY-SA 4.0）"],
     tone:"d3", ic:"🌊", t:"渔梁坝", s:"唐代水利工程 · 练江边可踩石过河",
     tag:["必打卡","人文"],
     rows:[["位置","歙县渔梁，徽州古城南侧"],["门票","含在渔梁景区，以现场为准"],["建议时长","1 小时"]],
@@ -737,6 +789,7 @@ const MODALS = {
     src:[["黄山发布·黄山北站到渔梁景区公交","https://m.thepaper.cn/newsDetail_forward_30574432"],["TourNews·徽州古城自由行攻略（渔梁坝）","https://tournews.tw/huizhou-hongcun-travel-guide/"]]
   },
   "spot-tunxi": {
+    img:["images/tunxi.jpg","屯溪老街 · 图：Wikimedia Commons（公有领域）"],
     tone:"d3", ic:"🍢", t:"屯溪老街 / 黎阳 in 巷", s:"免费 · 最后一顿 + 伴手礼",
     tag:["必打卡","免费"],
     rows:[["位置","黄山市屯溪区，离黄山北站最近"],["门票","免费开放"],["建议时长","1.5–2 小时"]],
@@ -867,6 +920,7 @@ const MODALS = {
 
   /* ---------- 美食 ---------- */
   "food-chouguiyu": {
+    img:["images/chouguiyu.jpg","臭鳜鱼 · 图：Wikimedia Commons（CC BY-SA 4.0）"],
     tone:"d1", ic:"🐟", t:"臭鳜鱼", s:"徽菜头牌 · 闻着臭吃着香",
     tag:["必吃","徽菜"],
     rows:[["价位","村内约 80–120 元/份"],["特点","腌制发酵后红烧，肉质蒜瓣状"],["哪里吃","得月楼、三思堂、屯溪老街的徽菜馆"]],
@@ -882,6 +936,7 @@ const MODALS = {
     src:[["康辉·宏村美食：徽州的味道在舌尖","http://m.029558.com/content/detail/18687"],["携程·徽八鲜臭鳜鱼非遗名菜（餐厅参考）","https://you.ctrip.com/food/Huangshan120061/58444-dianping.html"]]
   },
   "food-maodoufu": {
+    img:["images/maodoufu-shiyi.jpg","发酵豆腐示意图（非宏村实拍）· 图：Wikimedia Commons（CC0）"],
     tone:"d1", ic:"🧈", t:"毛豆腐", s:"徽州特色 · 路边摊比餐厅好吃",
     tag:["必吃","小吃"],
     rows:[["价位","路边摊约 5 元一份"],["吃法","煎至金黄，蘸辣酱"],["哪里吃","村内小摊、屯溪老街"]],
@@ -1058,6 +1113,7 @@ function openModal(id){
   mhs.textContent = d.s;
   let h = "";
   h += `<div class="row">${d.tag.map(t=>`<span class="badge ${badgeClass(t)}">${t}</span>`).join("")}</div>`;
+  if(d.img) h += `<div class="mphoto"><img src="${d.img[0]}" alt="${d.t}" loading="lazy"><div class="cap">📷 ${d.img[1]}</div></div>`;
   if(d.rows) h += kvHTML(d.rows);
   if(d.shop){ h += `<h5>🏡 店名对比</h5><ul class="shops">${d.shop.map((x,i)=>`<li class="rec"><span class="num">${i+1}</span><span class="lab">${x[0]}</span>：${x[1]}</li>`).join("")}</ul>`; }
   if(d.rec){ h += `<h5>👍 推荐理由</h5><ul>${d.rec.map(x=>`<li class="rec">${x}</li>`).join("")}</ul>`; }
