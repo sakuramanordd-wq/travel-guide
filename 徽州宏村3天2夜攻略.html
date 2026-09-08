@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>徽州 · 宏村 3天2夜 · 必吃必玩必体验攻略</title>
+<style>
+  :root{
+    --ink:#2b2b2b; --muted:#6b6b6b; --line:#e4e0d8;
+    --mo:#3a4a5c; --mo-d:#232e3a; --zhu:#b4472f; --zhu-l:#f7e4de;
+    --gold:#c99a3f; --gold-l:#f3e6c8; --green:#2e7d5b; --blue:#3e6f9e;
+    --cream:#f8f6f2; --cream2:#efece5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.7}
+  .wrap{max-width:920px;margin:0 auto;padding:22px 16px 70px}
+
+  /* ---------- Banner ---------- */
+  .banner{background:linear-gradient(135deg,#3a4a5c,#232e3a 60%,#1a222b);color:#fff;border-radius:20px;padding:28px 26px;position:relative;overflow:hidden}
+  .banner h1{font-size:30px;letter-spacing:2px}
+  .banner .sub{margin-top:8px;opacity:.95;font-size:14.5px}
+  .banner .slogan{margin-top:14px;display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:999px;font-size:14px}
+  .banner .deco{position:absolute;right:-24px;top:-30px;font-size:110px;opacity:.13}
+
+  /* ---------- Sticky nav ---------- */
+  .topnav{position:sticky;top:10px;z-index:200;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px;padding:10px;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+  .topnav a{text-decoration:none;color:var(--mo-d);font-size:13.5px;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--cream);border:1px solid transparent;transition:.2s}
+  .topnav a:hover{background:var(--gold-l);border-color:var(--gold)}
+
+  /* ---------- Section ---------- */
+  section{margin-top:28px}
+  h2{display:flex;align-items:center;gap:10px;font-size:22px;color:var(--mo-d);border-left:6px solid var(--zhu);padding-left:12px;margin-bottom:14px}
+  h2 .tag{font-size:13px;color:#fff;background:var(--zhu);border-radius:999px;padding:2px 10px;font-weight:500;white-space:nowrap}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+
+  /* ---------- Day ---------- */
+  .day{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:20px;box-shadow:0 3px 14px rgba(0,0,0,.05)}
+  .day-head{display:flex;align-items:center;gap:12px;padding:16px 20px;color:#fff}
+  .day-head.d1{background:linear-gradient(135deg,#3a4a5c,#232e3a)}
+  .day-head.d2{background:linear-gradient(135deg,#8c6b3f,#6b4f2b)}
+  .day-head.d3{background:linear-gradient(135deg,#b4472f,#8a3524)}
+  .day-head .num{font-size:24px;font-weight:700}
+  .day-head .t{font-size:18px;font-weight:600}
+  .day-head .route{font-size:12.5px;opacity:.9;margin-left:auto;text-align:right}
+  .day-body{padding:16px 20px}
+  .geo{background:var(--cream2);border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;font-size:13.5px;color:var(--muted);margin-bottom:14px}
+  .geo .lab{cursor:pointer;border-bottom:1px dotted var(--gold);color:var(--mo-d);font-weight:600}
+  .geo .lab:hover{background:var(--gold-l);border-radius:4px}
+  .timeblock{display:grid;grid-template-columns:78px 1fr;gap:4px 12px;padding:10px 0;border-top:1px dashed var(--line)}
+  .timeblock:first-of-type{border-top:none}
+  .slot{font-weight:700;color:var(--mo-d);font-size:14px;padding-top:2px}
+  .slot small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+  .what{font-size:15px}
+  .what b{color:var(--mo-d)}
+  .why{color:var(--muted);font-size:13.5px;margin-top:3px}
+  .sched-title{font-size:14px;color:var(--zhu);font-weight:700;margin:14px 0 4px;display:flex;align-items:center;gap:8px}
+
+  /* ---------- Clickable spot / shop cards ---------- */
+  .spot{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--mo);border-radius:14px;padding:13px 15px;margin:12px 0;cursor:pointer;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .spot:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(0,0,0,.10)}
+  .spot .ic{font-size:26px;flex:0 0 auto}
+  .spot .body{flex:1;min-width:0}
+  .spot .body .t{font-size:16px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .spot .body .t .badge{font-size:11px;font-weight:600;border-radius:999px;padding:1px 8px;white-space:nowrap}
+  .badge.g{background:#e2f0e9;color:var(--green)}
+  .badge.o{background:#f6ead2;color:#a87a2b}
+  .badge.r{background:#f5e0da;color:var(--zhu)}
+  .badge.b{background:#e3ebf4;color:var(--mo-d)}
+  .spot .body .s{font-size:13px;color:var(--muted);margin-top:3px}
+  .spot .arrow{color:var(--gold);font-size:18px;flex:0 0 auto}
+
+  /* ---------- Restaurant list ---------- */
+  .rest{margin-top:14px}
+  .rest h4{font-size:15px;color:var(--gold);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .rest h4 .rname{color:var(--ink);font-size:16px}
+  .rest ul{list-style:none}
+  .rest li{font-size:14px;padding:8px 0 8px 24px;position:relative;color:#444;border-bottom:1px dashed var(--line)}
+  .rest li:last-child{border-bottom:none}
+  .rest li::before{content:"";position:absolute;left:2px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--mo)}
+  .rest li.pit::before{background:var(--zhu)}
+  .rest li .lab{font-weight:700;margin-right:6px;color:var(--mo-d);cursor:pointer;border-bottom:1px dotted var(--gold)}
+  .rest li.pit .lab{color:var(--zhu)}
+  .rest li .lab:hover{background:var(--gold-l);border-radius:4px}
+
+  /* ---------- Chips ---------- */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .chip{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;transition:.18s}
+  .chip:hover{background:var(--gold-l);border-color:var(--gold)}
+  .chip b{color:var(--mo-d)}
+
+  /* ---------- Tips ---------- */
+  .tips .card ul{list-style:none}
+  .tips .card li{font-size:14px;padding:6px 0 6px 26px;position:relative;color:#444}
+  .tips .card li::before{content:"❗";position:absolute;left:2px;top:7px;font-size:13px}
+
+  /* ---------- Source tier ---------- */
+  .tier{display:grid;grid-template-columns:88px 1fr;gap:10px 14px;font-size:13.5px;padding:9px 0;border-top:1px dashed var(--line)}
+  .tier:first-child{border-top:none}
+  .tier .lv{font-weight:700;color:var(--mo-d)}
+  .tier .lv.a{color:var(--green)}
+  .tier .lv.b{color:var(--blue)}
+  .tier .lv.c{color:#a87a2b}
+  .tier .lv.d{color:var(--zhu)}
+
+  /* ---------- Footer ---------- */
+  .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:34px;line-height:1.9}
+  .foot a{color:var(--blue);text-decoration:none}
+
+  /* ---------- Modal ---------- */
+  .modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,26,32,.58);backdrop-filter:blur(3px)}
+  .modal.open{display:flex}
+  .modal-card{background:#fff;width:100%;max-width:600px;max-height:88vh;overflow-y:auto;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:pop .22s ease}
+  @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal-head{position:sticky;top:0;background:linear-gradient(135deg,var(--mo-d),var(--mo));color:#fff;padding:18px 22px;display:flex;align-items:center;gap:12px;border-radius:18px 18px 0 0}
+  .modal-head.d1{background:linear-gradient(135deg,#3a4a5c,#232e3a)}
+  .modal-head.d2{background:linear-gradient(135deg,#8c6b3f,#6b4f2b)}
+  .modal-head.d3{background:linear-gradient(135deg,#b4472f,#8a3524)}
+  .modal-head .ic{font-size:28px}
+  .modal-head .ht{flex:1}
+  .modal-head .ht .t{font-size:19px;font-weight:700}
+  .modal-head .ht .s{font-size:12.5px;opacity:.92}
+  .modal-close{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:22px;width:36px;height:36px;border-radius:50%;cursor:pointer;line-height:1}
+  .modal-close:hover{background:rgba(255,255,255,.35)}
+  .modal-body{padding:20px 22px}
+  .modal-body .row{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  .modal-body .kv{background:var(--cream);border-radius:10px;padding:8px 12px;font-size:13px}
+  .modal-body .kv b{color:var(--mo-d)}
+  .modal-body h5{font-size:14px;color:var(--gold);margin:14px 0 6px}
+  .modal-body p{font-size:14.5px;color:#3a3a3a;margin-bottom:6px}
+  .modal-body ul{list-style:none;margin:4px 0}
+  .modal-body ul li{font-size:14.5px;color:#3a3a3a;padding:6px 0 6px 24px;position:relative}
+  .modal-body ul li::before{content:"✓";position:absolute;left:2px;top:6px;color:var(--green);font-weight:700}
+  .modal-body ul li.rec::before{content:"👍";color:var(--green)}
+  .modal-body ul li.pit::before{content:"⚠️";color:var(--zhu)}
+  .modal-body ul li .lab{color:var(--mo-d);font-weight:700}
+  .modal-body ul li.pit .lab{color:var(--zhu)}
+  .modal-body ul.shops li::before{content:"🏪";color:var(--gold)}
+  .modal-body ul.shops li .num{display:inline-block;min-width:20px;text-align:center;background:var(--gold);color:#fff;border-radius:999px;font-size:12px;font-weight:700;padding:1px 6px;margin-right:6px}
+  .modal-body .src{font-size:12px;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:10px;line-height:1.9}
+  .modal-body .src a{color:var(--blue);text-decoration:none}
+
+  @media(max-width:560px){
+    .banner h1{font-size:24px}
+    .day-head{flex-wrap:wrap}
+    .day-head .route{width:100%;text-align:left;margin-left:0}
+    .timeblock{grid-template-columns:1fr;gap:2px}
+    .slot{margin-bottom:2px}
+    .tier{grid-template-columns:1fr;gap:2px}
+    .modal-head{padding:14px 16px}
+    .modal-body{padding:16px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Banner -->
+  <div class="banner">
+    <div class="deco">🏞️</div>
+    <h1>徽州 · 宏村 3天2夜</h1>
+    <div class="sub">必吃 · 必玩 · 必体验 · 必打卡 &nbsp;|&nbsp; 综合官方公告 / 主流媒体 / 携程·马蜂窝 / 小红书·微博·抖音反馈 · 点击任意卡片看详情</div>
+    <div class="slogan">🌫️ 清晨南湖看晨雾 &nbsp;·&nbsp; 🏮 夜里月沼等灯亮</div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="topnav">
+    <a href="#plan">核心思路</a>
+    <a href="#d1">Day 1</a>
+    <a href="#d2">Day 2</a>
+    <a href="#d3">Day 3</a>
+    <a href="#traffic">交通</a>
+    <a href="#stay">住宿</a>
+    <a href="#checkin">拍照机位</a>
+    <a href="#tips">避坑</a>
+    <a href="#source">信息来源</a>
+  </nav>
+
+  <!-- Overall -->
+  <section id="plan">
+    <h2>一句话规划 <span class="tag">核心思路</span></h2>
+    <div class="card">
+      <p>宏村不是「一个景点」，而是徽州古村落群的中心。<b>节奏不要赶</b>：三天按「<span class="chip"><b>黟县古村群</b></span> → <span class="chip"><b>徽州府城</b></span> → <span class="chip"><b>屯溪收尾</b></span>」三大片区串成三条不走回头路的线，每天一个方向。</p>
+      <p style="margin-top:8px;font-size:14px;color:var(--muted)">📍 <b>地理提示：</b>宏村、西递、塔川、木坑竹海、卢村、南屏、屏山都在黄山风景区<b>西侧的黟县</b>（宏村是中心，周边半小时圈）；呈坎、唐模在<b>中部的徽州区</b>，离黄山北站最近；徽州古城、渔梁坝在<b>东侧的歙县</b>；屯溪老街在<b>市区</b>、离黄山北站约 30 分钟。把同方向的地方放同一天，就是一路走到终点。</p>
+      <p style="margin-top:8px;font-size:14px;color:var(--muted)">🎟️ <b>门票一句话：</b>宏村、西递全价均 <b>104 元/人</b>（官方活动页口径），65 周岁以上多数景区免票；免票/半价与特惠活动都以「<b>徽黄游</b>」小程序和景区公告为准——<b>免票≠不用预约</b>。</p>
+    </div>
+  </section>
+
+  <!-- DAY 1 -->
+  <section id="d1">
+    <div class="day">
+      <div class="day-head d1">
+        <div class="num">DAY 1</div>
+        <div class="t">水墨宏村 · 牛形水系线</div>
+        <div class="route">黄山北站/黟县东站 → 南湖 → 月沼 → 承志堂 → 雷岗山</div>
+      </div>
+      <div class="day-body">
+        <div class="geo">🧭 <b>为何这样走：</b>宏村在黟县，从黄山北站坐大巴约 1.5 小时直达。村子很小，但动线有讲究——<b>先南湖、再月沼、最后往雷岗山收尾</b>，顺着一个方向走不绕路。第一天落地直接进村住下，把最好的光（清晨 / 黄昏）留给明早。</div>
+
+        <div class="sched-title">🕐 一天的节奏</div>
+        <div class="timeblock">
+          <div class="slot">上午<small>进村</small></div>
+          <div><div class="what"><b>南湖 → 画桥 → 南湖书院</b></div><div class="why">进村第一眼就是南湖倒影，千万别一进门就钻巷子，容易迷路还错过这个「第一眼高潮」。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">中午<small>村内</small></div>
+          <div><div class="what">主街吃徽菜：<b>臭鳜鱼 + 毛豆腐</b></div><div class="why">看哪家本地人多进哪家，别在村口最显眼的位置坐下。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">下午<small>核心</small></div>
+          <div><div class="what"><b>月沼 → 承志堂 → 树人堂</b>，沿水圳走一遍</div><div class="why">月沼是牛形水系的「牛胃」，承志堂是徽派木雕巅峰，顺着水圳走就能读懂整个村子的布局。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">傍晚<small>登高</small></div>
+          <div><div class="what"><b>雷岗山观景台</b>俯瞰全村</div><div class="why">20 分钟登顶，白墙黛瓦的鱼骨状布局只有在这里才看得清，日落时分最好。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">晚上<small>夜景</small></div>
+          <div><div class="what">月沼灯笼倒影 &nbsp;/&nbsp; 《宏村·阿菊》演出</div><div class="why">灯笼亮起后的月沼是宏村的高光时刻；夜场演出需另行购票。</div></div>
+        </div>
+
+        <div class="spot" data-modal="spot-nanhu" data-tone="d1">
+          <div class="ic">🌫️</div>
+          <div class="body"><div class="t">南湖 + 画桥<span class="badge g">必玩</span></div><div class="s">进村第一眼 · 清晨 6–7 点晨雾水墨感最强</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-yuezhao" data-tone="d1">
+          <div class="ic">🏮</div>
+          <div class="body"><div class="t">月沼<span class="badge g">必玩</span></div><div class="s">牛形水系的「牛胃」· 黄昏蓝调 + 夜间灯笼倒影</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-chengzhitang" data-tone="d1">
+          <div class="ic">🪵</div>
+          <div class="body"><div class="t">承志堂<span class="badge g">必玩</span></div><div class="s">「民间故宫」· 徽派木雕巅峰 · 避开 10:00–14:00 团队</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-shuizhen" data-tone="d1">
+          <div class="ic">💧</div>
+          <div class="body"><div class="t">水圳 + 南湖书院<span class="badge o">必打卡</span></div><div class="s">顺着水圳走，读懂 800 年的牛形水系</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-leigang" data-tone="d1">
+          <div class="ic">⛰️</div>
+          <div class="body"><div class="t">雷岗山观景台<span class="badge o">必体验</span></div><div class="s">20 分钟登顶俯瞰全村 · 日出前 / 日落前</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-aju" data-tone="d1">
+          <div class="ic">🎭</div>
+          <div class="body"><div class="t">《宏村·阿菊》实景演出<span class="badge b">可选</span></div><div class="s">夜场演出 · 需另行购票 · 想看夜戏的可以安排</div></div>
+          <div class="arrow">›</div>
+        </div>
+
+        <div class="rest">
+          <h4>🍽️ Day 1 吃什么 <span class="rname">（村内徽菜）</span> <span style="font-size:12px;color:var(--muted)">点店名看详情</span></h4>
+          <ul>
+            <li class="rec"><span class="lab" data-modal="food-dianyuelou">得月楼</span>月沼边的老店，红烧臭鳜鱼是招牌，人均 80–100 元。<span class="badge g">推荐</span></li>
+            <li class="rec"><span class="lab" data-modal="food-sansitang">三思堂</span>本地人认可的徽菜馆，毛豆腐、石耳炖土鸡，人均 60–80 元。<span class="badge g">性价比</span></li>
+            <li class="rec"><span class="lab" data-modal="food-maodoufu">毛豆腐</span>徽州特色，煎至金黄蘸辣酱，路边摊比餐厅好吃。<span class="badge g">必吃</span></li>
+            <li class="rec"><span class="lab" data-modal="food-xiaochi">村内小吃</span>石头粿、笋干肉丝面、蟹壳黄烧饼、乌米饭、宏村米酒。<span class="badge o">边走边吃</span></li>
+            <li class="pit"><span class="lab" data-modal="food-pit">村口 / 主街高价店</span>价格虚高、团餐化，多走几步价差很大。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAY 2 -->
+  <section id="d2">
+    <div class="day">
+      <div class="day-head d2">
+        <div class="num">DAY 2</div>
+        <div class="t">古村人家 · 西递塔川线</div>
+        <div class="route">南湖晨雾 → 塔川 / 木坑竹海 / 卢村 → 西递 → 夜游</div>
+      </div>
+      <div class="day-body">
+        <div class="geo">🧭 <b>为何这样走：</b>塔川距宏村 <b>2 公里</b>、木坑竹海 <b>4 公里</b>、卢村在宏村西北角，都在「宏村半小时圈」里；西递在宏村东南约 <b>20 公里</b>（班车 / 包车半小时）。上午把周边小村串完，下午进西递，晚上看夜游——<b>一路往东</b>，为第三天去徽州府城铺路。</div>
+
+        <div class="sched-title">🕐 一天的节奏</div>
+        <div class="timeblock">
+          <div class="slot">清晨<small>宏村</small></div>
+          <div><div class="what"><b>南湖晨雾</b>（6–7 点）</div><div class="why">住村内的意义就在这一刻：出门走几步就是无人的水墨画。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">上午<small>周边</small></div>
+          <div><div class="what"><b>塔川 / 木坑竹海 / 卢村</b>，三选二</div><div class="why">秋天必去塔川看红叶，夏天走木坑竹海避暑，喜欢木雕就去卢村。别贪多，两个刚好。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">中午<small>农家乐</small></div>
+          <div><div class="what">景区外农家乐午餐</div><div class="why">卢村、塔川的农家乐普遍比村内便宜，量也实在。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">下午<small>西递</small></div>
+          <div><div class="what"><b>西递古村</b>：牌坊群 → 胡文光刺史坊 → 敬爱堂</div><div class="why">与宏村齐名的世界遗产，比宏村更清静，宗祠和牌坊是重点。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">晚上<small>住宿</small></div>
+          <div><div class="what">西递夜游 &nbsp;/&nbsp; 返黟县或西递住下</div><div class="why">夜游是单独购票项目；住西递第二天往东更顺。</div></div>
+        </div>
+
+        <div class="spot" data-modal="spot-taichuan" data-tone="d2">
+          <div class="ic">🍁</div>
+          <div class="body"><div class="t">塔川秋色<span class="badge g">必打卡</span></div><div class="s">距宏村 2km · 中国三大秋色之一 · 11 月最佳</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-mukeng" data-tone="d2">
+          <div class="ic">🎋</div>
+          <div class="body"><div class="t">木坑竹海<span class="badge o">必体验</span></div><div class="s">距宏村 4km · 《卧虎藏龙》竹林斗剑取景地 · 人少安静</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-lucun" data-tone="d2">
+          <div class="ic">🪟</div>
+          <div class="body"><div class="t">卢村木雕楼<span class="badge o">必打卡</span></div><div class="s">宏村隔壁 · 木雕天花板 · 游客少、适合探幽</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-xidi" data-tone="d2">
+          <div class="ic">🏛️</div>
+          <div class="body"><div class="t">西递古村（5A / 世界遗产）<span class="badge g">必玩</span></div><div class="s">牌坊群 + 胡文光刺史坊 + 敬爱堂 · 半天</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-xidiyeyou" data-tone="d2">
+          <div class="ic">🌙</div>
+          <div class="body"><div class="t">西递夜游<span class="badge b">可选</span></div><div class="s">单独购票项目 · 不在常规门票内</div></div>
+          <div class="arrow">›</div>
+        </div>
+
+        <div class="rest">
+          <h4>🍽️ Day 2 吃什么 <span class="rname">（农家乐 / 西递）</span> <span style="font-size:12px;color:var(--muted)">点店名看详情</span></h4>
+          <ul>
+            <li class="rec"><span class="lab" data-modal="food-nongjiale">卢村 / 塔川农家乐</span>比村内便宜、分量足，土鸡、腊肉、笋干。<span class="badge g">平价</span></li>
+            <li class="rec"><span class="lab" data-modal="food-tiandeng">添灯食堂</span>三十年徽菜名店，在宏村/黟县一带口碑老店。<span class="badge g">老店</span></li>
+            <li class="rec"><span class="lab" data-modal="food-chouguiyu">臭鳜鱼</span>徽菜头牌，闻着臭吃着香，肉质蒜瓣状。<span class="badge g">必吃</span></li>
+            <li class="pit"><span class="lab" data-modal="food-pit">景区门口团餐</span>价高味一般，旅行团扎堆，能避开就避开。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAY 3 -->
+  <section id="d3">
+    <div class="day">
+      <div class="day-head d3">
+        <div class="num">DAY 3</div>
+        <div class="t">徽州府城 · 呈坎古城线</div>
+        <div class="route">呈坎 → 徽州古城 → 渔梁坝 → 屯溪老街 → 黄山北站</div>
+      </div>
+      <div class="day-body">
+        <div class="geo">🧭 <b>为何这样走：</b>呈坎在徽州区（黄山北站西南约 30 分钟），徽州古城在歙县（屯溪以东约 30 公里），屯溪老街在市区、离黄山北站最近（21 路约 30 分钟）。从<b>西往东</b>一路走，最后在屯溪老街吃晚饭、黄山北站返程，<b>全程不折返</b>。</div>
+
+        <div class="sched-title">🕐 一天的节奏</div>
+        <div class="timeblock">
+          <div class="slot">上午<small>呈坎</small></div>
+          <div><div class="what"><b>呈坎八卦村</b>：罗东舒祠 → 龙溪河 → 古巷</div><div class="why">按《易经》八卦布局，游客少、商业化程度低，和宏村是完全不同的气质。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">中午<small>歙县</small></div>
+          <div><div class="what">徽州古城内午餐</div><div class="why">古城街区免费开放，原住民生活其中，比纯景区更有烟火气。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">下午<small>古城</small></div>
+          <div><div class="what"><b>许国石坊 → 徽州府衙 → 渔梁坝</b></div><div class="why">许国石坊是全国唯一的八角牌坊；渔梁坝是唐代水利工程，可踩石过河。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">傍晚<small>屯溪</small></div>
+          <div><div class="what"><b>屯溪老街 / 黎阳 in 巷</b>：最后一顿 + 伴手礼</div><div class="why">老街、水街、河街相邻，边吃边买，黄山烧饼和茶叶在这里补齐。</div></div>
+        </div>
+        <div class="timeblock">
+          <div class="slot">晚上<small>返程</small></div>
+          <div><div class="what">屯溪 → <b>黄山北站</b>（21 路 / 高铁快线 1 路）</div><div class="why">约 30 分钟，赶高铁务必留足 2 小时余量。</div></div>
+        </div>
+
+        <div class="spot" data-modal="spot-chengkan" data-tone="d3">
+          <div class="ic">☯️</div>
+          <div class="body"><div class="t">呈坎八卦村<span class="badge g">必玩</span></div><div class="s">「江南第一村」· 罗东舒祠 · 商业化程度低</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-gucheng" data-tone="d3">
+          <div class="ic">🏯</div>
+          <div class="body"><div class="t">徽州古城<span class="badge g">必玩</span></div><div class="s">古城免费开放 · 徽州府衙 48 元 · 许国石坊</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-yuliang" data-tone="d3">
+          <div class="ic">🌊</div>
+          <div class="body"><div class="t">渔梁坝<span class="badge o">必打卡</span></div><div class="s">唐代水利工程 · 练江边可踩石过河</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-tunxi" data-tone="d3">
+          <div class="ic">🍢</div>
+          <div class="body"><div class="t">屯溪老街 / 黎阳 in 巷<span class="badge o">必打卡</span></div><div class="s">免费 · 最后一顿 + 伴手礼 · 离黄山北站最近</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-xinanjiang" data-tone="d3">
+          <div class="ic">⛵</div>
+          <div class="body"><div class="t">新安江山水画廊<span class="badge b">时间充裕再加</span></div><div class="s">深渡镇乘船约 2 小时 · 春季油菜花最美</div></div>
+          <div class="arrow">›</div>
+        </div>
+
+        <div class="rest">
+          <h4>🍽️ Day 3 吃什么 <span class="rname">（府城 / 屯溪）</span> <span style="font-size:12px;color:var(--muted)">点店名看详情</span></h4>
+          <ul>
+            <li class="rec"><span class="lab" data-modal="food-tunxi">屯溪老街小吃</span>汪一挑馄饨、毛豆腐、蟹壳黄烧饼、徽墨酥。<span class="badge g">推荐</span></li>
+            <li class="rec"><span class="lab" data-modal="food-chouguiyu">臭鳜鱼</span>在市区吃一顿正经徽菜收尾，比景区里实惠。<span class="badge g">必吃</span></li>
+            <li class="pit"><span class="lab" data-modal="food-pit">老街街口「特产店」</span>茶叶、烧饼价差大，认准明码标价、能试吃的。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAFFIC -->
+  <section id="traffic">
+    <h2>🚌 交通怎么走 <span class="tag">先看这里</span></h2>
+    <div class="card">
+      <div class="spot" data-modal="traffic-hongcun" data-tone="d1">
+        <div class="ic">🚄</div>
+        <div class="body"><div class="t">黄山北站 → 宏村<span class="badge g">主力方式</span></div><div class="s">约 90 公里 / 1.5 小时 / 30 元 · 班次 08:05–17:05</div></div>
+        <div class="arrow">›</div>
+      </div>
+      <div class="spot" data-modal="traffic-yixian" data-tone="d2">
+        <div class="ic">🚌</div>
+        <div class="body"><div class="t">黟县东站 → 宏村 / 西递<span class="badge o">更快</span></div><div class="s">高铁 12 分钟到黟县东站 · 转公交约 29 分钟 / 8 元</div></div>
+        <div class="arrow">›</div>
+      </div>
+      <div class="spot" data-modal="traffic-around" data-tone="d2">
+        <div class="ic">🚐</div>
+        <div class="body"><div class="t">村与村之间怎么串<span class="badge o">关键</span></div><div class="s">宏村↔西递 20km、塔川 2km、木坑竹海 4km</div></div>
+        <div class="arrow">›</div>
+      </div>
+      <div class="spot" data-modal="traffic-back" data-tone="d3">
+        <div class="ic">🎫</div>
+        <div class="body"><div class="t">返程与末班车<span class="badge r">别踩坑</span></div><div class="s">宏村→黄山北站末班 17:30 · 错过只能拼车</div></div>
+        <div class="arrow">›</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY -->
+  <section id="stay">
+    <h2>🛏️ 住哪儿 <span class="tag">决定体验</span></h2>
+    <div class="card">
+      <p style="font-size:14.5px">宏村住宿的第一决策维度是<b>位置</b>：「住在景区内」和「住在景区外」体验完全不同。景区内多是百年徽派老宅改造，推窗见月沼、南湖，但车开不进去、行李要拖行、老宅隔音一般；景区外集中在宏村印象商圈，步行 5–10 分钟到入口，方便但少了「住在画里」的氛围。</p>
+      <div class="spot" data-modal="stay-hongcun" data-tone="d1">
+        <div class="ic">🏡</div>
+        <div class="body"><div class="t">宏村民宿怎么选<span class="badge g">5 家对比</span></div><div class="s">月沼 C 位 ¥139 起 / 老宅庭院 ¥204 / 设计酒店 ¥456 / 连锁 ¥523</div></div>
+        <div class="arrow">›</div>
+      </div>
+      <div class="spot" data-modal="stay-pit" data-tone="d1">
+        <div class="ic">⚠️</div>
+        <div class="body"><div class="t">老宅民宿的坑<span class="badge r">必看</span></div><div class="s">隔音 / 独立卫浴 / 无电梯 / 景区内禁车 / 停车费</div></div>
+        <div class="arrow">›</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Check-in chips -->
+  <section id="checkin">
+    <h2>📸 必打卡机位 <span class="tag">卡住光线</span></h2>
+    <div class="card">
+      <div class="chips">
+        <span class="chip" data-modal="spot-nanhu"><b>南湖</b>画桥晨雾</span>
+        <span class="chip" data-modal="spot-yuezhao"><b>月沼</b>夜灯倒影</span>
+        <span class="chip" data-modal="spot-chengzhitang"><b>承志堂</b>木雕门楣</span>
+        <span class="chip" data-modal="spot-shuizhen"><b>巷弄</b>午后光影</span>
+        <span class="chip" data-modal="spot-leigang"><b>雷岗山</b>全景</span>
+        <span class="chip" data-modal="spot-taichuan"><b>塔川</b>秋色</span>
+        <span class="chip" data-modal="spot-lucun"><b>卢村</b>木雕楼</span>
+        <span class="chip" data-modal="spot-gucheng"><b>许国石坊</b></span>
+      </div>
+      <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">💡 <b>黄金半小时：</b>清晨 6–7 点南湖无风镜面；傍晚 17:00–18:30 南湖逆光；月沼蓝调在日落前后、夜灯在 20:00 后。正午光硬，正好钻巷子拍马头墙细节。</p>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section id="tips" class="tips">
+    <h2>⚠️ 评论区避坑 <span class="tag">记住这几条</span></h2>
+    <div class="card">
+      <ul>
+        <li><b>别报「低价团」</b> —— 澎湃 / 央视 / 香港01 都曝光过：标价 750 元含黄山+宏村三日团，出发后补交 159 元、签「自愿购物协议」、进翡翠和蚕丝被购物点。自由行或纯玩小团更省心。</li>
+        <li><b>门票 104 元，别信「不用买票」</b> —— 网上「宏村不用买门票免费进」是误导：不买票只能在村外和外围转，进南湖、月沼、承志堂等核心景区必须凭票。</li>
+        <li><b>免票 ≠ 不用预约</b> —— 免票、半价、特惠都要在「徽黄游」小程序或黄山旅游官方平台提前实名预约，现场排队容易白跑。</li>
+        <li><b>门票三日有效（刷身份证）</b> —— 多数攻略与游客实测：104 元门票可三天多次进出，别重复买；具体以景区公告为准。</li>
+        <li><b>末班车是硬约束</b> —— 宏村→黄山北站末班 17:30（30 元），错过只能拼车、价格翻倍。赶高铁留 2 小时。</li>
+        <li><b>写生季人多</b> —— 3–5 月、9–11 月是写生季，村内巷子挤，想拍空景 7:00 前出门。</li>
+        <li><b>雨天青石板极滑</b> —— 徽州多雨，石板路遇水像溜冰场，务必防滑鞋；相机进屋前密封防凝水。</li>
+        <li><b>路边「古董」多是义乌货</b> —— 老物件、老银饰、老家具，看看就好，别当真。</li>
+        <li><b>老宅民宿先问三件事</b> —— 有没有独立卫浴、隔音如何、行李能否帮忙接送（景区内禁车）。</li>
+        <li><b>宏村不是「打卡完就走」</b> —— 它的美在巷弄、水圳、晨雾和月沼的灯，赶行程反而亏。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Source tiers -->
+  <section id="source">
+    <h2>📚 信息来源与可信度 <span class="tag">怎么看这份攻略</span></h2>
+    <div class="card">
+      <p style="font-size:14.5px;margin-bottom:10px">这份攻略的信息按渠道分层，<b>价格、班次、政策类信息优先采信官方与主流媒体，体验与口碑类参考平台和社交平台</b>。每条详情弹窗底部都标了具体来源，可点开核对。</p>
+      <div class="tier"><div class="lv a">A 官方</div><div>黟县徽黄西递旅游开发有限公司（景区运营方，门票政策/免票活动）、黄山发布（澎湃政务号，公交班车时刻表）、黄山旅游官方平台 / 徽黄游小程序。门票与班次以这里为准。</div></div>
+      <div class="tier"><div class="lv b">B 主流媒体</div><div>澎湃新闻、央视网、香港01、燕赵老年报（石家庄日报报系）、中国摄影报（景区门票与拍点）。用于交叉验证价格和曝光低价团等问题。</div></div>
+      <div class="tier"><div class="lv c">C 平台</div><div>携程 / 永安旅游 / Trip.com / 马蜂窝的景点与餐饮页，用于门票参考价、开放时间、评分与人均。</div></div>
+      <div class="tier"><div class="lv d">D 自媒体 / 社交</div><div>小红书、微博、抖音、搜狐号、百家号、美篇等的游记与评论。体验细节、机位、避坑很有用，但价格和政策常有滞后，<b>请以官方为准</b>。</div></div>
+      <p style="margin-top:12px;font-size:13px;color:var(--muted)">🔍 <b>核对建议：</b>出发前用「徽黄游」小程序查当天门票与活动，用「黄山旅游官方平台」查班次；宏村景区电话 0559-5541158、西递景区 0559-5154030。</p>
+    </div>
+  </section>
+
+  <div class="foot">
+    攻略综合官方公告 / 主流媒体 / 携程·马蜂窝 / 小红书·微博·抖音高赞帖与评论整理 · 点击页内卡片查看各店详情<br>
+    价格与班次会随季节和活动调整，出行前请以官方渠道为准 · 参考来源见各详情弹窗底部
+  </div>
+
+</div>
+
+<!-- ================= MODALS ================= -->
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <div class="modal-head" id="mh">
+      <div class="ic" id="mh-ic">🏞️</div>
+      <div class="ht"><div class="t" id="mh-t">标题</div><div class="s" id="mh-s">副标题</div></div>
+      <button class="modal-close" id="mh-x">×</button>
+    </div>
+    <div class="modal-body" id="mh-body"></div>
+  </div>
+</div>
+
+<script>
+const MODALS = {
+  /* ---------- Day 1 景点 ---------- */
+  "spot-nanhu": {
+    tone:"d1", ic:"🌫️", t:"南湖 + 画桥", s:"进村第一眼 · 清晨 6–7 点最美",
+    tag:["必玩","宏村地标"],
+    rows:[["位置","宏村村口，进村必经"],["最佳时间","清晨 6–7 点 / 傍晚 17:00–18:30"],["建议时长","40–60 分钟"]],
+    rec:[
+      "南湖是宏村的「牛肚」，画桥横跨湖面，白墙黛瓦倒影是宏村最经典的一张照片。",
+      "进村先过南湖画桥，把最出片的地方留给光线最好的清晨或傍晚。",
+      "南湖平路多、推车友好，带老人孩子可以把这里当主战场。",
+      "南湖书院就在湖边，可顺路一起看。"],
+    pit:[
+      "<b>别一进门就钻巷子</b>——跳过南湖等于浪费了「第一眼高潮」，还容易迷路。",
+      "正午顶光时南湖很平，照片发灰；想拍好就早去或傍晚去。",
+      "画桥上三脚架位子抢手，想占位要早到。"],
+    src:[["官方·黟县徽黄西递旅游开发有限公司（门票政策）","https://www.chinaxidi.com.cn/run_href.html?typeid=110&page=1"],["搜狐·安徽宏村漫游指南（机位与时间）","https://www.sohu.com/a/866292507_115776"],["康辉·宏村经典路线推荐（动线逻辑）","http://www.029558.com/content/detail/25490"]]
+  },
+  "spot-yuezhao": {
+    tone:"d1", ic:"🏮", t:"月沼", s:"牛形水系的「牛胃」· 黄昏蓝调 + 夜灯倒影",
+    tag:["必玩","夜景"],
+    rows:[["位置","村中心"],["最佳时间","日落前后蓝调 / 20:00 后灯笼亮起"],["建议时长","30–60 分钟"]],
+    rec:[
+      "月沼是宏村的核心，半月形水面被白墙黛瓦环抱，是「中国画里的乡村」最标准的构图。",
+      "清晨五点半到七点是月沼的黄金半小时，水面如镜、光线柔和。",
+      "晚上灯笼亮起后拍建筑倒影，是最有徽州味道的一张。",
+      "汪氏宗祠门口的石阶适合拍人像剪影。"],
+    pit:[
+      "旅游团最挤的是上午，普通游客可以错峰到黄昏或夜间。",
+      "拍夜景带三脚架，ISO 控制在 800 以内画面更干净。",
+      "月沼边的民宿晚上可能被游客拍照声打扰，睡眠浅的选内巷房间。"],
+    src:[["康辉·宏村经典路线（月沼黄金半小时）","http://www.029558.com/content/detail/22112"],["搜狐·宏村漫游指南（月沼星夜机位）","https://www.sohu.com/a/866292507_115776"]]
+  },
+  "spot-chengzhitang": {
+    tone:"d1", ic:"🪵", t:"承志堂", s:"「民间故宫」· 徽派木雕巅峰",
+    tag:["必玩","人文"],
+    rows:[["位置","村中主巷"],["最佳时间","避开 10:00–14:00 团队高峰"],["建议时长","40–60 分钟"]],
+    rec:[
+      "承志堂是徽派木雕的巅峰之作，被称为「民间故宫」，木雕、砖雕、石雕密度极高。",
+      "广角仰拍「商」字门楣，两侧冬瓜梁形成天然画框，是摄影客的必拍机位。",
+      "雨天躲进承志堂看木雕细部，一小时不嫌多，反而是天气的补偿。",
+      "看完承志堂正好是饭点，顺路进主街吃饭。"],
+    pit:[
+      "老宅地面不平，带老人小孩要扶好慢行。",
+      "10:00–14:00 是团队高峰，想安静看就错峰。",
+      "室内光线暗，别开闪光灯怼文物。"],
+    src:[["搜狐·宏村漫游指南（承志堂构图技巧）","https://www.sohu.com/a/866292507_115776"],["康辉·宏村美食与路线","http://m.029558.com/content/detail/18687"]]
+  },
+  "spot-shuizhen": {
+    tone:"d1", ic:"💧", t:"水圳 + 南湖书院", s:"顺着水圳走，读懂 800 年牛形水系",
+    tag:["必打卡","小众"],
+    rows:[["位置","贯穿全村"],["建议时长","40–60 分钟"],["玩法","沿水圳慢走，别赶"]],
+    rec:[
+      "宏村是「牛形村」：月沼是牛胃、南湖是牛肚，水圳穿巷入户，把活水引进每家每户。",
+      "顺着水圳走一遍，就懂了整个村子的布局，也不会迷路——巷巷通水圳。",
+      "南湖书院是旧时村中最高学府，安静、适合坐下歇脚。",
+      "午后 15:00–16:30 从敬德堂拐入茶行弄，能拍到斜射光束穿过竹筛的光影。"],
+    pit:[
+      "水圳边青石板湿滑，注意脚下。",
+      "水圳旁是居民生活区，拍照别堵门、别大声喧哗。",
+      "迷路时问浣衣的阿婆，比看地图快。"],
+    src:[["搜狐·宏村漫游指南（小巷光影路线）","https://www.sohu.com/a/866292507_115776"],["康辉·宏村经典路线","http://www.029558.com/content/detail/25490"]]
+  },
+  "spot-leigang": {
+    tone:"d1", ic:"⛰️", t:"雷岗山观景台", s:"20 分钟登顶俯瞰全村 · 日出 / 日落",
+    tag:["必体验","全景"],
+    rows:[["登顶时间","约 20 分钟"],["最佳时间","日出前 / 日落前"],["门票","免费"]],
+    rec:[
+      "宏村鱼骨状的布局只有从高处才看得清，雷岗山是最近的免费观景点。",
+      "建议日出前抵达，能看到晨雾从屋脊间升起。",
+      "村外还有「宏村观景山」，视角比官方观景台更开阔，但需要走远一点。",
+      "拍完下山正好回村吃早饭，节奏很顺。"],
+    pit:[
+      "台阶不少，老人视体力决定上不上。",
+      "<b>雨天别上</b>，泥路危险、视线也差。",
+      "别把雷岗山放到一天最后，累瘫了没力气爬。"],
+    src:[["搜狐·宏村漫游指南（雷岗山观景台）","https://www.sohu.com/a/866292507_115776"],["康辉·宏村路线误区","http://www.029558.com/content/detail/25490"]]
+  },
+  "spot-aju": {
+    tone:"d1", ic:"🎭", t:"《宏村·阿菊》实景演出", s:"夜场演出 · 需另行购票",
+    tag:["可选","夜游"],
+    rows:[["性质","夜场实景演出"],["购票","单独购票，不含在门票内"],["建议","想看夜戏再安排，白天行程别排太满"]],
+    rec:[
+      "官方暑期优惠公告里提到的黟县演艺项目之一，属于宏村的夜游补充选项。",
+      "如果第一天住宏村、又不想只拍夜景，可以安排一场。",
+      "演出票务与场次随季节调整，出发前在「徽黄游」小程序确认。"],
+    pit:[
+      "演出是<b>单独收费</b>项目，别以为含在 104 元门票里。",
+      "看完演出较晚，第二天要早起拍晨雾的话慎重安排。"],
+    src:[["官方·黟县景区暑期优惠（含《宏村·阿菊》演出）","https://www.chinaxidi.com.cn/run_href.html?typeid=110&detail=1956"]]
+  },
+
+  /* ---------- Day 2 景点 ---------- */
+  "spot-taichuan": {
+    tone:"d2", ic:"🍁", t:"塔川秋色", s:"距宏村 2km · 中国三大秋色之一",
+    tag:["必打卡","秋色"],
+    rows:[["位置","黟县宏村镇塔川村，距宏村约 2km"],["门票","约 40 元/人"],["最佳时间","11 月初乌桕转红，日出前到"]],
+    rec:[
+      "塔川被列为「中国三大秋色」之一，白墙黛瓦掩映在红黄绿交织的树丛里。",
+      "距宏村仅 2 公里，沿宏泗公路不出两公里就到，顺路。",
+      "村口「五树参天」是塔川第一景，清晨炊烟袅袅时最美。",
+      "春季可换成柯村油菜花海，同样在黟县境内。"],
+    pit:[
+      "红叶期很短，通常 11 月上旬到中旬，去早了绿、去晚了秃，出发前看实时照片。",
+      "秋色季人多车多，自驾要早出发，停车位紧张。",
+      "非秋色季就是普通山村，别抱过高期待。"],
+    src:[["中国摄影报·黟县塔川景区（门票 40 元 / 拍点）","http://byz.cppfoto.com/Scenic/detail.aspx?id=2479"],["康辉·徽州古村全规划","http://www.029558.com/content/detail/22112"]]
+  },
+  "spot-mukeng": {
+    tone:"d2", ic:"🎋", t:"木坑竹海", s:"距宏村 4km · 《卧虎藏龙》竹林斗剑取景地",
+    tag:["必体验","避暑"],
+    rows:[["位置","距宏村约 4km，距塔川 1.5km"],["门票","30 元/人"],["建议时长","半天，四季皆宜"]],
+    rec:[
+      "《卧虎藏龙》「竹林斗剑」就在这里拍，很多人误以为是翡翠谷。",
+      "漫山竹林、游客不多、非常安静，夏天是黟县最凉快的地方之一。",
+      "气候合适时还能看到类似黄山云海的景致。",
+      "和塔川在同一条线上，可以串成半天。"],
+    pit:[
+      "交通靠自驾或打车，班车少；从黟县县城打车约 60 元（不打表但可要发票）。",
+      "竹林里蚊虫多，夏天带驱蚊液。",
+      "纯自然景观，喜欢人文老宅的可能觉得单调。"],
+    src:[["中国摄影报·黟县木坑竹海（门票 30 元 / 交通）","http://byz.cppfoto.com/Scenic/detail.aspx?id=2473"],["官方·黟县景区免票名单含木坑竹海","https://www.chinaxidi.com.cn/run_href.html?typeid=110&detail=1967"]]
+  },
+  "spot-lucun": {
+    tone:"d2", ic:"🪟", t:"卢村木雕楼", s:"宏村隔壁 · 木雕天花板 · 人少",
+    tag:["必打卡","小众"],
+    rows:[["位置","宏村西北侧，宏村镇卢村"],["门票","约 50 元/人（以景区公告为准）"],["建议时长","2–3 小时"]],
+    rec:[
+      "清代富商卢帮燮为六位妻子建造的木雕楼群，木雕耗时二十年才雕成。",
+      "黄梅剧《徽州女人》等曾在此取景，游客远少于宏村，特别适合摄影和探幽。",
+      "距宏村很近，是「顺道一游」的最佳选择。",
+      "雪后木雕楼积雪的马头墙非常出片。"],
+    pit:[
+      "门票以景区现场为准，别用旧攻略的价格。",
+      "村子小、配套少，吃饭建议回宏村或去塔川农家乐。",
+      "老宅内部光线暗，木雕细节要靠近看。"],
+    src:[["永安旅游·卢村参观攻略（门票与开放信息）","https://www.wingontravel.com/discovery/scenic-lu-village-98219"],["TourNews·徽州古城宏村自由行攻略","https://tournews.tw/huizhou-hongcun-travel-guide/"]]
+  },
+  "spot-xidi": {
+    tone:"d2", ic:"🏛️", t:"西递古村（5A / 世界遗产）", s:"牌坊群 + 胡文光刺史坊 + 敬爱堂",
+    tag:["必玩","世界遗产"],
+    rows:[["位置","黟县西递镇，距宏村约 20km"],["门票","全票 104 元/人，半票 52 元"],["建议时长","半天"]],
+    rec:[
+      "与宏村齐名的世界文化遗产，保存完好的明清民居与牌坊群，被称「古徽州建筑博物馆」。",
+      "胡文光刺史坊是西递地标，村口牌坊群 + 青石板路是最佳拍照点。",
+      "比宏村更清静，适合深度慢游、看宗祠和砖木石三雕。",
+      "傍晚逆光拍牌坊最有味道。"],
+    pit:[
+      "门票与宏村分开买；联票、赠票活动随季节变，以当天公告为准。",
+      "<b>西递夜游是单独收费项目</b>，不在常规门票内。",
+      "一天跑宏村+西递会很赶，建议各留半天。"],
+    src:[["燕赵老年报·西递/宏村常规票价 104 元","http://yzlnb.sjzdaily.com.cn/yzlnbpaper/pc/content/202607/03/content_249548.html"],["美篇·西递宏村门票政策全解（夜游单独购票）","https://www.meipian.cn/5jbvhgip"],["官方·黟县徽黄西递旅游开发有限公司","https://www.chinaxidi.com.cn/run_href.html?typeid=110&page=1"]]
+  },
+  "spot-xidiyeyou": {
+    tone:"d2", ic:"🌙", t:"西递夜游", s:"单独购票项目 · 不在常规门票内",
+    tag:["可选","夜景"],
+    rows:[["性质","夜游项目，另行购票"],["位置","西递古村内"],["建议","住西递的话顺理成章"]],
+    rec:[
+      "官方门票政策明确：西递夜游为单独项目，不在常规门票范围内。",
+      "如果第二天住西递，晚上看夜游最顺；否则要赶回宏村。",
+      "夜游场次和票价随季节调整，出发前查「徽黄游」小程序。"],
+    pit:[
+      "别默认门票含夜游，现场补票容易打乱预算。",
+      "夜游结束后班车基本停了，需提前安排好住宿或用车。"],
+    src:[["美篇·西递宏村门票政策全解","https://www.meipian.cn/5jbvhgip"],["官方·黟县徽黄西递旅游开发有限公司","https://www.chinaxidi.com.cn/run_href.html?typeid=110&page=1"]]
+  },
+
+  /* ---------- Day 3 景点 ---------- */
+  "spot-chengkan": {
+    tone:"d3", ic:"☯️", t:"呈坎八卦村", s:"「江南第一村」· 罗东舒祠",
+    tag:["必玩","小众"],
+    rows:[["位置","黄山市徽州区，黄山北站西南约 30 分钟"],["门票","全票 107 元，半票 53 元"],["建议时长","2–3 小时"]],
+    rec:[
+      "按《易经》阴阳八卦布局的古村，被朱熹誉为「江南第一村」。",
+      "龙溪河呈 S 形穿村而过，形成天然太极图；罗东舒祠是国宝级建筑，银杏木柱直径近 1 米。",
+      "游客稀少、商业化程度低，和宏村是两种完全不同的体验。",
+      "从黄山北站乘徽州 17 路公交可直达，交通比想象中方便。"],
+    pit:[
+      "门票 107 元不算便宜，纯打卡的话性价比一般，适合喜欢人文的人。",
+      "村内餐饮少，午饭建议去徽州古城或歙县解决。",
+      "公交班次不多（北站发车约 7:30–16:20），回程要卡好时间。"],
+    src:[["合肥本地宝·古徽州文化旅游区门票（呈坎 107 元）","https://m.hf.bendibao.com/tour/92778.shtm"],["黄山发布·黄山北站到呈坎公交时刻","https://m.thepaper.cn/newsDetail_forward_30574432"]]
+  },
+  "spot-gucheng": {
+    tone:"d3", ic:"🏯", t:"徽州古城", s:"古城免费开放 · 徽州府衙 48 元",
+    tag:["必玩","烟火气"],
+    rows:[["位置","歙县，屯溪以东约 30km"],["门票","古城免费；徽州府衙 48 元；夜游 98 元"],["建议时长","半天"]],
+    rec:[
+      "中国四大古城之一，徽州府治千年所在，古城街区已取消大门禁、可自由出入。",
+      "许国石坊是全国唯一的八角牌坊，是古城的绝对地标。",
+      "城内原住民生活其中，商铺、茶馆、手工作坊林立，比纯景区更有烟火气。",
+      "从黄山北站可乘游 1 路、游 2 路直达徽州路（徽州古城）。"],
+    pit:[
+      "古城免费≠府衙免费，徽州府衙、夜游都要单独买票。",
+      "古城范围大，别只看主街，往巷子里走才是精华。",
+      "节假日城内人多，正午暴晒，注意补水。"],
+    src:[["合肥本地宝·徽州古城已取消大门禁","https://m.hf.bendibao.com/tour/92778.shtm"],["黄山发布·黄山北站到徽州古城公交","https://m.thepaper.cn/newsDetail_forward_30574432"],["燕赵老年报·歙县景区免票政策","http://yzlnb.sjzdaily.com.cn/yzlnbpaper/pc/content/202607/03/content_249548.html"]]
+  },
+  "spot-yuliang": {
+    tone:"d3", ic:"🌊", t:"渔梁坝", s:"唐代水利工程 · 练江边可踩石过河",
+    tag:["必打卡","人文"],
+    rows:[["位置","歙县渔梁，徽州古城南侧"],["门票","含在渔梁景区，以现场为准"],["建议时长","1 小时"]],
+    rec:[
+      "练江上的古代滚水坝，唐代水利工程，至今仍在发挥作用。",
+      "可以踩石过河，是徽州古城片区最有画面感的一站。",
+      "从黄山北站乘游 1 路、游 2 路至长青路（渔梁景区）。",
+      "和徽州古城连在一起走，半天刚好。"],
+    pit:[
+      "踩石过河湿滑，注意安全，雨季水量大时别下水。",
+      "夏季中午无遮挡，晒得厉害。",
+      "单独跑一趟不划算，务必和徽州古城串起来。"],
+    src:[["黄山发布·黄山北站到渔梁景区公交","https://m.thepaper.cn/newsDetail_forward_30574432"],["TourNews·徽州古城自由行攻略（渔梁坝）","https://tournews.tw/huizhou-hongcun-travel-guide/"]]
+  },
+  "spot-tunxi": {
+    tone:"d3", ic:"🍢", t:"屯溪老街 / 黎阳 in 巷", s:"免费 · 最后一顿 + 伴手礼",
+    tag:["必打卡","免费"],
+    rows:[["位置","黄山市屯溪区，离黄山北站最近"],["门票","免费开放"],["建议时长","1.5–2 小时"]],
+    rec:[
+      "老街、水街、河街相邻，是黄山市区最有烟火气的一段。",
+      "臭鳜鱼、毛豆腐、汪一挑馄饨、蟹壳黄烧饼在这里一次吃齐。",
+      "伴手礼集中：黄山烧饼、徽墨酥、黄山毛峰、祁门红茶。",
+      "从黄山北站乘 21 路（首班 6:50、末班 23:00）或高铁快线 1 路直达。"],
+    pit:[
+      "老街街口「特产店」价差大，认准明码标价、能试吃的。",
+      "商业化程度高，部分店铺是给游客开的，往里走更实在。",
+      "晚上人多，注意随身物品。"],
+    src:[["黄山发布·黄山北站到屯溪老街公交","https://m.thepaper.cn/newsDetail_forward_30574432"],["燕赵老年报·屯溪老街美食建议","http://yzlnb.sjzdaily.com.cn/yzlnbpaper/pc/content/202607/03/content_249548.html"]]
+  },
+  "spot-xinanjiang": {
+    tone:"d3", ic:"⛵", t:"新安江山水画廊", s:"时间充裕再加 · 春季油菜花最美",
+    tag:["可选","船游"],
+    rows:[["位置","歙县深渡镇"],["门票","约 80 元（含船票，以景区为准）"],["建议时长","约 2 小时"]],
+    rec:[
+      "从深渡镇乘船游新安江，两岸青山夹碧水，粉墙黛瓦点缀其间。",
+      "途经九砂古村、漳潭千年古樟，春天油菜花开时最美。",
+      "一般和歙县片区（徽州古城）连着玩，从歙县汽车站乘 938 路至深渡港。"],
+    pit:[
+      "游船班次有限、时段集中在上午到下午 3 点，行程要卡好。",
+      "安排在第三天会挤压屯溪老街和返程时间，时间紧就别加。",
+      "船上风大，注意保暖和防晒。"],
+    src:[["黄山发布·新安江山水画廊交通","https://m.thepaper.cn/newsDetail_forward_30574432"],["TourNews·徽州古城宏村自由行攻略","https://tournews.tw/huizhou-hongcun-travel-guide/"]]
+  },
+
+  /* ---------- 交通 ---------- */
+  "traffic-hongcun": {
+    tone:"d1", ic:"🚄", t:"黄山北站 → 宏村", s:"主力方式 · 1.5 小时 / 30 元",
+    tag:["主力方式","必看"],
+    rows:[["车站","黄山北站·黄山旅游客运中心"],["距离","约 90 公里，车程约 1.5 小时"],["票价","30 元/人"],["发车","08:05–17:05 多班次（约每半小时）"]],
+    rec:[
+      "出黄山北站右转直走就是黄山旅游客运中心，在这里买去宏村的大巴票。",
+      "大巴途经西递、归园、屏山、秀里，可以在西递提前下车。",
+      "宏村返回黄山北站的班次为 08:30–17:30，同样是 30 元。",
+      "高铁到黟县东站更快：黄山北站→黟县东站高铁约 12 分钟。"],
+    pit:[
+      "班次会随季节和节假日调整，出发前用官方渠道再确认一次。",
+      "<b>末班车是硬约束</b>，错过只能拼车，价格翻倍。",
+      "节假日高速容易堵，赶高铁请多加余量。"],
+    src:[["黄山发布（澎湃政务号）·黄山北站公交班车全攻略","https://m.thepaper.cn/newsDetail_forward_30574432"],["百度百家号·安徽宏村旅行攻略（交通与门票）","https://baijiahao.baidu.com/s?id=1826172207941143412"]]
+  },
+  "traffic-yixian": {
+    tone:"d2", ic:"🚌", t:"黟县东站 → 宏村 / 西递", s:"高铁+公交更快",
+    tag:["更快","省时"],
+    rows:[["高铁","黄山北站 → 黟县东站 约 12 分钟"],["公交","黟县 1 路至宏村客运站，约 29 分钟，8 元"],["快线","黟县东站—西递—宏村 10 路旅游快速专线"]],
+    rec:[
+      "从黄山北站坐高铁到黟县东站只要 12 分钟，比大巴快很多。",
+      "出站同站换乘黟县 1 路公交到宏村客运站，全程票约 8 元，步行几分钟进景区。",
+      "10 路旅游快速专线走「黟县东站—西递—宏村」，约 20 分钟到西递。",
+      "宏村客运站到黟县东站也有班车，13 元。"],
+    pit:[
+      "公交班次比大巴少，晚到可能没车，注意末班时间。",
+      "带大件行李换乘略麻烦，人多时不如直接坐宏村大巴。",
+      "具体线路与时刻以现场公告为准。"],
+    src:[["燕赵老年报·黟县东站转 10 路快速专线","http://yzlnb.sjzdaily.com.cn/yzlnbpaper/pc/content/202607/03/content_249548.html"],["百度百家号·黟县东站到宏村交通","https://baijiahao.baidu.com/s?id=1826172207941143412"],["黄山发布·宏村—黟县东站班车","https://m.thepaper.cn/newsDetail_forward_30574432"]]
+  },
+  "traffic-around": {
+    tone:"d2", ic:"🚐", t:"村与村之间怎么串", s:"关键：距离都不远，但班车少",
+    tag:["关键","包车"],
+    rows:[["宏村 → 塔川","约 2 公里"],["宏村 → 木坑竹海","约 4 公里"],["宏村 → 西递","约 20 公里，班车/包车约半小时"],["宏村 → 黄山风景区南大门","15 元"],["宏村 → 屯溪","26 元（10:00 / 15:25）"]],
+    rec:[
+      "黟县片区景点彼此都在 20 公里内，包车或自驾一天能串 2–3 个。",
+      "包车半天去塔川+木坑竹海，通常一两百元，人多更划算。",
+      "公共交通班次旺季密、淡季疏，赶时间就包车，提前一天约。",
+      "村口有电瓶车摆渡，几元到十几元，带老人孩子可以用上。"],
+    pit:[
+      "别指望「随到随走」，班车时刻要提前查好写下来。",
+      "出租车不打表但可提供发票，上车前先谈好价。",
+      "旺季拼车会临时涨价，尽量提前约。"],
+    src:[["黄山发布·宏村相关班车时刻","https://m.thepaper.cn/newsDetail_forward_30574432"],["康辉·宏村路线间转换交通","http://www.029558.com/content/detail/22112"]]
+  },
+  "traffic-back": {
+    tone:"d3", ic:"🎫", t:"返程与末班车", s:"错过末班只能拼车",
+    tag:["别踩坑","末班车"],
+    rows:[["宏村 → 黄山北站","08:30–17:30，30 元"],["宏村 → 黟县东站","07:55–18:50，13 元"],["屯溪 → 黄山北站","21 路（6:50–23:00）/ 高铁快线 1 路"],["建议","赶高铁留 2 小时余量"]],
+    rec:[
+      "返程前把发车时间写在一张纸上，比现场刷手机靠谱。",
+      "从屯溪老街回黄山北站最方便：21 路公交约 30 分钟。",
+      "如果接着去黄山风景区，宏村→汤口（南大门）15 元，下午出村住汤口最顺。"],
+    pit:[
+      "<b>宏村→黄山北站末班 17:30</b>，错过只能拼车、价格翻倍。",
+      "节假日高速拥堵，赶飞机高铁务必多留时间。",
+      "回程前检查证件、充电宝，村口超市可补水补干粮。"],
+    src:[["黄山发布·宏村及屯溪返程班次","https://m.thepaper.cn/newsDetail_forward_30574432"],["康辉·宏村路线收尾建议","http://www.029558.com/content/detail/25490"]]
+  },
+
+  /* ---------- 住宿 ---------- */
+  "stay-hongcun": {
+    tone:"d1", ic:"🏡", t:"宏村民宿怎么选", s:"5 家对比 · 按预算对号入座",
+    tag:["推荐","对号入座"],
+    rows:[["景区内","推窗见月沼/南湖，但车进不去、行李要拖行"],["景区外","宏村印象商圈，步行 5–10 分钟，方便但少氛围"],["预订","旺季提前 7–14 天，月沼/南湖周边提前一个月"]],
+    shop:[
+      ["近水楼台客栈","景区内月沼旁（约 22 米），人均 139 元起、评分 4.7。预算党首选，下楼就是打卡机位；缺点是房间小、楼下餐厅略嘈杂。"],
+      ["舍得园客栈","景区内前街，204 元起、评分 4.8，徽派庭院 + 私厨，老宅体验与性价比平衡最好；无电梯，行李要手提。"],
+      ["南湖观园·湖景度假民宿","景区内南湖畔，评分 4.8，湖景房视野绝佳；房量少，旺季要提前一个月订。"],
+      ["作闲艺术·微酒店","景区外宏村印象，步行 5 分钟到南湖，456 元起、评分 4.9，设计感强，年轻人喜欢；旺季可能涨到 600+。"],
+      ["亚朵酒店","景区外毗邻入口，523 元起、评分 4.8，连锁标准化、隔音好，带长辈孩子省心；少了古村沉浸感。"]],
+    rec:[
+      "第一次去、预算有限选近水楼台；想体验徽派老宅选舍得园。",
+      "带长辈或大件行李，优先选景区外或有门口接送服务的民宿。",
+      "想拍晨昏光，必须住景区内——清晨走几步就到南湖，不用算进出时间。",
+      "顶楼露台房是加分项，能看到宏村全景，傍晚拍晚霞、夜里拍星空。"],
+    pit:[
+      "价格随季节浮动大，以上为平台参考价，下单前再核。",
+      "古宅隔音普遍一般，睡眠浅的选景区外连锁或做了隔音改造的新房型。",
+      "月沼旁民宿夜里可能被游客拍照声打扰，建议选内巷房间。"],
+    src:[["新浪·宏村景区内特色民宿怎么选（携程数据）","https://www.sina.cn/news/article/comos_nipmnpn1936474.html"],["新浪·宏村景区内特色民宿推荐（微博用户反馈）","https://www.sina.cn/news/article/comos_nipzpac3267553.html"]]
+  },
+  "stay-pit": {
+    tone:"d1", ic:"⚠️", t:"老宅民宿的坑", s:"订房前先问清这几件事",
+    tag:["避雷","必看"],
+    rows:[["隔音","木质结构，楼上走路楼下能听到"],["卫浴","部分古宅共用卫生间，务必确认独立卫浴"],["电梯","老宅基本无电梯，二楼要爬木楼梯"],["车辆","景区内禁机动车，行李需拖行；停车约 20–30 元/天"]],
+    pit:[
+      "订房时确认<b>是否有独立卫浴</b>——部分古宅是共用的。",
+      "问清房间是否临街或挨着公共区域，隔音差别很大。",
+      "带老人小孩，确认房间在一层或楼梯是否陡峭。",
+      "自驾把车停景区外停车场，再联系民宿老板接送或步行进入，预订时问清有无接送。",
+      "别被「百年老宅」四个字冲昏头，硬件条件确实不如现代酒店。"],
+    rec:[
+      "优先选近两年新装修、带独立卫浴且做过隔音的房型。",
+      "有老板开三轮车到景区门口接人的，对带大件行李的人非常实用。"],
+    src:[["新浪·宏村民宿避坑提示与 FAQ","https://www.sina.cn/news/article/comos_nipmnpn1936474.html"],["新浪·宏村民宿选址与隔音提醒","https://www.sina.cn/news/article/comos_nipzpac3267553.html"]]
+  },
+
+  /* ---------- 美食 ---------- */
+  "food-chouguiyu": {
+    tone:"d1", ic:"🐟", t:"臭鳜鱼", s:"徽菜头牌 · 闻着臭吃着香",
+    tag:["必吃","徽菜"],
+    rows:[["价位","村内约 80–120 元/份"],["特点","腌制发酵后红烧，肉质蒜瓣状"],["哪里吃","得月楼、三思堂、屯溪老街的徽菜馆"]],
+    rec:[
+      "用新鲜鳜鱼特殊发酵处理，表面略黏滑、味道独特，红烧后鱼肉紧实鲜嫩。",
+      "臭中带香，是极致的味觉反差，初尝可能觉得怪，多吃几口会上瘾。",
+      "宏村内餐厅基本都供应，是徽菜的门面菜。",
+      "在屯溪老街吃通常比景区内实惠。"],
+    pit:[
+      "各家做法差异大，价格也不透明，点之前先问清单价和分量。",
+      "不喜欢发酵味的人别硬点，徽菜里还有一品锅、笋干烧肉可选。",
+      "景区内臭鳜鱼溢价明显，预算有限可以去景区外农家乐吃。"],
+    src:[["康辉·宏村美食：徽州的味道在舌尖","http://m.029558.com/content/detail/18687"],["携程·徽八鲜臭鳜鱼非遗名菜（餐厅参考）","https://you.ctrip.com/food/Huangshan120061/58444-dianping.html"]]
+  },
+  "food-maodoufu": {
+    tone:"d1", ic:"🧈", t:"毛豆腐", s:"徽州特色 · 路边摊比餐厅好吃",
+    tag:["必吃","小吃"],
+    rows:[["价位","路边摊约 5 元一份"],["吃法","煎至金黄，蘸辣酱"],["哪里吃","村内小摊、屯溪老街"]],
+    rec:[
+      "豆腐表面长出一层白色绒毛（发酵形成），油炸后外酥里嫩，比普通豆腐更滑。",
+      "蘸辣椒酱吃是宏村最受欢迎的下酒小吃。",
+      "很多游客反馈路边摊的毛豆腐比餐厅里做得更好吃。",
+      "在老街酒坊附近、中街一带的小摊可以试。"],
+    pit:[
+      "第一次吃可能不习惯发酵味，先买一份小的试。",
+      "路边摊卫生条件参差，肠胃敏感的谨慎。",
+      "别在景区最显眼的摊位买，价格能差一倍。"],
+    src:[["康辉·宏村美食","http://m.029558.com/content/detail/18687"],["搜狐·宏村漫游指南（毛豆腐摊推荐）","https://www.sohu.com/a/866292507_115776"]]
+  },
+  "food-xiaochi": {
+    tone:"d1", ic:"🍡", t:"宏村小吃", s:"石头粿、笋干肉丝面、蟹壳黄烧饼、宏村米酒",
+    tag:["推荐","边走边吃"],
+    rows:[["早餐","笋干肉丝面、石头粿"],["零食","蟹壳黄烧饼、乌米饭、艾叶果、御饼"],["喝的","宏村米酒（甜而不腻）、葛粉丝"]],
+    rec:[
+      "石头粿当早餐边走边吃最方便，笋干肉丝面是本地人的常规早饭。",
+      "蟹壳黄烧饼（梅干菜肉馅）2 元左右一个，外酥内香，是伴手礼首选。",
+      "宏村米酒甜而不腻，是品尝当地风情的入口。",
+      "乌米饭、艾叶果、芙蓉糕、红枣乌糍都是本地小点心，可以拼着尝。",
+      "晚上宏村有夜市，价格比白天实惠。"],
+    pit:[
+      "小吃摊价格浮动大，先问价再买。",
+      "蟹壳黄烧饼保质期短，别一次买太多带走。",
+      "「御饼」等包装特产在景区内溢价高，屯溪老街或市区超市更便宜。"],
+    src:[["百度百家号·宏村旅行攻略（特产小吃）","https://baijiahao.baidu.com/s?id=1826172207941143412"],["康辉·宏村美食","http://m.029558.com/content/detail/18687"]]
+  },
+  "food-dianyuelou": {
+    tone:"d1", ic:"🍽️", t:"得月楼", s:"月沼边的老店 · 红烧臭鳜鱼招牌",
+    tag:["推荐","位置好"],
+    rows:[["位置","月沼边"],["人均","约 80–100 元"],["招牌","红烧臭鳜鱼"]],
+    rec:[
+      "就在月沼边上，吃饭时能看到水面和徽派老宅，位置是最大加分项。",
+      "红烧臭鳜鱼是招牌菜，游客口碑普遍不错。",
+      "顺路：逛完月沼正好进店吃饭。"],
+    pit:[
+      "位置好意味着游客多，饭点要等位。",
+      "人均 80–100 元在村里属于偏上，预算紧的可以换三思堂。",
+      "点菜前确认价格和分量，避免结账时意外。"],
+    src:[["康辉·宏村美食（得月楼人均 80–100 元）","http://m.029558.com/content/detail/18687"]]
+  },
+  "food-sansitang": {
+    tone:"d1", ic:"🥢", t:"三思堂", s:"本地人认可 · 人均 60–80 元",
+    tag:["性价比","本地口碑"],
+    rows:[["位置","宏村内"],["人均","约 60–80 元"],["招牌","毛豆腐、石耳炖土鸡"]],
+    rec:[
+      "本地人认可的徽菜馆，毛豆腐和石耳炖土鸡口碑好。",
+      "人均比月沼边的店低一档，分量实在。",
+      "想避开游客店、吃本地口味，选它更稳。"],
+    pit:[
+      "环境普通，没有月沼边的景观位。",
+      "饭点同样要等位，早一点去。",
+      "菜品偏家常，追求精致摆盘的别抱期待。"],
+    src:[["康辉·宏村美食（三思堂人均 60–80 元）","http://m.029558.com/content/detail/18687"]]
+  },
+  "food-tiandeng": {
+    tone:"d2", ic:"🏮", t:"添灯食堂", s:"三十年徽菜名店",
+    tag:["老店","推荐"],
+    rows:[["定位","三十年徽菜老店"],["位置","宏村 / 黟县一带"],["建议","饭点早去"]],
+    rec:[
+      "当地经营三十年的徽菜名店，属于黟县一带口碑老店。",
+      "适合安排在第二天中午，从周边小村回宏村的路上顺路吃。",
+      "点徽菜经典：臭鳜鱼、毛豆腐、笋干烧肉。"],
+    pit:[
+      "老店旺季排队，尽量避开正午 12 点整的高峰。",
+      "菜单价格以店内为准，网上信息可能滞后。"],
+    src:[["中华老字号网·添灯食堂三十年徽菜名店","https://www.zhlxw.net/food/show-8.html"],["搜狐·宏村漫游指南（行程中的午餐点）","https://www.sohu.com/a/866292507_115776"]]
+  },
+  "food-nongjiale": {
+    tone:"d2", ic:"🍲", t:"卢村 / 塔川农家乐", s:"景区外更便宜 · 分量实在",
+    tag:["平价","本地"],
+    rows:[["位置","卢村、塔川等宏村周边村落"],["人均","低于宏村村内"],["推荐","土鸡、腊肉、笋干、时令野菜"]],
+    rec:[
+      "景区外的卢村和塔川有很多农家乐，价格比宏村内实惠。",
+      "土鸡、腊肉、笋干这类家常菜做得好，量也大。",
+      "第二天串周边小村时，午饭直接在这些村子解决最划算。"],
+    pit:[
+      "农家乐水平参差，挑本地人多的那家。",
+      "部分农家乐只收现金或需要提前订，问清楚。",
+      "淡季可能不开门，别指望随到随吃。"],
+    src:[["康辉·宏村美食（景区外农家乐更实惠）","http://m.029558.com/content/detail/18687"]]
+  },
+  "food-tunxi": {
+    tone:"d3", ic:"🍢", t:"屯溪老街美食", s:"最后一顿 · 汪一挑馄饨 + 毛豆腐",
+    tag:["推荐","收尾"],
+    rows:[["位置","黄山市屯溪区老街"],["人均","丰俭由人"],["必吃","汪一挑馄饨、毛豆腐、蟹壳黄烧饼、臭鳜鱼"]],
+    rec:[
+      "老街、水街、河街相邻，从街头吃到街尾就够一顿饭。",
+      "汪一挑馄饨是屯溪老街的老字号小吃，人气高。",
+      "徽墨酥、黄山烧饼、黄山毛峰、祁门红茶在这里一次买齐。",
+      "离黄山北站最近，安排在最后一天顺路。"],
+    pit:[
+      "街口「特产店」价格虚高，往里走或去市区超市更划算。",
+      "游客多、排队久，赶车的话别在最热闹的时段来。",
+      "茶叶建议试喝后再买，认准明码标价。"],
+    src:[["携程·汪一挑馄饨（老街店）","https://gs.ctrip.com/html5/you/foods/fooddetail/120061/58002.html"],["燕赵老年报·屯溪老街与徽州美食","http://yzlnb.sjzdaily.com.cn/yzlnbpaper/pc/content/202607/03/content_249548.html"]]
+  },
+  "food-pit": {
+    tone:"d1", ic:"⚠️", t:"景区餐饮避雷", s:"村口 / 主街高价店与团餐",
+    tag:["踩雷","谨慎"],
+    rows:[["高风险区","村口最显眼的店、主街入口段、旅行团定点餐厅"],["问题","价高、味一般、团餐化"],["建议","往里走几条巷子，或去景区外农家乐"]],
+    pit:[
+      "村口和主街入口的店租金高，价格自然虚高，多走几步价差很明显。",
+      "接旅行团的定点餐厅，出品流水线化，别指望味道。",
+      "菜单没有标价的店，先问清楚再点。",
+      "景区门口的快餐性价比低，正餐宁可进村吃。"],
+    rec:[
+      "选本地人多的馆子，通常比网红店实在。",
+      "把吃饭和景点顺路排，别为了一顿饭绕回村口。",
+      "中午正餐排在看完成志堂之后，正好饭点。"],
+    src:[["康辉·宏村美食与路线（把餐馆和景点顺路排）","http://m.029558.com/content/detail/18687"],["搜狐·宏村漫游指南（避坑指南）","https://www.sohu.com/a/866292507_115776"]]
+  }
+};
+
+const modal = document.getElementById("modal");
+const mh = document.getElementById("mh");
+const mhic = document.getElementById("mh-ic");
+const mht = document.getElementById("mh-t");
+const mhs = document.getElementById("mh-s");
+const mhbody = document.getElementById("mh-body");
+
+function kvHTML(rows){
+  return `<div class="row">${rows.map(r=>`<span class="kv"><b>${r[0]}</b>：${r[1]}</span>`).join("")}</div>`;
+}
+function badgeClass(t){
+  if(["踩雷","避雷","谨慎","别踩坑"].includes(t)) return "r";
+  if(["推荐","必玩","必吃","主力方式","性价比"].includes(t)) return "g";
+  if(["必打卡","必体验","老店","免费","省时","更快","包车","夜景","秋色","避暑"].includes(t)) return "b";
+  return "o";
+}
+function openModal(id){
+  const d = MODALS[id];
+  if(!d) return;
+  mh.className = "modal-head " + (d.tone||"d1");
+  mhic.textContent = d.ic;
+  mht.textContent = d.t;
+  mhs.textContent = d.s;
+  let h = "";
+  h += `<div class="row">${d.tag.map(t=>`<span class="badge ${badgeClass(t)}">${t}</span>`).join("")}</div>`;
+  if(d.rows) h += kvHTML(d.rows);
+  if(d.shop){ h += `<h5>🏡 店名对比</h5><ul class="shops">${d.shop.map((x,i)=>`<li class="rec"><span class="num">${i+1}</span><span class="lab">${x[0]}</span>：${x[1]}</li>`).join("")}</ul>`; }
+  if(d.rec){ h += `<h5>👍 推荐理由</h5><ul>${d.rec.map(x=>`<li class="rec">${x}</li>`).join("")}</ul>`; }
+  if(d.pit){ h += `<h5>⚠️ 注意 & 踩雷</h5><ul>${d.pit.map(x=>`<li class="pit">${x}</li>`).join("")}</ul>`; }
+  if(d.src){
+    h += `<div class="src">📎 参考来源：${d.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join(" · ")}</div>`;
+  }
+  mhbody.innerHTML = h;
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.querySelectorAll("[data-modal]").forEach(el=>{
+  el.addEventListener("click",e=>{
+    e.stopPropagation();
+    openModal(el.getAttribute("data-modal"));
+  });
+});
+document.getElementById("mh-x").addEventListener("click",closeModal);
+modal.addEventListener("click",e=>{ if(e.target===modal) closeModal(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeModal(); });
+</script>
+</body>
+</html>
