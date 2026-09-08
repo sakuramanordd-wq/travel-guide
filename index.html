@@ -3,28 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>扬州 3天2夜 · 必吃必玩必体验攻略</title>
-<!-- 立即跳转到主攻略页面，GitHub Pages 根目录访问时直接打开 -->
-<meta http-equiv="refresh" content="0; url=扬州3天2夜攻略.html">
-<script>
-  window.location.replace(encodeURI("扬州3天2夜攻略.html"));
-</script>
+<title>旅行攻略合集 · 扬州 / 徽州·宏村</title>
 <style>
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#faf6ef;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:#2b2b2b}
-  .box{text-align:center;padding:40px}
-  .box .emoji{font-size:52px}
-  .box h1{font-size:22px;margin:16px 0 10px;color:#1f5741}
-  .box p{font-size:14.5px;color:#6b6b6b;line-height:1.8}
-  .box a{display:inline-block;margin-top:14px;text-decoration:none;color:#fff;background:#2e7d5b;border-radius:999px;padding:10px 28px;font-size:15px}
-  .box a:hover{background:#1f5741}
+  :root{--ink:#2b2b2b;--muted:#6b6b6b;--line:#e4e0d8;--cream:#f8f6f2}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;color:var(--ink);background:var(--cream);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 18px;line-height:1.7}
+  .box{width:100%;max-width:820px;text-align:center}
+  .box .emoji{font-size:46px}
+  .box h1{font-size:24px;margin:12px 0 6px;color:#232e3a;letter-spacing:1px}
+  .box .lead{font-size:14px;color:var(--muted);margin-bottom:26px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;text-align:left}
+  a.card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 22px;box-shadow:0 3px 14px rgba(0,0,0,.05);transition:.2s;position:relative;overflow:hidden}
+  a.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.10)}
+  a.card .ic{font-size:30px}
+  a.card .t{font-size:18px;font-weight:700;margin:8px 0 4px}
+  a.card .s{font-size:13.5px;color:var(--muted)}
+  a.card .go{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;padding:6px 16px;border-radius:999px;color:#fff}
+  a.card.yz{border-top:5px solid #2e7d5b}
+  a.card.yz .go{background:#2e7d5b}
+  a.card.hz{border-top:5px solid #3a4a5c}
+  a.card.hz .go{background:#3a4a5c}
+  .foot{margin-top:26px;font-size:12.5px;color:var(--muted);line-height:1.9}
 </style>
 </head>
 <body>
   <div class="box">
-    <div class="emoji">🏮</div>
-    <h1>扬州 · 3天2夜攻略</h1>
-    <p>正在打开攻略… 若没有自动跳转，请点击下方按钮。</p>
-    <a href="扬州3天2夜攻略.html">直接打开攻略</a>
+    <div class="emoji">🧳</div>
+    <h1>旅行攻略合集</h1>
+    <div class="lead">点击卡片进入对应攻略 · 单页图文 + 弹窗详情，手机可直接看</div>
+
+    <div class="cards">
+      <a class="card yz" href="扬州3天2夜攻略.html">
+        <div class="ic">🏮</div>
+        <div class="t">扬州 · 3天2夜</div>
+        <div class="s">瘦西湖 / 大明寺 → 个园 / 东关街 / 何园 → 大运河博物馆。含早茶 4 家对比、修脚水包皮、避坑清单。</div>
+        <span class="go">打开扬州攻略</span>
+      </a>
+
+      <a class="card hz" href="徽州宏村3天2夜攻略.html">
+        <div class="ic">🏞️</div>
+        <div class="t">徽州 · 宏村 3天2夜</div>
+        <div class="s">宏村牛形水系 → 塔川 / 木坑竹海 / 西递 → 呈坎 / 徽州古城 / 屯溪老街。含交通班次、民宿对比、拍照机位、来源分级。</div>
+        <span class="go">打开徽州·宏村攻略</span>
+      </a>
+    </div>
+
+    <div class="foot">
+      攻略综合官方公告 / 主流媒体 / 携程·马蜂窝 / 小红书·微博·抖音整理<br>
+      价格与班次会随季节和活动调整，出行前请以官方渠道为准
+    </div>
   </div>
 </body>
 </html>
