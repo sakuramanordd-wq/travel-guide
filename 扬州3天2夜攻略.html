@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>扬州 3天2夜 · 必吃必玩必体验攻略</title>
+<style>
+  :root{
+    --ink:#2b2b2b; --muted:#6b6b6b; --line:#e8e3da;
+    --green:#2e7d5b; --green-d:#1f5741; --gold:#c99a3f; --gold-l:#f3e6c8;
+    --cream:#faf6ef; --cream2:#f4ede0; --red:#b4472f; --blue:#3e6f9e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.7}
+  .wrap{max-width:920px;margin:0 auto;padding:22px 16px 70px}
+
+  /* ---------- Banner ---------- */
+  .banner{background:linear-gradient(135deg,#2e7d5b,#1f5741 60%,#163e31);color:#fff;border-radius:20px;padding:28px 26px;position:relative;overflow:hidden}
+  .banner h1{font-size:30px;letter-spacing:2px}
+  .banner .sub{margin-top:8px;opacity:.95;font-size:14.5px}
+  .banner .slogan{margin-top:14px;display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:999px;font-size:14px}
+  .banner .deco{position:absolute;right:-30px;top:-30px;font-size:110px;opacity:.15}
+
+  /* ---------- Sticky nav ---------- */
+  .topnav{position:sticky;top:10px;z-index:200;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px;padding:10px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+  .topnav a{text-decoration:none;color:var(--green-d);font-size:13.5px;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--cream);border:1px solid transparent;transition:.2s}
+  .topnav a:hover{background:var(--gold-l);border-color:var(--gold)}
+
+  /* ---------- Section ---------- */
+  section{margin-top:28px}
+  h2{display:flex;align-items:center;gap:10px;font-size:22px;color:var(--green-d);border-left:6px solid var(--gold);padding-left:12px;margin-bottom:14px}
+  h2 .tag{font-size:13px;color:#fff;background:var(--gold);border-radius:999px;padding:2px 10px;font-weight:500;white-space:nowrap}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+
+  /* ---------- Day ---------- */
+  .day{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:20px;box-shadow:0 3px 14px rgba(0,0,0,.05)}
+  .day-head{display:flex;align-items:center;gap:12px;padding:16px 20px;color:#fff}
+  .day-head.d1{background:linear-gradient(135deg,#3e6f9e,#2c4f73)}
+  .day-head.d2{background:linear-gradient(135deg,#2e7d5b,#1f5741)}
+  .day-head.d3{background:linear-gradient(135deg,#c99a3f,#a87a2b)}
+  .day-head .num{font-size:24px;font-weight:700}
+  .day-head .t{font-size:18px;font-weight:600}
+  .day-head .route{font-size:12.5px;opacity:.9;margin-left:auto;text-align:right}
+  .day-body{padding:16px 20px}
+  .geo{background:var(--cream2);border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;font-size:13.5px;color:var(--muted);margin-bottom:14px}
+  .timeblock{display:grid;grid-template-columns:72px 1fr;gap:4px 12px;padding:10px 0;border-top:1px dashed var(--line)}
+  .timeblock:first-of-type{border-top:none}
+  .slot{font-weight:700;color:var(--green-d);font-size:14px;padding-top:2px}
+  .slot small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+  .what{font-size:15px}
+  .what b{color:var(--green-d)}
+  .why{color:var(--muted);font-size:13.5px;margin-top:3px}
+
+  /* ---------- Clickable spot / shop cards ---------- */
+  .spot{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--green);border-radius:14px;padding:13px 15px;margin:12px 0;cursor:pointer;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .spot:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(0,0,0,.10)}
+  .spot .ic{font-size:26px;flex:0 0 auto}
+  .spot .body{flex:1;min-width:0}
+  .spot .body .t{font-size:16px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .spot .body .t .badge{font-size:11px;font-weight:600;border-radius:999px;padding:1px 8px;white-space:nowrap}
+  .badge.g{background:#e2f0e9;color:var(--green-d)}
+  .badge.o{background:#f6ead2;color:#a87a2b}
+  .badge.r{background:#f5e0da;color:var(--red)}
+  .spot .body .s{font-size:13px;color:var(--muted);margin-top:3px}
+  .spot .arrow{color:var(--gold);font-size:18px;flex:0 0 auto}
+
+  /* ---------- Restaurant list ---------- */
+  .rest{margin-top:14px}
+  .rest h4{font-size:15px;color:var(--gold);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .rest h4 .rname{color:var(--ink);font-size:16px}
+  .rest ul{list-style:none}
+  .rest li{font-size:14px;padding:8px 0 8px 24px;position:relative;color:#444;border-bottom:1px dashed var(--line)}
+  .rest li:last-child{border-bottom:none}
+  .rest li::before{content:"";position:absolute;left:2px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--green)}
+  .rest li.pit::before{background:var(--red)}
+  .rest li .lab{font-weight:700;margin-right:6px;color:var(--green-d);cursor:pointer;border-bottom:1px dotted var(--gold)}
+  .rest li.pit .lab{color:var(--red)}
+  .rest li .lab:hover{background:var(--gold-l);border-radius:4px}
+  .rest li.rec .lab{color:var(--green-d)}
+
+  /* ---------- Chips ---------- */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .chip{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;transition:.18s}
+  .chip:hover{background:var(--gold-l);border-color:var(--gold)}
+  .chip b{color:var(--green-d)}
+
+  /* ---------- Tips ---------- */
+  .tips .card ul{list-style:none}
+  .tips .card li{font-size:14px;padding:6px 0 6px 26px;position:relative;color:#444}
+  .tips .card li::before{content:"❗";position:absolute;left:2px;top:7px;font-size:13px}
+
+  /* ---------- Footer ---------- */
+  .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:34px;line-height:1.9}
+  .foot a{color:var(--blue);text-decoration:none}
+
+  /* ---------- Modal ---------- */
+  .modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,30,25,.55);backdrop-filter:blur(3px)}
+  .modal.open{display:flex}
+  .modal-card{background:#fff;width:100%;max-width:600px;max-height:88vh;overflow-y:auto;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:pop .22s ease}
+  @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal-head{position:sticky;top:0;background:linear-gradient(135deg,var(--green-d),var(--green));color:#fff;padding:18px 22px;display:flex;align-items:center;gap:12px;border-radius:18px 18px 0 0}
+  .modal-head.d1{background:linear-gradient(135deg,#3e6f9e,#2c4f73)}
+  .modal-head.d2{background:linear-gradient(135deg,#2e7d5b,#1f5741)}
+  .modal-head.d3{background:linear-gradient(135deg,#c99a3f,#a87a2b)}
+  .modal-head .ic{font-size:28px}
+  .modal-head .ht{flex:1}
+  .modal-head .ht .t{font-size:19px;font-weight:700}
+  .modal-head .ht .s{font-size:12.5px;opacity:.92}
+  .modal-close{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:22px;width:36px;height:36px;border-radius:50%;cursor:pointer;line-height:1}
+  .modal-close:hover{background:rgba(255,255,255,.35)}
+  .modal-body{padding:20px 22px}
+  .modal-body .row{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  .modal-body .kv{background:var(--cream);border-radius:10px;padding:8px 12px;font-size:13px}
+  .modal-body .kv b{color:var(--green-d)}
+  .modal-body h5{font-size:14px;color:var(--gold);margin:14px 0 6px}
+  .modal-body p{font-size:14.5px;color:#3a3a3a;margin-bottom:6px}
+  .modal-body ul{list-style:none;margin:4px 0}
+  .modal-body ul li{font-size:14.5px;color:#3a3a3a;padding:6px 0 6px 24px;position:relative}
+  .modal-body ul li::before{content:"✓";position:absolute;left:2px;top:6px;color:var(--green);font-weight:700}
+  .modal-body ul li.rec::before{content:"👍";color:var(--green)}
+  .modal-body ul li.pit::before{content:"⚠️";color:var(--red)}
+  .modal-body ul li .lab{color:var(--green-d);font-weight:700}
+  .modal-body ul li.pit .lab{color:var(--red)}
+  .modal-body .src{font-size:12px;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:10px}
+  .modal-body .src a{color:var(--blue);text-decoration:none}
+
+  @media(max-width:560px){
+    .day-head{flex-wrap:wrap}
+    .day-head .route{width:100%;text-align:left;margin-left:0}
+    .timeblock{grid-template-columns:1fr;gap:2px}
+    .slot{margin-bottom:2px}
+    .modal-head{padding:14px 16px}
+    .modal-body{padding:16px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Banner -->
+  <div class="banner">
+    <div class="deco">🏮</div>
+    <h1>扬州 · 3天2夜</h1>
+    <div class="sub">必吃 · 必玩 · 必体验 · 必打卡 &nbsp;|&nbsp; 综合小红书 / 微博 / 抖音 / 携程反馈 · 点击任意卡片看详情</div>
+    <div class="slogan">☀️ 早上皮包水（早茶） &nbsp;·&nbsp; 🌙 晚上水包皮（泡澡修脚）</div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="topnav">
+    <a href="#plan">核心思路</a>
+    <a href="#d1">Day 1</a>
+    <a href="#d2">Day 2</a>
+    <a href="#d3">Day 3</a>
+    <a href="#checkin">拍照机位</a>
+    <a href="#tips">避坑</a>
+  </nav>
+
+  <!-- Overall -->
+  <section id="plan">
+    <h2>一句话规划 <span class="tag">核心思路</span></h2>
+    <div class="card">
+      <p>扬州是一座适合「慢下来、躺平」的小城，<b>节奏千万不要赶</b>。三天按「西北园林 → 中/东南老街 → 南线运河」三大片区串成三条<span class="chip"><b>不走回头路</b></span>的线路，每天一条走廊，顺着走不绕路。</p>
+      <p style="margin-top:8px;font-size:14px;color:var(--muted)">📍 <b>地理提示：</b>瘦西湖、大明寺在<b>西北</b>；个园在东关街北端、皮市街在东南、何园再往南；中国大运河博物馆在最<b>南</b>（三湾）。把同方向景点放同一天，就是一路走到终点，不用来回折返。</p>
+    </div>
+  </section>
+
+  <!-- DAY 1 -->
+  <section id="d1">
+    <div class="day">
+      <div class="day-head d1">
+        <div class="num">DAY 1</div>
+        <div class="t">湖光塔影 · 西北园林线</div>
+        <div class="route">瘦西湖 → 大明寺 → 古运河夜游</div>
+      </div>
+      <div class="day-body">
+        <div class="geo">🧭 <b>为何这样走：</b>瘦西湖和大明寺紧挨着（大明寺就在瘦西湖北门旁），半天逛完湖再上塔，顺路不折返；晚上到古运河边坐船看夜景。西北线一整天只在城的一角活动，最省力。</div>
+
+        <div class="spot" data-modal="spot-slender" data-tone="d1">
+          <div class="ic">🏞️</div>
+          <div class="body"><div class="t">瘦西湖（5A）<span class="badge g">必玩</span></div><div class="s">扬州名片 · 五亭桥 / 白塔 / 二十四桥 · 上午 3–4h</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-daming" data-tone="d1">
+          <div class="ic">🛕</div>
+          <div class="body"><div class="t">大明寺 · 栖灵塔<span class="badge g">必玩</span></div><div class="s">千年古刹 · 登塔俯瞰全景 · 下午 1.5h</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-canal" data-tone="d1">
+          <div class="ic">⛴️</div>
+          <div class="body"><div class="t">古运河夜游<span class="badge o">必体验</span></div><div class="s">东关街古渡 / 便益门码头 · 坐船看两岸灯火</div></div>
+          <div class="arrow">›</div>
+        </div>
+
+        <div class="rest">
+          <h4>🍽️ Day 1 吃什么 <span class="rname">（正餐 / 面馆）</span> <span style="font-size:12px;color:var(--muted)">点店名看详情</span></h4>
+          <ul>
+            <li class="rec"><span class="lab" data-modal="liusheji">刘佘记面馆</span>本地宝藏面馆，米其林必比登。<span class="badge g">推荐</span><span class="badge o">下午早去</span></li>
+            <li class="pit"><span class="lab" data-modal="yzhengyan">扬州宴（瘦西湖店）</span>价格高、出品口碑两极，有差评。<span class="badge r">谨慎</span></li>
+            <li class="pit"><span class="lab" data-modal="scenic-fast">瘦西湖景区快餐</span>价高味一般，<b>踩雷</b>，别在景区门口将就。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAY 2 -->
+  <section id="d2">
+    <div class="day">
+      <div class="day-head d2">
+        <div class="num">DAY 2</div>
+        <div class="t">园林老街 · 三把刀体验线</div>
+        <div class="route">早茶 → 个园 → 东关街 → 皮市街 → 何园 → 泡澡修脚</div>
+      </div>
+      <div class="day-body">
+        <div class="geo">🧭 <b>为何这样走：</b>从北向南一条直线：个园（东关街北端）→ 东关街（中）→ 皮市街（东南）→ 何园（更南）。午前在老城北端，一路往南逛，傍晚走完；晚上在老城附近泡澡修脚收尾。全程顺流而下，<b>零折返</b>。</div>
+
+        <div class="spot" data-modal="spot-morningtea" data-tone="d2">
+          <div class="ic">🫖</div>
+          <div class="body"><div class="t">扬州早茶<span class="badge g">必体验</span></div><div class="s">「皮包水」· 4 家老字号对比，点我看详情</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-ge" data-tone="d2">
+          <div class="ic">🌿</div>
+          <div class="body"><div class="t">个园<span class="badge g">必玩</span></div><div class="s">春/夏/秋/冬四季假山 · 1.5–2h</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-dongguan" data-tone="d2">
+          <div class="ic">🏮</div>
+          <div class="body"><div class="t">东关街<span class="badge g">必玩</span></div><div class="s">古运河畔历史街区 · 小吃 + 老宅 · 2–3h</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-pi" data-tone="d2">
+          <div class="ic">🎨</div>
+          <div class="body"><div class="t">皮市街<span class="badge o">必打卡</span></div><div class="s">文艺老街 · 书店 / 咖啡 · 1–2h</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-he" data-tone="d2">
+          <div class="ic">🏯</div>
+          <div class="body"><div class="t">何园<span class="badge g">必玩</span></div><div class="s">「晚清第一园」· 复道回廊 · 1.5h</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-shuibaopi" data-tone="d2">
+          <div class="ic">🦶</div>
+          <div class="body"><div class="t">泡澡 + 修脚（水包皮）<span class="badge r">必体验</span></div><div class="s">晚上走完老街再去 · 解除一天的疲惫 · 点击看 5 家店</div></div>
+          <div class="arrow">›</div>
+        </div>
+
+        <div class="rest">
+          <h4>🍽️ Day 2 吃什么 <span class="rname">（早茶 4 家 / 小吃）</span> <span style="font-size:12px;color:var(--muted)">点店名看详情</span></h4>
+          <ul>
+            <li class="rec"><span class="lab" data-modal="fuchun">① 富春茶社（1885）</span>老牌殿堂级，文化打卡首选。<span class="badge o">情怀</span></li>
+            <li class="rec"><span class="lab" data-modal="quyuan">② 趣园茶社</span>瘦西湖畔环境最美、出品精致。<span class="badge o">贵/排队</span></li>
+            <li class="rec"><span class="lab" data-modal="yiyuan">④ 怡园饭店 / 锦春</span>本地人日常，出品稳。<span class="badge g">地道</span></li>
+            <li class="rec"><span class="lab" data-modal="zhichun">治春 </span>来老店（西冶春）才正宗，御码头景区店勿去。<span class="badge o">认店</span></li>
+            <li class="rec"><span class="lab" data-modal="benpu">蒋家桥 / 共和春</span>本地人高性价比替代，人均低。<span class="badge g">平价</span></li>
+            <li class="rec"><span class="lab" data-modal="xiaochi">东关街小吃</span>黄桥烧饼、老鹅、梅花糕、藕粉圆子。<span class="badge g">边走边吃</span></li>
+            <li class="pit"><span class="lab" data-modal="zhengyuan">郑远元专业修脚（连锁）</span>投诉高发，<b>踩雷</b>，务必先谈清价格。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAY 3 -->
+  <section id="d3">
+    <div class="day">
+      <div class="day-head d3">
+        <div class="num">DAY 3</div>
+        <div class="t">运河文明 · 南线收官线</div>
+        <div class="route">中国大运河博物馆 → 仁丰里/彩衣街 → 返程</div>
+      </div>
+      <div class="day-body">
+        <div class="geo">🧭 <b>为何这样走：</b>博物馆在扬州最<b>南</b>（三湾），单独放最后一天正好顺路离城；上午看展，午后顺路逛南边小众老街，轻量收尾、不赶车。全程南向，不走回头路。</div>
+
+        <div class="spot" data-modal="spot-museum" data-tone="d3">
+          <div class="ic">🏛️</div>
+          <div class="body"><div class="t">中国大运河博物馆<span class="badge g">必玩</span></div><div class="s">沉浸式 · 免费但需预约 · 上午 2–3h</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-renfeng" data-tone="d3">
+          <div class="ic">🚶</div>
+          <div class="body"><div class="t">仁丰里 / 彩衣街<span class="badge o">必打卡</span></div><div class="s">避开人潮的小众老街 · café / 拍照 · 1–2h</div></div>
+          <div class="arrow">›</div>
+        </div>
+
+        <div class="rest">
+          <h4>🍽️ Day 3 吃什么 <span class="rname">（正餐收尾）</span></h4>
+          <ul>
+            <li class="rec"><span class="lab" data-modal="fumanlou">福满楼</span>本地人气、菜式丰富，最后一餐补齐淮扬菜。<span class="badge g">稳妥</span></li>
+            <li class="pit"><span class="lab">博物馆门口快餐</span><b>踩雷</b>，价高味一般，往老店里走。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Check-in chips -->
+  <section id="checkin">
+    <h2>📸 必打卡机位 <span class="tag">顺手拍</span></h2>
+    <div class="card">
+      <div class="chips">
+        <span class="chip" data-modal="spot-slender"><b>瘦西湖</b>五亭桥/白塔</span>
+        <span class="chip" data-modal="spot-daming"><b>大明寺</b>栖灵塔</span>
+        <span class="chip" data-modal="spot-dongguan"><b>东关街</b>古渡口</span>
+        <span class="chip" data-modal="spot-ge"><b>个园</b>四季假山</span>
+        <span class="chip" data-modal="spot-he"><b>何园</b>复道回廊</span>
+        <span class="chip" data-modal="spot-pi"><b>皮市街</b>网红墙/书店</span>
+        <span class="chip" data-modal="spot-renfeng"><b>仁丰里</b>小众老街</span>
+      </div>
+      <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">💡 <b>拍照时机：</b>早去或傍晚光线好、人少；瘦西湖五亭桥上午人最多，建议开园就去。</p>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section id="tips" class="tips">
+    <h2>⚠️ 评论区避坑 <span class="tag">记住这几条</span></h2>
+    <div class="card">
+      <ul>
+        <li><b>别赶行程</b> —— 扬州是「躺平」城市，一天塞满景点会累且错失精髓，每天一条线最舒服。</li>
+        <li><b>门票 & 预约</b> —— 中国大运河博物馆需提前线上预约；旺季热门园子也先抢票。</li>
+        <li><b>早茶要早起、排队久</b> —— 工作日上午去体验更好，开市就到。</li>
+        <li><b>瘦西湖很大</b> —— 穿舒服的鞋，留足 3 小时以上。</li>
+        <li><b>旺季 vs 淡季</b> —— "烟花三月"（3–5月）最美但人多；想清净可避开樱花节高峰。</li>
+        <li><b>郑远元修脚请谨慎</b> —— 涉及「治疗」「办卡」「承诺根治」时坚决拒绝，先谈清价格。</li>
+        <li><b>避开高价溢价区</b> —— 东关街街口、虹桥坊、瘦西湖正门一带价格偏高，多走几步价差大。</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="foot">
+    攻略综合小红书 / 微博 / 抖音 / 携程高赞帖与评论整理 · 点击页内卡片查看各店详情<br>
+    参考来源见各详情弹窗底部
+  </div>
+
+</div>
+
+<!-- ================= MODALS ================= -->
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <div class="modal-head" id="mh">
+      <div class="ic" id="mh-ic">🏞️</div>
+      <div class="ht"><div class="t" id="mh-t">标题</div><div class="s" id="mh-s">副标题</div></div>
+      <button class="modal-close" id="mh-x">×</button>
+    </div>
+    <div class="modal-body" id="mh-body"></div>
+  </div>
+</div>
+
+<script>
+const MODALS = {
+  /* ---------- 景点 ---------- */
+  "spot-slender": {
+    tone:"d1", ic:"🏞️", t:"瘦西湖（5A）", s:"扬州园林名片 · 3–4 小时 · 春季最美",
+    tag:["必玩","扬州地标"],
+    rows:[["门票","旺季需预订，旺季提前线上购票"],["建议时长","慢慢逛 3–4 小时"],["交通","西北片区，与大明寺相邻"]],
+    rec:[
+      "五亭桥 + 白塔是扬州地标，最经典的合影位。",
+      "二十四桥、小金山、熙春台，一步一景，江南园林的集大成者。",
+      "春季柳絮、琼花盛开，是「烟花三月下扬州」的代表画面。",
+      "请早去或傍晚，光线好且人少；上午五亭桥人最多。"],
+    pit:[
+      "景区较大，穿舒服的鞋，预留足够时间。",
+      "节假日人多价格高，能平日去就平日。",
+      "景区门口快餐价高味一般，别将就，正餐去市区老字号。"],
+    src:[["瘦西湖·门票/开放时间（永安旅游）","https://www.wingontravel.com/discovery/scenic-deqing-1367/list/scenic-yangzhou-15/scenic-slender-west-lake-75733"],["扬州必打卡10大攻略","https://www.toutiao.com/article/7682320964322869789/?wid=1788752181893"]]
+  },
+  "spot-daming": {
+    tone:"d1", ic:"🛕", t:"大明寺 · 栖灵塔", s:"千年古刹 · 登塔俯瞰全景 · 1.5 小时",
+    tag:["必玩","登高"],
+    rows:[["位置","瘦西湖北门外，出园即到"],["建议时长","1.5–2 小时"],["亮点","栖灵塔可登顶俯瞰扬州城"]],
+    rec:["坐落于蜀冈之上，与瘦西山相邻，顺路不折返。","栖灵塔登顶可俯瞰扬州全景，是拍城市天际线的好位置。","千年古刹，文化氛围浓厚。"],
+    pit:["旺季登塔可能要排队，注意塔上空间较窄。","与瘦西湖同行一天，时间是充足的，别赶。"],
+    src:[["2026 大明寺行程推荐（Trip.com）","https://tw.trip.com/moments/theme/poi-daming-temple-75734-itinerary-999195/"]]
+  },
+  "spot-canal": {
+    tone:"d1", ic:"⛴️", t:"古运河夜游", s:"坐船看两岸灯火 · Day 1 晚上",
+    tag:["必体验","夜色"],
+    rows:[["登船点","东关街古渡 / 便益门码头"],["时间","晚上","建议时长","约 1 小时"]],
+    rec:["与瘦西湖夜景并列「扬州夜色最佳」。","白天+晚上两种运河体验一次拿下。","两岸灯光映在河面，很适合拍照。"],
+    pit:["旺季票要提前订，码头排队。","选正规游船，别上私拉客的。"],
+    src:[["扬州二日游详细攻略（今日头条）","https://www.toutiao.com/article/7550150636822610467/"]]
+  },
+  "spot-morningtea": {
+    tone:"d2", ic:"🫖", t:"扬州早茶", s:"「皮包水」· 4 家老字号对比",
+    tag:["必体验","非遗"],
+    rows:[["时段","早晨","亮点","蟹黄汤包 / 三丁包 / 烫干丝 / 千层油糕"]],
+    rec:["扬州的名片，一句「来扬州不喝早茶等于白来」广为流传。","与「晚上水包皮」对应，是扬州慢生活的代表。","早茶要素多，一笼包子 + 一盅茶，慢慢吃最有氛围。"],
+    pit:["老字号排队久，早去（开市就到）体验更好。","贵、人多，追求极致口味的本地人推荐走小馆子。"],
+    src:[["扬州早茶推荐5家老字号（今日头条）","https://www.toutiao.com/w/1826650663470153/?wid=1788404200430"],["本地人早茶攻略（知乎）","https://zhuanlan.zhihu.com/p/1897943900586513318"]]
+  },
+  "spot-ge": {
+    tone:"d2", ic:"🌿", t:"个园", s:"春/夏/秋/冬四季假山 · 1.5–2 小时",
+    tag:["必玩","园林"],
+    rows:[["位置","东关街北端"],["建议时长","1.5–2 小时"],["亮点","四季假山是最大看点"]],
+    rec:["用春夏秋冬四座假山表现四季，是扬州园林的代表作。","位于东关街北端，顺路串联老街。","盐商宅邸，建筑与叠石都讲究。"],
+    pit:["园区不大，别安排太久，把时间留给老街。","旺季人多，拍照机位要等。"],
+    src:[["扬州必打卡10大攻略","https://www.toutiao.com/article/7682320964322869789/?wid=1788752181893"]]
+  },
+  "spot-dongguan": {
+    tone:"d2", ic:"🏮", t:"东关街", s:"古运河畔历史街区 · 2–3 小时",
+    tag:["必玩","烟火气"],
+    rows:[["时段","中午开始","建议时长","2–3 小时","特色","小吃 + 老宅 + 店铺"]],
+    rec:["扬州最有烟火气的老街，边逛边吃。","历史街区，保留许多老宅和店铺。","小吃密集，可当午餐。"],
+    pit:["街口最贵的那几家别买，往里走价格更实在。","人多，注意随身物品。"],
+    src:[["漫步扬州东关老街","https://www.sina.cn/news/detail/5325912498508150.html"]]
+  },
+  "spot-pi": {
+    tone:"d2", ic:"🎨", t:"皮市街", s:"文艺老街 · 书店 / 咖啡 · 1–2 小时",
+    tag:["必打卡","出片"],
+    rows:[["位置","东南，何园北侧"],["建议时长","1–2 小时"],["特色","书店、咖啡、网红墙"]],
+    rec:["文艺氛围浓，网红书店 + 咖啡店，年轻人打卡地。","比东关街更安静，适合拍照、慢走。","从东关街顺路往南，串联何园。"],
+    pit:["网红店周末排队、价格偏贵，选人少的小店更舒服。"],
+    src:[["漫步扬州皮市街（新浪）","https://www.sina.cn/news/detail/5325912498508150.html"]]
+  },
+  "spot-he": {
+    tone:"d2", ic:"🏯", t:"何园", s:"「晚清第一园」· 复道回廊 · 1.5 小时",
+    tag:["必玩","出片"],
+    rows:[["位置","南端（徐凝门街）"],["建议时长","1.5 小时"],["亮点","复道回廊、中西合璧"]],
+    rec:["「晚清第一园」，建筑中西合璧。","复道回廊结构独特，拍照极出片。","位于老街南端，结束暴走安静收尾。"],
+    pit:["旺季人多，长廊拍照要等。"],
+    src:[["扬州必打卡10大攻略","https://www.toutiao.com/article/7682320964322869789/?wid=1788752181893"]]
+  },
+  "spot-shuibaopi": {
+    tone:"d2", ic:"🦶", t:"泡澡 + 修脚（水包皮）", s:"晚上走完老街再去 · 5 家店对比",
+    tag:["必体验","非遗"],
+    rows:[["时段","晚上"],["标准流程","泡澡 → 搓背 → 修脚"],["价位","几十元 到 数百元/位"]],
+    rec:[
+      "扬州「三把刀」之一，国家级非遗手艺。",
+      "完整流程是入池泡澡 → 搓背（搓泥+按摩）→ 修脚，部分再加足疗推拿。",
+      "虹桥坊（瘦西湖旁）：「三把刀文化体验区」，温泉+搓背+修脚一站式，环境好适合首次体验（数百元/位，偏贵）。",
+      "陆琴脚艺：创始人陆琴是国家级非遗「扬州传统修脚术」代表性传承人，专业、明码标价（百元级）。",
+      "扬州搓背馆（运河旗舰店）：主打地道「搓背」，仪式感强（中等价）。",
+      "街边老修脚店：最接地气、几十元，本地人常去，性价比高。"],
+    pit:[
+      "郑远元连锁投诉高发（见郑远元条目），治疗/办卡/承诺根治要坚决拒绝。",
+      "街边老店卫生参差、手艺靠运气，挑本地人常去的口碑店，避开明显拉客的。",
+      "扬州九怪沐浴休闲：多为酒店洗护/旅游用品业务，无可靠游客口碑，不建议列入。"],
+    src:[["揚州修腳必體驗·水包皮文化天花板（Trip.com）","https://tw.trip.com/moments/detail/yangzhou-12-129608683/"],["陆琴·国家级非遗修脚术传承人","https://www.ihchina.cn/ccr_detail/3571"]]
+  },
+  "spot-museum": {
+    tone:"d3", ic:"🏛️", t:"中国大运河博物馆", s:"沉浸式 · 免费但需预约 · 上午 2–3 小时",
+    tag:["必玩","必体验"],
+    rows:[["位置","最南（三湾）"],["建议时长","2–3 小时"],["门票","免费，需提前线上预约"]],
+    rec:["浓缩一部运河史，内容硬核不枯燥。","展馆大气、沉浸式体验好。","安排在最后一天南线，顺路离城。"],
+    pit:["免费但必须线上预约，旺季先抢票。","博物馆面积大，穿舒服的鞋，别安排在赶飞机的当天下午。"],
+    src:[["扬州中国大运河博物馆预约规则（扬州本地宝）","http://yz.bendibao.com/tour/2024919/27273.shtm"]]
+  },
+  "spot-renfeng": {
+    tone:"d3", ic:"🚶", t:"仁丰里 / 彩衣街", s:"避开人潮的小众老街 · café / 拍照 · 1–2 小时",
+    tag:["必打卡","小众"],
+    rows:[["位置","南边老街"],["建议时长","1–2 小时"],["特色","安静、本地味浓"]],
+    rec:["比网红街安静、本地味浓，适合出发前的松弛收尾。","顺路溜达 + 咖啡 + 拍照，很舒服。"],
+    pit:["没有大景点，纯休闲，别安排太久。"],
+    src:[["扬州避坑避开人潮攻略（大众网）","https://m.dzplus.dzng.com/share/general/1/DZHN241536KCZSKOULIK"]]
+  },
+
+  /* ---------- 餐厅 ---------- */
+  "yzhengyan": {
+    tone:"d1", ic:"⚠️", t:"扬州宴（瘦西湖店）", s:"价格高 · 出品口碑两极 · 谨慎",
+    tag:["谨慎","偏贵"],
+    rows:[["定位","高端淮扬菜，套餐制"],["人均","约 300 元"],["必点","文思豆腐羹、扬州炒饭、八宝葫芦鸭、狮子头"]],
+    rec:["环境高端、摆盘讲究，适合商务/请客。","微博「城市巡游记」点名为淮扬菜代表（文思豆腐、炒饭、狮子头）。"],
+    pit:["价格偏高、多为套餐制（人均约300元）。","有游客反馈「点心像预制、千层糕干没蒸热、蟹黄汤包腥」等差评。","曾有游客「多人恶心呕吐」的食品安全投诉记录，口碑两极，点单前先看近期评价。"],
+    src:[["城市巡游记·扬州早茶地图（微博）","https://www.sina.cn/news/detail/5236660616826944.html"],["扬州淮扬菜-扬州宴瘦西湖店（知乎）","https://zhuanlan.zhihu.com/p/1901395695770007293"]]
+  },
+  "liusheji": {
+    tone:"d1", ic:"🍜", t:"刘佘记面馆", s:"本地宝藏面馆 · 米其林必比登 · 务必早去",
+    tag:["推荐","下午早去"],
+    rows:[["位置","四望亭一带"],["特色","浇头面"],["注意","下午卖完就打烊"]],
+    rec:["抖音博主狂推，被称「扬州最好吃的面馆」，浇头面非常地道。","米其林必比登餐厅，含金量高于一般点评榜。","藏在巷弄里，是真正的本地宝藏店。"],
+    pit:["在四望亭，需专程跑一趟。","<b>下午卖完就打烊，务必早去</b>，别晚饭点才到。","先确认当天营业时间再出发。"],
+    src:[["刘佘记面馆点评（今日头条）","https://m.toutiao.com/w/1846197164107776/"]]
+  },
+  "scenic-fast": {
+    tone:"d1", ic:"⚠️", t:"瘦西湖景区快餐（避雷）", s:"景区门口将就吃饭 = 踩雷",
+    tag:["踩雷"],
+    rows:[["理由","价高、味一般、不正宗"]],
+    pit:["景区门口简单快餐性价比低。","正餐去市区老字号淮扬菜，才不辜负这趟。"],
+    src:[["去了6次扬州·踩坑合集（今日头条）","https://m.toutiao.com/article/7629680115429114406/?upstream_biz=toutiao_pc&upstream_biz=toutiao_pc"]]
+  },
+  "fuchun": {
+    tone:"d2", ic:"🥟", t:"① 富春茶社", s:"老牌殿堂级 · 打卡文化 · 要会点",
+    tag:["情怀","打卡"],
+    rows:[["历史","开业1885年"],["必点","三丁包、蟹黄汤包、烫干丝"],["要点","点散座，别点套餐"]],
+    rec:["百年老字号，来一次点一次，体验「打卡文化」首选。","点心种类齐全，经典都在。"],
+    pit:["国庆路老店只能拼桌、排长队点单。","高峰期旅行团多、有涨价情况。","<b>别点套餐，要点散座</b>（人均30+才划算）。","不少年轻人评价「情怀大于味道」，追求口味可换别家。"],
+    src:[["扬州早茶推荐5家老字号（今日头条）","https://www.toutiao.com/w/1826650663470153/?wid=1788404200430"]]
+  },
+  "quyuan": {
+    tone:"d2", ic:"🍵", t:"② 趣园茶社", s:"口碑最佳 · 环境最美 · 排队夸张",
+    tag:["环境","排队狠"],
+    rows:[["位置","瘦西湖畔/长春路"],["必点","五丁包、蟹黄汤包"],["人均","约 150 元"],["排队","凌晨3-4点排、6:30放号"]],
+    rec:["口碑/环境最好的早茶之一，微博「城市巡游记」点名为乾隆同款。","出品精致，适合拍照、请客。"],
+    pit:["<b>排队极狠</b>：网上有「凌晨3-4点排、6:30放号」的说法，想尝要起大早。","人均约150元，价格偏高。","整体「网红化」，追求性价比的本地人觉得不如实在的馆子。"],
+    src:[["排队2小时吃早茶？趣园值不值得排（什么值得买）","https://post.smzdm.com/p/agg66406/"],["城市巡游记·扬州早茶地图（微博）","https://www.sina.cn/news/detail/5236660616826944.html"]]
+  },
+  "zhichun": {
+    tone:"d2", ic:"🍵", t:"冶春茶社", s:"来老店（西冶春）才正宗 · 认店",
+    tag:["认店","避景区店"],
+    rows:[["正宗","西冶春（老店）"],["避","御码头店=东冶春近码头，接旅游团、有景区溢价"]],
+    rec:["老字号，本地人认可的早茶店。","老店（西冶春）出品更正宗、性价比好。"],
+    pit:["<b>御码头店别去</b>：那家是「东冶春」，近码头、大量接待旅游团、有景区溢价。","网友实测：蟹黄汤包吸管细、狮子头偏油只给3.5星。","要正宗就去西冶春（老店）。"],
+    src:[["本地人早茶攻略（知乎）","https://zhuanlan.zhihu.com/p/1897943900586513318"],["扬州早茶推荐5家老字号","https://www.toutiao.com/w/1826650663470153/?wid=1788404200430"]]
+  },
+  "yiyuan": {
+    tone:"d2", ic:"🥢", t:"④ 怡园饭店 / 锦春", s:"本地人日常 · 出品稳 · 分量大",
+    tag:["推荐","地道"],
+    rows:[["定位","本地人更常去"],["特点","出品稳定、分量大"]],
+    rec:["本地人爱去，出品稳定，最代表扬州人的日常。","想避开游客、吃地道口味选它。"],
+    pit:["分量极大，人多点餐别点多。","锦春本地好评但<b>必须订位</b>。"],
+    src:[["扬州怡园饭店·餐厅(四望亭店)（携程）","https://you.ctrip.com/food/tianjin154/4925954-dianping177274050.html"]]
+  },
+  "benpu": {
+    tone:"d2", ic:"🍜", t:"蒋家桥 / 共和春", s:"本地人高性价比替代 · 人均低",
+    tag:["平价","本地推荐"],
+    rows:[["定位","本地人日常馆子"],["特点","便宜、地道、不用排长队"]],
+    rec:["本地人真实在吃的碳水早餐/早茶，人均低、味道正。","避开网红排队，性价比极高。"],
+    pit:["环境普通、无网红氛围，纯为吃东西。","部分门店口味因店而异，挑生意好、本地人多的。"],
+    src:[["2026年去扬州吃淮扬菜必看（知乎）","https://zhuanlan.zhihu.com/p/2077506525719945873"]]
+  },
+  "xiaochi": {
+    tone:"d2", ic:"🍡", t:"东关街 / 皮市街 小吃", s:"黄桥烧饼、老鹅、梅花糕、藕粉圆子",
+    tag:["推荐","边走边吃"],
+    rows:[["种类","黄桥烧饼 / 盐水鹅（老鹅摊）/ 梅花糕 / 藕粉圆子"],["用法","边走边解决午餐/零食"],["顺路试","粗茶淡饭（藕粉圆子/阳春面）、朱记牛肉（东圈门）"]],
+    rec:["扬州人气街头小吃，老鹅是「扬州人的最爱」。","皮市街配一杯咖啡，氛围出片。","「粗茶淡饭」性价比高（藕粉圆子、阳春面），「朱记牛肉」（东圈门）本地常去、评分不错。"],
+    pit:["<b>东关街街口</b>是高价溢价区，多走几步价差大，往里走更实在。","「粗茶淡饭」性价比虽高但服务一般。","一线茶社点心基本非实时现蒸，别迷信所有老字号（如毛牌楼被指「翻车」）。"],
+    src:[["扬州东关街游记（美篇）","https://www.meipian.cn/5ftmkkxe"]]
+  },
+  "fumanlou": {
+    tone:"d3", ic:"🍽️", t:"福满楼", s:"本地人气 · 便宜量大 · 出品一般",
+    tag:["平价","一般"],
+    rows:[["定位","本地人气淮扬菜"],["人均","120–200 元"],["特点","便宜、分量大"]],
+    rec:["便宜、量大，适合人多、预算有限的收尾餐。","本地常见的老牌馆子。"],
+    pit:["出品评价「一般般」，别抱太高期待。","常接待旅行团，用餐高峰期较吵、要等位。","追求精致可换口味更好的店。"],
+    src:[["2026扬州本地人推荐的高口碑淮扬菜餐厅（知乎）","https://zhuanlan.zhihu.com/p/2077713422431604991"]]
+  },
+  "zhengyuan": {
+    tone:"d2", ic:"⚠️", t:"郑远元专业修脚（连锁）", s:"投诉高发 · 务必谨慎",
+    tag:["踩雷","谨慎"],
+    rows:[["定位","连锁、平价、网点多"],["价位","低端"],["风险","办卡/夸大治疗/退款难"]],
+    pit:["扬州本地有游客投诉：团购欺诈、把甲沟炎当「治疗」高价收费、不正规治疗。","涉及「治疗」「办卡」「承诺根治」时坚决拒绝，务必先谈清价格和项目。","普通搓背修脚可体验，但别轻信治疗类推销。"],
+    src:[["郑远元·扬州团购欺诈投诉（新浪）","https://tousu.sina.com.cn/complaint/view/17388510238?sld=bd8bf346696f1fe804bae688cdf4a581"],["扬州郑远元欺骗消费者（知乎）","https://zhuanlan.zhihu.com/p/358888839"]]
+  }
+};
+
+const modal = document.getElementById("modal");
+const mh = document.getElementById("mh");
+const mhic = document.getElementById("mh-ic");
+const mht = document.getElementById("mh-t");
+const mhs = document.getElementById("mh-s");
+const mhbody = document.getElementById("mh-body");
+
+function kvHTML(rows){
+  return `<div class="row">${rows.map(r=>`<span class="kv"><b>${r[0]}</b>：${r[1]}</span>`).join("")}</div>`;
+}
+function openModal(id){
+  const d = MODALS[id];
+  if(!d) return;
+  mh.className = "modal-head " + (d.tone||"d1");
+  mhic.textContent = d.ic;
+  mht.textContent = d.t;
+  mhs.textContent = d.s;
+  let h = "";
+  h += `<div class="row">${d.tag.map(t=>`<span class="badge ${t==="踩雷"?"r":(t==="推荐"?"g":"o")}">${t}</span>`).join("")}</div>`;
+  if(d.rows) h += kvHTML(d.rows);
+  if(d.rec){ h += `<h5>👍 推荐理由</h5><ul>${d.rec.map(x=>`<li class="rec">${x}</li>`).join("")}</ul>`; }
+  if(d.pit){ h += `<h5>⚠️ 注意 & 踩雷</h5><ul>${d.pit.map(x=>`<li class="pit">${x}</li>`).join("")}</ul>`; }
+  if(d.src){
+    h += `<div class="src">📎 参考来源：${d.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join(" · ")}</div>`;
+  }
+  mhbody.innerHTML = h;
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.querySelectorAll("[data-modal]").forEach(el=>{
+  el.addEventListener("click",e=>{
+    e.stopPropagation();
+    openModal(el.getAttribute("data-modal"));
+  });
+});
+document.getElementById("mh-x").addEventListener("click",closeModal);
+modal.addEventListener("click",e=>{ if(e.target===modal) closeModal(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeModal(); });
+</script>
+</body>
+</html>
