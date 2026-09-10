@@ -44,6 +44,8 @@
   .day-head .route{font-size:12.5px;opacity:.9;margin-left:auto;text-align:right}
   .day-body{padding:16px 20px}
   .geo{background:var(--cream2);border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;font-size:13.5px;color:var(--muted);margin-bottom:14px}
+  .geo .lab{cursor:pointer;border-bottom:1px dotted var(--gold);color:var(--green-d);font-weight:600}
+  .geo .lab:hover{background:var(--gold-l);border-radius:4px}
   .timeblock{display:grid;grid-template-columns:72px 1fr;gap:4px 12px;padding:10px 0;border-top:1px dashed var(--line)}
   .timeblock:first-of-type{border-top:none}
   .slot{font-weight:700;color:var(--green-d);font-size:14px;padding-top:2px}
@@ -122,6 +124,8 @@
   .modal-body ul li.pit::before{content:"⚠️";color:var(--red)}
   .modal-body ul li .lab{color:var(--green-d);font-weight:700}
   .modal-body ul li.pit .lab{color:var(--red)}
+  .modal-body ul.shops li::before{content:"🏪";color:var(--gold)}
+  .modal-body ul.shops li .num{display:inline-block;min-width:20px;text-align:center;background:var(--gold);color:#fff;border-radius:999px;font-size:12px;font-weight:700;padding:1px 6px;margin-right:6px}
   .modal-body .src{font-size:12px;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:10px}
   .modal-body .src a{color:var(--blue);text-decoration:none}
 
@@ -242,9 +246,11 @@
         </div>
         <div class="spot" data-modal="spot-shuibaopi" data-tone="d2">
           <div class="ic">🦶</div>
-          <div class="body"><div class="t">泡澡 + 修脚（水包皮）<span class="badge r">必体验</span></div><div class="s">晚上走完老街再去 · 解除一天的疲惫 · 点击看 5 家店</div></div>
+          <div class="body"><div class="t">泡澡 + 修脚（水包皮）<span class="badge r">必体验</span></div><div class="s">晚上走完老街再去 · 解除一天的疲惫 · 点击看 4 家店</div></div>
           <div class="arrow">›</div>
         </div>
+
+        <div class="geo" style="margin-bottom:4px"><b>⚠️ 郑远元专业修脚（连锁）</b><span class="lab" data-modal="zhengyuan">投诉详情</span> —— 连锁平价店，投诉高发，踩雷；涉及「治疗」「办卡」「承诺根治」坚决拒绝，务必先谈清价格。</div>
 
         <div class="rest">
           <h4>🍽️ Day 2 吃什么 <span class="rname">（早茶 4 家 / 小吃）</span> <span style="font-size:12px;color:var(--muted)">点店名看详情</span></h4>
@@ -255,7 +261,6 @@
             <li class="rec"><span class="lab" data-modal="zhichun">治春 </span>来老店（西冶春）才正宗，御码头景区店勿去。<span class="badge o">认店</span></li>
             <li class="rec"><span class="lab" data-modal="benpu">蒋家桥 / 共和春</span>本地人高性价比替代，人均低。<span class="badge g">平价</span></li>
             <li class="rec"><span class="lab" data-modal="xiaochi">东关街小吃</span>黄桥烧饼、老鹅、梅花糕、藕粉圆子。<span class="badge g">边走边吃</span></li>
-            <li class="pit"><span class="lab" data-modal="zhengyuan">郑远元专业修脚（连锁）</span>投诉高发，<b>踩雷</b>，务必先谈清价格。</li>
           </ul>
         </div>
       </div>
@@ -422,16 +427,17 @@ const MODALS = {
     src:[["扬州必打卡10大攻略","https://www.toutiao.com/article/7682320964322869789/?wid=1788752181893"]]
   },
   "spot-shuibaopi": {
-    tone:"d2", ic:"🦶", t:"泡澡 + 修脚（水包皮）", s:"晚上走完老街再去 · 5 家店对比",
+    tone:"d2", ic:"🦶", t:"泡澡 + 修脚（水包皮）", s:"晚上走完老街再去 · 4 家店对比",
     tag:["必体验","非遗"],
     rows:[["时段","晚上"],["标准流程","泡澡 → 搓背 → 修脚"],["价位","几十元 到 数百元/位"]],
+    shop:[
+      ["虹桥坊（瘦西湖旁）","「三把刀文化体验区」，温泉+搓背+修脚一站式，环境好适合首次体验（数百元/位，偏贵）。"],
+      ["陆琴脚艺","创始人陆琴是国家级非遗「扬州传统修脚术」代表性传承人，专业、明码标价（百元级）。"],
+      ["扬州搓背馆（运河旗舰店）","主打地道「搓背」，仪式感强（中等价）。"],
+      ["街边老修脚店","最接地气、几十元，本地人常去，性价比高。"]],
     rec:[
       "扬州「三把刀」之一，国家级非遗手艺。",
-      "完整流程是入池泡澡 → 搓背（搓泥+按摩）→ 修脚，部分再加足疗推拿。",
-      "虹桥坊（瘦西湖旁）：「三把刀文化体验区」，温泉+搓背+修脚一站式，环境好适合首次体验（数百元/位，偏贵）。",
-      "陆琴脚艺：创始人陆琴是国家级非遗「扬州传统修脚术」代表性传承人，专业、明码标价（百元级）。",
-      "扬州搓背馆（运河旗舰店）：主打地道「搓背」，仪式感强（中等价）。",
-      "街边老修脚店：最接地气、几十元，本地人常去，性价比高。"],
+      "完整流程是入池泡澡 → 搓背（搓泥+按摩）→ 修脚，部分再加足疗推拿。"],
     pit:[
       "郑远元连锁投诉高发（见郑远元条目），治疗/办卡/承诺根治要坚决拒绝。",
       "街边老店卫生参差、手艺靠运气，挑本地人常去的口碑店，避开明显拉客的。",
@@ -564,6 +570,7 @@ function openModal(id){
   let h = "";
   h += `<div class="row">${d.tag.map(t=>`<span class="badge ${t==="踩雷"?"r":(t==="推荐"?"g":"o")}">${t}</span>`).join("")}</div>`;
   if(d.rows) h += kvHTML(d.rows);
+  if(d.shop){ h += `<h5>🛁 店名对比</h5><ul class="shops">${d.shop.map((x,i)=>`<li class="rec"><span class="num">${i+1}</span><span class="lab">${x[0]}</span>：${x[1]}</li>`).join("")}</ul>`; }
   if(d.rec){ h += `<h5>👍 推荐理由</h5><ul>${d.rec.map(x=>`<li class="rec">${x}</li>`).join("")}</ul>`; }
   if(d.pit){ h += `<h5>⚠️ 注意 & 踩雷</h5><ul>${d.pit.map(x=>`<li class="pit">${x}</li>`).join("")}</ul>`; }
   if(d.src){
