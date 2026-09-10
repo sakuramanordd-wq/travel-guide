@@ -122,6 +122,31 @@
   .chip:hover{background:var(--gold-l);border-color:var(--gold)}
   .chip b{color:var(--ai-d)}
 
+  /* ---------- 美食清单 ---------- */
+  .foodlegend{font-size:13.5px;color:var(--muted);line-height:1.8}
+  .foodlegend b{color:var(--ink)}
+  .quick{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:8px}
+  .quick .q{border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:var(--cream)}
+  .quick .q b{display:block;font-size:13.5px;color:var(--shu-d)}
+  .quick .q span{font-size:13px;color:#3a3a3a;line-height:1.6}
+  .fgroup{margin-top:20px}
+  .fgroup>h3{font-size:16.5px;color:var(--shu-d);display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+  .fgroup>h3 span{font-size:12.5px;font-weight:400;color:var(--muted)}
+  .fgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));margin-top:10px}
+  .fcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 15px;cursor:pointer;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+  .fcard:hover{border-color:var(--gold);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+  .fcard .fn{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .fcard .fn b{font-size:15.5px;color:var(--ai-d)}
+  .fcard .fn .fc{font-size:12px;color:var(--muted)}
+  .fcard .fl{font-size:13px;color:#46423c;margin-top:6px;line-height:1.7}
+  .fcard .fl .k{color:var(--muted)}
+  .fcard .fwarn{color:#9c3f2b}
+  .fstars{color:#d39021;letter-spacing:1.5px;font-size:14px;white-space:nowrap}
+  .fgood{color:var(--green);font-weight:700}
+  .fquote{font-size:12.6px;color:#5b5650;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:7px 10px;margin-top:8px;line-height:1.65}
+  .fquote em{font-style:normal;color:var(--muted);font-size:11.5px;display:block;margin-top:3px}
+  @media(max-width:700px){.fgrid{grid-template-columns:1fr}}
+
   /* ---------- Tips ---------- */
   .tips .card ul{list-style:none}
   .tips .card li{font-size:14px;padding:6px 0 6px 26px;position:relative;color:#444}
@@ -214,7 +239,7 @@
     <a href="#d4">Day4 一日游</a>
     <a href="#d5">Day5</a>
     <a href="#pass">票券</a>
-    <a href="#food">美食</a>
+    <a href="#food">美食24家</a>
     <a href="#tips">避坑</a>
     <a href="#gallery">图集</a>
   </nav>
@@ -655,21 +680,277 @@
 
   <!-- ============ 美食 ============ -->
   <section id="food">
-    <h2>吃什么 · 一张清单 <span class="tag">点开看细节</span></h2>
+    <h2>吃什么 · 24 家实测清单 <span class="tag">人均 · 好评率 · 缺点</span></h2>
+
     <div class="card">
-      <div class="chips">
-        <span class="chip" data-modal="food-shinsekai"><b>新世界/恵美須町</b> 串炸老铺</span>
-        <span class="chip" data-modal="food-okonomiyaki"><b>大阪烧</b> 美津の·千房</span>
-        <span class="chip" data-modal="food-takoyaki"><b>章鱼烧</b> わなか·くくる</span>
-        <span class="chip" data-modal="food-kushikatsu"><b>串炸</b> だるま</span>
-        <span class="chip" data-modal="food-ramen"><b>拉面</b> 金龙·一兰·神座</span>
-        <span class="chip" data-modal="food-kuromon"><b>黑门市场</b> 海鲜/和牛串</span>
+      <p class="foodlegend">📊 <b>这张表怎么念：</b>数据来自 <b>食べログ（日本最大美食评分站）中文站</b>，2026 年 9 月抓取。<b>人均</b>＝店家自己登录的晚餐预算（括号里按 1 日元 ≈ 0.044 元折算）；<b>评分</b>＝食べログ 5 分制（<b>3.5 以上算「好吃」、3.7 以上是难波一带的顶尖水平</b>，日本人给分很吝啬，别拿大众点评的 4.8 来比）；<b>好评率</b>＝该店最新约 20 条评价里「≥3.5 分」占的比例（同时给出抽样均分，避免只看一个数字）；<b>推荐指数</b>＝我们按「口碑 × 顺路程度 × 排队代价」给的 ★1–5。<b>评价</b>都是真人在食べログ 上写的原文（日文），中文站显示的是机器翻译，我们只做了断句和错字整理 —— 所以句子读起来会有点「翻译腔」，但内容没有改写；每张卡点开都能看到一条好评 + 一条差评，以及营业时间／定休／付款方式／怎么去。</p>
+      <p class="foodlegend" style="margin-top:8px">👇 <b>10 秒决策：</b></p>
+      <div class="quick">
+        <div class="q"><b>第一次来大阪、想一次吃全</b><span>Day 1 晚上新世界串炸（だるま 或 ぎふや本家）＋黑门市场小吃</span><br><span class="muted">人均 ¥3,000–4,000</span></div>
+        <div class="q"><b>只想吃一碗最好的拉面</b><span>面屋 丈六 难波店（3.73 分、好评率 95%）</span><br><span class="muted">≈44 元，11:30 前到</span></div>
+        <div class="q"><b>不想排队、要能刷卡</b><span>ぎふや本家（128 席）／ぼんくら家 道頓堀（87 席，地下街直通）</span><br><span class="muted">人均 ¥2,000–3,000</span></div>
+        <div class="q"><b>想省钱吃饱</b><span>自由轩 难波本店（名物咖喱）／金龙拉面（24 小时）</span><br><span class="muted">≈44 元以内</span></div>
+        <div class="q"><b>雨天 / 想安静坐一会儿</b><span>ぼんくら家（地下街）／Salon de The Alcyon 法善寺（下午茶）</span><br><span class="muted">人均 ¥2,000–3,000</span></div>
+        <div class="q"><b>京都 Day 2 早午餐</b><span>本家 第一旭 总店（京都站 5 分、06:00 开门）</span><br><span class="muted">≈44 元</span></div>
+        <div class="q"><b>奈良 Day 4 午餐</b><span>釜粋（近铁奈良站 2 分，鸡天冷乌冬）</span><br><span class="muted">≈44 元</span></div>
+        <div class="q"><b>神户 Day 4 想吃神户牛又不想花大钱</b><span>神户牛洋食 Amona（A5 午餐 ¥1,000–1,999）</span><br><span class="muted">≈44–88 元</span></div>
+        <div class="q"><b>坚决避开（本次抽样口碑最弱）</b><span>横綱 通天阁店（好评率 20%）／鶴亀家（26%）</span><br><span class="muted">同一街区有更好选择</span></div>
+      </div>
+    </div>
+
+    <div class="fgroup">
+      <h3>🍢 串炸 · 新世界（酒店步行 8–12 分钟，落地第一晚最顺） <span>价格 ¥2,000–4,000 段，薄衣现炸；同街区密度极高，排队太久就换一家</span></h3>
+      <div class="fgrid">
+    <div class="fcard" data-modal="f-daruma">
+      <div class="fn"><b>元祖串かつ だるま 新世界総本店</b><span class="fc">串炸 · 新世界（酒店步行 8–12 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥2,000–2,999</b>（≈88–132 元） · <span class="k">食べログ</span> <b>3.46</b><span class="k">／1,000+ 条</span> · <span class="fgood">好评率 79%</span><span class="k">（抽样 19 条≥3.5，均分 3.92）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 排队 20–40 分</span></div>
+      <div class="fl"><span class="k">招牌</span> 串炸套餐（総本店セット）、土手焼き；点完现裹面糊现炸，衣薄不腻</div>
+      <div class="fl fwarn"><span class="k">缺点</span> 只有 12 个吧台位、饭点基本要排队；<b>只收现金</b>，不能刷卡；酱汁禁止二次蘸；店内不适合久坐</div>
+      <div class="fquote">“点餐后，店员会为您裹上面糊、撒上面包屑并炸制。松软的面糊配上极细的面包屑，口感极佳，不容易让人感到油腻。与其他串炸店相比，水平完全不同。”<em>—— 食べログ 用户（5.0 分 · 2026/08）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-gifuya">
+      <div class="fn"><b>ぎふや本家</b><span class="fc">串炸 · 新世界（动物园前站 3 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥3,000–3,999</b>（≈132–176 元） · <span class="k">食べログ</span> <b>3.49</b><span class="k">／597 条</span> · <span class="fgood">好评率 70%</span><span class="k">（抽样 20 条≥3.5，均分 3.42）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 128 席，通常不用久等</span></div>
+      <div class="fl"><span class="k">招牌</span> 串炸、寿喜烧、土手焼き；本地人常去，接客会逐串说明</div>
+      <div class="fl fwarn"><span class="k">缺点</span> 饮品偏贵、要收服务费（お通し）；啤酒杯偏温，有人抱怨；团客多时上菜会慢</div>
+      <div class="fquote">“串炸上菜速度非常快，味道也很好，服务员会清楚地解释并分开摆放，感觉非常不错。”<em>—— 食べログ 用户（4.0 分 · 2026/07）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-oyaji">
+      <div class="fn"><b>新世界おやじの串や 新世界本店</b><span class="fc">串炸 · 新世界（动物园前站 5 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥2,000–2,999</b>（≈88–132 元） · <span class="k">食べログ</span> <b>3.46</b><span class="k">／484 条</span> · <span class="fgood">好评率 58%</span><span class="k">（抽样 19 条≥3.5，均分 3.55）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★☆☆</span> <span class="k">· 150 席，翻台快</span></div>
+      <div class="fl"><span class="k">招牌</span> 蔬菜拼盘、炖牛筋、薄衣串炸；10:00–24:00 超长营业，玩到深夜也能吃</div>
+      <div class="fl fwarn"><span class="k">缺点</span> 串炸本身被评价「普通」的不少；<b>22:00 后加收 10% 深夜费</b>；串以外的菜「有点微妙」</div>
+      <div class="fquote">“薄薄的外衣非常美味，让人想多吃几份。这是我第一次吃串炸，在大阪旅行中这是最好吃的一家。”<em>—— 食べログ 用户（5.0 分 · 2026/06）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-yokozuna">
+      <div class="fn"><b>日本一の串かつ 横綱 通天閣店</b><span class="fc">串炸 · 新世界（通天阁旁）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥2,000–2,999</b>（≈88–132 元） · <span class="k">食べログ</span> <b>3.39</b><span class="k">／414 条</span> · <span class="fgood">好评率 20%</span><span class="k">（抽样 20 条≥3.5，均分 2.95）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★☆☆☆</span> <span class="k">· 354 席，基本不排队</span></div>
+      <div class="fl"><span class="k">招牌</span> 24 小时营业、串炸 10 串拼盘、无限畅饮 60 分 ¥750；人多时最省事的一家</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>评价两极化最严重的一家</b>（抽样均分仅 2.95）：<b>每人必须点两道菜</b>（一杯饮品制）、无限畅饮还要加钱；串炸水准被认为不如 だるま</div>
+      <div class="fquote">“菜单种类丰富，最重要的是价格便宜。如果只是想随便喝一杯，这里真的很推荐。”<em>—— 食べログ 用户（3.5 分 · 2026/06）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-tsurukame">
+      <div class="fn"><b>名代 鶴亀家</b><span class="fc">串炸 · 土手焼き · 新世界（通天阁旁）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥2,000–2,999</b>（≈88–132 元） · <span class="k">食べログ</span> <b>3.38</b><span class="k">／355 条</span> · <span class="fgood">好评率 26%</span><span class="k">（抽样 19 条≥3.5，均分 2.95）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★☆☆☆</span> <span class="k">· 239 席，好入座</span></div>
+      <div class="fl"><span class="k">招牌</span> 土手焼き（味噌炖牛筋，大阪下町名物）、串炸 10 串拼盘 ¥1,480、炒面</div>
+      <div class="fl fwarn"><span class="k">缺点</span> 评分不高、抽样均分 2.95：饮品「味道偏淡、完全不冰」有多次抱怨；扫码点单常漏单；外籍店员多，服务被吐槽</div>
+      <div class="fquote">“串炸炸得酥脆，分量小，吃起来很方便；通天阁附近的店都很挤，这里很幸运地马上就能入座。”<em>—— 食べログ 用户（3.5 分 · 2026/08）</em></div>
+    </div>
+      </div>
+    </div>
+    <div class="fgroup">
+      <h3>🥘 大阪烧 · 粉类（道顿堀 / 难波） <span>面糊 + 酱汁 + 美乃滋；份量大，两个人点一份主食再加一份豚平烧刚好</span></h3>
+      <div class="fgrid">
+    <div class="fcard" data-modal="f-mizuno">
+      <div class="fn"><b>美津の</b><span class="fc">大阪烧 · 道頓堀（难波站 5 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥2,000–2,999</b>（≈88–132 元） · <span class="k">食べログ</span> <b>3.56</b><span class="k">／1,000+ 条</span> · <span class="fgood">好评率 80%</span><span class="k">（抽样 20 条≥3.5，均分 3.80）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 排队 20–60 分（不可预约）</span></div>
+      <div class="fl"><span class="k">招牌</span> 山药烧（とんぺい焼・山芋焼）、道頓堀烧；面糊轻、吃到最后不腻</div>
+      <div class="fl fwarn"><span class="k">缺点</span> 招牌不显眼、不好找；<b>不可预约、饭点排队 20–60 分</b>；座位 38 席、人多时吃完就得走；刷卡需满 ¥3,000</div>
+      <div class="fquote">“超出乎意料的美味！几乎感觉不到面粉，口感轻盈，能充分享受到食材的味道，吃起来不油腻，最后一口都吃得干干净净。”<em>—— 食べログ 用户（4.0 分 · 2026/09）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-chibo">
+      <div class="fn"><b>千房 道頓堀支店</b><span class="fc">大阪烧 · 道頓堀（日本桥站 5 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥1,000–1,999</b>（≈44–88 元） · <span class="k">食べログ</span> <b>3.16</b><span class="k">／262 条</span> · <span class="fgood">好评率 80%</span><span class="k">（抽样 20 条≥3.5，均分 3.75）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★☆☆</span> <span class="k">· 120 席 + 7 层楼，周末也常常不用等</span></div>
+      <div class="fl"><span class="k">招牌</span> 千房原创大阪烧 ¥2,000、豚平烧、葱烧（ねぎ焼き）、明太子大阪烧；吧台能看师傅现做</div>
+      <div class="fl fwarn"><span class="k">缺点</span> 食べログ 分数不高（3.16）、价格偏观光价；高峰期可能加收特别费用；一份份量大，两人点两份容易吃撑</div>
+      <div class="fquote">“这里的御好烧特点是配料细腻，面糊松软；炒面则是面条 Q 弹，酱汁的香气令人陶醉。”<em>—— 食べログ 用户（4.5 分 · 2026/09）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-bonkura">
+      <div class="fn"><b>お好み焼き・鉄板焼 ぼんくら家 道頓堀店</b><span class="fc">大阪烧 · 铁板烧 · 道頓堀（なんばウォーク B22 出口 3 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥2,000–2,999</b>（≈88–132 元） · <span class="k">食べログ</span> <b>3.46</b><span class="k">／468 条</span> · <span class="fgood">好评率 70%</span><span class="k">（抽样 20 条≥3.5，均分 3.38）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 87 席，地下街直通好找</span></div>
+      <div class="fl"><span class="k">招牌</span> ぼんくら烧、豚平烧、牛筋葱烧；地下街出口直达、下雨天最方便</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>每人必须点一杯饮料</b>；周末会被限时 2 小时；美乃滋偏腻、有人点错后悔；周一 17:00 才开门</div>
+      <div class="fquote">“虽然是普通的御好烧，但味道却非常美味；这里也有很多外国客人。”<em>—— 食べログ 用户（4.0 分 · 2026/08）</em></div>
+    </div>
+      </div>
+    </div>
+    <div class="fgroup">
+      <h3>🐙 章鱼烧 · 边走边吃（道顿堀 / 法善寺） <span>¥500–900 一份 6–8 个；刚出锅极烫，别一口吞</span></h3>
+      <div class="fgrid">
+    <div class="fcard" data-modal="f-otako">
+      <div class="fn"><b>本家 大たこ 法善寺店</b><span class="fc">章鱼烧 · 法善寺横丁（难波站 3 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥2,000–2,999</b>（≈88–132 元） · <span class="k">食べログ</span> <b>3.47</b><span class="k">／508 条</span> · <span class="fgood">好评率 75%</span><span class="k">（抽样 20 条≥3.5，均分 3.58）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 70 席，可坐下吃</span></div>
+      <div class="fl"><span class="k">招牌</span> 章鱼烧（章鱼块大到对得起店名）、葱烧、炒面；<b>支持支付宝 / 微信 / N Pay</b></div>
+      <div class="fl fwarn"><span class="k">缺点</span> 难波章鱼烧竞争激烈，周边店几乎都满座、要排队；店内 3 层，被安排到 3 楼时上下不便</div>
+      <div class="fquote">“大阪烧、葱烧、章鱼烧、炒面全部都非常美味！特别是章鱼烧，里面的章鱼非常丰盛，名副其实的「大章鱼」。”<em>—— 食べログ 用户（5.0 分 · 2026/06）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-takohachi">
+      <div class="fn"><b>たこ八 道頓堀総本店</b><span class="fc">章鱼烧 · 道頓堀（难波站 14 号出口 5 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥2,000–2,999</b>（≈88–132 元） · <span class="k">食べログ</span> <b>3.29</b><span class="k">／467 条</span> · <span class="fgood">好评率 79%</span><span class="k">（抽样 19 条≥3.5，均分 3.63）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★☆☆</span> <span class="k">· 57 席；1 楼立食快、2–3 楼有座</span></div>
+      <div class="fl"><span class="k">招牌</span> 章鱼烧、大阪烧、炒面；1 楼立食吧台适合赶时间，2 楼以上可坐着吃</div>
+      <div class="fl fwarn"><span class="k">缺点</span> 味道被评「印象一般」的次数不少；<b>1 楼摊位只收现金或 PayPay</b>；节假日中午人潮集中</div>
+      <div class="fquote">“无论点什么，味道都非常好，这顿饭让我非常满意，酒也喝得很尽兴。”<em>—— 食べログ 用户（4.0 分 · 2026/08）</em></div>
+    </div>
+      </div>
+    </div>
+    <div class="fgroup">
+      <h3>🍜 拉面（难波 / 道顿堀 / 京都站） <span>大阪是清汤系（金龙、神座），京都站第一旭是酱油系；多数只收现金</span></h3>
+      <div class="fgrid">
+    <div class="fcard" data-modal="f-jojoro">
+      <div class="fn"><b>麺屋 丈六 なんば店</b><span class="fc">拉面 · 难波（南海难波 5 分 / 日本桥 5 号出口 6 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>～¥999</b>（≈44 元以内） · <span class="k">食べログ</span> <b>3.73</b><span class="k">／2,709 条</span> · <span class="fgood">好评率 95%</span><span class="k">（抽样 20 条≥3.5，均分 3.83）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★★</span> <span class="k">· 仅 7 席，开门前就要排</span></div>
+      <div class="fl"><span class="k">招牌</span> 中华荞麦（¥1,000）、冷面中华、限定面；难波口碑第一梯队，本地回头客极多</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>只有 7 个吧台位、开店前就排队</b>；<b>只收现金</b>、不能刷卡；周三定休；晚上只到 21:00，早去才吃得到</div>
+      <div class="fquote">“冰凉的汤底散发着浓郁的酱油香气和酸味，口感丰富——这是我第 23 次来这家店。”<em>—— 食べログ 用户（5.0 分 · 2026/09）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-kinryu">
+      <div class="fn"><b>金龍ラーメン 道頓堀店</b><span class="fc">拉面 · 道頓堀（难波站 14 号出口 5 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>～¥999</b>（≈44 元以内） · <span class="k">食べログ</span> <b>3.49</b><span class="k">／1,078 条</span> · <span class="fgood">好评率 45%</span><span class="k">（抽样 20 条≥3.5，均分 3.15）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★☆☆</span> <span class="k">· 24 小时，深夜也要排 5 分钟</span></div>
+      <div class="fl"><span class="k">招牌</span> 金龙拉面 ¥900、叉烧面；免费加韭菜・泡菜・蒜，深夜最方便的一家</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>口碑两极：抽样均分只有 3.15</b>，有人嫌「汤头中庸、叉烧干柴」；<b>只收现金</b>；店内游客比例极高、立食氛围</div>
+      <div class="fquote">“在立食的氛围中享受在大阪市中心啜饮；可以随意添加韭菜、泡菜和葱，为了体验这种氛围我还是推荐这里。”<em>—— 食べログ 用户（4.0 分 · 2026/08）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-kamikura">
+      <div class="fn"><b>本家 第一旭 本店</b><span class="fc">拉面（京都） · 京都站（步行 5 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>～¥999</b>（≈44 元以内） · <span class="k">食べログ</span> <b>3.74</b><span class="k">／6,906 条</span> · <span class="fgood">好评率 75%</span><span class="k">（抽样 20 条≥3.5，均分 3.50）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 京都站前名店，排队 15–20 分</span></div>
+      <div class="fl"><span class="k">招牌</span> 中华荞麦 ¥900、叉烧面 ¥1,180；清晨 06:00 开门，京都站旁 24 小时食堂级别的存在</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>几乎总要排队（约 20 分钟）</b>；人多时拼桌；周四定休；早餐时段是唯一清净窗口</div>
+      <div class="fquote">“点了叉烧面 ¥1,180，汤底真好喝，面条也很稳定；加了胡椒粉和辣椒调味后味道更上一层楼。”<em>—— 食べログ 用户（4.0 分 · 2026/09）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-kamukura">
+      <div class="fn"><b>どうとんぼり神座 道頓堀店</b><span class="fc">拉面 · 道頓堀（难波站 5 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥1,000–1,999</b>（≈44–88 元） · <span class="k">食べログ</span> <b>3.20</b><span class="k">／606 条</span> · <span class="fgood">好评率 70%</span><span class="k">（抽样 20 条≥3.5，均分 3.75）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★☆☆</span> <span class="k">· 71 席，深夜好入座</span></div>
+      <div class="fl"><span class="k">招牌</span> 白菜拉面（关西特有清汤系）、冷拉面；10:00–08:00 营业，深夜救急最稳</div>
+      <div class="fl fwarn"><span class="k">缺点</span> 食べログ 分数低（3.20），偏「连锁味」；套餐份量被吐槽「全都大份，吃到肚子鼓」；高峰需等位</div>
+      <div class="fquote">“深夜喝完酒突然想吃东西，这次尝试了冷拉面，味道非常好。”<em>—— 食べログ 用户（4.0 分 · 2026/08）</em></div>
+    </div>
+      </div>
+    </div>
+    <div class="fgroup">
+      <h3>🍛 咖喱 · 洋食 · 海鲜（难波） <span>想换口味或吃一顿正经鱼料理时用得上</span></h3>
+      <div class="fgrid">
+    <div class="fcard" data-modal="f-jiyuuken">
+      <div class="fn"><b>自由軒 難波本店</b><span class="fc">咖喱 · 洋食 · 难波（Metro 难波站 3 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>～¥999</b>（≈44 元以内） · <span class="k">食べログ</span> <b>3.49</b><span class="k">／2,223 条</span> · <span class="fgood">好评率 65%</span><span class="k">（抽样 20 条≥3.5，均分 3.48）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 38 席，翻台快；周一休</span></div>
+      <div class="fl"><span class="k">招牌</span> 名物咖喱（米饭和咖喱一开始就拌在一起，中间打生鸡蛋）¥900 级别；创业 1910 年的洋食老铺</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>只收现金</b>；<b>周一休息</b>、营业只到 19:45，晚饭时段容易吃不上；口味偏辣、评价两极（有人觉得就是咖喱烩饭）</div>
+      <div class="fquote">“时隔 12 年再次光临，点了招牌咖喱（大）；咖喱酱偏辣，更像是咖喱烩饭，浓郁美味。”<em>—— 食べログ 用户（4.0 分 · 2026/09）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-ginpei">
+      <div class="fn"><b>魚匠 銀平 道頓堀店</b><span class="fc">海鲜 · 居酒屋 · 道頓堀（难波站 25 号出口 3 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥8,000–9,999</b>（≈352–440 元） · <span class="k">食べログ</span> <b>3.52</b><span class="k">／616 条</span> · <span class="fgood">好评率 90%</span><span class="k">（抽样 20 条≥3.5，均分 3.95）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 70 席，周日休；建议预约</span></div>
+      <div class="fl"><span class="k">招牌</span> 午餐「鯛饭套餐」¥2,000–2,999、烤鱼 / 煮鱼可选；想吃一顿安静、正规的鱼料理时首选</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>晚餐人均 ¥8,000 起，明显比小吃贵</b>；周日定休；座位基本 2 小时制；平日 11:25 也可能要等位</div>
+      <div class="fquote">“这次选择「午餐鯛饭套餐」，以鱼为主的菜肴都非常美味；烤鱼的腹肉油脂丰富，口感十足。”<em>—— 食べログ 用户（4.0 分 · 2026/09）</em></div>
+    </div>
+      </div>
+    </div>
+    <div class="fgroup">
+      <h3>🍡 甜品 · 下午茶（日本桥 / 难波 / 天王寺） <span>几个都是「排队换一口」的类型，注意营业时段和定休日</span></h3>
+      <div class="fgrid">
+    <div class="fcard" data-modal="f-tamasei">
+      <div class="fn"><b>玉製家</b><span class="fc">和果子 · 日本桥站 B28 出口即到（离酒店最近的甜品）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥1,000–1,999</b>（≈44–88 元） · <span class="k">食べログ</span> <b>3.77</b><span class="k">／1,278 条</span> · <span class="fgood">好评率 90%</span><span class="k">（抽样 20 条≥3.5，均分 4.25）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 14:00 开卖即排队</span></div>
+      <div class="fl"><span class="k">招牌</span> わらび餅（蕨饼）名店，只在 <b>14:00 起售、卖完为止</b>；<b>每人限购 30 个</b>；日本桥站 B28 出口即到</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>周三・周四・周日・法定假日休</b>；<b>14:00 才开始卖、卖完就关门</b>；<b>只收现金</b>、仅外带、店内禁止用手机；天热排队很苦</div>
+      <div class="fquote">“下午 1 点开始排队，我排在第六位；一吃到黄豆粉团子，啊，幸福啊～太好吃了，完全没有辜负我的期待。”<em>—— 食べログ 用户（5.0 分 · 2026/09）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-rikuro">
+      <div class="fn"><b>りくろーおじさんの店 JR天王寺駅店</b><span class="fc">甜品 · 芝士蛋糕 · 天王寺（堺筋线 2 站 / 约 7 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>～¥999</b>（≈44 元以内） · <span class="k">食べログ</span> <b>3.18</b><span class="k">／191 条</span> · <span class="fgood">好评率 60%</span><span class="k">（抽样 20 条≥3.5，均分 3.40）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★☆☆</span> <span class="k">· 常排 10–30 人，但翻台快</span></div>
+      <div class="fl"><span class="k">招牌</span> 大阪名物「烤芝士蛋糕」¥1,000 级别、刚出炉会摇；JR 天王寺站内，去阿倍野看夜景时顺路</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>几乎每次都要排队（10–30 人）</b>；只能外带、没有座位；天王寺店口味评价比难波本店分散；蛋糕需冷藏、不适合带回国</div>
+      <div class="fquote">“好久没吃，终于又尝到了りくろーおじさん的芝士蛋糕，依然是那么美味，轻轻一口就融化在嘴里。”<em>—— 食べログ 用户（4.0 分 · 2026/08）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-alshon">
+      <div class="fn"><b>サロン・ド・テ・アルション 法善寺本店</b><span class="fc">蛋糕 · 下午茶 · 法善寺横丁（难波站 3 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥2,000–2,999</b>（≈88–132 元） · <span class="k">食べログ</span> <b>3.70</b><span class="k">／1,203 条</span> · <span class="fgood">好评率 94%</span><span class="k">（抽样 18 条≥3.5，均分 3.97）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 36 席，建议预约</span></div>
+      <div class="fl"><span class="k">招牌</span> 下午茶套餐（小份 ¥2,980）、和栗蒙布朗、司康；难波最出名的蛋糕沙龙，红茶种类多</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>周末基本满座，建议提前网上预约</b>；<b>不接受电子货币 / 二维码</b>（仅现金或 VISA/Master）；正式下午茶氛围偏安静，穿得太随便会不自在</div>
+      <div class="fquote">“我点了下午茶套餐，蛋糕是和栗蒙布朗，红茶是店员推荐的栗子口味，搭配得非常好；蒙布朗在嘴里瞬间散发出浓郁的栗子味和香气。”<em>—— 食べログ 用户（5.0 分 · 2026/09）</em></div>
+    </div>
+      </div>
+    </div>
+    <div class="fgroup">
+      <h3>🍁 京都（Day 2 中午 / 傍晚） <span>祇园四条站周边步行 1–3 分钟；午市 11:00 开门，13:00 后基本要排</span></h3>
+      <div class="fgrid">
+    <div class="fcard" data-modal="f-okaru">
+      <div class="fn"><b>京都祇園 おかる</b><span class="fc">乌冬 · 大阪烧（京都） · 祇园四条（3 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥1,000–1,999</b>（≈44–88 元） · <span class="k">食べログ</span> <b>3.59</b><span class="k">／1,398 条</span> · <span class="fgood">好评率 85%</span><span class="k">（抽样 20 条≥3.5，均分 3.58）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 37 席，午市 11:00 开门即满</span></div>
+      <div class="fl"><span class="k">招牌</span> 咖喱乌冬、亲子丼、祇园名物「おかる烧」；墙上挂满艺人签名，11:00–15:00 午市最划算</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>只收现金</b>；<b>午市人多、19 点前后翻台快但很挤</b>；午餐时间禁烟但店内本身可吸烟（对烟敏感的话注意）；大份乌冬要另加 ¥220（菜单上没写）</div>
+      <div class="fquote">“我点了亲子盖饭和咖喱乌冬面，在我心中这份亲子盖饭是我吃过的最好吃的，汤汁非常丰富。”<em>—— 食べログ 用户（4.0 分 · 2026/08）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-matsuba">
+      <div class="fn"><b>総本家にしんそば 松葉 本店</b><span class="fc">荞麦（京都） · 祇园四条（1 分）/ 南座旁</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥1,000–1,999</b>（≈44–88 元） · <span class="k">食べログ</span> <b>3.48</b><span class="k">／844 条</span> · <span class="fgood">好评率 58%</span><span class="k">（抽样 19 条≥3.5，均分 3.42）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★☆☆</span> <span class="k">· 饭点满座，但翻台快</span></div>
+      <div class="fl"><span class="k">招牌</span> にしんそば（鲱鱼荞麦）¥1,800 级别；1860 年创业、京都南座旁，二楼座位能看街景</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>「服务态度不太好」在评价里出现多次</b>；鲱鱼荞麦口味两极（有人嫌甜、嫌冷荞麦普通）；饭点必须排队；偏观光价</div>
+      <div class="fquote">“这家店成立于文久元年（1860 年），以にしんそば闻名；二楼的座位可以俯瞰京都的街景。”<em>—— 食べログ 用户（4.0 分 · 2026/07）</em></div>
+    </div>
+      </div>
+    </div>
+    <div class="fgroup">
+      <h3>🦌 奈良（Day 4） <span>近铁奈良站前拱廊街，去奈良公园的路上</span></h3>
+      <div class="fgrid">
+    <div class="fcard" data-modal="f-kamabashi">
+      <div class="fn"><b>釜粋</b><span class="fc">乌冬（奈良） · 近铁奈良站（2 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>～¥999</b>（≈44 元以内） · <span class="k">食べログ</span> <b>3.46</b><span class="k">／278 条</span> · <span class="fgood">好评率 70%</span><span class="k">（抽样 20 条≥3.5，均分 3.65）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 37 席，饭点满座</span></div>
+      <div class="fl"><span class="k">招牌</span> 鸡天冷乌冬（¥1,000 出头）、豆乳沾面、咖喱乌冬；近铁奈良站前拱廊街上，去奈良公园的路上</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>只收现金 / PayPay</b>，不能刷卡；<b>饭点排长队</b>、店内 80–90% 是外国游客；汤头被评「稍微有点淡」；卖完即止、15:00–17:00 休息</div>
+      <div class="fquote">“我点了鸡肉天妇罗冷乌冬面，味道非常好；粗面条有嚼劲，天妇罗有两大块鸡天和一个竹轮天，热乎乎的。”<em>—— 食べログ 用户（4.5 分 · 2026/09）</em></div>
+    </div>
+      </div>
+    </div>
+    <div class="fgroup">
+      <h3>🥩 神户（Day 4） <span>神户牛午餐比晚餐便宜一大截，预算够就吃午餐</span></h3>
+      <div class="fgrid">
+    <div class="fcard" data-modal="f-ishida">
+      <div class="fn"><b>神戸牛ステーキ Ishida. 本店</b><span class="fc">神户牛 · 铁板烧 · 三宫（JR / 阪急 2 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥10,000–14,999</b>（≈440–660 元） · <span class="k">食べログ</span> <b>3.61</b><span class="k">／206 条</span> · <span class="fgood">好评率 95%</span><span class="k">（抽样 20 条≥3.5，均分 4.05）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 26 席，必须预约</span></div>
+      <div class="fl"><span class="k">招牌</span> 神户牛午餐套餐 ¥6,000–7,999（≈264–352 元）；每组客人有专属厨师在铁板上现烤，可拍照</div>
+      <div class="fl fwarn"><span class="k">缺点</span> <b>必须预约、迟到会被取消</b>；<b>晚餐人均 ¥10,000+（≈440 元起）</b>，性价比一般（有评价给性价比 3.4）；26 席很小；周二定休；冷饮另收费</div>
+      <div class="fquote">“店内几乎都是吧台，每组客人都有专属的厨师为他们烤肉和蔬菜；神户牛的瘦肉虽然清淡，却一点也不油腻。”<em>—— 食べログ 用户（5.0 分 · 2026/08）</em></div>
+    </div>
+    <div class="fcard" data-modal="f-amona">
+      <div class="fn"><b>神戸牛洋食アモナ</b><span class="fc">洋食 · 神户牛 · 三宫・花钟前（2 分）</span></div>
+      <div class="fl"><span class="k">人均</span> <b>¥4,000–4,999</b>（≈176–220 元） · <span class="k">食べログ</span> <b>3.41</b><span class="k">／325 条</span> · <span class="fgood">好评率 70%</span><span class="k">（抽样 20 条≥3.5，均分 3.58）</span></div>
+      <div class="fl"><span class="k">推荐指数</span> <span class="fstars">★★★★☆</span> <span class="k">· 40 席，午市满座但翻台快</span></div>
+      <div class="fl"><span class="k">招牌</span> A5 神户牛午餐 ¥1,000–1,999（≈44–88 元）、汉堡排、前菜沙拉套餐；花小钱吃神户牛的最优解</div>
+      <div class="fl fwarn"><span class="k">缺点</span> 汉堡排被评「普通」；<b>当天只接受「仅座位预约」</b>、套餐要现场点；午市满座；晚上人均翻倍到 ¥4,000 级别</div>
+      <div class="fquote">“前菜是甜咸的火腿和夏季蔬菜、玉米一起食用，口感很好；主菜 A5 等级的神户牛肉非常嫩。”<em>—— 食べログ 用户（4.0 分 · 2026/08）</em></div>
+    </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:22px">
+      <p class="muted">💡 <b>点单三条铁律：</b>① 上面每一家的营业时间／定休／付款方式都是逐店核对过的，<b>但日本餐饮变动频繁，出门前再瞄一眼官网</b>；② 大阪食堂多数 21:00–22:00 last order，别 21:30 才找饭；③ 居酒屋／串炸店常见「お通し（小菜费）」「一杯饮品制」「每人两道菜制」，不是被坑，进店前心里有数。</p>
+      <div class="chips" style="margin-top:12px">
+        <span class="chip" data-modal="food-shinsekai"><b>新世界</b> 串炸一带</span>
+        <span class="chip" data-modal="food-okonomiyaki"><b>大阪烧</b> 怎么点</span>
+        <span class="chip" data-modal="food-takoyaki"><b>章鱼烧</b> 怎么买</span>
+        <span class="chip" data-modal="food-kushikatsu"><b>串炸</b> 规矩</span>
+        <span class="chip" data-modal="food-ramen"><b>拉面</b> 三大派</span>
+        <span class="chip" data-modal="food-kuromon"><b>黑门市场</b> 攻略</span>
         <span class="chip" data-modal="food-kyoto"><b>京都</b> 锦市场·祇园</span>
         <span class="chip" data-modal="food-nara"><b>奈良</b> 釜饭·柿叶寿司</span>
-        <span class="chip" data-modal="food-kobe"><b>神户</b> 神户牛午市</span>
+        <span class="chip" data-modal="food-kobe"><b>神户</b> 午市神户牛</span>
         <span class="chip" data-modal="food-sweets"><b>甜品</b> りくろー·551</span>
       </div>
-      <p class="muted" style="margin-top:12px">💡 <b>点单三条铁律：</b>① 热门店先看 Google 评分的「最近 1 个月」评论；② 大阪食堂多数 21:00–22:00 last order，别 21:30 才找饭；③ 居酒屋很多要「お通し（小菜费）」，不是被坑。</p>
+      <p class="muted" style="margin-top:10px">↑ 这一排是「按类别看怎么吃」，点开是通用的点法／规矩／避坑；上面 24 张卡是「具体去哪家」。</p>
     </div>
   </section>
 
@@ -1543,7 +1824,224 @@ const MODALS = {
     "如果是 T2 航站楼（廉航），要坐接驳车，再多留 15–20 分钟。",
     "若 11 月起免税改为「出境时退税」，机场多花 15–45 分钟办退税，<b>优先办退税再去逛店</b>。"],
   src:[["关西机场 官方（值机与航站楼）","https://www.kansai-airport.or.jp/"],["南海电铁 官方","https://www.nankai.co.jp/"],["Rinku Premium Outlets 官方（10:00–20:00）","https://www.premiumoutlets.co.jp/chs/rinku/"]]
+},
+"f-daruma": {
+  tone:"d3", ic:"🍢", t:"元祖串かつ だるま 新世界総本店", s:"串炸 · 新世界（酒店步行 8–12 分） · 人均 ¥2,000–2,999（≈88–132 元）",
+  tag:["食べログ 3.46","好评率 79%","推荐 ★★★★☆"],
+  rows:[["人均","¥2,000–2,999（≈88–132 元）"],["口碑","食べログ 3.46 分（1,000+ 条评价） · 好评率 79%（抽样 19 条中 ≥3.5 分的比例，抽样均分 3.92）"],["推荐指数","★★★★☆ · 排队 20–40 分"],["招牌","串炸套餐（総本店セット）、土手焼き；点完现裹面糊现炸，衣薄不腻"],["营业","11:00–22:30（六日祝 10:30 起，L.O. 22:00）"],["定休","无休（年初以外）"],["座位","12 席（全吧台）"],["预约","不可预约"],["付款","现金 only"],["怎么去","堺筋线恵美須町 3 号出口步行 6 分 / 御堂筋线动物园前 5 号出口步行 6 分；从酒店走约 10 分钟"],["顺路","Day 1 / Day 3 晚上"]],
+  shop:[["真实评价 · 正面","“点餐后，店员会为您裹上面糊、撒上面包屑并炸制。松软的面糊配上极细的面包屑，口感极佳，不容易让人感到油腻。与其他串炸店相比，水平完全不同。” —— 食べログ 用户（5.0 分 · 2026/08）"],["真实评价 · 吐槽 / 注意","“平日中午 12 点虽然没有排队，但店内大约 10 个座位已经满座。” —— 食べログ 用户（4.0 分 · 2026/08）"]],
+  rec:["顺路安排：Day 1 / Day 3 晚上","<b>记得带现金</b>：这家不支持（或不完全支持）刷卡／电子支付。"],
+  pit:["只有 12 个吧台位、饭点基本要排队；<b>只收现金</b>，不能刷卡；酱汁禁止二次蘸；店内不适合久坐","上榜理由：排队 20–40 分"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270206/27004260/"],["官方站","https://www.kushikatu-daruma.com/"]]
+},
+"f-gifuya": {
+  tone:"d3", ic:"🍢", t:"ぎふや本家", s:"串炸 · 新世界（动物园前站 3 分） · 人均 ¥3,000–3,999（≈132–176 元）",
+  tag:["食べログ 3.49","好评率 70%","推荐 ★★★★☆"],
+  rows:[["人均","¥3,000–3,999（≈132–176 元） · 午餐 ¥2,000–2,999"],["口碑","食べログ 3.49 分（597 条评价） · 好评率 70%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.42）"],["推荐指数","★★★★☆ · 128 席，通常不用久等"],["招牌","串炸、寿喜烧、土手焼き；本地人常去，接客会逐串说明"],["营业","11:00–23:00（日祝 10:30 起，L.O. 22:00）"],["定休","无休"],["座位","128 席"],["预约","可预约"],["付款","可刷卡 / 二维码"],["怎么去","御堂筋线动物园前 5 号口步行 3 分；从酒店走约 10 分钟"],["顺路","Day 3 晚上（替代 だるま 排队太久）"]],
+  shop:[["真实评价 · 正面","“串炸上菜速度非常快，味道也很好，服务员会清楚地解释并分开摆放，感觉非常不错。” —— 食べログ 用户（4.0 分 · 2026/07）"],["真实评价 · 吐槽 / 注意","“和其他店相比，饮品的价格整体上感觉偏高；另外需要收取服务费。” —— 食べログ 用户（3.0 分 · 2026/07）"]],
+  rec:["顺路安排：Day 3 晚上（替代 だるま 排队太久）"],
+  pit:["饮品偏贵、要收服务费（お通し）；啤酒杯偏温，有人抱怨；团客多时上菜会慢","上榜理由：128 席，通常不用久等"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270206/27079311/"]]
+},
+"f-oyaji": {
+  tone:"d3", ic:"🍢", t:"新世界おやじの串や 新世界本店", s:"串炸 · 新世界（动物园前站 5 分） · 人均 ¥2,000–2,999（≈88–132 元）",
+  tag:["食べログ 3.46","好评率 58%","推荐 ★★★☆☆"],
+  rows:[["人均","¥2,000–2,999（≈88–132 元） · 午餐 ¥1,000–1,999"],["口碑","食べログ 3.46 分（484 条评价） · 好评率 58%（抽样 19 条中 ≥3.5 分的比例，抽样均分 3.55）"],["推荐指数","★★★☆☆ · 150 席，翻台快"],["招牌","蔬菜拼盘、炖牛筋、薄衣串炸；10:00–24:00 超长营业，玩到深夜也能吃"],["营业","10:00–24:00（L.O. 23:30）"],["定休","无休"],["座位","150 席"],["预约","可预约"],["付款","可刷卡 / 电子货币 / 二维码"],["怎么去","恵美須町站步行 5 分 / 动物园前站步行 5 分；从酒店走约 8 分钟"],["顺路","Day 1 / Day 3 深夜"]],
+  shop:[["真实评价 · 正面","“薄薄的外衣非常美味，让人想多吃几份。这是我第一次吃串炸，在大阪旅行中这是最好吃的一家。” —— 食べログ 用户（5.0 分 · 2026/06）"],["真实评价 · 吐槽 / 注意","“串炸的味道都很普通；青葱几乎都是干的，感觉有点可惜。” —— 食べログ 用户（3.0 分 · 2026/06）"]],
+  rec:["顺路安排：Day 1 / Day 3 深夜"],
+  pit:["串炸本身被评价「普通」的不少；<b>22:00 后加收 10% 深夜费</b>；串以外的菜「有点微妙」","上榜理由：150 席，翻台快"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270206/27004862/"]]
+},
+"f-yokozuna": {
+  tone:"d3", ic:"🍢", t:"日本一の串かつ 横綱 通天閣店", s:"串炸 · 新世界（通天阁旁） · 人均 ¥2,000–2,999（≈88–132 元）",
+  tag:["食べログ 3.39","好评率 20%","推荐 ★★☆☆☆"],
+  rows:[["人均","¥2,000–2,999（≈88–132 元） · 午餐 ¥1,000–1,999"],["口碑","食べログ 3.39 分（414 条评价） · 好评率 20%（抽样 20 条中 ≥3.5 分的比例，抽样均分 2.95）"],["推荐指数","★★☆☆☆ · 354 席，基本不排队"],["招牌","24 小时营业、串炸 10 串拼盘、无限畅饮 60 分 ¥750；人多时最省事的一家"],["营业","24 小时营业"],["定休","无休"],["座位","354 席"],["预约","可预约"],["付款","可刷卡 / 二维码"],["怎么去","御堂筋线动物园前 5 号出口步行 3 分；从酒店走约 10 分钟"],["顺路","Day 3 晚上（团体 / 深夜）"]],
+  shop:[["真实评价 · 正面","“菜单种类丰富，最重要的是价格便宜。如果只是想随便喝一杯，这里真的很推荐。” —— 食べログ 用户（3.5 分 · 2026/06）"],["真实评价 · 吐槽 / 注意","“被 60 分钟无限畅饮 ¥750 的招牌吸引进来，但啤酒要再加 ¥220，而且还必须点两道菜。” —— 食べログ 用户（3.0 分 · 2026/08）"]],
+  rec:["顺路安排：Day 3 晚上（团体 / 深夜）","口碑两极分化明显（好评率 20%）：当作「便宜方便」的备选，不要抱太高期待。"],
+  pit:["<b>评价两极化最严重的一家</b>（抽样均分仅 2.95）：<b>每人必须点两道菜</b>（一杯饮品制）、无限畅饮还要加钱；串炸水准被认为不如 だるま","上榜理由：354 席，基本不排队"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270206/27066939/"]]
+},
+"f-tsurukame": {
+  tone:"d3", ic:"🍢", t:"名代 鶴亀家", s:"串炸 · 土手焼き · 新世界（通天阁旁） · 人均 ¥2,000–2,999（≈88–132 元）",
+  tag:["食べログ 3.38","好评率 26%","推荐 ★★☆☆☆"],
+  rows:[["人均","¥2,000–2,999（≈88–132 元）"],["口碑","食べログ 3.38 分（355 条评价） · 好评率 26%（抽样 19 条中 ≥3.5 分的比例，抽样均分 2.95）"],["推荐指数","★★☆☆☆ · 239 席，好入座"],["招牌","土手焼き（味噌炖牛筋，大阪下町名物）、串炸 10 串拼盘 ¥1,480、炒面"],["营业","11:00–01:00（六日祝 10:00 起）"],["定休","无休"],["座位","239 席"],["预约","可预约"],["付款","可刷卡 / 二维码"],["怎么去","新今宫站步行 5 分 / 动物园前站步行 4 分；从酒店走约 12 分钟"],["顺路","Day 3 晚上（想尝土手焼き）"]],
+  shop:[["真实评价 · 正面","“串炸炸得酥脆，分量小，吃起来很方便；通天阁附近的店都很挤，这里很幸运地马上就能入座。” —— 食べログ 用户（3.5 分 · 2026/08）"],["真实评价 · 吐槽 / 注意","“串炸非常美味，但其他的食物和饮料就有点令人失望，尤其是饮料，味道偏淡，且完全没有冰凉的感觉。” —— 食べログ 用户（2.5 分 · 2026/08）"]],
+  rec:["顺路安排：Day 3 晚上（想尝土手焼き）","口碑两极分化明显（好评率 26%）：当作「便宜方便」的备选，不要抱太高期待。"],
+  pit:["评分不高、抽样均分 2.95：饮品「味道偏淡、完全不冰」有多次抱怨；扫码点单常漏单；外籍店员多，服务被吐槽","上榜理由：239 席，好入座"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270206/27009455/"]]
+},
+"f-mizuno": {
+  tone:"d3", ic:"🥘", t:"美津の", s:"大阪烧 · 道頓堀（难波站 5 分） · 人均 ¥2,000–2,999（≈88–132 元）",
+  tag:["食べログ 3.56","好评率 80%","推荐 ★★★★☆"],
+  rows:[["人均","¥2,000–2,999（≈88–132 元） · 午餐 ¥1,000–1,999"],["口碑","食べログ 3.56 分（1,000+ 条评价） · 好评率 80%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.80）"],["推荐指数","★★★★☆ · 排队 20–60 分（不可预约）"],["招牌","山药烧（とんぺい焼・山芋焼）、道頓堀烧；面糊轻、吃到最后不腻"],["营业","11:00–22:00"],["定休","无休（不定休）"],["座位","38 席（吧台 12 席）"],["预约","不可预约"],["付款","可刷卡（¥3,000 起），不收电子货币"],["怎么去","御堂筋线难波站步行 5 分 / 堺筋线日本桥站步行 5 分；从酒店 堺筋线 1 站到日本桥 + 步行 5 分"],["顺路","Day 3 中午 / 傍晚"]],
+  shop:[["真实评价 · 正面","“超出乎意料的美味！几乎感觉不到面粉，口感轻盈，能充分享受到食材的味道，吃起来不油腻，最后一口都吃得干干净净。” —— 食べログ 用户（4.0 分 · 2026/09）"],["真实评价 · 吐槽 / 注意","“外观不太显眼，找了半天才找到；我原本预计要等近一个小时，结果只等了大约 20 分钟。” —— 食べログ 用户（3.0 分 · 2026/09）"]],
+  rec:["顺路安排：Day 3 中午 / 傍晚"],
+  pit:["招牌不显眼、不好找；<b>不可预约、饭点排队 20–60 分</b>；座位 38 席、人多时吃完就得走；刷卡需满 ¥3,000","上榜理由：排队 20–60 分（不可预约）"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27001278/"]]
+},
+"f-chibo": {
+  tone:"d3", ic:"🥘", t:"千房 道頓堀支店", s:"大阪烧 · 道頓堀（日本桥站 5 分） · 人均 ¥1,000–1,999（≈44–88 元）",
+  tag:["食べログ 3.16","好评率 80%","推荐 ★★★☆☆"],
+  rows:[["人均","¥1,000–1,999（≈44–88 元）"],["口碑","食べログ 3.16 分（262 条评价） · 好评率 80%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.75）"],["推荐指数","★★★☆☆ · 120 席 + 7 层楼，周末也常常不用等"],["招牌","千房原创大阪烧 ¥2,000、豚平烧、葱烧（ねぎ焼き）、明太子大阪烧；吧台能看师傅现做"],["营业","11:00–23:00（L.O. 22:00）"],["定休","无休"],["座位","120 席"],["预约","可预约"],["付款","可刷卡 / 电子货币"],["怎么去","近铁日本桥站步行 5 分 / 难波站步行 10 分；从酒店 堺筋线 1 站到日本桥 + 步行 5 分"],["顺路","Day 3 中午（不想排队时的稳妥选择）"]],
+  shop:[["真实评价 · 正面","“这里的御好烧特点是配料细腻，面糊松软；炒面则是面条 Q 弹，酱汁的香气令人陶醉。” —— 食べログ 用户（4.5 分 · 2026/09）"],["真实评价 · 吐槽 / 注意","“原创大阪烧售价 ¥2,000，里面有魔芋和各种配料——价格偏高；即使周末从一楼到七楼都没有等待时间。” —— 食べログ 用户（3.5 分 · 2026/09）"]],
+  rec:["顺路安排：Day 3 中午（不想排队时的稳妥选择）"],
+  pit:["食べログ 分数不高（3.16）、价格偏观光价；高峰期可能加收特别费用；一份份量大，两人点两份容易吃撑","上榜理由：120 席 + 7 层楼，周末也常常不用等"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27002622/"]]
+},
+"f-bonkura": {
+  tone:"d3", ic:"🥘", t:"お好み焼き・鉄板焼 ぼんくら家 道頓堀店", s:"大阪烧 · 铁板烧 · 道頓堀（なんばウォーク B22 出口 3 分） · 人均 ¥2,000–2,999（≈88–132 元）",
+  tag:["食べログ 3.46","好评率 70%","推荐 ★★★★☆"],
+  rows:[["人均","¥2,000–2,999（≈88–132 元） · 午餐 ¥1,000–1,999"],["口碑","食べログ 3.46 分（468 条评价） · 好评率 70%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.38）"],["推荐指数","★★★★☆ · 87 席，地下街直通好找"],["招牌","ぼんくら烧、豚平烧、牛筋葱烧；地下街出口直达、下雨天最方便"],["营业","周二–六 11:30–23:30 / 周日 11:30–22:30 / 周一 17:00 起"],["定休","不定休"],["座位","87 席"],["预约","可预约"],["付款","可刷卡 / 二维码"],["怎么去","难波站 なんばウォーク 3 番街 B22 出口步行 3 分；从酒店 堺筋线 1 站到日本桥 + 步行 5 分"],["顺路","Day 3 中午"]],
+  shop:[["真实评价 · 正面","“虽然是普通的御好烧，但味道却非常美味；这里也有很多外国客人。” —— 食べログ 用户（4.0 分 · 2026/08）"],["真实评价 · 吐槽 / 注意","“个人觉得上面的美乃滋酱有点腻，稍微后悔点错了；虽然是周六，但并没有很拥挤，不过还是被告知用餐时间是两个小时。” —— 食べログ 用户（3.5 分 · 2026/08）"]],
+  rec:["顺路安排：Day 3 中午"],
+  pit:["<b>每人必须点一杯饮料</b>；周末会被限时 2 小时；美乃滋偏腻、有人点错后悔；周一 17:00 才开门","上榜理由：87 席，地下街直通好找"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27056606/"]]
+},
+"f-otako": {
+  tone:"d3", ic:"🐙", t:"本家 大たこ 法善寺店", s:"章鱼烧 · 法善寺横丁（难波站 3 分） · 人均 ¥2,000–2,999（≈88–132 元）",
+  tag:["食べログ 3.47","好评率 75%","推荐 ★★★★☆"],
+  rows:[["人均","¥2,000–2,999（≈88–132 元） · 午餐 ¥1,000–1,999"],["口碑","食べログ 3.47 分（508 条评价） · 好评率 75%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.58）"],["推荐指数","★★★★☆ · 70 席，可坐下吃"],["招牌","章鱼烧（章鱼块大到对得起店名）、葱烧、炒面；<b>支持支付宝 / 微信 / N Pay</b>"],["营业","11:30–23:00（L.O. 22:00，全天无休时段）"],["定休","无休"],["座位","70 席（含包间）"],["预约","可预约"],["付款","可刷卡 / 电子货币 / 支付宝・微信"],["怎么去","御堂筋线难波站 14 号出口步行 3 分；从酒店步行约 20 分钟或 堺筋线 1 站"],["顺路","Day 1 / Day 3 边逛边吃"]],
+  shop:[["真实评价 · 正面","“大阪烧、葱烧、章鱼烧、炒面全部都非常美味！特别是章鱼烧，里面的章鱼非常丰盛，名副其实的「大章鱼」。” —— 食べログ 用户（5.0 分 · 2026/06）"],["真实评价 · 吐槽 / 注意","“难波周边的章鱼烧竞争非常激烈，几乎每家店都座无虚席，排队的人很多。” —— 食べログ 用户（3.5 分 · 2026/06）"]],
+  rec:["顺路安排：Day 1 / Day 3 边逛边吃"],
+  pit:["难波章鱼烧竞争激烈，周边店几乎都满座、要排队；店内 3 层，被安排到 3 楼时上下不便","上榜理由：70 席，可坐下吃"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27051095/"]]
+},
+"f-takohachi": {
+  tone:"d3", ic:"🐙", t:"たこ八 道頓堀総本店", s:"章鱼烧 · 道頓堀（难波站 14 号出口 5 分） · 人均 ¥2,000–2,999（≈88–132 元）",
+  tag:["食べログ 3.29","好评率 79%","推荐 ★★★☆☆"],
+  rows:[["人均","¥2,000–2,999（≈88–132 元） · 午餐 ～¥999"],["口碑","食べログ 3.29 分（467 条评价） · 好评率 79%（抽样 19 条中 ≥3.5 分的比例，抽样均分 3.63）"],["推荐指数","★★★☆☆ · 57 席；1 楼立食快、2–3 楼有座"],["招牌","章鱼烧、大阪烧、炒面；1 楼立食吧台适合赶时间，2 楼以上可坐着吃"],["营业","10:00–22:30（L.O. 21:30）"],["定休","无休"],["座位","57 席（1F 立食）"],["预约","可预约"],["付款","1F 现金 / PayPay；2–3F 可刷卡"],["怎么去","难波站 14 号出口步行 5 分；从酒店步行约 20 分钟"],["顺路","Day 1 晚上 / Day 3"]],
+  shop:[["真实评价 · 正面","“无论点什么，味道都非常好，这顿饭让我非常满意，酒也喝得很尽兴。” —— 食べログ 用户（4.0 分 · 2026/08）"],["真实评价 · 吐槽 / 注意","“虽然味道给人的印象一般，但在节假日的午餐时间也能不预约就进来，真是幸运。” —— 食べログ 用户（3.0 分 · 2026/08）"]],
+  rec:["顺路安排：Day 1 晚上 / Day 3","<b>记得带现金</b>：这家不支持（或不完全支持）刷卡／电子支付。"],
+  pit:["味道被评「印象一般」的次数不少；<b>1 楼摊位只收现金或 PayPay</b>；节假日中午人潮集中","上榜理由：57 席；1 楼立食快、2–3 楼有座"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27076174/"]]
+},
+"f-jojoro": {
+  tone:"d3", ic:"🍜", t:"麺屋 丈六 なんば店", s:"拉面 · 难波（南海难波 5 分 / 日本桥 5 号出口 6 分） · 人均 ～¥999（≈44 元以内）",
+  tag:["食べログ 3.73","好评率 95%","推荐 ★★★★★"],
+  rows:[["人均","～¥999（≈44 元以内）"],["口碑","食べログ 3.73 分（2,709 条评价） · 好评率 95%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.83）"],["推荐指数","★★★★★ · 仅 7 席，开门前就要排"],["招牌","中华荞麦（¥1,000）、冷面中华、限定面；难波口碑第一梯队，本地回头客极多"],["营业","11:30–15:00 / 18:00–21:00（周三休）"],["定休","周三（另有临时休）"],["座位","7 席（吧台）"],["预约","不可预约"],["付款","现金 only"],["怎么去","南海难波站步行 5 分 / 堺筋线日本桥站 5 号出口步行 6 分；从酒店 堺筋线 1 站 + 步行 6 分"],["顺路","Day 3 中午（本趟最推荐的一碗）"]],
+  shop:[["真实评价 · 正面","“冰凉的汤底散发着浓郁的酱油香气和酸味，口感丰富——这是我第 23 次来这家店。” —— 食べログ 用户（5.0 分 · 2026/09）"],["真实评价 · 吐槽 / 注意","“营业开始 5 分钟后我就进来了，已经有排队的人；店内排队的动线让人感到不太方便。” —— 食べログ 用户（3.5 分 · 2026/09）"]],
+  rec:["顺路安排：Day 3 中午（本趟最推荐的一碗）","<b>记得带现金</b>：这家不支持（或不完全支持）刷卡／电子支付。","本次抽样口碑最好的梯队之一（好评率 95%），值得专门排进路线。"],
+  pit:["<b>只有 7 个吧台位、开店前就排队</b>；<b>只收现金</b>、不能刷卡；周三定休；晚上只到 21:00，早去才吃得到","上榜理由：仅 7 席，开门前就要排"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27084754/"]]
+},
+"f-kinryu": {
+  tone:"d3", ic:"🍜", t:"金龍ラーメン 道頓堀店", s:"拉面 · 道頓堀（难波站 14 号出口 5 分） · 人均 ～¥999（≈44 元以内）",
+  tag:["食べログ 3.49","好评率 45%","推荐 ★★★☆☆"],
+  rows:[["人均","～¥999（≈44 元以内）"],["口碑","食べログ 3.49 分（1,078 条评价） · 好评率 45%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.15）"],["推荐指数","★★★☆☆ · 24 小时，深夜也要排 5 分钟"],["招牌","金龙拉面 ¥900、叉烧面；免费加韭菜・泡菜・蒜，深夜最方便的一家"],["营业","24 小时营业"],["定休","无休"],["座位","立食 + 座位"],["预约","不可预约"],["付款","现金 only"],["怎么去","难波站 14 号出口步行 5 分；从酒店步行约 20 分钟"],["顺路","Day 1 深夜 / Day 3 夜宵"]],
+  shop:[["真实评价 · 正面","“在立食的氛围中享受在大阪市中心啜饮；可以随意添加韭菜、泡菜和葱，为了体验这种氛围我还是推荐这里。” —— 食べログ 用户（4.0 分 · 2026/08）"],["真实评价 · 吐槽 / 注意","“味道既不浓郁也不算特别清淡，给人一种中庸的感觉；叉烧的口感也有些干柴，虽然是著名店，但并不值得特意前来。” —— 食べログ 用户（2.5 分 · 2026/09）"]],
+  rec:["顺路安排：Day 1 深夜 / Day 3 夜宵","<b>记得带现金</b>：这家不支持（或不完全支持）刷卡／电子支付。","口碑两极分化明显（好评率 45%）：当作「便宜方便」的备选，不要抱太高期待。"],
+  pit:["<b>口碑两极：抽样均分只有 3.15</b>，有人嫌「汤头中庸、叉烧干柴」；<b>只收现金</b>；店内游客比例极高、立食氛围","上榜理由：24 小时，深夜也要排 5 分钟"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27001495/"]]
+},
+"f-kamikura": {
+  tone:"d3", ic:"🍜", t:"本家 第一旭 本店", s:"拉面（京都） · 京都站（步行 5 分） · 人均 ～¥999（≈44 元以内）",
+  tag:["食べログ 3.74","好评率 75%","推荐 ★★★★☆"],
+  rows:[["人均","～¥999（≈44 元以内）"],["口碑","食べログ 3.74 分（6,906 条评价） · 好评率 75%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.50）"],["推荐指数","★★★★☆ · 京都站前名店，排队 15–20 分"],["招牌","中华荞麦 ¥900、叉烧面 ¥1,180；清晨 06:00 开门，京都站旁 24 小时食堂级别的存在"],["营业","06:00–01:00（周四休）"],["定休","周四"],["座位","31 席"],["预约","不可预约"],["付款","可刷卡 / 电子货币 / 二维码"],["怎么去","JR 京都站步行约 5 分；Day 2 从大阪到京都站后先吃再走，或回程前吃"],["顺路","Day 2 早上 06:40 出发前 / 回程前"]],
+  shop:[["真实评价 · 正面","“点了叉烧面 ¥1,180，汤底真好喝，面条也很稳定；加了胡椒粉和辣椒调味后味道更上一层楼。” —— 食べログ 用户（4.0 分 · 2026/09）"],["真实评价 · 吐槽 / 注意","“下雨的平日午餐时分，我 11:53 开始排队，12:11 才被带到座位，等了大约 20 分钟。” —— 食べログ 用户（3.5 分 · 2026/09）"]],
+  rec:["顺路安排：Day 2 早上 06:40 出发前 / 回程前"],
+  pit:["<b>几乎总要排队（约 20 分钟）</b>；人多时拼桌；周四定休；早餐时段是唯一清净窗口","上榜理由：京都站前名店，排队 15–20 分"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/kyoto/A2601/A260101/26000873/"]]
+},
+"f-kamukura": {
+  tone:"d3", ic:"🍜", t:"どうとんぼり神座 道頓堀店", s:"拉面 · 道頓堀（难波站 5 分） · 人均 ¥1,000–1,999（≈44–88 元）",
+  tag:["食べログ 3.20","好评率 70%","推荐 ★★★☆☆"],
+  rows:[["人均","¥1,000–1,999（≈44–88 元）"],["口碑","食べログ 3.20 分（606 条评价） · 好评率 70%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.75）"],["推荐指数","★★★☆☆ · 71 席，深夜好入座"],["招牌","白菜拉面（关西特有清汤系）、冷拉面；10:00–08:00 营业，深夜救急最稳"],["营业","10:00–次日 08:00"],["定休","无休"],["座位","71 席"],["预约","不可预约"],["付款","可刷卡 / 二维码"],["怎么去","难波站步行 5 分；从酒店步行约 20 分钟"],["顺路","Day 1 深夜 / Day 3 宵夜"]],
+  shop:[["真实评价 · 正面","“深夜喝完酒突然想吃东西，这次尝试了冷拉面，味道非常好。” —— 食べログ 用户（4.0 分 · 2026/08）"],["真实评价 · 吐槽 / 注意","“不过我点了套餐，所有的份量都是大号，吃得我肚子鼓鼓的。” —— 食べログ 用户（3.0 分 · 2026/08）"]],
+  rec:["顺路安排：Day 1 深夜 / Day 3 宵夜"],
+  pit:["食べログ 分数低（3.20），偏「连锁味」；套餐份量被吐槽「全都大份，吃到肚子鼓」；高峰需等位","上榜理由：71 席，深夜好入座"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27001562/"]]
+},
+"f-jiyuuken": {
+  tone:"d3", ic:"🍛", t:"自由軒 難波本店", s:"咖喱 · 洋食 · 难波（Metro 难波站 3 分） · 人均 ～¥999（≈44 元以内）",
+  tag:["食べログ 3.49","好评率 65%","推荐 ★★★★☆"],
+  rows:[["人均","～¥999（≈44 元以内）"],["口碑","食べログ 3.49 分（2,223 条评价） · 好评率 65%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.48）"],["推荐指数","★★★★☆ · 38 席，翻台快；周一休"],["招牌","名物咖喱（米饭和咖喱一开始就拌在一起，中间打生鸡蛋）¥900 级别；创业 1910 年的洋食老铺"],["营业","周二–五 11:00–19:45 / 六日 11:30 起（周一休）"],["定休","周一"],["座位","38 席"],["预约","不可预约"],["付款","现金 only"],["怎么去","Metro 难波站步行 3 分；从酒店步行约 20 分钟或 堺筋线 1 站"],["顺路","Day 1 / Day 3 中午"]],
+  shop:[["真实评价 · 正面","“时隔 12 年再次光临，点了招牌咖喱（大）；咖喱酱偏辣，更像是咖喱烩饭，浓郁美味。” —— 食べログ 用户（4.0 分 · 2026/09）"],["真实评价 · 吐槽 / 注意","“店内几乎满座，但店外排队的人并不多，所以很快就能入座——支付方式仅限现金。” —— 食べログ 用户（3.0 分 · 2026/09）"]],
+  rec:["顺路安排：Day 1 / Day 3 中午","<b>记得带现金</b>：这家不支持（或不完全支持）刷卡／电子支付。"],
+  pit:["<b>只收现金</b>；<b>周一休息</b>、营业只到 19:45，晚饭时段容易吃不上；口味偏辣、评价两极（有人觉得就是咖喱烩饭）","上榜理由：38 席，翻台快；周一休"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27001310/"]]
+},
+"f-ginpei": {
+  tone:"d3", ic:"🐟", t:"魚匠 銀平 道頓堀店", s:"海鲜 · 居酒屋 · 道頓堀（难波站 25 号出口 3 分） · 人均 ¥8,000–9,999（≈352–440 元）",
+  tag:["食べログ 3.52","好评率 90%","推荐 ★★★★☆"],
+  rows:[["人均","¥8,000–9,999（≈352–440 元） · 午餐 ¥2,000–2,999"],["口碑","食べログ 3.52 分（616 条评价） · 好评率 90%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.95）"],["推荐指数","★★★★☆ · 70 席，周日休；建议预约"],["招牌","午餐「鯛饭套餐」¥2,000–2,999、烤鱼 / 煮鱼可选；想吃一顿安静、正规的鱼料理时首选"],["营业","11:30–14:30 / 17:00–22:00（日休，周六到晚 21:00）"],["定休","周日"],["座位","70 席"],["预约","可预约"],["付款","可刷卡 / 电子货币 / 二维码"],["怎么去","难波站 25 号出口步行 3 分；从酒店步行约 20 分钟"],["顺路","Day 3 晚上（想吃正经海鲜）"]],
+  shop:[["真实评价 · 正面","“这次选择「午餐鯛饭套餐」，以鱼为主的菜肴都非常美味；烤鱼的腹肉油脂丰富，口感十足。” —— 食べログ 用户（4.0 分 · 2026/09）"],["真实评价 · 吐槽 / 注意","“我在平日 11:25 到达，前面已经等了 2 位。” —— 食べログ 用户（5.0 分 · 2026/09）"]],
+  rec:["顺路安排：Day 3 晚上（想吃正经海鲜）","本次抽样口碑最好的梯队之一（好评率 90%），值得专门排进路线。"],
+  pit:["<b>晚餐人均 ¥8,000 起，明显比小吃贵</b>；周日定休；座位基本 2 小时制；平日 11:25 也可能要等位","上榜理由：70 席，周日休；建议预约"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27001291/"]]
+},
+"f-tamasei": {
+  tone:"d3", ic:"🍡", t:"玉製家", s:"和果子 · 日本桥站 B28 出口即到（离酒店最近的甜品） · 人均 ¥1,000–1,999（≈44–88 元）",
+  tag:["食べログ 3.77","好评率 90%","推荐 ★★★★☆"],
+  rows:[["人均","¥1,000–1,999（≈44–88 元）"],["口碑","食べログ 3.77 分（1,278 条评价） · 好评率 90%（抽样 20 条中 ≥3.5 分的比例，抽样均分 4.25）"],["推荐指数","★★★★☆ · 14:00 开卖即排队"],["招牌","わらび餅（蕨饼）名店，只在 <b>14:00 起售、卖完为止</b>；<b>每人限购 30 个</b>；日本桥站 B28 出口即到"],["营业","14:00–售完为止"],["定休","周三・周四・周日・祝日"],["座位","外带（4 席等候位）"],["预约","不可预约"],["付款","现金 only"],["怎么去","堺筋线 / 千日前线日本桥站（难波 Walk）B28 出口即到；从酒店步行约 8 分钟"],["顺路","Day 1 下午 / Day 3 下午"]],
+  shop:[["真实评价 · 正面","“下午 1 点开始排队，我排在第六位；一吃到黄豆粉团子，啊，幸福啊～太好吃了，完全没有辜负我的期待。” —— 食べログ 用户（5.0 分 · 2026/09）"],["真实评价 · 吐槽 / 注意","“虽然听说排队是必然的，但作为おはぎ爱好者，我无法错过便加入了队伍；那天非常炎热，排队的时间很艰苦。” —— 食べログ 用户（3.5 分 / 5.0 分 · 2026/09）"]],
+  rec:["顺路安排：Day 1 下午 / Day 3 下午","<b>记得带现金</b>：这家不支持（或不完全支持）刷卡／电子支付。","本次抽样口碑最好的梯队之一（好评率 90%），值得专门排进路线。"],
+  pit:["<b>周三・周四・周日・法定假日休</b>；<b>14:00 才开始卖、卖完就关门</b>；<b>只收现金</b>、仅外带、店内禁止用手机；天热排队很苦","上榜理由：14:00 开卖即排队"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27001576/"]]
+},
+"f-rikuro": {
+  tone:"d3", ic:"🧀", t:"りくろーおじさんの店 JR天王寺駅店", s:"甜品 · 芝士蛋糕 · 天王寺（堺筋线 2 站 / 约 7 分） · 人均 ～¥999（≈44 元以内）",
+  tag:["食べログ 3.18","好评率 60%","推荐 ★★★☆☆"],
+  rows:[["人均","～¥999（≈44 元以内）"],["口碑","食べログ 3.18 分（191 条评价） · 好评率 60%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.40）"],["推荐指数","★★★☆☆ · 常排 10–30 人，但翻台快"],["招牌","大阪名物「烤芝士蛋糕」¥1,000 级别、刚出炉会摇；JR 天王寺站内，去阿倍野看夜景时顺路"],["营业","09:00–20:00"],["定休","无休"],["座位","仅外带"],["预约","可预约"],["付款","可刷卡 / 电子货币 / 二维码"],["怎么去","JR 天王寺站内（距离天王寺站 25m）；酒店 堺筋线 2 站约 7 分"],["顺路","Day 3 晚上（阿倍野 HARUKAS 顺路）"]],
+  shop:[["真实评价 · 正面","“好久没吃，终于又尝到了りくろーおじさん的芝士蛋糕，依然是那么美味，轻轻一口就融化在嘴里。” —— 食べログ 用户（4.0 分 · 2026/08）"],["真实评价 · 吐槽 / 注意","“到达时大约有 30 人排队；虽然排队，但大约 10 分钟就轮到我了。” —— 食べログ 用户（3.0 分 · 2026/08）"]],
+  rec:["顺路安排：Day 3 晚上（阿倍野 HARUKAS 顺路）"],
+  pit:["<b>几乎每次都要排队（10–30 人）</b>；只能外带、没有座位；天王寺店口味评价比难波本店分散；蛋糕需冷藏、不适合带回国","上榜理由：常排 10–30 人，但翻台快"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270203/27071010/"]]
+},
+"f-alshon": {
+  tone:"d3", ic:"🍰", t:"サロン・ド・テ・アルション 法善寺本店", s:"蛋糕 · 下午茶 · 法善寺横丁（难波站 3 分） · 人均 ¥2,000–2,999（≈88–132 元）",
+  tag:["食べログ 3.70","好评率 94%","推荐 ★★★★☆"],
+  rows:[["人均","¥2,000–2,999（≈88–132 元）"],["口碑","食べログ 3.70 分（1,203 条评价） · 好评率 94%（抽样 18 条中 ≥3.5 分的比例，抽样均分 3.97）"],["推荐指数","★★★★☆ · 36 席，建议预约"],["招牌","下午茶套餐（小份 ¥2,980）、和栗蒙布朗、司康；难波最出名的蛋糕沙龙，红茶种类多"],["营业","11:30–20:00（六日祝 11:00 起）"],["定休","不定休"],["座位","36 席"],["预约","可预约（2F 座位）"],["付款","现金 / VISA・Master（不收电子货币）"],["怎么去","难波站 なんばウォーク B-12 / B-14 出口步行 3 分；从酒店步行约 20 分钟"],["顺路","Day 1 / Day 3 下午歇脚"]],
+  shop:[["真实评价 · 正面","“我点了下午茶套餐，蛋糕是和栗蒙布朗，红茶是店员推荐的栗子口味，搭配得非常好；蒙布朗在嘴里瞬间散发出浓郁的栗子味和香气。” —— 食べログ 用户（5.0 分 · 2026/09）"],["真实评价 · 吐槽 / 注意","“平日中午过后店内座无虚席；周日 15 点客人不多，但下午茶需提前预约才稳。” —— 食べログ 用户（3.5 分 · 2026/08）"]],
+  rec:["顺路安排：Day 1 / Day 3 下午歇脚","<b>记得带现金</b>：这家不支持（或不完全支持）刷卡／电子支付。","本次抽样口碑最好的梯队之一（好评率 94%），值得专门排进路线。"],
+  pit:["<b>周末基本满座，建议提前网上预约</b>；<b>不接受电子货币 / 二维码</b>（仅现金或 VISA/Master）；正式下午茶氛围偏安静，穿得太随便会不自在","上榜理由：36 席，建议预约"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/osaka/A2701/A270202/27001538/"]]
+},
+"f-okaru": {
+  tone:"d3", ic:"🍲", t:"京都祇園 おかる", s:"乌冬 · 大阪烧（京都） · 祇园四条（3 分） · 人均 ¥1,000–1,999（≈44–88 元）",
+  tag:["食べログ 3.59","好评率 85%","推荐 ★★★★☆"],
+  rows:[["人均","¥1,000–1,999（≈44–88 元）"],["口碑","食べログ 3.59 分（1,398 条评价） · 好评率 85%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.58）"],["推荐指数","★★★★☆ · 37 席，午市 11:00 开门即满"],["招牌","咖喱乌冬、亲子丼、祇园名物「おかる烧」；墙上挂满艺人签名，11:00–15:00 午市最划算"],["营业","11:00–15:00 / 17:00–次日 02:00"],["定休","无休（不定休）"],["座位","37 席"],["预约","不可预约"],["付款","现金 only"],["怎么去","京阪祇园四条站 7 号出口步行 3 分；Day 2 从大阪到祇园四条后步行 3 分"],["顺路","Day 2 中午（祇园 / 清水寺一带）"]],
+  shop:[["真实评价 · 正面","“我点了亲子盖饭和咖喱乌冬面，在我心中这份亲子盖饭是我吃过的最好吃的，汤汁非常丰富。” —— 食べログ 用户（4.0 分 · 2026/08）"],["真实评价 · 吐槽 / 注意","“大约 19 点，没有排队，但顾客流动很快、人很多；店内氛围偏嘈杂。” —— 食べログ 用户（3.5 分 · 2026/08）"]],
+  rec:["顺路安排：Day 2 中午（祇园 / 清水寺一带）","<b>记得带现金</b>：这家不支持（或不完全支持）刷卡／电子支付。","本次抽样口碑最好的梯队之一（好评率 85%），值得专门排进路线。"],
+  pit:["<b>只收现金</b>；<b>午市人多、19 点前后翻台快但很挤</b>；午餐时间禁烟但店内本身可吸烟（对烟敏感的话注意）；大份乌冬要另加 ¥220（菜单上没写）","上榜理由：37 席，午市 11:00 开门即满"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/kyoto/A2601/A260301/26001282/"]]
+},
+"f-matsuba": {
+  tone:"d3", ic:"🍜", t:"総本家にしんそば 松葉 本店", s:"荞麦（京都） · 祇园四条（1 分）/ 南座旁 · 人均 ¥1,000–1,999（≈44–88 元）",
+  tag:["食べログ 3.48","好评率 58%","推荐 ★★★☆☆"],
+  rows:[["人均","¥1,000–1,999（≈44–88 元）"],["口碑","食べログ 3.48 分（844 条评价） · 好评率 58%（抽样 19 条中 ≥3.5 分的比例，抽样均分 3.42）"],["推荐指数","★★★☆☆ · 饭点满座，但翻台快"],["招牌","にしんそば（鲱鱼荞麦）¥1,800 级别；1860 年创业、京都南座旁，二楼座位能看街景"],["营业","10:30–20:30"],["定休","无休（不定休）"],["座位","座位数少、常拼桌"],["预约","不可预约"],["付款","可刷卡 / 电子货币"],["怎么去","祇园四条站步行 1 分（南座旁）；Day 2 从祇园四条出站即到"],["顺路","Day 2 中午 / 傍晚"]],
+  shop:[["真实评价 · 正面","“这家店成立于文久元年（1860 年），以にしんそば闻名；二楼的座位可以俯瞰京都的街景。” —— 食べログ 用户（4.0 分 · 2026/07）"],["真实评价 · 吐槽 / 注意","“这次我点了冷的鲱鱼荞麦和ざるそば，服务态度也不太好。” —— 食べログ 用户（2.5 分 · 2026/07）"]],
+  rec:["顺路安排：Day 2 中午 / 傍晚"],
+  pit:["<b>「服务态度不太好」在评价里出现多次</b>；鲱鱼荞麦口味两极（有人嫌甜、嫌冷荞麦普通）；饭点必须排队；偏观光价","上榜理由：饭点满座，但翻台快"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/kyoto/A2601/A260301/26001629/"]]
+},
+"f-kamabashi": {
+  tone:"d3", ic:"🍲", t:"釜粋", s:"乌冬（奈良） · 近铁奈良站（2 分） · 人均 ～¥999（≈44 元以内）",
+  tag:["食べログ 3.46","好评率 70%","推荐 ★★★★☆"],
+  rows:[["人均","～¥999（≈44 元以内）"],["口碑","食べログ 3.46 分（278 条评价） · 好评率 70%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.65）"],["推荐指数","★★★★☆ · 37 席，饭点满座"],["招牌","鸡天冷乌冬（¥1,000 出头）、豆乳沾面、咖喱乌冬；近铁奈良站前拱廊街上，去奈良公园的路上"],["营业","11:00–15:00 / 17:00–21:00（售完即止）"],["定休","不定休"],["座位","37 席"],["预约","不可预约"],["付款","现金 / PayPay"],["怎么去","近铁奈良站步行 2 分；Day 4 奈良线路（近铁快速急行 45–50 分到近铁奈良）"],["顺路","Day 4 奈良的中午"]],
+  shop:[["真实评价 · 正面","“我点了鸡肉天妇罗冷乌冬面，味道非常好；粗面条有嚼劲，天妇罗有两大块鸡天和一个竹轮天，热乎乎的。” —— 食べログ 用户（4.5 分 · 2026/09）"],["真实评价 · 吐槽 / 注意","“面条的韧性很强、天妇罗酱汁味道很好，但稍微有些淡；店内大约 80% 到 90% 的顾客是外国人。” —— 食べログ 用户（3.0 分 · 2026/08）"]],
+  rec:["顺路安排：Day 4 奈良的中午","<b>记得带现金</b>：这家不支持（或不完全支持）刷卡／电子支付。"],
+  pit:["<b>只收现金 / PayPay</b>，不能刷卡；<b>饭点排长队</b>、店内 80–90% 是外国游客；汤头被评「稍微有点淡」；卖完即止、15:00–17:00 休息","上榜理由：37 席，饭点满座"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/nara/A2901/A290101/29004854/"]]
+},
+"f-ishida": {
+  tone:"d3", ic:"🥩", t:"神戸牛ステーキ Ishida. 本店", s:"神户牛 · 铁板烧 · 三宫（JR / 阪急 2 分） · 人均 ¥10,000–14,999（≈440–660 元）",
+  tag:["食べログ 3.61","好评率 95%","推荐 ★★★★☆"],
+  rows:[["人均","¥10,000–14,999（≈440–660 元） · 午餐 ¥6,000–7,999"],["口碑","食べログ 3.61 分（206 条评价） · 好评率 95%（抽样 20 条中 ≥3.5 分的比例，抽样均分 4.05）"],["推荐指数","★★★★☆ · 26 席，必须预约"],["招牌","神户牛午餐套餐 ¥6,000–7,999（≈264–352 元）；每组客人有专属厨师在铁板上现烤，可拍照"],["营业","11:30–15:00 / 17:00–21:30（周二休）"],["定休","周二"],["座位","26 席"],["预约","必须预约"],["付款","可刷卡 / 二维码"],["怎么去","JR 三宫站西口步行 2 分；Day 4 神户线路（阪神/阪急 三宫下车）"],["顺路","Day 4 神户（午餐最划算）"]],
+  shop:[["真实评价 · 正面","“店内几乎都是吧台，每组客人都有专属的厨师为他们烤肉和蔬菜；神户牛的瘦肉虽然清淡，却一点也不油腻。” —— 食べログ 用户（5.0 分 · 2026/08）"],["真实评价 · 吐槽 / 注意","“菜品与味道 4.2、接待服务 4.4、氛围 3.6、性价比 3.4——性价比是这套午餐里最弱的一项。” —— 食べログ 用户（4.0 分 · 2026/08）"]],
+  rec:["顺路安排：Day 4 神户（午餐最划算）","<b>出发前先预约</b>：11:30–15:00 / 17:00–21:30（周二休） 的时段很容易满。","本次抽样口碑最好的梯队之一（好评率 95%），值得专门排进路线。"],
+  pit:["<b>必须预约、迟到会被取消</b>；<b>晚餐人均 ¥10,000+（≈440 元起）</b>，性价比一般（有评价给性价比 3.4）；26 席很小；周二定休；冷饮另收费","上榜理由：26 席，必须预约"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/hyogo/A2801/A280101/28032718/"]]
+},
+"f-amona": {
+  tone:"d3", ic:"🍽️", t:"神戸牛洋食アモナ", s:"洋食 · 神户牛 · 三宫・花钟前（2 分） · 人均 ¥4,000–4,999（≈176–220 元）",
+  tag:["食べログ 3.41","好评率 70%","推荐 ★★★★☆"],
+  rows:[["人均","¥4,000–4,999（≈176–220 元） · 午餐 ¥1,000–1,999"],["口碑","食べログ 3.41 分（325 条评价） · 好评率 70%（抽样 20 条中 ≥3.5 分的比例，抽样均分 3.58）"],["推荐指数","★★★★☆ · 40 席，午市满座但翻台快"],["招牌","A5 神户牛午餐 ¥1,000–1,999（≈44–88 元）、汉堡排、前菜沙拉套餐；花小钱吃神户牛的最优解"],["营业","10:30–21:00（L.O. 20:30）"],["定休","不定休"],["座位","40 席"],["预约","可预约（当天仅座位）"],["付款","可刷卡 / 电子货币"],["怎么去","三宫・花钟前站 4 号出口步行 2 分；Day 4 神户线路"],["顺路","Day 4 神户（不想花大钱的午餐）"]],
+  shop:[["真实评价 · 正面","“前菜是甜咸的火腿和夏季蔬菜、玉米一起食用，口感很好；主菜 A5 等级的神户牛肉非常嫩。” —— 食べログ 用户（4.0 分 · 2026/08）"],["真实评价 · 吐槽 / 注意","“汉堡肉味道普通，但非常美味，毫无疑问；汤如果是冷汤的话可能会更好。” —— 食べログ 用户（3.0 分 · 2026/08）"]],
+  rec:["顺路安排：Day 4 神户（不想花大钱的午餐）"],
+  pit:["汉堡排被评「普通」；<b>当天只接受「仅座位预约」</b>、套餐要现场点；午市满座；晚上人均翻倍到 ¥4,000 级别","上榜理由：40 席，午市满座但翻台快"],
+  src:[["食べログ（中文站）","https://tabelog.com/cn/hyogo/A2801/A280101/28056045/"]]
 }
+
 };
 
 const modal = document.getElementById("modal");
