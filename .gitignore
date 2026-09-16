@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+research/_raw/
+research/.cache/
+popo_login_url.txt

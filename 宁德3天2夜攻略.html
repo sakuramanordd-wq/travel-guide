@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宁德 · 3天2夜（杭州高铁往返）· 霞浦滩涂 + 太姥山 + 福鼎</title>
+<style>
+  :root{
+    --ink:#2b2b2b; --muted:#6b6b6b; --line:#e8e3da;
+    --shu:#b4581f; --shu-d:#83390f; --shu-l:#f8e8d9;
+    --ai:#2f6f7e; --ai-d:#143c47; --ai-l:#e1edf0;
+    --gold:#c99a3f; --gold-l:#f3e6c8;
+    --green:#2e7d5b; --green-d:#1f5741;
+    --cream:#faf7f2; --cream2:#f3ece1; --yt:#8c6b3f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.7}
+  .wrap{max-width:940px;margin:0 auto;padding:22px 16px 70px}
+
+  /* ---------- Banner ---------- */
+  .banner{background:linear-gradient(135deg,#143c47,#2f6f7e 45%,#b4581f 130%);color:#fff;border-radius:20px;padding:28px 26px;position:relative;overflow:hidden}
+  .banner h1{font-size:29px;letter-spacing:1.5px}
+  .banner .sub{margin-top:8px;opacity:.95;font-size:14.5px}
+  .banner .slogan{margin-top:14px;display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:999px;font-size:14px}
+  .banner .deco{position:absolute;right:-24px;top:-30px;font-size:112px;opacity:.16}
+
+  /* ---------- Sticky nav ---------- */
+  .topnav{position:sticky;top:10px;z-index:200;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px;padding:10px;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+  .topnav a{text-decoration:none;color:var(--ai-d);font-size:13.5px;font-weight:600;padding:6px 13px;border-radius:999px;background:var(--cream);border:1px solid transparent;transition:.2s}
+  .topnav a:hover{background:var(--gold-l);border-color:var(--gold)}
+
+  /* ---------- Section ---------- */
+  section{margin-top:28px}
+  h2{display:flex;align-items:center;gap:10px;font-size:22px;color:var(--ai-d);border-left:6px solid var(--shu);padding-left:12px;margin-bottom:14px}
+  h2 .tag{font-size:13px;color:#fff;background:var(--shu);border-radius:999px;padding:2px 10px;font-weight:500;white-space:nowrap}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .card p{font-size:14.5px;color:#3a3a3a}
+  .card p+p{margin-top:8px}
+  .muted{font-size:13.5px;color:var(--muted)}
+  .hl{background:linear-gradient(transparent 62%,var(--gold-l) 62%);font-weight:600}
+
+  /* ---------- Table ---------- */
+  .tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+  .tbl th,.tbl td{border-bottom:1px dashed var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+  .tbl th{color:var(--ai-d);font-weight:700;white-space:nowrap}
+  .tbl tr:last-child td{border-bottom:none}
+  .tbl .d{color:var(--shu);font-weight:700;white-space:nowrap}
+
+  /* ---------- Day ---------- */
+  .day{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:20px;box-shadow:0 3px 14px rgba(0,0,0,.05)}
+  .day-head{display:flex;align-items:center;gap:12px;padding:16px 20px;color:#fff}
+  .day-head.d1{background:linear-gradient(135deg,#2f6f7e,#143c47)}
+  .day-head.d2{background:linear-gradient(135deg,#b4581f,#83390f)}
+  .day-head.d3{background:linear-gradient(135deg,#2e7d5b,#1f5741)}
+  .day-head.d4{background:linear-gradient(135deg,#c99a3f,#a87a2b)}
+  .day-head.d5{background:linear-gradient(135deg,#46605f,#2c3c3b)}
+  .day-head .num{font-size:23px;font-weight:700}
+  .day-head .t{font-size:18px;font-weight:600}
+  .day-head .route{font-size:12.5px;opacity:.92;margin-left:auto;text-align:right}
+  .day-body{padding:16px 20px}
+  .geo{background:var(--cream2);border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;font-size:13.5px;color:var(--muted);margin-bottom:14px}
+  .geo .lab{cursor:pointer;border-bottom:1px dotted var(--gold);color:var(--ai-d);font-weight:600}
+  .geo .lab:hover{background:var(--gold-l);border-radius:4px}
+  .timeblock{display:grid;grid-template-columns:86px 1fr;gap:4px 12px;padding:10px 0;border-top:1px dashed var(--line)}
+  .timeblock:first-of-type{border-top:none}
+  .slot{font-weight:700;color:var(--ai-d);font-size:14px;padding-top:2px}
+  .slot small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+  .what{font-size:15px}
+  .what b{color:var(--ai-d)}
+  .why{color:var(--muted);font-size:13.5px;margin-top:3px}
+  .sched-title{font-size:14px;color:var(--shu);font-weight:700;margin:16px 0 4px;display:flex;align-items:center;gap:8px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .split .box{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--cream)}
+  .split .box h4{font-size:14px;color:var(--shu);margin-bottom:6px}
+  .split .box ul{list-style:none}
+  .split .box li{font-size:13.5px;color:#3a3a3a;padding:4px 0 4px 18px;position:relative}
+  .split .box li::before{content:"・";position:absolute;left:2px;color:var(--gold);font-weight:700}
+
+  /* ---------- Clickable spot cards ---------- */
+  .spot{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--ai);border-radius:14px;padding:13px 15px;margin:12px 0;cursor:pointer;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .spot:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(0,0,0,.10)}
+  .spot .ic{font-size:26px;flex:0 0 auto}
+  .spot .body{flex:1;min-width:0}
+  .spot .body .t{font-size:16px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .spot .body .s{font-size:13px;color:var(--muted);margin-top:3px}
+  .spot .arrow{color:var(--gold);font-size:18px;flex:0 0 auto}
+  .spot .ph{width:96px;height:68px;flex:0 0 auto;border-radius:10px;overflow:hidden;background:#e9e5dd}
+  .spot .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .badge{font-size:11px;font-weight:600;border-radius:999px;padding:1px 8px;white-space:nowrap}
+  .badge.g{background:#e2f0e9;color:var(--green)}
+  .badge.o{background:#f6ead2;color:#a87a2b}
+  .badge.r{background:#f7e5d6;color:var(--shu)}
+  .badge.b{background:var(--ai-l);color:var(--ai-d)}
+
+  /* ---------- Photos ---------- */
+  .mphoto{margin:0 0 14px;border-radius:12px;overflow:hidden;background:#eee}
+  .mphoto img{width:100%;display:block}
+  .mphoto .cap{font-size:12px;color:var(--muted);padding:6px 10px;background:var(--cream)}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(206px,1fr));gap:12px}
+  .gallery figure{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .gallery img{width:100%;height:148px;object-fit:cover;display:block}
+  .gallery figcaption{font-size:11.5px;color:var(--muted);padding:8px 10px;line-height:1.65}
+  .gallery figcaption b{color:var(--ai-d);display:block;font-size:13.5px;margin-bottom:2px}
+
+  /* ---------- Restaurant list ---------- */
+  .rest{margin-top:14px}
+  .rest h4{font-size:15px;color:var(--gold);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .rest h4 .rname{color:var(--ink);font-size:16px}
+  .rest ul{list-style:none}
+  .rest li{font-size:14px;padding:8px 0 8px 24px;position:relative;color:#444;border-bottom:1px dashed var(--line)}
+  .rest li:last-child{border-bottom:none}
+  .rest li::before{content:"";position:absolute;left:2px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--ai)}
+  .rest li.pit::before{background:var(--shu)}
+  .rest li .lab{font-weight:700;margin-right:6px;color:var(--ai-d);cursor:pointer;border-bottom:1px dotted var(--gold)}
+  .rest li.pit .lab{color:var(--shu)}
+  .rest li .lab:hover{background:var(--gold-l);border-radius:4px}
+
+  /* ---------- Chips ---------- */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .chip{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;transition:.18s}
+  .chip:hover{background:var(--gold-l);border-color:var(--gold)}
+  .chip b{color:var(--ai-d)}
+
+  /* ---------- 美食清单 ---------- */
+  .foodlegend{font-size:13.5px;color:var(--muted);line-height:1.8}
+  .foodlegend b{color:var(--ink)}
+  .quick{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:8px}
+  .quick .q{border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:var(--cream)}
+  .quick .q b{display:block;font-size:13.5px;color:var(--shu-d)}
+  .quick .q span{font-size:13px;color:#3a3a3a;line-height:1.6}
+  .fgroup{margin-top:20px}
+  .fgroup>h3{font-size:16.5px;color:var(--shu-d);display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+  .fgroup>h3 span{font-size:12.5px;font-weight:400;color:var(--muted)}
+  .fgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));margin-top:10px}
+  .fcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 15px;cursor:pointer;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+  .fcard:hover{border-color:var(--gold);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+  .fcard .fn{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .fcard .fn b{font-size:15.5px;color:var(--ai-d)}
+  .fcard .fn .fc{font-size:12px;color:var(--muted)}
+  .fcard .fl{font-size:13px;color:#46423c;margin-top:6px;line-height:1.7}
+  .fcard .fl .k{color:var(--muted)}
+  .fcard .fwarn{color:#96430f}
+  .fstars{color:#d39021;letter-spacing:1.5px;font-size:14px;white-space:nowrap}
+  .fgood{color:var(--green);font-weight:700}
+  .fquote{font-size:12.6px;color:#5b5650;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:7px 10px;margin-top:8px;line-height:1.65}
+  .fquote em{font-style:normal;color:var(--muted);font-size:11.5px;display:block;margin-top:3px}
+  @media(max-width:700px){.fgrid{grid-template-columns:1fr}}
+
+  /* ---------- 店铺卡片：一张图 + 推荐指数 + 好评率（Day 模块用） ---------- */
+  .restnote{font-size:13px;color:var(--muted);margin:2px 0 10px;line-height:1.75}
+  .restnote b{color:var(--ink)}
+  .restfoot{font-size:11.8px;color:var(--muted);margin-top:12px;line-height:1.75;border-top:1px dashed var(--line);padding-top:9px}
+  .foodgroup{margin:16px 0 4px}
+  .foodgroup>h5{font-size:14.5px;color:var(--shu-d);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+  .foodgroup>h5 span{font-size:12px;font-weight:400;color:var(--muted)}
+  .sgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(256px,1fr));margin-top:9px}
+  .scard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column}
+  .scard:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.11);border-color:var(--gold)}
+  .scard .cover{position:relative;height:146px;background:var(--cream2);overflow:hidden;flex:0 0 auto}
+  .scard .cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+  .scard:hover .cover img{transform:scale(1.06)}
+  .scard .cover .lv{position:absolute;left:8px;top:8px;background:rgba(24,30,38,.74);color:#ffd98f;font-size:12.5px;font-weight:700;letter-spacing:1px;padding:2px 9px;border-radius:999px}
+  .scard .cover .rt{position:absolute;right:8px;top:8px;background:rgba(46,125,91,.93);color:#fff;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px}
+  .scard .cover .rt.mid{background:rgba(201,154,63,.95)}
+  .scard .cover .rt.low{background:rgba(180,71,47,.93)}
+  .scard .cover .cr{position:absolute;left:0;right:0;bottom:0;padding:16px 8px 4px;background:linear-gradient(transparent,rgba(0,0,0,.66));color:#fff;font-size:9.5px;text-align:right;opacity:.95}
+  .scard .cb{padding:11px 12px 12px;display:flex;flex-direction:column;flex:1}
+  .scard .cname{font-size:15px;font-weight:700;color:var(--ai-d);line-height:1.4}
+  .scard .cmeta{font-size:11.8px;color:var(--muted);margin-top:4px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .scard .cmeta .sc{color:#a87a2b;font-weight:700}
+  .scard .cline{font-size:12.6px;color:#46423c;line-height:1.62;margin-top:6px}
+  .scard .cline .k{color:var(--muted)}
+  .scard .cline.warn{color:#96430f}
+  .scard .cmore{margin-top:auto;padding-top:8px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:11.8px;color:var(--muted)}
+  .scard .cmore .cta{color:var(--shu);font-weight:700}
+
+  /* 美食清单大卡加封面图 */
+  .fcard{padding:0 15px 13px;overflow:hidden}
+  .fcard .fcover{height:134px;margin:0 -15px 11px;background:var(--cream2);overflow:hidden;position:relative}
+  .fcard .fcover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+  .fcard:hover .fcover img{transform:scale(1.05)}
+  .fcard .fcover .lv{position:absolute;left:9px;top:9px;background:rgba(24,30,38,.74);color:#ffd98f;font-size:12.5px;font-weight:700;letter-spacing:1px;padding:2px 9px;border-radius:999px}
+  .fcard .fcover .rt{position:absolute;right:9px;top:9px;background:rgba(46,125,91,.93);color:#fff;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px}
+  .fcard .fcover .rt.mid{background:rgba(201,154,63,.95)}
+  .fcard .fcover .rt.low{background:rgba(180,71,47,.93)}
+  .fcard .fcover .cr{position:absolute;left:0;right:0;bottom:0;padding:16px 9px 4px;background:linear-gradient(transparent,rgba(0,0,0,.66));color:#fff;font-size:9.5px;text-align:right}
+
+  /* ---------- 美食弹窗：首图 + 评分面板 + 好评/差评 ---------- */
+  .fhero{margin:0 0 12px;border-radius:12px;overflow:hidden;background:var(--cream2)}
+  .fhero img{width:100%;display:block;max-height:330px;object-fit:cover}
+  .fhero .cap{font-size:11.5px;color:var(--muted);padding:6px 10px;background:var(--cream);line-height:1.7}
+  .fhero .cap a{color:var(--ai);text-decoration:none}
+  .fstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(126px,1fr));gap:8px;margin:12px 0 2px}
+  .fstats .st{background:var(--cream);border:1px solid var(--line);border-radius:11px;padding:8px 9px;text-align:center}
+  .fstats .st b{display:block;font-size:16px;color:var(--ai-d);line-height:1.35}
+  .fstats .st .sm{font-size:13px;letter-spacing:.5px}
+  .fstats .st i{display:block;font-size:11.5px;color:var(--muted);font-style:normal;margin-top:2px;line-height:1.5}
+  .fstats .st .bar{height:6px;border-radius:99px;background:#e7e2d8;margin-top:6px;overflow:hidden}
+  .fstats .st .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#4fae7f)}
+  .fstats .st .bar.warn i{background:linear-gradient(90deg,#b4581f,#d39270)}
+  .fstars2{color:#d39021;letter-spacing:1.5px}
+  .verdict{background:var(--gold-l);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:9px 12px;font-size:13.5px;color:#4a4237;margin:12px 0 0;line-height:1.75}
+  .dishes{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 2px}
+  .dishes .d{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--ai-d);font-weight:600}
+  .revcards{display:grid;gap:9px;margin-top:6px}
+  .rev{border:1px solid var(--line);border-left:4px solid var(--green);border-radius:0 10px 10px 0;background:#fbfdfc;padding:9px 12px}
+  .rev.bad{border-left-color:var(--shu);background:#fdf9f8}
+  .rev .rh{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:4px}
+  .rev .rh .sc{font-weight:700;color:#fff;background:var(--green);border-radius:999px;padding:1px 8px}
+  .rev.bad .rh .sc{background:var(--shu)}
+  .rev p{font-size:13.8px;color:#3f3b36;line-height:1.78;margin:0}
+  .rev .rmt{font-size:11.5px;color:var(--muted);margin-top:5px}
+  .jump{display:grid;gap:7px;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));margin-top:6px}
+  .jump .j{border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:12.6px;cursor:pointer;background:var(--cream);transition:.16s}
+  .jump .j:hover{border-color:var(--gold);background:#fff}
+  .jump .j b{display:block;color:var(--ai-d);font-size:13px;font-weight:600}
+  .jump .j span{color:var(--muted)}
+  .jump .j .g{color:var(--green);font-weight:700}
+
+  /* ---------- Tips ---------- */
+  .tips .card ul{list-style:none}
+  .tips .card li{font-size:14px;padding:6px 0 6px 26px;position:relative;color:#444}
+  .tips .card li::before{content:"❗";position:absolute;left:2px;top:7px;font-size:13px}
+  .tips .card li .lab{font-weight:700;color:var(--shu);cursor:pointer;border-bottom:1px dotted var(--gold);margin-left:4px}
+  .tips .card li .lab:hover{background:var(--gold-l);border-radius:4px}
+
+  /* ---------- Source tier ---------- */
+  .tier{display:grid;grid-template-columns:92px 1fr;gap:10px 14px;font-size:13.5px;padding:9px 0;border-top:1px dashed var(--line)}
+  .tier:first-child{border-top:none}
+  .tier .lv{font-weight:700;color:var(--ai-d)}
+  .tier .lv.a{color:var(--green)}
+  .tier .lv.b{color:var(--ai)}
+  .tier .lv.c{color:#a87a2b}
+  .tier .lv.d{color:var(--shu)}
+
+  /* ---------- Footer ---------- */
+  .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:34px;line-height:1.9}
+  .foot a{color:var(--ai);text-decoration:none}
+
+  /* ---------- Modal ---------- */
+  .modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(18,26,34,.58);backdrop-filter:blur(3px)}
+  .modal.open{display:flex}
+  .modal-card{background:#fff;width:100%;max-width:620px;max-height:88vh;overflow-y:auto;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:pop .22s ease}
+  @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal-head{position:sticky;top:0;background:linear-gradient(135deg,var(--ai-d),var(--ai));color:#fff;padding:18px 22px;display:flex;align-items:center;gap:12px;border-radius:18px 18px 0 0;z-index:2}
+  .modal-head.d1{background:linear-gradient(135deg,#2f6f7e,#143c47)}
+  .modal-head.d2{background:linear-gradient(135deg,#b4581f,#83390f)}
+  .modal-head.d3{background:linear-gradient(135deg,#2e7d5b,#1f5741)}
+  .modal-head.d4{background:linear-gradient(135deg,#c99a3f,#a87a2b)}
+  .modal-head.d5{background:linear-gradient(135deg,#46605f,#2c3c3b)}
+  .modal-head .ic{font-size:28px}
+  .modal-head .ht{flex:1}
+  .modal-head .ht .t{font-size:19px;font-weight:700}
+  .modal-head .ht .s{font-size:12.5px;opacity:.92}
+  .modal-close{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:22px;width:36px;height:36px;border-radius:50%;cursor:pointer;line-height:1}
+  .modal-close:hover{background:rgba(255,255,255,.35)}
+  .modal-body{padding:20px 22px}
+  .modal-body .row{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  .modal-body .kv{background:var(--cream);border-radius:10px;padding:8px 12px;font-size:13px}
+  .modal-body .kv b{color:var(--ai-d)}
+  .modal-body h5{font-size:14px;color:var(--gold);margin:14px 0 6px}
+  .modal-body p{font-size:14.5px;color:#3a3a3a;margin-bottom:6px}
+  .modal-body ul{list-style:none;margin:4px 0}
+  .modal-body ul li{font-size:14.5px;color:#3a3a3a;padding:6px 0 6px 24px;position:relative}
+  .modal-body ul li::before{content:"✓";position:absolute;left:2px;top:6px;color:var(--green);font-weight:700}
+  .modal-body ul li.rec::before{content:"👍";color:var(--green)}
+  .modal-body ul li.pit::before{content:"⚠️";color:var(--shu)}
+  .modal-body ul li .lab{color:var(--ai-d);font-weight:700}
+  .modal-body ul li.pit .lab{color:var(--shu)}
+  .modal-body ul.shops li::before{content:"🏪";color:var(--gold)}
+  .modal-body ul.shops li .num{display:inline-block;min-width:20px;text-align:center;background:var(--gold);color:#fff;border-radius:999px;font-size:12px;font-weight:700;padding:1px 6px;margin-right:6px}
+  .modal-body .src{font-size:12px;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:10px;line-height:1.9}
+  .modal-body .src a{color:var(--ai);text-decoration:none}
+
+  @media(max-width:600px){
+    .day-head{flex-wrap:wrap}
+    .day-head .route{width:100%;text-align:left;margin-left:0}
+    .timeblock{grid-template-columns:1fr;gap:2px}
+    .slot{margin-bottom:2px}
+    .split{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+    .gallery img{height:112px}
+    .spot .ph{width:74px;height:56px}
+    .sgrid{grid-template-columns:1fr}
+    .scard{flex-direction:row}
+    .scard .cover{width:118px;height:118px;flex:0 0 118px}
+    .scard .cb{padding:10px 11px}
+    .fstats{grid-template-columns:repeat(2,1fr)}
+    .jump{grid-template-columns:1fr}
+    .modal-head{padding:14px 16px}
+    .modal-body{padding:16px}
+    .banner h1{font-size:23px}
+  }
+
+  /* ==MEALS-CSS-START== */
+  /* ---- 按餐次的「吃什么」时间轴 ---- */
+  .meals{margin-top:6px}
+  .meal{position:relative;border-left:2px solid var(--line);padding:0 0 14px 18px;margin-left:5px}
+  .meal:last-child{border-left-color:transparent;padding-bottom:2px}
+  .meal:before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--shu);box-shadow:0 0 0 3px #fff,0 0 0 4px var(--shu-l)}
+  .mhead{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:3px}
+  .mtime{font-size:12.5px;font-weight:700;color:#fff;background:var(--shu-d);border-radius:7px;padding:2px 8px;letter-spacing:.4px}
+  .mname{font-size:15.5px;font-weight:700;color:var(--ai-d)}
+  .mwhere{font-size:12px;color:var(--muted);background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:1px 9px}
+  .mnote{font-size:13px;color:#4a4640;line-height:1.72;margin:3px 0 9px}
+  .mnote b{color:var(--shu-d)}
+  /* 封面上的档位徽章：必须限定在 .scard .cover 内，否则会覆盖 #precheck
+     的 .tier 网格行（曾导致「行前必查清单」整块塌陷到首屏底部） */
+  .scard .cover .tier{position:absolute;left:8px;bottom:8px;background:rgba(201,154,63,.94);color:#fff;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px}
+  .scard .cover .tier.s{background:rgba(180,71,47,.94)}
+  .scard .cover .tier.c{background:rgba(90,96,105,.9)}
+  .mlinks{font-size:12.5px;color:var(--muted);margin:2px 0 0;line-height:1.9}
+  .mlinks .lab{cursor:pointer;color:var(--ai-d);font-weight:600;border-bottom:1px dotted var(--gold);padding-bottom:1px}
+  .mlinks .lab:hover{background:var(--gold-l);border-radius:4px}
+  /* ---- 餐次内的「品类」分组小标题 ---- */
+  .mcats{display:grid;gap:12px;margin-top:2px}
+  .mcat-row{border-top:1px dashed var(--line);padding-top:9px}
+  .mcat-row:first-child{border-top:none;padding-top:0}
+  .mcat{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+  .mcat .cn{font-size:13.5px;font-weight:700;color:var(--shu-d)}
+  .mcat .cn:before{content:"◆";font-size:9px;color:var(--gold);margin-right:5px;vertical-align:1px}
+  .mcat .ch{font-size:12px;color:var(--muted);line-height:1.6}
+  .mcat .cnt{font-size:11.5px;color:var(--muted);background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin-left:auto}
+  .mcat-row .sgrid{margin-top:0}
+  .demote{display:grid;gap:9px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));margin-top:10px}
+  .dcard{background:#fff;border:1px solid var(--line);border-left:4px solid #b4581f;border-radius:12px;padding:11px 13px;cursor:pointer;transition:.18s}
+  .dcard:hover{box-shadow:0 6px 16px rgba(0,0,0,.09)}
+  .dcard .dn{font-size:14px;font-weight:700;color:var(--ai-d)}
+  .dcard .ds{font-size:12px;color:var(--muted);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap}
+  .dcard .ds b{color:#b4581f}
+  .dcard .dr{font-size:12.4px;color:#5a5650;line-height:1.6;margin-top:6px}
+  /* ==MEALS-CSS-END== */
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== Banner ===== -->
+  <div class="banner">
+    <div class="deco">🌅</div>
+    <h1>宁德 · 3天2夜</h1>
+    <div class="sub">2026.10.01（周四）– 10.03（周六）· 国庆 &nbsp;|&nbsp; 住宿：D1 三沙/东壁民宿 · D2 太姥山镇 &nbsp;|&nbsp; 点任意卡片看详情</div>
+    <div class="sub" style="margin-top:6px;font-size:13px;opacity:.88">💰 页内价格均为<b>人民币（元）</b>；车次票价为 12306 图定口径（核对日期 2026-09-15），<b>国庆临客以 12306 当日查询为准</b></div>
+    <div class="slogan">🚄 去：D3123 杭州东 07:20 → 霞浦 11:21（¥230） &nbsp;|&nbsp; 回：福鼎/太姥山 17:34–19:12 多班 &nbsp;|&nbsp; 🌅 霞浦滩涂 · ⛰️ 太姥山 · 🦀 开渔季海鲜</div>
+  </div>
+
+  <!-- ===== 吸顶导航 ===== -->
+  <nav class="topnav">
+    <a href="#plan">总览</a>
+    <a href="#hotel">住宿</a>
+    <a href="#d1">Day1</a>
+    <a href="#d2">Day2</a>
+    <a href="#d3">Day3</a>
+    <a href="#extra">多一天</a>
+    <a href="#pass">票券</a>
+    <a href="#food">数据·撤下</a>
+    <a href="#tips">避坑</a>
+    <a href="#precheck">必查</a>
+    <a href="#gallery">图集</a>
+  </nav>
+
+  <!-- ===== 1. 一句话规划 ===== -->
+  <section id="plan">
+    <h2>一句话规划 <span class="tag">核心思路</span></h2>
+    <div class="card">
+      <p><b>以「霞浦进、太姥山出」的开口程为骨架，一趟不回头。</b>杭州南下的动车沿海岸线依次停靠 <b>福鼎 → 太姥山 → 霞浦 → 宁德</b>：坐到宁德站 = 多坐 59 公里再折返北上，所以<span class="hl">去程直接买到霞浦站，回程从太姥山/福鼎站走</span>。Day 1 霞浦县城吃海鲜、小皓东壁拍滩涂日落，住东壁/三沙；Day 2 花竹日出 + 杨家溪古榕 + 县城午饭，傍晚 14 分钟动车搬到太姥山镇；Day 3 太姥山赶早进园，下午福鼎市区小吃街收尾，傍晚回杭。</p>
+      <p class="muted">📍 <b>为什么是 10/1–10/3（周四–周六）？</b>2026 年国庆 10/1–10/7 放假 7 天。2025 年国庆霞浦游客峰值出现在 <b>10 月 4 日（15.8 万人次）</b>——我们 10/3 傍晚离开霞浦，正好错过峰值日；回程 10/3 也避开 10/6–7 的返程最高峰。且东海伏季休渔 <b>9 月 16 日结束</b>，国庆正是开渔后海鲜最肥的窗口。</p>
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <tr><th>日期</th><th>主题</th><th>主线</th><th>体力</th></tr>
+        <tr><td class="d">10/01 周四</td><td>抵达 + 三沙热身</td><td><b>D3123 杭州东 07:20 → 霞浦 11:21</b> → 太康路午饭 → 光影 1 号专线 → 小皓滩涂 → <b>东壁日落 17:46</b> → 三沙晚饭，住东壁/三沙</td><td>★★★☆</td></tr>
+        <tr><td class="d">10/02 周五</td><td>日出 + 转场（最重）</td><td><b>花竹日出 05:52</b> → 三沙金沙街早饭 → 杨家溪古榕 → 县城午饭 → 下午东海 1 号线（或北岐）→ <b>D3124 霞浦 18:37 → 太姥山 18:51</b>，住太姥山镇</td><td>★★★★★</td></tr>
+        <tr><td class="d">10/03 周六</td><td>太姥山 + 返程</td><td><b>07:00 进太姥山</b>（行李寄存集散中心）→ 12:30 下山 → 福鼎肉片午饭 → 桐山溪西小吃街 + 买白茶 → <b>福鼎站 17:34/17:45 → 杭州</b></td><td>★★★★☆</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <p class="muted">🌗 <b>季节期望值管理（逐条管理，免得到了才失望）：</b><br>
+      ① <b>潮汐</b>：10/1–10/3 是农历八月廿一至廿三，已过大潮（八月十五=9/25），滩涂纹理和火烧云规模可能不如初一、十五前后；<b>前一晚务必用「潮汐表」类 App 查北岐/下尾岛低潮时刻</b>（下尾岛只在退潮前后约 2 小时值得上岛）。<br>
+      ② <b>杨家溪没有红叶</b>：赏枫季在 12 月，国庆去是看千年古榕群，别为「红枫」专程。<br>
+      ③ <b>台风尾巴</b>：2026 年 7–9 月白水洋·鸳鸯溪因台风多次闭园（7/9、8/8、8/23、9/1 四起公告），10 月初仍是台风季尾端，<b>出发前三天开始盯景区公告</b>。<br>
+      ④ <b>天亮/日落</b>：霞浦 10/1 日出 05:52、日落 17:46、天黑 18:10（第三方工具站口径，建议 App 复核）。<br>
+      ⑤ <b>人多价高</b>：2025 年国庆 8 天霞浦接待 98.6 万人次、宁德民宿平均入住率 90.55%；霞浦官方对房价有指导价（酒店 ≤ 上年均价 +100%、民宿 ≤ +50%），超了可以投诉（见避坑清单）。</p>
+    </div>
+  </section>
+
+  <!-- ===== 2. 住宿与周边 ===== -->
+  <section id="hotel">
+    <h2>住宿与周边 <span class="tag">两晚两个落脚点</span></h2>
+    <div class="spot" data-modal="hotel-d1" data-tone="d1">
+      <div class="ph"><img src="images/xiapu-sunset.jpg" alt="霞浦东壁日落" loading="lazy"></div>
+      <div class="body"><div class="t">D1 晚：三沙/东壁海景民宿 <span class="badge g">为日出而住</span><span class="badge o">国庆最抢手</span></div><div class="s">东壁日落步行圈 · 花竹日出开车约 15 分 · 携程 4.8–4.9 分集群</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="spot" data-modal="hotel-d2" data-tone="d3">
+      <div class="ph"><img src="images/taimushan-town.jpg" alt="太姥山镇街景" loading="lazy"></div>
+      <div class="body"><div class="t">D2 晚：太姥山镇（秦屿） <span class="badge g">为早进园而住</span></div><div class="s">全季/途客/太姥大酒店 · 为 Day 3 赶 07:00 第一波进园</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="spot" data-modal="hotel-backup" data-tone="d2">
+      <div class="ph"><img src="images/xiapu-county.jpg" alt="霞浦县城" loading="lazy"></div>
+      <div class="body"><div class="t">备选：霞浦县城酒店 <span class="badge b">省钱省心</span></div><div class="s">亚朵/白玉兰等连锁 · 吃饭方便 · 代价是日出要 04:30 起床</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="card">
+      <p><b>住村里还是住县城，是这趟最重要的住宿决策</b>：住东壁/三沙，花竹日出只需开车约 15 分钟（可 04:40 起）；住霞浦县城，拍北岐日出也得 04:30 前出发，拍花竹要再早 40 分钟。民宿早餐普遍 07:00 才开始，<b>赶不上日出</b>（解决法见 Day 2 早饭）。</p>
+      <p class="muted" style="margin-top:8px">🚇 <b>到了之后怎么走</b><br>
+      · <b>霞浦站</b>：在赤岸村、距县城约 4 公里；公交 7/8 路 1–2 元进城；<b>光影 1 号专线</b>（站前，8:00–18:30）直达小皓/光影栈道/东壁/三沙古镇码头，19 座 15 元、7 座 18 元；站前另有深粉色「三沙火车站快线」15 元/人。打车到东壁约 80 元、拼车 4 人约 20 元/人（UGC 口径）。<br>
+      · <b>太姥山站</b>：出站巴士到景区集散中心约 6 元/20 分（2024 口径），人多直接打车约 30 元/10 来分钟（UGC）。<br>
+      · <b>宁德站</b>：本行程只在你想去屏南白水洋/周宁鲤鱼溪/霍童时才用得上——那是衢宁铁路的起点（见「多一天」）。</p>
+    </div>
+  </section>
+
+  <!-- ===== Day 1 ===== -->
+  <section id="d1">
+    <div class="day">
+      <div class="day-head d1">
+        <div class="num">DAY 1</div>
+        <div class="t">抵达霞浦 · 小皓 + 东壁日落</div>
+        <div class="route">杭州东 → 霞浦站 → 太康路 → 小皓 → 东壁 → 三沙</div>
+      </div>
+      <div class="day-body">
+        <div class="geo">🧭 <b>为何这样走：</b>杭州到霞浦上午只有 <b>D3123（07:20→11:21）</b>一趟时间合适，所以它最紧张、9/17 开售当天先抢它。11:21 到站正好错开太康路 07:30–09:30 的早高峰、又赶在 17:30–20:30 晚高峰前吃完午饭。下午顺着海岸线由近及远：小皓 → 光影栈道 → 东壁日落，晚上住下不走回头路。<span class="lab" data-modal="pit-station">为什么不是「宁德站」？点开</span></div>
+
+        <div class="timeblock"><div class="slot">07:20<small>4h01</small></div><div><div class="what"><b>杭州东 → 霞浦 · D3123</b>（二等 ¥230 / 一等 ¥369）</div><div class="why">上午唯一一班时间合适的直达车，国庆最抢手。<b>9 月 17 日 10:45 开售</b>（杭州各站起售时刻），没抢到立刻挂候补并拉满 60 个「日期+车次」组合。<span class="muted">备选：D377 杭州西 09:40→13:16（¥208）、G1659 杭州西 16:36→19:18（¥231，最快 2h42 但太晚）。买票时核对经停站——走金温线的车（如 D3211）会跳过霞浦。</span></div></div></div>
+        <div class="timeblock"><div class="slot">11:21<small>约 30 分</small></div><div><div class="what"><b>到霞浦站，进县城</b></div><div class="why">车站在赤岸村，距县城约 4 公里：公交 7 路/8 路 1–2 元（8 路末班 21:50），或打车。行李多的话先寄到今晚民宿（让老板来接或放前台），别拖着箱子逛滩涂。</div></div></div>
+        <div class="timeblock"><div class="slot">11:45<small>约 1h15m</small></div><div><div class="what"><b>午饭：太康路「海鲜排档一条街」</b></div><div class="why">三十余家排档扎堆，官方认证的热门美食街区；<b>午市 11:00–13:30 不在交警拥堵时段内</b>，晚上 17:30–20:30 才是最堵+全线禁停。点单口诀：椒盐皮皮虾、梭子蟹、清煮花螺等<b>先问价</b>；剑蛏 130–150 元/斤，点之前确认。<span class="lab" data-modal="food-askprice">问价清单</span></div></div></div>
+        <div class="timeblock"><div class="slot">13:30<small>约 1h</small></div><div><div class="what"><b>县城 → 东壁/三沙：两条走法</b></div><div class="why">① 回霞浦站坐<b>光影 1 号专线</b>（8:00–18:30，30–60 分/班，19 座 15 元/7 座 18 元），约 40 分钟到东壁；② 县城汽车站坐<b>三沙班车</b>（6:30–17:30 约 20 分/班，15 元），小皓/东壁路口下车。4 人同行打车/拼车更划算。</div></div></div>
+        <div class="timeblock"><div class="slot">15:00<small>约 1.5h</small></div><div><div class="what"><b>小皓滩涂</b>（免费，全天开放）</div><div class="why">看潮汐沟与滩涂肌理，退潮至七分左右最好看；从光影 1 号「小皓路口」下车走过去。穿不怕脏的鞋，别踩进养殖区。</div></div></div>
+        <div class="timeblock"><div class="slot">16:45<small>约 1.5h</small></div><div><div class="what"><b>光影栈道 → 东壁村等日落（17:46）</b></div><div class="why">东壁是霞浦日落头牌机位，涨潮时海面反光最好；提前 40 分钟占位置。⚠️ 2025 年国庆口径：<b>10/2–10/7 每天 19:00–21:00 东壁村禁止机动车进入</b>（10/1 不在该时段内，但拍完也建议尽快出村回三沙吃饭）。</div></div></div>
+        <div class="timeblock"><div class="slot">18:45<small>约 1h</small></div><div><div class="what"><b>晚饭：三沙镇</b></div><div class="why">渔港镇排档比东壁村便宜一截（镇区人均约 ¥70 vs 东壁 ¥94–130）。吃完回民宿，<b>跟老板敲定明早花竹日出的车</b>（民宿一般能帮你约拼车/师傅）。</div></div></div>
+
+        <div class="sched-title">📍 Day 1 点这些卡片</div>
+        <div class="spot" data-modal="spot-taikanglu" data-tone="d1">
+          <div class="ph"><img src="images/xiapu-county.jpg" alt="霞浦县城" loading="lazy"></div>
+          <div class="body"><div class="t">太康路美食一条街 <span class="badge g">主打</span><span class="badge r">晚高峰禁停</span></div><div class="s">三十余家海鲜排档 · 午市最不堵 · 全线禁停</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-xiaohao" data-tone="d1">
+          <div class="ph"><img src="images/xiapu-xiaohao.jpg" alt="小皓滩涂" loading="lazy"></div>
+          <div class="body"><div class="t">小皓滩涂 <span class="badge b">免费</span><span class="badge b">滩涂</span></div><div class="s">潮汐沟肌理 · 退潮七分最佳 · 光影 1 号小皓路口下</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-dongbi" data-tone="d1">
+          <div class="ph"><img src="images/xiapu-sunset.jpg" alt="东壁日落" loading="lazy"></div>
+          <div class="body"><div class="t">东壁村 · 日落 <span class="badge g">必去</span><span class="badge r">19 点后禁车</span></div><div class="s">霞浦日落头牌 · 涨潮反光 · 光影栈道在旁边</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-sansha" data-tone="d1">
+          <div class="body"><div class="t">三沙镇（渔港） <span class="badge b">本地</span></div><div class="s">晚饭比东壁便宜 · 金沙街早饭 · 民宿集群</div></div>
+          <div class="arrow">›</div>
+        </div>
+
+        <div class="rest">
+          <h4>🍽️ Day 1 吃什么 · 按餐次排 <span class="rname">（抵达日 · 县城 + 三沙）</span> <span class="muted" style="font-size:12px">点任意一家店 → 好评 / 差评 + 招牌 + 人均</span></h4>
+          <p class="restnote">🧭 <b>今天的节奏：车上早饭 → 太康路午饭（11:45 错峰）→ 三沙晚饭。</b>⚠️ 太康路 17:30–20:30 最堵且全线禁停，所以海鲜大餐放中午；晚上人在东壁拍日落，拍完就近在三沙吃，不回县城。</p>
+          <div class="meals">
+            <div class="meal">
+              <div class="mhead"><span class="mtime">06:30</span><span class="mname">🥪 早饭</span><span class="mwhere">杭州东站/车上</span></div>
+              <p class="mnote">07:20 发车前在杭州东站解决，或自带。车上 4 小时，备点水和零食——正餐留到霞浦。</p>
+            </div>
+            <div class="meal">
+              <div class="mhead"><span class="mtime">11:45</span><span class="mname">🦀 午饭</span><span class="mwhere">太康路（霞浦县城）</span></div>
+              <p class="mnote">这时候你刚下火车、人在县城。<b>午市 10:00–11:00 开档即去最不挤</b>；这条街官方做过电子秤专项检查，仍建议当面看秤、先问价。</p>
+              <div class="mcats">
+                <div class="mcat-row">
+                  <div class="mcat"><span class="cn">海鲜排档（太康路）</span><span class="ch">清蒸/白灼/煲汤为主</span><span class="cnt">3 家</span></div>
+                  <div class="sgrid">
+                    <div class="scard" data-modal="f-xinjincheng">
+                      <div class="cover"><img src="images/food/f-haixian-platter.jpg" alt="海鲜拼盘 参考图" loading="lazy"><span class="lv">★★★★★</span><span class="rt">携程 5.0 · 23 条</span><span class="tier">本地人吃</span><span class="cr">© N509FZ · CC BY-SA 4.0</span></div>
+                      <div class="cb"><div class="cname">新金城·平价海鲜大牌档</div><div class="cmeta"><span class="sc">携程 5.0</span><span>·</span><span>太康路 610 号好旺佳 A 幢</span></div><div class="cline"><span class="k">人均</span> ¥121（携程用户反馈）</div><div class="cline"><span class="k">招牌</span> 广蒸青斑鱼、太平燕鱼面、锅贝炖蛋</div><div class="cline"><span class="k">营业</span> 10:00–次日 03:00（POI 口径）</div><div class="cline warn"><span class="k">注意</span> 节假日排队；先问时价</div><div class="cmore"><span class="cta">点开看好评 / 差评 →</span><span>Day 1 中午</span></div></div>
+                    </div>
+                    <div class="scard" data-modal="f-shejianshang">
+                      <div class="cover"><img src="images/food/f-haixian.jpg" alt="海鲜 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt mid">携程 4.0 · 39 条</span><span class="tier">网红店</span><span class="cr">© YEUalichangpsia · CC BY-SA 4.0</span></div>
+                      <div class="cb"><div class="cname">舌尖上 de 海鲜馆（总店）</div><div class="cmeta"><span class="sc">携程 4.0</span><span>·</span><span>太康路 610 号好万佳 A 号楼 113</span></div><div class="cline"><span class="k">人均</span> ¥136（携程用户反馈）</div><div class="cline"><span class="k">招牌</span> 清蒸本地大黄鱼、皮皮虾、鱼丸汤</div><div class="cline"><span class="k">营业</span> 10:00–23:30（POI 口径）</div><div class="cline warn"><span class="k">注意</span> 节假日排队久；有「最近偏咸」反馈</div><div class="cmore"><span class="cta">点开看好评 / 差评 →</span><span>Day 1 中午</span></div></div>
+                    </div>
+                    <div class="scard" data-modal="f-xinmeiweiyuan">
+                      <div class="cover"><img src="images/food/f-crab.jpg" alt="蟹 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt mid">携程 4.5</span><span class="tier c">夜宵也开</span><span class="cr">© YEUalichangpsia · CC BY-SA 4.0</span></div>
+                      <div class="cb"><div class="cname">新美味园·海鲜夜档（总店）</div><div class="cmeta"><span class="sc">携程 4.5</span><span>·</span><span>太康路 610 号一带</span></div><div class="cline"><span class="k">人均</span> ¥95（携程用户反馈）</div><div class="cline"><span class="k">招牌</span> 剑蛏、红膏蟹、海鲜夜档</div><div class="cline"><span class="k">营业</span> 夜档为主（POI 口径）</div><div class="cline warn"><span class="k">注意</span> 口味偏甜（江浙沪友好）；装潢一般所以便宜</div><div class="cmore"><span class="cta">点开看好评 / 差评 →</span><span>Day 1 中午 / 夜宵</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="meal">
+              <div class="mhead"><span class="mtime">15:30</span><span class="mname">🧋 下午</span><span class="mwhere">小皓/东壁</span></div>
+              <p class="mnote">滩涂边没有正经餐饮店，水和小零食在县城买好带上。东壁村有民宿咖啡厅（如悦萃咖啡，携程 4.3 · 6 条 · ¥47），等日落时可以坐。</p>
+            </div>
+            <div class="meal">
+              <div class="mhead"><span class="mtime">18:45</span><span class="mname">🐟 晚饭</span><span class="mwhere">三沙镇</span></div>
+              <p class="mnote">拍完日落（天黑 18:10）走/坐车回三沙镇区。镇区排档比东壁村便宜一截；想吃活的先问价再下单。</p>
+              <div class="mcats">
+                <div class="mcat-row">
+                  <div class="mcat"><span class="cn">三沙排档</span><span class="ch">渔港镇家常价</span><span class="cnt">1 家</span></div>
+                  <div class="sgrid">
+                    <div class="scard" data-modal="f-sansha-shejianshang">
+                      <div class="cover"><img src="images/food/f-yu.jpg" alt="清蒸鱼 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt mid">携程 4.5 · 5 条</span><span class="tier">明码标价</span><span class="cr">© Apeach316 · CC BY-SA 2.0</span></div>
+                      <div class="cb"><div class="cname">舌尖上三沙平价海鲜排档</div><div class="cmeta"><span class="sc">携程 4.5</span><span>·</span><span>三沙镇金沙街 48 号</span></div><div class="cline"><span class="k">人均</span> ¥70（携程；去哪儿旧口径 ¥112 需注意）</div><div class="cline"><span class="k">招牌</span> 手工目鱼饼、葱油剑蛏、清蒸大黄鱼、海鲜鱼面</div><div class="cline"><span class="k">营业</span> 09:30–13:30 / 16:30–22:00（POI 口径）</div><div class="cline warn"><span class="k">注意</span> 样本少（5 条点评）；巷子深、装修旧</div><div class="cmore"><span class="cta">点开看好评 / 差评 →</span><span>Day 1 晚饭</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="meal">
+              <div class="mhead"><span class="mtime">21:00</span><span class="mname">🌙 夜宵</span><span class="mwhere">三沙镇菜市场旁</span></div>
+              <p class="mnote">三沙海蛎煎（UGC：菜市场旁路边摊，约 18:00–次日 02:00，单源未核实）。猪油煎海蛎+鸡蛋面糊，配一碗闽南糊就是三沙的夜晚。早睡，明天 04:40 出发。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Day 2 ===== -->
+  <section id="d2">
+    <div class="day">
+      <div class="day-head d2">
+        <div class="num">DAY 2</div>
+        <div class="t">花竹日出 · 杨家溪 · 傍晚搬到太姥山</div>
+        <div class="route">花竹 → 三沙 → 杨家溪 → 霞浦县城 → 太姥山镇</div>
+      </div>
+      <div class="day-body">
+        <div class="geo">🧭 <b>为何这样走：</b>今天是体力最重的一天：日出 05:52，为了抢机位 04:40 从三沙出发（住县城则要再早 40 分钟）。杨家溪在牙城镇，正好在三沙回县城的方向上，顺路不绕。傍晚动车 14 分钟把住宿点搬到太姥山镇——这是 Day 3 能 07:00 进园、避开 10 点后排队人潮的关键。<span class="lab" data-modal="pit-sunrise-logistics">日出后勤全细节</span></div>
+
+        <div class="timeblock"><div class="slot">04:40<small>车程 15 分</small></div><div><div class="what"><b>出发去花竹村</b>（提前一晚约好的拼车/包车）</div><div class="why">花竹观景台要爬一段山路、山上风大，多带一件外套。旺季凌晨 4 点多机位区已有人，<b>05:10 前到观景台</b>比较稳（10 月日出比 8 月晚约 40 分钟，别照抄夏季攻略的 04:10）。</div></div></div>
+        <div class="timeblock"><div class="slot">05:20<small>约 1h10m</small></div><div><div class="what"><b>花竹日出（05:52）</b></div><div class="why">居高临下俯瞰福瑶列岛与紫菜架海域。火烧云黄金窗口是日出前 40 分～日出后 20 分；别等太阳跳出来才开机。</div></div></div>
+        <div class="timeblock"><div class="slot">07:00<small>约 1h</small></div><div><div class="what"><b>早饭：三沙金沙街</b></div><div class="why">锅边、豹纹肉粽、海蛎油饼，便宜本地（UGC 口径）。或回民宿吃——但民宿早餐 07:00 才开餐，拍完回来正好赶上。⚠️ 07:30 后是霞浦县城早高峰，回城吃饭会堵车。</div></div></div>
+        <div class="timeblock"><div class="slot">08:30<small>约 2h</small></div><div><div class="what"><b>杨家溪（榕枫公园）</b>：门票 50 元</div><div class="why">千年古榕群 + 枫香林（红叶 12 月才有）；「老农牵牛过榕林」是付费摆拍场景，摆拍人还可能休息——当顺路景点看古榕就好。三沙→杨家溪无直达公交，打车/包车最实际（这也是今天建议半天包车的原因）。</div></div></div>
+        <div class="timeblock"><div class="slot">11:30<small>约 1h15m</small></div><div><div class="what"><b>回县城午饭</b></div><div class="why">连着吃海鲜会腻，中午换闽菜家常或肉片；想吃排档的话午市仍是全天最不挤的时段。吃完去酒店/民宿拿寄存行李。</div></div></div>
+        <div class="timeblock"><div class="slot">14:00<small>约 2.5h</small></div><div><div class="what"><b>下午二选一：东海 1 号线（主推）／北岐（轻松）</b></div><div class="why"><b>A · 东海 1 号专线</b>（霞浦站 8:00–17:30，约 20 分/班，19 座 15 元/7 座 20 元）：高罗沙滩 → 大京沙滩 → 下尾岛，单程 60–70 分；<b>下尾岛只在退潮前后约 2 小时值得上</b>，中午先查潮汐表再决定去不去。⚠️ 2025 国庆口径：东海 1 号蜘蛛网大桥段 09:00–18:00 单行管制，返程车从大京/吕峡绕 987 县道回城，多留 20 分钟。<b>B · 北岐滩涂</b>（免费全天，松山专线 2 元/打车约 15 元）：县城边最省力的点，为明后年再来拍日出踩个点。</div></div></div>
+        <div class="timeblock"><div class="slot">17:00<small>约 1.5h</small></div><div><div class="what"><b>回县城拿行李 → 霞浦站</b></div><div class="why">县城 17:30–20:00 是晚高峰，留足余量。晚饭两条路：① 车站前简餐/打包，坐 <b>D3124 霞浦 18:37 → 太姥山 18:51（¥14，14 分钟）</b>，到太姥山镇再吃；② 县城吃完坐 <b>D6330 20:08 → 太姥山 20:22（¥15）</b>兜底。</div></div></div>
+        <div class="timeblock"><div class="slot">19:00<small>约 1h</small></div><div><div class="what"><b>晚饭：太姥山镇（秦屿）</b></div><div class="why">福鼎肉片的发源地就在这一带，镇上小馆十几块一碗；太姥山步行街、玉湖大道沿线选择多。⚠️ 玉池路白天 8:00–20:00 易堵（2024 国庆交警口径），晚上到正好错峰。早点睡，明天 06:30 起。</div></div></div>
+
+        <div class="sched-title">📍 Day 2 点这些卡片</div>
+        <div class="spot" data-modal="spot-huazhu" data-tone="d2">
+          <div class="body"><div class="t">花竹村 · 日出 <span class="badge g">必去</span><span class="badge b">日出</span></div><div class="s">俯瞰福瑶列岛 · 05:52 日出 · 山上风大带外套</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-yangjiaxi" data-tone="d2">
+          <div class="body"><div class="t">杨家溪（榕枫公园） <span class="badge b">顺路</span><span class="badge o">季节性</span></div><div class="s">千年古榕群 · 红叶要 12 月 · 摆拍可能扑空</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-donghai1" data-tone="d2">
+          <div class="ph"><img src="images/xiapu-gaoluo.jpg" alt="高罗沙滩" loading="lazy"></div>
+          <div class="body"><div class="t">东海 1 号风景道 <span class="badge g">推荐</span><span class="badge b">滩涂</span></div><div class="s">高罗/大京沙滩 · 下尾岛看潮汐 · 专线 15–20 元</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-beiqi" data-tone="d2">
+          <div class="body"><div class="t">北岐滩涂 <span class="badge b">免费</span><span class="badge b">日出机位</span></div><div class="s">离县城最近的名机位 · 虎皮纹紫菜架 · 今天先踩点</div></div>
+          <div class="arrow">›</div>
+        </div>
+
+        <div class="rest">
+          <h4>🍽️ Day 2 吃什么 · 按餐次排 <span class="rname">（日出日 · 三沙 + 县城 + 太姥山镇）</span></h4>
+          <p class="restnote">🧭 <b>今天的关键词是「赶日出怎么吃」</b>：民宿早餐 07:00 才开餐，拍完日出回来正好；要更早吃，只有凌晨开工的糊汤包店。⚠️ 县城 07:30–09:30 是早高峰（太康路/府前路/六一七路全堵），早饭别安排在这个窗口进县城。</p>
+          <div class="meals">
+            <div class="meal">
+              <div class="mhead"><span class="mtime">07:00</span><span class="mname">🥣 早饭</span><span class="mwhere">三沙镇（拍完日出回来）</span></div>
+              <p class="mnote">三沙是闽南糊的家乡（《早餐中国》拍过）：地瓜粉勾芡的浓汤+虾仁海蛎鱿鱼。金沙街是镇上的早餐街（UGC）。民宿早餐 07:00 才开餐，拍完日出回来正好赶上；想在县城吃凌晨就开的店，看 <span class="lab" data-modal="f-linmingfa">林明发糊汤包店</span>。⚠️ 07:30 后是县城早高峰。</p>
+              <div class="mcats">
+                <div class="mcat-row">
+                  <div class="mcat"><span class="cn">三沙早餐</span><span class="ch">闽南糊 · 锅边 · 肉粽</span><span class="cnt">2 家</span></div>
+                  <div class="sgrid">
+                    <div class="scard" data-modal="f-sansha-zaocan">
+                      <div class="cover"><img src="images/food/f-yutangmian.jpg" alt="汤粉 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt mid">UGC 口径</span><span class="tier b">本地</span><span class="cr">© Peachyeung316 · CC BY-SA 4.0</span></div>
+                      <div class="cb"><div class="cname">三沙金沙街早餐摊</div><div class="cmeta"><span class="sc">UGC</span><span>·</span><span>三沙镇金沙街</span></div><div class="cline"><span class="k">人均</span> 约 ¥10–20（UGC 估计）</div><div class="cline"><span class="k">招牌</span> 锅边、豹纹肉粽、海蛎油饼</div><div class="cline"><span class="k">营业</span> 清晨起（具体未查到）</div><div class="cline warn"><span class="k">注意</span> 摊位无店名无门牌，跟着本地人排队</div><div class="cmore"><span class="cta">点开看细节 →</span><span>Day 2 早饭</span></div></div>
+                    </div>
+                    <div class="scard" data-modal="f-sansha-jingdian">
+                      <div class="cover"><img src="images/food/f-street-food.jpg" alt="小吃 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt mid">携程 4.2 · 19 条</span><span class="tier b">本地</span><span class="cr">© Balon Greyjoy · CC0</span></div>
+                      <div class="cb"><div class="cname">三沙经典小吃（太康店）</div><div class="cmeta"><span class="sc">携程 4.2</span><span>·</span><span>县城太康路×金山路（备选，中午吃）</span></div><div class="cline"><span class="k">人均</span> ¥30（携程用户反馈）</div><div class="cline"><span class="k">招牌</span> 煎闽南糊、海蛎煎、海鲜锅边、炒甜黄粿</div><div class="cline"><span class="k">营业</span> 08:30–次日 01:30（POI 口径）</div><div class="cline warn"><span class="k">注意</span> 旺季排队约半小时；海蛎煎偏油</div><div class="cmore"><span class="cta">点开看好评 / 差评 →</span><span>Day 2 中午备选</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="meal">
+              <div class="mhead"><span class="mtime">11:30</span><span class="mname">🍠 午饭</span><span class="mwhere">霞浦县城</span></div>
+              <p class="mnote">从杨家溪回县城正好饭点。想换口味吃芋头饭（福鼎槟榔芋是名产），想省钱吃肉片，想再吃海鲜去太康路（午市不堵）。</p>
+              <div class="mcats">
+                <div class="mcat-row">
+                  <div class="mcat"><span class="cn">闽菜家常</span><span class="ch">换换口味</span><span class="cnt">2 家</span></div>
+                  <div class="sgrid">
+                    <div class="scard" data-modal="f-yujia">
+                      <div class="cover"><img src="images/food/f-taro-cake.jpg" alt="芋头 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt mid">携程 4.1 · 7 条</span><span class="tier b">本地</span><span class="cr">© Dllu · CC BY-SA 4.0</span></div>
+                      <div class="cb"><div class="cname">芋家人芋头饭（百丽花园店）</div><div class="cmeta"><span class="sc">携程 4.1</span><span>·</span><span>霞浦县城</span></div><div class="cline"><span class="k">人均</span> ¥51（携程用户反馈）</div><div class="cline"><span class="k">招牌</span> 芋头饭（槟榔芋）</div><div class="cline"><span class="k">营业</span> 10:30–16:00 / 16:30–20:30（POI 口径）</div><div class="cline warn"><span class="k">注意</span> 两段制，14 点后午市将收</div><div class="cmore"><span class="cta">点开看细节 →</span><span>Day 2 中午</span></div></div>
+                    </div>
+                    <div class="scard" data-modal="f-roupian-xiapu">
+                      <div class="cover"><img src="images/food/f-wonton.jpg" alt="肉片汤 参考图" loading="lazy"><span class="lv">★★★☆☆</span><span class="rt mid">携程 4.2 · 6 条</span><span class="tier c">快</span><span class="cr">© Rocky Masum · CC BY-SA 4.0</span></div>
+                      <div class="cb"><div class="cname">福鼎正宗肉片（府前路店）</div><div class="cmeta"><span class="sc">携程 4.2</span><span>·</span><span>府前路 259 号（东门菜市场对面）</span></div><div class="cline"><span class="k">人均</span> ¥13（携程用户反馈）</div><div class="cline"><span class="k">招牌</span> 福鼎肉片（加黄椒醋）</div><div class="cline"><span class="k">营业</span> 08:00–23:00（POI 口径）</div><div class="cline warn"><span class="k">注意</span> 有 UGC 反馈「粉感偏重，不如福鼎本地」</div><div class="cmore"><span class="cta">点开看细节 →</span><span>Day 2 中午·快</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="meal">
+              <div class="mhead"><span class="mtime">15:00</span><span class="mname">🥤 下午</span><span class="mwhere">东海 1 号沿线</span></div>
+              <p class="mnote">高罗/大京沙滩边有民宿餐厅和烧烤摊，价格高于县城（东壁/高罗一带餐厅携程人均 ¥94–130）；建议县城买好水饮再上车。</p>
+            </div>
+            <div class="meal">
+              <div class="mhead"><span class="mtime">19:00</span><span class="mname">🍜 晚饭</span><span class="mwhere">太姥山镇</span></div>
+              <p class="mnote">18:51 到太姥山站，打车/班车进镇。福鼎肉片在本地吃和霞浦分店吃是两种体验，镇上一碗约 15 元（UGC）；想吃扎实的就去「阿耐」吃酸辣口卤猪头肉。吃完顺路买明天上山的水——山上 10 元/瓶。</p>
+              <div class="mcats">
+                <div class="mcat-row">
+                  <div class="mcat"><span class="cn">太姥山镇晚饭</span><span class="ch">肉片 · 卤味</span><span class="cnt">2 家</span></div>
+                  <div class="sgrid">
+                    <div class="scard" data-modal="f-roupian-fuding">
+                      <div class="cover"><img src="images/food/f-hundun.jpg" alt="福鼎肉片 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt">官方名小吃</span><span class="tier">必吃</span><span class="cr">© Grueslayer · CC BY-SA 4.0</span></div>
+                      <div class="cb"><div class="cname">福鼎肉片（太姥山镇/福鼎市区）</div><div class="cmeta"><span class="sc">品类卡</span><span>·</span><span>「中国十大特色地域小吃」</span></div><div class="cline"><span class="k">人均</span> 约 ¥15/碗（UGC）</div><div class="cline"><span class="k">招牌</span> 肉片 + 黄椒 + 本地醋</div><div class="cline"><span class="k">营业</span> 各家不同，早到晚都有</div><div class="cline warn"><span class="k">注意</span> 无单一指定店：认排队多的本地店</div><div class="cmore"><span class="cta">点开看细节 →</span><span>Day 2 晚 / Day 3 午</span></div></div>
+                    </div>
+                    <div class="scard" data-modal="f-anai">
+                      <div class="cover"><img src="images/food/f-luwei.jpg" alt="卤味 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt mid">UGC 强推</span><span class="tier b">非遗</span><span class="cr">© Yun Huang Yong · CC BY 2.0</span></div>
+                      <div class="cb"><div class="cname">阿耐·福鼎非遗猪头肉（太姥山店）</div><div class="cmeta"><span class="sc">UGC</span><span>·</span><span>太姥山镇，玉池南路一带</span></div><div class="cline"><span class="k">人均</span> 未查到（卤味按盘计）</div><div class="cline"><span class="k">招牌</span> 卤猪头肉、卤鸡骨架（酸辣口）、炸牡蛎、煎芋头饼、拌面</div><div class="cline"><span class="k">营业</span> 未查到，建议 20:00 前去</div><div class="cline warn"><span class="k">注意</span> 无平台评分；UGC 单源但评价很具体</div><div class="cmore"><span class="cta">点开看好评 / 差评 →</span><span>Day 2 晚</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Day 3 ===== -->
+  <section id="d3">
+    <div class="day">
+      <div class="day-head d3">
+        <div class="num">DAY 3</div>
+        <div class="t">太姥山赶早 · 福鼎小吃收尾 · 回杭州</div>
+        <div class="route">太姥山镇 → 太姥山 → 福鼎市区 → 福鼎站 → 杭州</div>
+      </div>
+      <div class="day-body">
+        <div class="geo">🧭 <b>为何这样走：</b>太姥山的体验分水岭在进园时间——节假日 7 点前进园几乎不排队，10 点后一线天要排长队（UGC），所以昨晚才专程搬到镇里住。下山后为什么不坐动车去福鼎？<b>太姥山→福鼎的直达动车白天只有 D3166（11:32，太早），下一档要 18:43 以后（太晚）</b>，两地公路约 20 多公里、半小时车程，走公路最顺（班车/打车，票价未核实）。福鼎站 17:34/17:45 两班回杭正好卡在晚饭前。</div>
+
+        <div class="timeblock"><div class="slot">06:30<small>约 30 分</small></div><div><div class="what"><b>镇上早饭</b></div><div class="why">玉池南路一带小吃店密集：太姥邱记（官方「十大名小吃」小笼包代表企业）、老福鼎祖传肉片、李记扁食都在百米内。07:00 前吃完去景区。</div></div></div>
+        <div class="timeblock"><div class="slot">07:00<small>约 5h</small></div><div><div class="what"><b>太姥山（门票 115 + 景交 40；线上套票 ¥138 含观光车）</b></div><div class="why">行李寄存游客集散中心（有大小寄存柜，福建日报 2024 口径）。走官方「轻松休闲线」约 3 小时覆盖核心（迎仙台、一线天、一片瓦），体力好加九鲤湖、白云寺走「秘境寻幽线」4–5 小时覆盖约 80% 精华。<b>一线天最窄处 UGC 称只有 20–30cm</b>，要侧身收腹，胖友和背大包量力而行；山上水 10 元/瓶，山下买好。</div></div></div>
+        <div class="timeblock"><div class="slot">12:30<small>约 40 分</small></div><div><div class="what"><b>下山 → 太姥山镇 → 福鼎市区</b></div><div class="why">集散中心取行李，班车/打车去福鼎市区（约半小时，票价未核实；打车贵些但国庆更稳）。⚠️ 玉池路 8:00–20:00 易堵（2024 国庆交警口径），留余量。</div></div></div>
+        <div class="timeblock"><div class="slot">13:30<small>约 1h</small></div><div><div class="what"><b>午饭：福鼎市区</b></div><div class="why">正餐吃<b>阿古牛肉丸</b>（官方「十大名小吃」牛肉丸代表企业，¥53）：牛肉丸 + 牛肉水粉 + 挂霜芋；或路边一碗福鼎肉片 ¥16 快速解决，把胃留给下午的小吃街。</div></div></div>
+        <div class="timeblock"><div class="slot">14:30<small>约 2h</small></div><div><div class="what"><b>桐山溪西小吃美食街 + 买白茶</b></div><div class="why">省级特色步行街（福建省政府 2023 年第二批名单），蜜汁鸡翅、点头米粉汤、畲家乌米饭都在这一带。白茶在市区品牌店买（品品香/绿雪芽/六妙等），<b>别在景区买「老白茶」</b>——做旧虚标是重灾区。⚠️ 桐山大桥西侧口 10:00–21:00 易堵，步行进出最省心。</div></div></div>
+        <div class="timeblock"><div class="slot">16:30<small>留余量</small></div><div><div class="what"><b>去福鼎站，回杭</b></div><div class="why">市区到福鼎站的距离/车费未查到可靠口径，按「打车 + 留 40 分钟」执行。<b>首选 G3022 福鼎 17:45 → 杭州西 20:48（¥212）或 D2424 福鼎 17:34 → 杭州东 21:19（¥210）</b>；兜底 D3124 福鼎 19:04 → 杭州东 22:40（¥210）。若下午想直接躺平，也可从太姥山站走：D3308 18:05→21:56（¥241）/ G1622 19:12→22:25（¥213，太姥山站末班）。<span class="lab" data-modal="pit-ticket-timing">回程票 9/19 开售</span></div></div></div>
+
+        <div class="sched-title">📍 Day 3 点这些卡片</div>
+        <div class="spot" data-modal="spot-taimushan" data-tone="d3">
+          <div class="ph"><img src="images/taimushan.jpg" alt="太姥山" loading="lazy"></div>
+          <div class="body"><div class="t">太姥山 <span class="badge g">必去</span><span class="badge r">要赶早</span></div><div class="s">世界地质公园 · 海上仙都 · 一线天 20–30cm · 07:00 进园</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-tongshanxi" data-tone="d3">
+          <div class="body"><div class="t">桐山溪西小吃美食街 <span class="badge g">主打</span><span class="badge b">本地</span></div><div class="s">省级特色步行街 · 蜜汁鸡翅/米粉汤/乌米饭 · 步行进出</div></div>
+          <div class="arrow">›</div>
+        </div>
+        <div class="spot" data-modal="spot-whitetea" data-tone="d3">
+          <div class="body"><div class="t">买福鼎白茶 <span class="badge b">手信</span><span class="badge r">别买老白茶</span></div><div class="s">市区品牌店买 · 「中国白茶城」其实在政和 · 做旧是重灾区</div></div>
+          <div class="arrow">›</div>
+        </div>
+
+        <div class="rest">
+          <h4>🍽️ Day 3 吃什么 · 按餐次排 <span class="rname">（太姥山镇 + 福鼎市区）</span></h4>
+          <p class="restnote">🧭 <b>今天是「福鼎小吃日」</b>：福鼎肉片、小笼包、蜜汁鸡翅、牛肉丸、挂霜芋——全是小份小吃，适合一路走一路吃。福鼎三条官方美食街里，桐山溪西最适合下午逛；石湖海鲜一条街国庆 16:00–19:00 会堵（交警口径），想吃海鲜晚饭又要赶 17:34 的车，时间冲突，这趟放弃。</p>
+          <div class="meals">
+            <div class="meal">
+              <div class="mhead"><span class="mtime">06:30</span><span class="mname">🥟 早饭</span><span class="mwhere">太姥山镇（玉池南路一带）</span></div>
+              <p class="mnote">上山前吃饱。邱记的小笼珍珠包、百年肉燕是官方盖章的「十大名小吃」代表；隔壁 122m 的李记扁食 UGC 称「皮非常薄」。</p>
+              <div class="mcats">
+                <div class="mcat-row">
+                  <div class="mcat"><span class="cn">福鼎小吃</span><span class="ch">小笼包 · 肉燕</span><span class="cnt">1 家</span></div>
+                  <div class="sgrid">
+                    <div class="scard" data-modal="f-qiuji">
+                      <div class="cover"><img src="images/food/f-xiaolongbao.jpg" alt="小笼包 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt mid">携程 5 条 · ¥27</span><span class="tier g">官方名小吃</span><span class="cr">© Darrylsnow · CC BY-SA 4.0</span></div>
+                      <div class="cb"><div class="cname">太姥邱记小吃（太姥山店）</div><div class="cmeta"><span class="sc">携程 5 条</span><span>·</span><span>玉池南路 193 号</span></div><div class="cline"><span class="k">人均</span> ¥27（携程用户反馈）</div><div class="cline"><span class="k">招牌</span> 小笼珍珠包、太姥百年肉燕、福鼎肉片、蜜汁鸡翅</div><div class="cline"><span class="k">营业</span> 未查到（建议电话确认：0593-7267888）</div><div class="cline warn"><span class="k">注意</span> 样本极小；若没开门就吃隔壁老福鼎祖传肉片</div><div class="cmore"><span class="cta">点开看细节 →</span><span>Day 3 早饭</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="meal">
+              <div class="mhead"><span class="mtime">13:30</span><span class="mname">🍡 午饭</span><span class="mwhere">福鼎市区</span></div>
+              <p class="mnote">阿古牛肉丸是官方「十大名小吃」牛肉丸代表企业之一（彭记阿古），挂霜芋是槟榔芋做的甜品。想快就吃鼎培/阿山肉片（¥16 一碗）。</p>
+              <div class="mcats">
+                <div class="mcat-row">
+                  <div class="mcat"><span class="cn">牛肉丸 · 肉片</span><span class="ch">本地家常</span><span class="cnt">2 家</span></div>
+                  <div class="sgrid">
+                    <div class="scard" data-modal="f-agu">
+                      <div class="cover"><img src="images/food/f-beef-ball.jpg" alt="牛肉丸 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt mid">携程 14 条 · ¥53</span><span class="tier g">官方名小吃</span><span class="cr">© DragonSamYU · CC BY-SA 4.0</span></div>
+                      <div class="cb"><div class="cname">阿古牛肉丸（一建店）</div><div class="cmeta"><span class="sc">携程 14 条</span><span>·</span><span>南大路桐山建工商住楼 A 幢 108 号</span></div><div class="cline"><span class="k">人均</span> ¥53（携程用户反馈）</div><div class="cline"><span class="k">招牌</span> 牛肉丸、牛肉水粉、挂霜芋、鸡翅膀、拌牛杂</div><div class="cline"><span class="k">营业</span> 未查到（POI 未标注）</div><div class="cline warn"><span class="k">注意</span> 携程 14 条未显示总分；桐山大桥西侧口白天易堵</div><div class="cmore"><span class="cta">点开看细节 →</span><span>Day 3 午饭</span></div></div>
+                    </div>
+                    <div class="scard" data-modal="f-dingpei">
+                      <div class="cover"><img src="images/food/f-wonton.jpg" alt="肉片汤 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt mid">携程 4.0 · 4 条</span><span class="tier c">快</span><span class="cr">© Rocky Masum · CC BY-SA 4.0</span></div>
+                      <div class="cb"><div class="cname">鼎培肉片（人民剧场对面）</div><div class="cmeta"><span class="sc">携程 4.0</span><span>·</span><span>中山中路，市政府西北约 40m</span></div><div class="cline"><span class="k">人均</span> ¥16（携程用户反馈）</div><div class="cline"><span class="k">招牌</span> 拌肉片、肉片汤、肉片水粿、芋头条</div><div class="cline"><span class="k">营业</span> 未查到（POI 未标注）</div><div class="cline warn"><span class="k">注意</span> 4 条样本；阿山肉片（锦宁路 106 号）是同价位替代</div><div class="cmore"><span class="cta">点开看细节 →</span><span>Day 3 午饭·快</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="meal">
+              <div class="mhead"><span class="mtime">15:00</span><span class="mname">🍗 下午</span><span class="mwhere">桐山溪西小吃美食街</span></div>
+              <p class="mnote">蜜汁鸡翅是福鼎「十大名小吃」之一（官方代表企业：鼎韵食膳、鼎享翅），溪西街上边走边吃；配一碗点头米粉汤或畲家乌米饭。褚翅（¥47，携程 3.0·3 条）号称「人气老店」但评分垫底，别专程。</p>
+              <div class="mcats">
+                <div class="mcat-row">
+                  <div class="mcat"><span class="cn">小吃街</span><span class="ch">蜜汁鸡翅 · 米粉汤</span><span class="cnt">1 张街区卡</span></div>
+                  <div class="sgrid">
+                    <div class="scard" data-modal="f-tongshanxi">
+                      <div class="cover"><img src="images/food/f-luwei.jpg" alt="蜜汁鸡翅 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt">省级特色步行街</span><span class="tier b">本地</span><span class="cr">© Yun Huang Yong · CC BY 2.0</span></div>
+                      <div class="cb"><div class="cname">桐山溪西小吃美食街（街区卡）</div><div class="cmeta"><span class="sc">省政府 2023 名单</span><span>·</span><span>龙山溪水系 + 西园主街区</span></div><div class="cline"><span class="k">人均</span> 小吃每样约 ¥10–20（UGC 口径）</div><div class="cline"><span class="k">招牌</span> 蜜汁鸡翅、点头米粉汤、畲家乌米饭、福鼎肉片</div><div class="cline"><span class="k">营业</span> 街区全天，摊店各家不同</div><div class="cline warn"><span class="k">注意</span> 桐山大桥西侧口 10:00–21:00 易堵，步行进出</div><div class="cmore"><span class="cta">点开看细节 →</span><span>Day 3 下午</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="meal">
+              <div class="mhead"><span class="mtime">16:00</span><span class="mname">🍵 手信</span><span class="mwhere">福鼎市区茶店</span></div>
+              <p class="mnote">白茶四品类（白毫银针/白牡丹/贡眉/寿眉）是品类不是等级；口粮茶买当年新茶最稳，「十年陈老白茶」做旧重灾区，别在路边店赌。</p>
+              <div class="mcats">
+                <div class="mcat-row">
+                  <div class="mcat"><span class="cn">福鼎白茶</span><span class="ch">手信</span><span class="cnt">1 张指南卡</span></div>
+                  <div class="sgrid">
+                    <div class="scard" data-modal="f-white-tea">
+                      <div class="cover"><img src="images/food/f-white-tea.jpg" alt="白茶 参考图" loading="lazy"><span class="lv">★★★★☆</span><span class="rt">人类非遗技艺</span><span class="tier">手信</span><span class="cr">© soultea.de/André Helbig · CC BY-SA 3.0</span></div>
+                      <div class="cb"><div class="cname">福鼎白茶（购买指南卡）</div><div class="cmeta"><span class="sc">品类卡</span><span>·</span><span>市区品牌专卖店</span></div><div class="cline"><span class="k">人均</span> 口粮新茶几十–几百元/饼</div><div class="cline"><span class="k">招牌</span> 白毫银针、白牡丹、寿眉、贡眉</div><div class="cline"><span class="k">营业</span> 茶店一般 9:00–21:00（未核实）</div><div class="cline warn"><span class="k">注意</span> 「中国白茶城」在政和县不在福鼎；老白茶做旧多</div><div class="cmore"><span class="cta">点开看细节 →</span><span>Day 3 手信</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 多一天（备选扩展） ===== -->
+  <section id="extra">
+    <h2>如果多一天 <span class="tag">备选扩展 · 都不在 3 天主线里</span></h2>
+    <div class="card">
+      <p class="muted">主线 3 天只装得下「霞浦 + 太姥山」。下面这些点各有硬伤（国庆人多、季节不对、路程太绕），所以不进主线；多一天的话按此优先级挑。</p>
+    </div>
+    <div class="spot" data-modal="spot-yushan" data-tone="d1">
+      <div class="ph"><img src="images/yushan-island.jpg" alt="嵛山岛天湖" loading="lazy"></div>
+      <div class="body"><div class="t">＋嵛山岛（福鼎） <span class="badge g">最值得加</span><span class="badge r">国庆船票紧</span></div><div class="s">海上天湖 + 万亩草场 · 三沙/渔井码头上船 · 建议住岛一晚</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="spot" data-modal="spot-sanduao" data-tone="d2">
+      <div class="ph"><img src="images/sanduao-doumu.jpg" alt="三都澳斗姆岛" loading="lazy"></div>
+      <div class="body"><div class="t">＋三都澳（蕉城） <span class="badge b">渔排出片</span><span class="badge o">看时间</span></div><div class="s">斗姆岛门票 35 · 大黄鱼之乡 · 需宁德站中转</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="spot" data-modal="spot-huotong" data-tone="d2">
+      <div class="ph"><img src="images/huotong.jpg" alt="霍童古镇" loading="lazy"></div>
+      <div class="body"><div class="t">＋霍童古镇（蕉城） <span class="badge g">免费</span><span class="badge b">非遗</span></div><div class="s">千年古镇 · 霍童线狮 · 与三都澳同在蕉城可串一天</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="spot" data-modal="spot-zhouning" data-tone="d4">
+      <div class="ph"><img src="images/liyuxi.jpg" alt="周宁鲤鱼溪" loading="lazy"></div>
+      <div class="body"><div class="t">＋周宁鲤鱼溪 + 九龙漈 <span class="badge b">小众</span><span class="badge o">路程远</span></div><div class="s">人鱼同乐 800 年 · 华东第一瀑 · 衢宁铁路周宁站</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="spot" data-modal="spot-baishuiyang" data-tone="d4">
+      <div class="ph"><img src="images/baishuiyang.jpg" alt="白水洋" loading="lazy"></div>
+      <div class="body"><div class="t">＋白水洋·鸳鸯溪（屏南） <span class="badge r">季节性</span><span class="badge r">10月水冷</span></div><div class="s">浅水广场夏天才是本体 · 10/9 起冲浪漂流季节性停</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="spot" data-modal="spot-jiaocheng" data-tone="d5">
+      <div class="body"><div class="t">＋蕉城半日（宁德市区） <span class="badge b">吃货向</span></div><div class="s">2026 米其林必比登宁德 5 家全在蕉城 · 只在被迫中转时安排</div></div>
+      <div class="arrow">›</div>
+    </div>
+  </section>
+
+  <!-- ===== 交通票券 ===== -->
+  <section id="pass">
+    <h2>交通票券怎么买 <span class="tag">2026-09 已核对价格</span></h2>
+    <div class="card">
+      <p class="muted">价格均为 12306 / 景区官方已公布数字（核对日期：2026-09-15，车次为 2026-09-29 图定口径）。<b>货币单位：人民币（元）</b>。国庆临客与当日票价以 12306 App 查询为准。</p>
+      <p class="muted" style="margin-top:8px">💰 <b>全程大交通预算</b>：去程 ¥230 + 霞浦→太姥山 ¥14 + 回程 ¥210 ≈ <b>¥454/人</b>；市内专线/班车零散约 ¥50–80/人。</p>
+    </div>
+    <div class="spot" data-modal="pass-train" data-tone="d1">
+      <div class="ph"><img src="images/xiapu-station.jpg" alt="霞浦站" loading="lazy"></div>
+      <div class="body"><div class="t">① 高铁开口程：霞浦进 · 太姥山/福鼎出 <span class="badge g">主力</span><span class="badge r">要抢</span></div><div class="s">去 D3123 ¥230 · 回 ¥210–241 · 9/17 与 9/19 两个开售时点</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="spot" data-modal="pass-taimushan" data-tone="d3">
+      <div class="body"><div class="t">② 太姥山门票 + 景交 <span class="badge g">已核对</span></div><div class="s">门票 115 + 景交 40 · 线上套票 138 · 07:00 进园</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="spot" data-modal="pass-bus" data-tone="d1">
+      <div class="body"><div class="t">③ 霞浦本地交通：光影 1 号 / 东海 1 号 / 三沙班车 <span class="badge g">省钱</span></div><div class="s">15–20 元/人 · 30–60 分/班 · 站前上车</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="spot" data-modal="pass-tickets" data-tone="d2">
+      <div class="body"><div class="t">④ 其他景点门票速查 <span class="badge g">已核对</span></div><div class="s">杨家溪 50 · 斗姆岛 35 · 鲤鱼溪 35–40 · 白水洋联票 140</div></div>
+      <div class="arrow">›</div>
+    </div>
+  </section>
+
+  <!-- ===== 评分数据说明 + 撤下名单 ===== -->
+  <section id="food">
+    <h2>评分数据 & 复查后撤下的店 <span class="tag">数据怎么念 · 撤下名单</span></h2>
+    <div class="card">
+      <p class="foodlegend">📊 <b>这张表怎么念：</b>评分与「人均」全部来自<b>携程美食 POI</b>（2026-09-15 抓取），5 分制，人均为「用户反馈」口径；<b>大众点评/美团在本环境抓不到</b>，所以只有携程一个平台。宁德餐饮的点评条数普遍只有 1–39 条——<b>5 条样本的 5.0 分不等于「必吃」，只代表「目前没人给差评」</b>。推荐指数 ★ 是综合「评分 × 顺路 × 样本量」的主观打分。UGC（游记/帖）一律标注，不与平台评分混用。</p>
+      <p class="foodlegend" style="margin-top:8px">📷 <b>关于封面图：</b>全部来自 Wikimedia Commons 自由授权；宁德这些店大多没有实拍图，封面是同类菜品参考图，以店名、地址与评分为准。</p>
+    </div>
+    <div class="fgroup" id="demoted">
+      <h3>🚫 复查后撤下推荐（附真实评分，别专程去） <span>2026-09 复查；点开仍可看原始数据</span></h3>
+      <div class="demote">
+        <div class="dcard" data-modal="f-zhengxiaoer">
+          <div class="dn">郑小二滩涂海鲜（总店）</div>
+          <div class="ds"><span>海鲜排档</span> · <span>携程 <b>4.0</b></span> · <span><b>17</b> 条 · ¥94</span></div>
+          <div class="dr">撤下原因：头条同账号 2025-08~09 连发近十篇雷同推广帖，营销过重，独立口碑无法分辨。替代：新金城（5.0）。</div>
+        </div>
+        <div class="dcard" data-modal="f-yunman">
+          <div class="dn">云缦观海民宿餐厅（东壁）</div>
+          <div class="ds"><span>民宿餐厅</span> · <span>携程 <b>3.7</b></span> · <span><b>6</b> 条 · ¥123</span></div>
+          <div class="dr">撤下原因：东壁片区最低分；同价位不如去三沙镇区排档（¥70）。</div>
+        </div>
+        <div class="dcard" data-modal="f-wujinxi">
+          <div class="dn">无尽夕·落日海景餐厅（东壁）</div>
+          <div class="ds"><span>海景餐厅</span> · <span>携程 <b>暂无点评</b></span> · <span>¥130</span></div>
+          <div class="dr">撤下原因：0 点评且是东壁最贵一档，国庆假期不做小白鼠。拍日落不需要进店。</div>
+        </div>
+        <div class="dcard" data-modal="f-dafengshou">
+          <div class="dn">大丰收</div>
+          <div class="ds"><span>海鲜</span> · <span>UGC 差评</span></div>
+          <div class="dr">撤下原因：本地 UGC 原话「真的别去」，无任何平台数据对冲。</div>
+        </div>
+        <div class="dcard" data-modal="f-shengyan">
+          <div class="dn">生腌大叔</div>
+          <div class="ds"><span>生腌</span> · <span>UGC 差评</span></div>
+          <div class="dr">撤下原因：「腌不够时间不入味、酒味重」；且生腌本身有食品安全门槛，外地胃慎试。</div>
+        </div>
+        <div class="dcard" data-modal="f-wuji">
+          <div class="dn">吴记鸡架肉饭</div>
+          <div class="ds"><span>简餐</span> · <span>UGC 褒贬不一</span></div>
+          <div class="dr">撤下原因：味道被认可（酸辣口），但「一小盘一百多」——性价比进不了推荐名单。</div>
+        </div>
+        <div class="dcard" data-modal="f-agui">
+          <div class="dn">阿贵包店</div>
+          <div class="ds"><span>糊汤包</span> · <span>UGC 差评</span></div>
+          <div class="dr">撤下原因：糊汤 3 元/碗可以喝，但「肉包皮太厚」。替代：林明发糊汤包店（官媒实地）。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 避坑清单 ===== -->
+  <section id="tips" class="tips">
+    <h2>⚠️ 这趟的避坑清单 <span class="tag">先看这几条</span></h2>
+    <div class="card">
+      <ul>
+        <li><b>买票别选「宁德站」</b>：杭州南下依次停福鼎→太姥山→霞浦→宁德，坐到宁德 = 多坐 59 公里再折返。去程买霞浦，回程从太姥山/福鼎走。<span class="lab" data-modal="pit-station">点开看</span></li>
+        <li><b>两个抢票时点不一样</b>：去程（杭州各站）9/17 <b>10:45</b> 开售；回程（宁德/霞浦/太姥山/福鼎）9/19 <b>18:00</b> 开售。候补拉满 60 个组合、勾「接受新增临客」。<span class="lab" data-modal="pit-ticket-timing">点开看</span></li>
+        <li><b>看清经停站再付款</b>：走金温线的车次（D3211/G1605/D3205/G1677 等）从内陆绕，<b>跳过霞浦和太姥山</b>。<span class="lab" data-modal="pit-jinwen">点开看</span></li>
+        <li><b>东壁村晚上禁车（2025 口径）</b>：10/2–10/7 每天 19:00–21:00 机动车禁入；看完日落要么 19 点前出村，要么安心走到三沙吃饭。<span class="lab" data-modal="pit-dongbi-traffic">点开看</span></li>
+        <li><b>海鲜六样先问价</b>：椒盐皮皮虾、梭子蟹、椒盐大虾、清煮花螺、大鱿鱼、淡水鳗；剑蛏 130–150 元/斤（官媒口径）下单前确认。<span class="lab" data-modal="food-askprice">点开看</span></li>
+        <li><b>买海鲜去农贸市场，别去码头</b>：码头是批发不卖散客（县融媒原话）；公众农贸市场/海滨市场/东关街海鲜市场买了去旁边店加工，高罗实测加工费清蒸/水煮 20 元/盘、爆炒 30 元/盘（县城口径未查到）。<span class="lab" data-modal="pit-market">点开看</span></li>
+        <li><b>民宿毁约取证法</b>：国庆民宿坐地起价有真实判例（霞浦 349 元订单拒单后卖 646，被罚没 2098 元）；被退单时<b>立刻截图「同房型仍在售」</b>，12315 小程序投诉。<span class="lab" data-modal="pit-minsu-cancel">点开看</span></li>
+        <li><b>民宿早餐赶不上日出</b>：普遍 07:00 才开餐；要更早只有凌晨 3 点开工的林明发糊汤包店（县城农贸市场巷内，住三沙则不顺路）。<span class="lab" data-modal="pit-sunrise-logistics">点开看</span></li>
+        <li><b>10/1–3 不是大潮</b>：农历八月廿一至廿三，滩涂纹理与火烧云规模可能不如初一十五；下尾岛只在退潮前后约 2 小时值得上，前一晚查潮汐表。<span class="lab" data-modal="pit-tide">点开看</span></li>
+        <li><b>太康路全线禁停 + 拥堵时段</b>：早高峰 7:30–9:30、晚 17:30–20:30 最堵；午市 11:00–13:30 最空。自驾别在这条街停车吃饭。<span class="lab" data-modal="pit-taikanglu-traffic">点开看</span></li>
+        <li><b>太姥山一线天 20–30cm</b>：需侧身收腹，背大包/体型宽的朋友量力而行；节假日 10 点后排队，山上水 10 元/瓶。<span class="lab" data-modal="pit-taimushan-line">点开看</span></li>
+        <li><b>国庆别临时起意去嵛山岛</b>：2025 国庆前 3 天岛上破 3 万人次、船票一度溢价、民宿全满；三沙去程末班 12:00，半天来回不现实。<span class="lab" data-modal="pit-yushan-holiday">点开看</span></li>
+        <li><b>杨家溪国庆没有红叶</b>：赏枫季在 12 月；「老农牵牛过榕林」是付费摆拍，摆拍人休息就扑空。<span class="lab" data-modal="pit-yangjiaxi-feng">点开看</span></li>
+        <li><b>10 月初仍是台风季尾端</b>：2026 年 7–9 月白水洋·鸳鸯溪因台风 4 次发闭园公告；出发前 3 天开始盯景区公告与高铁停运信息。<span class="lab" data-modal="pit-typhoon">点开看</span></li>
+        <li><b>海上信号选移动</b>：宁德海域 5G 覆盖的移动证据最全（官媒多起报道）；嵛山岛天湖草场 UGC 称信号弱，上岛前把离线地图下好。<span class="lab" data-modal="pit-signal">点开看</span></li>
+        <li><b>备一点现金</b>：渔港小摊、三沙突突车、村里小卖部可能只收现金或信号差刷不出码；村里没有银行网点，最近的在三沙镇区。<span class="lab" data-modal="pit-cash">点开看</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 行前必查 ===== -->
+  <section id="precheck">
+    <h2>行前必查清单 <span class="tag">出发前 1 周做</span></h2>
+    <div class="card">
+      <div class="tier"><div class="lv a">A 级·官方</div><div>太姥山门票 115 + 景交 40（2018 物价局文）与线上套票 138（福建日报 2024-11）、开放 07:00–17:00（文旅宁德）；斗姆岛 35（2024 官方）；白水洋 100 / 鸳鸯溪 78 / 联票 140（闽发改价格〔2019〕179 号）；霞浦节假日房价指导价（霞市监〔2024〕37 号：酒店 ≤ 上年均价 +100%、民宿 ≤ +50%）；桐山溪西 = 省级特色步行街（福建省政府 2023）。</div></div>
+      <div class="tier"><div class="lv b">B 级·机构</div><div>全部车次票价为 12306 图定口径（2026-09-29 查询）；起售时刻（12306 小程序：杭州各站 10:45、宁德辖区各站 18:00）；2026 国庆 10/1–10/7 放假（国务院办公厅）；东海伏季休渔 9/16 结束；光影 1 号/东海 1 号专线（霞浦县政府与县融媒 2026-02）；国庆交通管制全为 2025 年交警口径——<b>2026 年通告出发前必须重查</b>。</div></div>
+      <div class="tier"><div class="lv c">C 级·媒体/UGC</div><div>日出日落时刻（00cha 工具站，建议 App 复核）；花竹/东壁机位与排队经验；携程评分与人均（样本 1–39 条）；金沙街早餐摊、阿耐、李记扁食等 UGC 单源店。</div></div>
+      <div class="tier"><div class="lv d">D 级·已作废</div><div>fjta 三都澳页（礁头快艇 60 元、斗姆 45 元）→ 斗姆以 35 元为准；「太姥山单门票 115」为旧口径，现以线上套票 138 为主；2015 年新浪「太姥山 10 元班车」；cncn 班次信息只取票价；「815 路美食街」是误传，不存在。</div></div>
+      <p class="muted" style="margin-top:12px">✅ <b>必做七件事：</b>① 9/17 10:45 抢 D3123 去程票（同步挂候补、勾「接受新增临客」）；② 9/19 18:00 抢 10/3 回程票（福鼎 G3022/D2424、太姥山 D3308/G1622 都挂上）；③ 订 D1 东壁/三沙民宿，截图「退订条款 + 同房型在售页」存证；④ 出发前 3 天查台风动态与太姥山/白水洋景区公告；⑤ 装「潮汐表」类 App，前一晚查北岐/下尾岛低潮时刻；⑥ 线上买太姥山套票 ¥138（含观光车），确认 2026 国庆是否需预约入园；⑦ 复核霞浦/福鼎 2026 国庆交通管制通告（本页为 2025 口径）。</p>
+    </div>
+  </section>
+
+  <!-- ===== 图集 ===== -->
+  <section id="gallery">
+    <h2>📸 图集 · 这趟会看到的画面 <span class="tag">实拍参考</span></h2>
+    <div class="card">
+      <div class="gallery">
+        <figure><img src="images/xiapu-sunset.jpg" alt="东壁日落" loading="lazy"><figcaption><b>东壁日落（Day 1）</b>霞浦日落头牌机位，涨潮时海面反光最好。图：Fanghong · CC BY-SA 3.0</figcaption></figure>
+        <figure><img src="images/xiapu-beiqi-sunrise.jpg" alt="霞浦滩涂日出" loading="lazy"><figcaption><b>霞浦滩涂日出（参考图）</b>花竹/北岐看的就是这种海面。图：Jay Huang · CC BY 2.0</figcaption></figure>
+        <figure><img src="images/xiapu-gaoluo.jpg" alt="高罗沙滩" loading="lazy"><figcaption><b>高罗沙滩（Day 2 东海 1 号）</b>专线 15 元沿线第一站。图：颐园居 · CC BY-SA 4.0</figcaption></figure>
+        <figure><img src="images/xiapu-yangjiaxi.jpg" alt="古榕（参考图）" loading="lazy"><figcaption><b>杨家溪古榕群（Day 2）</b>国庆没有红叶，看千年古榕就好。图为古榕参考图（摄于福州）。图：Davidzdh · CC BY-SA 4.0</figcaption></figure>
+        <figure><img src="images/taimushan.jpg" alt="太姥山" loading="lazy"><figcaption><b>太姥山（Day 3）</b>海上仙都，奇石与洞的世界。图：颐园居 · CC BY-SA 4.0</figcaption></figure>
+        <figure><img src="images/taimushan-rock.jpg" alt="太姥山奇石" loading="lazy"><figcaption><b>太姥山奇石（Day 3）</b>一线天最窄处仅 20–30cm。图：颐园居 · CC BY-SA 4.0</figcaption></figure>
+        <figure><img src="images/yushan-island.jpg" alt="嵛山岛天湖" loading="lazy"><figcaption><b>嵛山岛天湖草场（多一天）</b>海上天湖，国庆船票紧。图：Perinbaba · CC BY 4.0</figcaption></figure>
+        <figure><img src="images/sanduao-boats.jpg" alt="三都澳渔排" loading="lazy"><figcaption><b>三都澳渔排（多一天）</b>大黄鱼之乡的海上村庄。图：江上清风1961 · CC BY 3.0</figcaption></figure>
+        <figure><img src="images/huotong.jpg" alt="霍童古镇" loading="lazy"><figcaption><b>霍童古镇（多一天）</b>免费千年古镇，看线狮。图：FradonStar · CC BY 4.0</figcaption></figure>
+        <figure><img src="images/baishuiyang.jpg" alt="白水洋" loading="lazy"><figcaption><b>白水洋（多一天）</b>浅水广场是夏天的本体，10 月水冷。图：rheins · CC BY 3.0</figcaption></figure>
+      </div>
+      <p class="muted" style="margin-top:14px">全部图片来自 Wikimedia Commons，采用 CC0 / CC BY / CC BY-SA 授权，作者与授权见每张图说明。</p>
+    </div>
+  </section>
+
+  <div class="foot">
+    攻略整理：2026 年 9 月 15 日 · 价格与日程以各官网/12306 当日为准（页内每个弹窗底部都有来源链接）<br>
+    A 级数字均来自政府/运营方官方页面；2026 国庆管制通告发布后需复核
+  </div>
+
+</div>
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <div class="modal-head" id="mh">
+      <div class="ic" id="mh-ic">📍</div>
+      <div class="ht"><div class="t" id="mh-t">标题</div><div class="s" id="mh-s">副标题</div></div>
+      <button class="modal-close" id="mh-x">×</button>
+    </div>
+    <div class="modal-body" id="mh-body"></div>
+  </div>
+</div>
+
+<script>
+const MODALS = {
+/* ================= 住宿 ================= */
+"hotel-d1": {
+  tone:"d1", ic:"🏡", t:"D1 晚：三沙/东壁海景民宿", s:"为 Day 2 花竹日出而住 · 国庆最抢手",
+  tag:["为日出而住","人多"],
+  img:["images/xiapu-dongbi.jpg","三沙一带渔港的渔船（参考图）· Allervous / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3A%E9%9C%9E%E6%B5%A6%E7%9C%8C%E3%81%AE%E3%81%82%E3%82%8B%E5%B3%B6%E3%81%AE%E5%B2%B8%E3%81%A7%E6%B3%8A%E3%81%BE%E3%82%8B%E6%BC%81%E8%88%B9%E5%9B%A3.jpg"],
+  rows:[["位置","三沙镇 / 东壁村一带，距花竹观景台车程约 15 分钟"],["价格","平日 ¥368–451 起（携程 2026-09-15 抓取）；国庆官方指导价上限：民宿 ≤ 上年均价 +50%"],["候选","花筑·叁宿 4.9（592 条）¥372 起｜挪亚岩宿 4.8（582 条）¥386 起｜浦隐·海谷 4.8（329 条）¥368 起｜风吹半夏 4.9（400 条）¥451 起"],["早餐","民宿普遍 07:00 才开餐——赶不上 05:52 的日出，别指望"],["退订","霞浦官方阶梯（2025 口径）：提前 5 天全退 / 3–5 天扣 10% / 1–3 天扣 20%"]],
+  rec:["订房时截图「退订条款 + 同房型在售页」存证，防坐地起价","优先选评分 4.8+ 且点评 300 条以上的店，样本才有点意义","到店当晚就让老板帮约明早花竹日出的拼车/包车"],
+  pit:["2025 年国庆霞浦民宿平均入住率 90.55%，9 月中旬必须下手","若被拒单：立刻截图「同房型仍在售」页面，12315 小程序投诉——霞浦有罚没 2098 元的真实判例"],
+  src:[["霞浦县市监局·节假日住宿价格行为规则（2025-07）","http://www.xiapu.gov.cn/zwgk/gkzl/bmzfxxgk/zfbm/xsgj/gkml_25160/zdgkxx/202507/t20250723_2081827.htm"],["霞浦县政府·民宿毁约处罚公示（2023-05）","http://www.xiapu.gov.cn/ztzl/zllwlbgz/xxgs/202305/t20230504_1754949.htm"],["携程酒店（价格 2026-09-15 抓取）","https://hotels.ctrip.com/"]]
+},
+"hotel-d2": {
+  tone:"d3", ic:"🏨", t:"D2 晚：太姥山镇（秦屿）", s:"为 Day 3 赶 07:00 第一波进园而住",
+  tag:["早去","已核对"],
+  img:["images/taimushan-town.jpg","太姥山镇街景 · FradonStar / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3A%E5%A4%AA%E5%A7%A5%E5%B1%B1%E9%95%87%E8%A1%97%E6%99%AF.jpg"],
+  rows:[["位置","太姥山镇（旧称秦屿），距景区游客集散中心约 10 分钟车程"],["价格","全季 ¥461 起 / 途客中国 ¥318 起（平日价，携程 2026-09-15 抓取）"],["候选","全季太姥山店 4.7（641 条）¥461 起｜途客中国 4.7（654 条）¥318 起｜福鼎太姥大酒店 4.7（1308 条）实时计价"],["怎么吃","晚饭在玉池南路一带：太姥邱记、阿耐猪头肉、老福鼎祖传肉片都在百米内"]],
+  rec:["入住后先买明天上山的水和干粮——山上水 10 元/瓶","06:30 出门，07:00 前到集散中心"],
+  pit:["玉池路 8:00–20:00 易堵（2024 国庆交警口径），白天进出镇子留余量","镇子就是「横竖几条街」的规模，别期待夜生活"],
+  src:[["福建日报《游玩全攻略！福鼎太姥山》2024-11-24","https://www.fjdaily.com/app/content/2024-11/24/content_2936678.html"],["携程酒店（价格 2026-09-15 抓取）","https://hotels.ctrip.com/"]]
+},
+"hotel-backup": {
+  tone:"d2", ic:"🏨", t:"备选：霞浦县城酒店", s:"省钱省心 · 代价是日出要起得更早",
+  tag:["省钱"],
+  img:["images/xiapu-county.jpg","霞浦县城（九大馆）· rheins / Wikimedia Commons · CC BY 3.0","https://commons.wikimedia.org/wiki/File%3A%E9%9C%9E%E6%B5%A6%E4%B9%9D%E5%A4%A7%E9%A6%86_-_Museums_of_Xiapu_County_-_2016.01_-_panoramio.jpg"],
+  rows:[["候选","亚朵（赤岸大道）4.8（3372 条）¥320 起｜白玉兰（太康路）4.7（2093 条）¥252 起（平日价，携程 2026-09-15 抓取）"],["优点","连锁稳、吃饭方便（太康路步行圈）、价格便宜一截"],["代价","拍花竹日出要 04:00 左右出发（比三沙早 40 分钟）；北岐也要 04:30 前出发"]],
+  rec:["带老人小孩 / 不执着日出的，住县城更舒服","Day 2 傍晚仍要赶去太姥山镇住，行程不变"],
+  pit:["住县城 = 放弃花竹日出的从容，04:00 起床是硬约束","太康路 17:30–20:30 晚高峰最堵且全线禁停，自驾进出酒店错开这段"],
+  src:[["携程酒店（价格 2026-09-15 抓取）","https://hotels.ctrip.com/"]]
+},
+/* ================= Day 1 景点 ================= */
+"spot-taikanglu": {
+  tone:"d1", ic:"🦀", t:"太康路美食一条街", s:"三十余家海鲜排档 · 午市最不堵 · 全线禁停",
+  tag:["主打","人多"],
+  rows:[["门票","免费（开放式街区）"],["最佳时段","午市 11:00–13:30 最空；17:30–20:30 晚高峰最堵"],["怎么去","县城中心，公交/打车/步行均可；自驾别在太康路停车（全线禁停）"],["官方治理","霞浦 2023 年起做省明码标价试点：餐饮推「电子点餐 + 餐前确认」31 家，价格投诉从 2023 五一 83 件降到 2024 春节 1 件"]],
+  rec:["优先选装了「电子点餐 + 餐前确认」系统的店（霞浦官方推行模式）","六样先问价：椒盐皮皮虾、梭子蟹、椒盐大虾、清煮花螺、大鱿鱼、淡水鳗","当面看秤；想省钱就去农贸市场买、找店加工"],
+  pit:["剑蛏 130–150 元/斤（县融媒口径），下单前确认","排档人均：普通菜一份 50 不到、鲜活 100 不到，控制一下人均 100 够（十六番用户口径）"],
+  src:[["霞浦县政府·价格治理（2024-07）","http://www.xiapu.gov.cn/gzdt/bmdt/202407/t20240705_1949901.htm"],["携程美食林·霞浦榜单（2026-09-15 查）","https://gs.ctrip.com/html5/you/foods/1154/list-c4938.html"]]
+},
+"spot-xiaohao": {
+  tone:"d1", ic:"📸", t:"小皓滩涂", s:"潮汐沟肌理 · 退潮七分最佳",
+  tag:["免费","滩涂"],
+  img:["images/xiapu-xiaohao.jpg","小皓滩涂 · 颐园居 / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3AXiaohao_Beach%2C_Xiapu_20230827.jpg"],
+  rows:[["门票","免费，全天开放"],["最佳时段","退潮至七分左右滩涂线条最好看；前一晚查潮汐表"],["怎么去","光影 1 号专线「小皓路口」站下车步行；县城打车约 20–30 元（UGC）"]],
+  rec:["穿不怕脏的鞋，滩涂边有泥","下午顺光，拍完接东壁日落正好"],
+  pit:["别踩进养殖区（紫菜架、蛏田都是私人财产）","没有正经餐饮店，水和小零食在县城买好"],
+  src:[["宁德市政府·光影 1 号专线开通（2026-02-09）","http://www.ningde.gov.cn/zwgk/gzdt/qxdt/202602/t20260209_2441127.htm"]]
+},
+"spot-dongbi": {
+  tone:"d1", ic:"🌅", t:"东壁村 · 日落", s:"霞浦日落头牌机位 · 10/1 日落 17:46",
+  tag:["必去","出片","看时间"],
+  img:["images/xiapu-sunset.jpg","霞浦日落 · Fanghong / Wikimedia Commons · CC BY-SA 3.0","https://commons.wikimedia.org/wiki/File%3AXiapu_sunset.JPG"],
+  rows:[["门票","免费，全天开放"],["日落","10/1 日落 17:46、天黑 18:10（工具站口径，建议 App 复核）；涨潮时海面反光最好"],["怎么去","光影 1 号专线直达东壁；从光影栈道一路逛过去"],["国庆管制","2025 口径：10/2–10/7 每天 19:00–21:00 东壁村禁止机动车进入（2026 须重查）"]],
+  rec:["提前 40 分钟占机位","拍完尽快出村：19 点后禁车，步行回三沙镇区吃饭约 20–30 分钟"],
+  pit:["东壁村餐厅是全线最贵一档（携程人均 ¥94–130），晚饭建议回三沙镇区吃（¥70 左右）","民宿咖啡厅等日落可以坐（如悦萃咖啡，携程 4.3 · 6 条 · ¥47）"],
+  src:[["霞浦县 2025 国庆交通管制通告（县融媒）","https://ndwww.cn/xw/ndxw/2025/1001/314822.shtml"],["日出日落时刻（00cha 工具站）","http://richu.00cha.net/ten_1791_ym202610.html"]]
+},
+"spot-sansha": {
+  tone:"d1", ic:"⚓", t:"三沙镇（渔港）", s:"晚饭比东壁便宜 · 金沙街早饭 · 民宿集群",
+  tag:["本地","省钱"],
+  rows:[["门票","免费（渔港镇区）"],["怎么去","霞浦站前「三沙火车站快线」（深粉色中巴）15 元/人；县城汽车站三沙班车 6:30–17:30 约 20 分/班 15 元；光影 1 号终点是三沙古镇码头"],["镇内","红色突突车（三轮车）代步，备现金"],["吃什么","金沙街早餐（锅边、豹纹肉粽、海蛎油饼）；镇区排档人均约 ¥70"]],
+  rec:["晚饭在镇区吃，比东壁村便宜一截","菜市场旁的海蛎煎路边摊（UGC：约 18:00–次日 02:00，单源未核实）当夜宵"],
+  pit:["村里没有银行网点，最近的 ATM 在镇区——备现金","三沙去嵛山岛的船白天班次有限，国庆别临时起意"],
+  src:[["霞浦县融媒体中心（吃什么·去哪买海鲜）","https://www.ndwww.cn/xspd/xpxw/2023/0828/264047.shtml"]]
+},
+/* ================= Day 2 景点 ================= */
+"spot-huazhu": {
+  tone:"d2", ic:"🌄", t:"花竹村 · 日出", s:"俯瞰福瑶列岛 · 10/2 日出约 05:52",
+  tag:["必去","日出","早去"],
+  rows:[["门票","免费（观景台）"],["日出","10/2 日出约 05:52；火烧云黄金窗口 = 日出前 40 分～日出后 20 分"],["怎么去","无公共交通：前一晚让民宿老板约拼车/包车，三沙出发约 15 分钟；旺季 05:10 前到观景台比较稳"],["穿衣","山上风大，10 月清晨带件外套"]],
+  rec:["别等太阳跳出来才开机，蓝调时刻就拍","机位有限，节假日早点到"],
+  pit:["10 月日出比 8 月晚约 40 分钟——别照抄夏季攻略的 04:10 到机位","天气是赌博：阴天就回民宿睡回笼觉，别硬等"],
+  src:[["日出时刻（00cha 工具站，建议 App 复核）","http://richu.00cha.net/ten_1791_ym202610.html"],["霞浦摄影攻略（UGC）","https://www.meipian.cn/5mm00cp0"]]
+},
+"spot-yangjiaxi": {
+  tone:"d2", ic:"🌳", t:"杨家溪（榕枫公园）", s:"千年古榕群 · 红叶要 12 月",
+  tag:["顺路","季节性"],
+  img:["images/xiapu-yangjiaxi.jpg","古榕（参考图，摄于福州）· Davidzdh / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3ABanyan_in_front_of_Wenke_Building%2C_FJNU.jpg"],
+  rows:[["门票","50 元；7:00 前 / 17:00 后免票（福建旅游资讯口径）"],["怎么去","牙城镇，三沙回县城方向顺路；无直达公交，打车/包车最实际"],["看什么","千年古榕群 + 枫香林；「老农牵牛过榕林」是付费摆拍场景"]],
+  rec:["当顺路景点看古榕就好，1–1.5 小时够","晨雾 + 阳光穿透榕林最出片（需要运气）"],
+  pit:["赏枫季在 12 月，国庆没有红叶","摆拍人休息就扑空，别为「牵牛图」专程来"],
+  src:[["福建旅游资讯·杨家溪（票价口径）","http://www.fjta.com/scenic/description/140"]]
+},
+"spot-donghai1": {
+  tone:"d2", ic:"🚌", t:"东海 1 号风景道", s:"高罗/大京沙滩 · 下尾岛看潮汐 · 专线 15–20 元",
+  tag:["推荐","滩涂"],
+  img:["images/xiapu-gaoluo.jpg","高罗沙滩 · 颐园居 / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3AGaoluo_Beach%2C_Xiapu_20230826.jpg"],
+  rows:[["门票","沿线沙滩免费；下尾岛免费（退潮才能上）"],["专线","霞浦站 8:00–17:30 约 20 分/班，19 座 15 元 / 7 座 20 元，单程 60–70 分钟"],["沿线","高罗沙滩 → 大京沙滩 → 下尾岛（海蚀洞）"],["国庆管制","2025 口径：蜘蛛网大桥段 09:00–18:00 单行，返程绕 987 县道，多留 20 分钟（2026 须重查）"]],
+  rec:["中午先查潮汐表：下尾岛只在退潮前后约 2 小时值得上","不赶时间就坐到高罗踩水，大京二选一"],
+  pit:["海边餐厅价格高于县城，水饮县城买好","2026-10-01～03 是农历廿一至廿三非大潮，滩涂规模别期待过高"],
+  src:[["霞浦县政府（旅游专线开通信息）","https://www.xiapu.gov.cn/"]]
+},
+"spot-beiqi": {
+  tone:"d2", ic:"📷", t:"北岐滩涂", s:"离县城最近的名机位 · 虎皮纹紫菜架",
+  tag:["免费","日出","小众"],
+  img:["images/xiapu-beiqi-sunrise.jpg","霞浦滩涂日出（参考图）· Jay Huang / Wikimedia Commons · CC BY 2.0","https://commons.wikimedia.org/wiki/File%3AXiapu_Sunrise_-_Flickr_-_Jaykhuang.jpg"],
+  rows:[["门票","免费，全天开放"],["怎么去","县城边：松山方向公交约 2 元 / 打车约 15 元（UGC）"],["机位","紫菜架虎皮纹 + 日出逆光；旺季提前 1.5 小时占位（UGC）"]],
+  rec:["这趟当「踩点」：下午顺路看地形，为下次来拍日出做准备","拍日出要 04:30 前从县城出发"],
+  pit:["退潮时滩涂裸露、线条最好；涨潮就是一片海","下午去主要是看地形，别期待出片"],
+  src:[["福建旅游资讯·北岐滩涂","http://www.fjta.com/scenic/description/205"]]
+},
+/* ================= Day 3 景点 ================= */
+"spot-taimushan": {
+  tone:"d3", ic:"⛰️", t:"太姥山", s:"世界地质公园 · 海上仙都 · 07:00 进园",
+  tag:["必去","早去","要预约"],
+  img:["images/taimushan.jpg","太姥山 · 颐园居 / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3AMount_Taimu_20230827.jpg"],
+  rows:[["门票","门票 115 + 景交 40（2018 物价局文）；线上套票 138 含观光车（福建日报 2024-11 口径）"],["开放","07:00–17:00（文旅宁德口径）；UGC 称旺季 06:30–17:30、16:30 停止入园（未核实）"],["寄存","游客集散中心有大小寄存柜（福建日报 2024）"],["路线","官方 5 条：轻松休闲线约 3h 覆盖核心；秘境寻幽线 4–5h 覆盖约 80% 精华"],["新设施","2025 年新增扶梯（五百罗汉堂→一片瓦）与轨道车（九鲤湖↔白云寺），收费未查到"]],
+  rec:["07:00 第一波进园，一线天不排队","山下买水（山上 10 元/瓶），存包再进一线天（存包 5 元，UGC）","半天走轻松休闲线足够，赶 17:34 的车时间宽裕"],
+  pit:["一线天最窄处 UGC 称仅 20–30cm，需侧身收腹，体型宽/背大包量力而行","节假日 10 点后一线天排队严重","2026 国庆是否强制预约未查到现行通告，出发前看官方公众号"],
+  src:[["太姥山门票价格（2018 物价局文，fjwj）","http://fjwj.fjsen.com/2018-04/28/content_20988445.htm"],["福建日报《游玩全攻略！福鼎太姥山》2024-11-24","https://www.fjdaily.com/app/content/2024-11/24/content_2936678.html"]]
+},
+"spot-tongshanxi": {
+  tone:"d3", ic:"🍢", t:"桐山溪西小吃美食街", s:"省级特色步行街 · 蜜汁鸡翅/米粉汤/乌米饭",
+  tag:["主打","本地"],
+  rows:[["门票","免费（街区）"],["地位","福建省政府 2023 年第二批省级特色步行街；福鼎 2021-11-20 三条官方美食示范街之一"],["吃什么","福鼎肉片、蜜汁鸡翅、点头米粉汤、畲家乌米饭"],["怎么去","福鼎市区龙山溪水系一带；桐山大桥西侧口 10:00–21:00 易堵，步行进出"],["另两条","桐城石湖海鲜一条街（海鲜，国庆 16:00–19:00 堵）、山前特色美食街（新城区约 50 家）"]],
+  rec:["下午来逛吃，留胃到晚上上车前","蜜汁鸡翅认准排队多的摊位"],
+  pit:["街区摊店营业时间各家不同，14 点后部分小吃店午休","褚翅（¥47，携程 3.0·3 条）号称人气老店但评分垫底，别专程"],
+  src:[["福建省政府·第二批省级特色步行街（2023-04-17）","http://www.fujian.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/wvjj/202304/t20230417_6149788.htm"],["东南网·福鼎三条美食街（2022-01-10）","http://nd.fjsen.com/2022-01/10/content_30934375.htm"]]
+},
+"spot-whitetea": {
+  tone:"d3", ic:"🍵", t:"买福鼎白茶", s:"世界白茶发源地 · 人类非遗技艺 · 别碰「老白茶」",
+  tag:["手信","谨慎"],
+  img:["images/fuding-tea.jpg","茶园（参考图）· Fumikas Sagisavas / Wikimedia Commons · CC0"],
+  rows:[["品类","国标 GB/T 22291：白毫银针、白牡丹、贡眉、寿眉是四个「品类」，不是上下级「等级」"],["地位","福鼎白茶制作技艺入选联合国教科文组织人类非物质文化遗产代表作名录"],["去哪买","市区品牌专卖店（品品香、绿雪芽、六妙等，品牌线索来自企业站自述，未核实）；点头镇有官方茶青交易市场但距市区远，不专程"],["重要纠错","「中国白茶城」在政和县，不在福鼎——别导航错"]],
+  rec:["口粮茶买当年新茶最稳：新茶价格透明、做旧空间小","认准「福鼎白茶」地理标志 + 大数据溯源码（2025-03 起官方溯源平台开启）"],
+  pit:["「十年陈老白茶」做旧虚标是重灾区（自媒体口径，谨慎采信），路边店别赌","景区/车站旁的「茶农直销」谨慎"],
+  src:[["福鼎市政府·福鼎白茶溯源（2025-08-01）","http://www.fuding.gov.cn/ztzl/fdbc/bczx/202508/t20250801_2140734.htm"],["中国茶叶流通协会","https://www.ctma.com.cn/"]]
+},
+/* ================= 多一天（备选） ================= */
+"spot-yushan": {
+  tone:"d1", ic:"🏝️", t:"＋嵛山岛（福鼎）", s:"海上天湖 + 万亩草场 · 建议住岛一晚",
+  tag:["最值得","人多","天气敏感"],
+  img:["images/yushan-island.jpg","嵛山岛天湖 · Perinbaba / Wikimedia Commons · CC BY 4.0","https://commons.wikimedia.org/wiki/File%3ADayushan_Island.jpg"],
+  rows:[["上岛","三沙古镇码头 / 福鼎渔井码头乘船；渔井船班参考 9:00 / 14:00 / 16:30，返程 7:30 / 13:20 / 15:00（2026 口径，以码头公示为准）"],["末班提醒","三沙方向去程末班约 12:00——半天来回不现实"],["国庆实况","2025 国庆前 3 天破 3 万人次、船票紧张、民宿全满（福州晚报/福鼎市政府口径）"],["看什么","天湖草场、大海、岛上海鲜"]],
+  rec:["加一天玩法：D2 傍晚搬到三沙，D3 早班船上岛，住岛一晚，D4 回","上岛前下好离线地图——天湖草场 UGC 称信号弱"],
+  pit:["国庆当天往返 = 大概率排队误船","岛上民宿少，不订到房别上岛"],
+  src:[["福州晚报·嵛山岛 2025 国庆船票紧张（2025-09-27）","https://news.fznews.com.cn/dsxw/20250927/91rD4mQzwx.shtml"],["福鼎市政府·嵛山岛 2025 国庆满房提示","http://www.fuding.gov.cn/zwgk/xzdt/202510/t20251010_2308262.htm"]]
+},
+"spot-sanduao": {
+  tone:"d2", ic:"🐟", t:"＋三都澳（蕉城）", s:"斗姆岛 35 元 · 大黄鱼之乡 · 需宁德站中转",
+  tag:["出片","看时间"],
+  img:["images/sanduao-doumu.jpg","三都澳斗姆岛 · 江上清风1961 / Wikimedia Commons · CC BY 3.0","https://commons.wikimedia.org/wiki/File%3A%E5%BF%AB%E8%89%87%E4%B8%8A%E6%8B%8D%E4%B8%89%E9%83%BD%E6%BE%B3%E7%9A%84%E6%96%97%E5%A7%86%E5%B2%9B_-_panoramio.jpg"],
+  rows:[["门票","斗姆岛 35 元（2024 官方口径）；旧攻略的 45 元与「礁头快艇 60 元」均已作废"],["怎么去","动车到宁德站，再转蕉城区礁头/城澳码头方向；班次少，适合自驾或包车"],["看什么","海上渔排（大黄鱼养殖）、斗姆岛礁石、渔排海鲜"]],
+  rec:["与霍童古镇串成一天（都在蕉城方向）","渔排吃饭先问价，同霞浦排档规则"],
+  pit:["船班与码头信息网上旧口径很多，以码头现场为准","离霞浦主线远，3 天行程别硬塞"],
+  src:[["宁德市政府","https://www.ningde.gov.cn/"]]
+},
+"spot-huotong": {
+  tone:"d2", ic:"🏘️", t:"＋霍童古镇（蕉城）", s:"千年古镇 · 霍童线狮（国家级非遗）",
+  tag:["免费","非遗"],
+  img:["images/huotong.jpg","霍童古镇 · FradonStar / Wikimedia Commons · CC BY 4.0","https://commons.wikimedia.org/wiki/File%3A%E9%9C%8D%E7%AB%A5%E6%B4%9E%E5%A4%A9%E6%99%AF%E5%8C%BA.jpg"],
+  rows:[["门票","古镇免费；线狮表演票价口径冲突（30 元两场 vs 60 元 13:10 一场、周一休），以现场为准"],["怎么去","宁德站转蕉城方向班车/打车；与三都澳同方向可串一天"],["看什么","明清古街、霍童溪、线狮表演、天后宫"]],
+  rec:["线狮表演前先问当天场次，别白等","古镇半天够，下午接三都澳"],
+  pit:["表演时间/票价网上口径互相打架，全部以现场公告为准","国庆古镇人多，早去"],
+  src:[["宁德网","https://www.ndwww.cn/"]]
+},
+"spot-zhouning": {
+  tone:"d4", ic:"🎏", t:"＋周宁鲤鱼溪 + 九龙漈", s:"人鱼同乐 800 年 · 华东第一瀑",
+  tag:["小众","路程远"],
+  img:["images/liyuxi.jpg","周宁鲤鱼溪 · 明天放假 / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3A%E5%91%A8%E5%AE%81%E9%B2%A4%E9%B1%BC%E6%BA%AA_01.jpg"],
+  rows:[["门票","鲤鱼溪 35–40 元（UGC 口径，17:30 后免票）；九龙漈 55–60 元（UGC 口径）"],["怎么去","衢宁铁路周宁站（杭州方向有车），或宁德站转车；县城离景点近"],["看什么","鲤鱼溪人鱼同乐（村民 800 年不捕溪中鲤鱼）、九龙漈瀑布群"]],
+  rec:["两景点一天刚好：上午鲤鱼溪，下午九龙漈","夏天避暑属性强，国庆偏凉带外套"],
+  pit:["票价全是 UGC 口径，以景区现场为准","山区班车少，优先火车 + 打车"],
+  src:[["福建日报·周宁鲤鱼溪报道（2026）","https://www.fjdaily.com/"]]
+},
+"spot-baishuiyang": {
+  tone:"d4", ic:"💦", t:"＋白水洋·鸳鸯溪（屏南）", s:"浅水广场夏天才是本体 · 10 月水冷",
+  tag:["季节性","天气敏感","当天往返太赶"],
+  img:["images/baishuiyang.jpg","白水洋水上广场 · rheins / Wikimedia Commons · CC BY 3.0","https://commons.wikimedia.org/wiki/File%3A%E7%99%BD%E6%B0%B4%E6%B4%8B%E6%B0%B4%E4%B8%8A%E5%B9%BF%E5%9C%BA_-_Baishuiyang_Water_Square_-_2014.07_-_panoramio.jpg"],
+  rows:[["门票","旺季 100 + 鸳鸯溪 78 / 联票 140（闽发改价格〔2019〕179 号）"],["季节","冲浪、漂流 2025-10-09 起季节性停运；10 月水温低，下水体验打折"],["怎么去","衢宁铁路屏南站转车，或宁德站转车；离霞浦/太姥山主线都远"],["台风","2026 年 7–9 月因台风 4 次发闭园公告（7/9、8/8、8/23、9/1），10 月初仍需盯公告"]],
+  rec:["真想玩水，夏天单独为屏南来一趟","10 月去就纯看地质奇观，别带下水预期"],
+  pit:["为这趟 3 天主线硬塞白水洋 = 两头都赶","闭园信息看白水洋官方公众号"],
+  src:[["福建省发改委·景区门票价格（2019）","https://fgw.fujian.gov.cn/zfxxgkzl/zfxxgkml/yzdgkdqtxx/201903/t20190325_4837441.htm"]]
+},
+"spot-jiaocheng": {
+  tone:"d5", ic:"🍜", t:"＋蕉城半日（宁德市区）", s:"2026 米其林必比登宁德 5 家全在蕉城",
+  tag:["本地","吃货向"],
+  img:["images/ningde-city.jpg","宁德市区（蕉城）· 琳飞 / Wikimedia Commons · CC BY-SA 3.0","https://commons.wikimedia.org/wiki/File%3AJiaocheng%2C_Ningde%2C_Fujian%2C_China_-_panoramio.jpg"],
+  rows:[["必比登 5 家","福鼎正宗扁肉（建新路）/ 胡裕忠武曲扁肉（闽东中路）/ 宁川祖耀鱼丸（八一五西路）/ 寿宁米糕（曲尺塘路）/ 小东门牛肉水粉（环城路）——2026 福建米其林指南必比登推介（52hrtt 汇总转述口径）"],["什么时候用","只在被迫宁德站中转/候车超过半天时安排"],["夜市","蕉城夜市（闽东中路 × 宁川北路一带，UGC）"]],
+  rec:["扁肉 + 鱼丸 + 牛肉水粉半天三连，都是十几块的小吃","洋中拌水粉是《早餐中国》拍过的蕉城招牌"],
+  pit:["「815 路美食街」是误传，不存在","必比登地址为媒体转述口径，出发前用地图 App 复核"],
+  src:[["52hrtt·米其林必比登 2026 福建宁德汇总","https://www.52hrtt.com/fr/n/w/info/F1763618595763"],["宁德网（2025-11-22）","https://www.ndwww.cn/xw/ndxw/2025/1122/317020.shtml"]]
+},
+/* ================= 交通票券 ================= */
+"pass-train": {
+  tone:"d1", ic:"🚄", t:"高铁开口程：霞浦进 · 太姥山/福鼎出", s:"去 ¥230 · 回 ¥210–241 · 两个开售时点",
+  tag:["主力","已核对","要抢"],
+  img:["images/xiapu-station.jpg","霞浦站 · 颐园居 / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3AXiapu_Railway_Station_20230825.jpg"],
+  rows:[["去程 10/1","D3123 杭州东 07:20 → 霞浦 11:21，¥230（上午唯一合适直达）；备选 D377 杭州西 09:40→13:16 ¥208"],["中段 10/2","D3124 霞浦 18:37 → 太姥山 18:51，¥14 / 14 分钟；兜底 D6330 20:08→20:22 ¥15"],["回程 10/3","福鼎：G3022 17:45→20:48 ¥212、D2424 17:34→21:19 ¥210、D3124 19:04→22:40 ¥210｜太姥山：D3308 18:05→21:56 ¥241、G1622 19:12→22:25 ¥213（末班）"],["开售","去程 9/17 10:45（杭州各站）；回程 9/19 18:00（宁德辖区各站）"],["候补","每人 6 个候补订单 × 3 个日期、合计 ≤60 车次；24 小时即有即兑；终止不晚于开车前 20 分钟"]],
+  rec:["开售即抢，没抢到立刻挂候补并勾「接受期望时段内新增临客」","付款前核对经停站：走金温线的车跳过霞浦","退票费：8 天外免 / 48h 外 5% / 24–48h 10% / 24h 内 20%"],
+  pit:["车次为 2026-09-29 图定口径（2026-09-15 查询），国庆临客以 12306 当日为准","别买到宁德站：多坐 59 公里折返"],
+  src:[["12306 候补购票说明","https://kyfw.12306.cn/otn/gonggao/alternate.html"],["12306 起售时刻查询","https://mobile.12306.cn/weixin/wxcore/qssj"]]
+},
+"pass-taimushan": {
+  tone:"d3", ic:"🎫", t:"太姥山门票 + 景交", s:"门票 115 + 景交 40 · 线上套票 138",
+  tag:["已核对","要预约"],
+  rows:[["门票","115 元（2018 物价局文）"],["景交","40 元（集散中心 → 山上入口）"],["线上套票","138 元含观光车（福建日报 2024-11 口径）——比分开买省 17 元"],["开放","07:00–17:00（文旅宁德）；UGC 称 16:30 停止入园"],["寄存","集散中心寄存柜（大小两种规格）"]],
+  rec:["提前线上买套票，刷码进园省排队","07:00 进园，10 点前玩完一线天"],
+  pit:["「单门票 115」是旧口径，现以套票 138 为主","2026 国庆是否强制预约未查到现行通告——出发前看「太姥山旅游」官方公众号"],
+  src:[["太姥山门票价格（2018 物价局文）","http://fjwj.fjsen.com/2018-04/28/content_20988445.htm"],["福建日报太姥山攻略（2024-11-24）","https://www.fjdaily.com/app/content/2024-11/24/content_2936678.html"]]
+},
+"pass-bus": {
+  tone:"d1", ic:"🚌", t:"霞浦本地交通", s:"光影 1 号 / 东海 1 号 / 三沙班车 · 15–20 元",
+  tag:["省钱","已核对"],
+  rows:[["光影 1 号","霞浦站 → 陇头 → 小皓 → 光影栈道 → 东壁 → 三沙古镇码头；8:00–18:30，30–60 分/班；19 座 15 元 / 7 座 18 元（2026-02 开通）"],["东海 1 号","霞浦站 → 高罗 → 大京 → 下尾岛；8:00–17:30 约 20 分/班；19 座 15 元 / 7 座 20 元，单程 60–70 分"],["三沙班车","县城汽车站 6:30–17:30 约 20 分/班，15 元"],["三沙火车站快线","霞浦站前深粉色中巴，15 元/人"],["县城公交","1–2 元（7/8 路等，8 路末班 21:50）"]],
+  rec:["4 人同行打车/拼车常常比专线更划算（站→东壁打车约 80 元、拼车约 20 元/人，UGC）","班次以站前公示为准，国庆可能加班"],
+  pit:["专线末班早（18:30），看完日落只能打车/班车回","太姥山站→景区班车约 6 元/20 分（2024 口径），人多直接打车十几分钟"],
+  src:[["宁德市政府·光影 1 号开通（2026-02-09）","http://www.ningde.gov.cn/zwgk/gzdt/qxdt/202602/t20260209_2441127.htm"],["福建日报太姥山攻略（2024-11-24）","https://www.fjdaily.com/app/content/2024-11/24/content_2936678.html"]]
+},
+"pass-tickets": {
+  tone:"d2", ic:"🎟️", t:"其他景点门票速查", s:"杨家溪 50 · 斗姆岛 35 · 白水洋联票 140",
+  tag:["已核对"],
+  rows:[["杨家溪","50 元；7:00 前 / 17:00 后免（福建旅游资讯口径）"],["斗姆岛（三都澳）","35 元（2024 官方）；旧 45 元作废"],["鲤鱼溪（周宁）","35–40 元（UGC，17:30 后免）"],["九龙漈（周宁）","55–60 元（UGC）"],["白水洋·鸳鸯溪（屏南）","旺季 100 / 鸳鸯溪 78 / 联票 140（闽发改价格〔2019〕179 号）；冲浪漂流 2025-10-09 起季节性停"],["霍童古镇","免费；线狮表演票价口径冲突（30 两场 vs 60 一场周一休）"]],
+  rec:["主线只涉及杨家溪 50 + 太姥山 138，其他都是「多一天」备选","北岐/东壁/小皓/金沙城全免费"],
+  pit:["UGC 口径的票价以景区现场为准","2026 国庆各景区预约政策出发前复核"],
+  src:[["福建旅游资讯·杨家溪","http://www.fjta.com/scenic/description/140"],["福建省发改委·门票价格（2019）","https://fgw.fujian.gov.cn/zfxxgkzl/zfxxgkml/yzdgkdqtxx/201903/t20190325_4837441.htm"]]
+},
+/* ================= 避坑 ================= */
+"pit-station": {
+  tone:"d1", ic:"🚉", t:"为什么不是「宁德站」", s:"坐到宁德 = 多坐 59 公里再折返",
+  tag:["别踩坑"],
+  rows:[["站点顺序","杭州南下沿海线依次停：福鼎 → 太姥山 → 霞浦 → 宁德"],["结论","玩霞浦买霞浦站（¥230）；玩太姥山买太姥山站；买到宁德站就是坐过头 59 公里"],["宁德站唯一用途","去屏南白水洋 / 周宁 / 霍童（衢宁铁路方向）时才用得上"]],
+  rec:["去程买霞浦，回程从太姥山/福鼎走——开口程不回头"],
+  pit:["杭州→太姥山直达仅 6 趟（G3091 07:55→10:40 最快 ¥207），班次远少于霞浦"],
+  src:[["12306","https://kyfw.12306.cn/"]]
+},
+"pit-ticket-timing": {
+  tone:"d1", ic:"⏰", t:"抢票时点：去程 9/17 10:45 · 回程 9/19 18:00", s:"预售 15 天 · 候补拉满 60 组合",
+  tag:["要预约","限时"],
+  rows:[["去程","10/1 车票 9/17 开售；杭州东/杭州西/杭州/杭州南起售时刻都是 10:45"],["回程","10/3 车票 9/19 开售；宁德/霞浦/太姥山/福鼎起售时刻都是 18:00"],["候补规则","每人 6 个候补订单 × 3 个乘车日期、合计 ≤60 个车次、每单 ≤19 人；24 小时「即有即兑」；终止时间不晚于开车前 20 分钟；按订单生效顺序兑现"],["退票费","开车前 8 天外免 / 48h 外 5% / 24–48h 10% / 24h 内 20%，最低 2 元"]],
+  rec:["开售蹲点抢；抢不到立刻挂候补，拉满 60 个「日期 + 车次」组合","必勾「接受期望出行时间段内的临时新增列车」——国庆临客出现就自动兑现","提前绑好支付、核对乘车人信息"],
+  pit:["2026 国庆 10/1–10/7 放假 7 天，10/1 与 10/6–7 是最难的票","杭州各站起售时刻以 12306 小程序当日查询为准"],
+  src:[["12306 候补购票说明","https://kyfw.12306.cn/otn/gonggao/alternate.html"],["12306 起售时刻","https://mobile.12306.cn/weixin/wxcore/qssj"],["中国政府网·2026 节假日安排","https://www.gov.cn/"]]
+},
+"pit-jinwen": {
+  tone:"d1", ic:"🚄", t:"金温线车次跳过霞浦", s:"D3211 / G1605 / D3205 / G1677 等走内陆",
+  tag:["别踩坑"],
+  rows:[["现象","同为「杭州 → 宁德方向」的车，走金温线的从金华—丽水内陆绕，不停霞浦、太姥山"],["涉及车次","D3211、G1605、D3205、G1677 等（2026-09 图定口径）"],["后果","买到这些车 = 只能到宁德站，再折返 59 公里回霞浦"]],
+  rec:["付款前点开「经停站」确认有霞浦/太姥山","认准沿海线（杭深线）车次"],
+  pit:["车次开行以 12306 当日为准"],
+  src:[["12306","https://kyfw.12306.cn/"]]
+},
+"pit-dongbi-traffic": {
+  tone:"d1", ic:"🚗", t:"东壁村 19:00–21:00 禁机动车（2025 口径）", s:"看完日落要么早走、要么步行回三沙",
+  tag:["看时间","人多"],
+  rows:[["管制","2025 国庆口径：10/2–10/7 每天 19:00–21:00，东壁村禁止机动车进入"],["本行程","10/1 不在管制日内，但 10/2 在——若改行程注意"],["配套","同通告管制三沙「留云寺至金沙街」路段；太康路/府前路全线禁停"]],
+  rec:["日落 17:46、天黑 18:10，拍完 19 点前出村正好","住东壁村里的，让民宿老板确认当晚车能不能进"],
+  pit:["2026 年通告出发前必须重查（霞浦交警/县融媒发布）"],
+  src:[["霞浦县 2025 国庆管制（县融媒）","https://ndwww.cn/xw/ndxw/2025/1001/314822.shtml"]]
+},
+"food-askprice": {
+  tone:"d1", ic:"💰", t:"海鲜点单问价清单", s:"六样先问价 · 剑蛏 130–150 元/斤",
+  tag:["别踩坑","已核对"],
+  rows:[["先问价 6 样","椒盐皮皮虾、梭子蟹、椒盐大虾、清煮花螺、大鱿鱼（要有白色籽的）、淡水鳗（十六番用户清单）"],["价格锚点","剑蛏 130–150 元/斤（县融媒）；排档普通菜一份 50 不到、鲜活 100 不到、人均 100 够（UGC）"],["计价方式","落座先确认按斤/按只/按盘；当面看秤"],["官方背书","霞浦「电子点餐 + 餐前确认」31 家餐饮安装，上线后相关主体未出现价格类投诉"]],
+  rec:["优先选有「电子点餐 + 餐前确认」标识的店","市场买海鲜找店加工：高罗实测清蒸/水煮 20 元/盘、爆炒 30 元/盘（县城口径未查到，当面对齐）","吃完留小票，纠纷打 12315"],
+  pit:["「时价」两个字不等于随便开价——问清单价再点头","出海捕鱼被船家带去加工是明确差评点（UGC 实测每船约 600 元）"],
+  src:[["霞浦县融媒体中心（海鲜怎么买）","https://www.ndwww.cn/xspd/xpxw/2023/0828/264047.shtml"],["十六番·霞浦本地店清单","http://live.16fan.com/info/535088.html"],["中国消费者报·宁德 315 典型案例（鬼秤罚 90500）","https://www.cqn.com.cn/ms/content/2024-03/18/content_9037245.htm"]]
+},
+"pit-market": {
+  tone:"d1", ic:"🐟", t:"买海鲜去农贸市场，别去码头", s:"码头是批发，不卖散客（县融媒原话）",
+  tag:["省钱","本地"],
+  rows:[["官方口径","「码头上大多是批发，很少卖给散客；买海鲜最好去农贸市场」——霞浦县融媒体中心"],["市场","公众农贸市场、海滨市场、东关街海鲜市场；旺季种类多、价格相对实惠"],["加工","市场旁边大多有加工店；高罗实测：清蒸/水煮 20 元/盘、爆炒 30 元/盘（UGC，县城口径未查到）"],["鬼秤案例","蕉城海鲜摊鬼秤被罚 90500 元（2023-11，波龙 6.24 斤复称 5.7 斤）——宁德 315 典型案例"]],
+  rec:["买了就在市场旁加工，最新鲜也最透明","加工费当面问清「按盘还是按斤」"],
+  pit:["「东关街海鲜一条街」不存在——东关是小吃夜市，买海鲜的是东关街海鲜市场，两回事"],
+  src:[["霞浦县融媒体中心","https://www.ndwww.cn/xspd/xpxw/2023/0828/264047.shtml"],["中国消费者报·宁德 315 典型案例","https://www.cqn.com.cn/ms/content/2024-03/18/content_9037245.htm"]]
+},
+"pit-minsu-cancel": {
+  tone:"d1", ic:"🏠", t:"民宿毁约怎么办（有真实判例）", s:"霞浦 349 元拒单卖 646，罚没 2098 元",
+  tag:["别踩坑","人多"],
+  rows:[["真实判例","霞浦某民宿 349 元/间订单被拒单后同房型卖 646 元，市监局罚没 2098 元（2023，县政府公示）"],["官方限价","霞市监〔2024〕37 号：节假日酒店房价 ≤ 上年均价 +100%、民宿 ≤ +50%"],["退订阶梯","提前 5 天全退 / 3–5 天扣 10% / 1–3 天扣 20%（霞浦 2025 口径）"],["平台赔付","携程/飞猪对「到店无房」有最高首晚 3 倍差价赔付（2023 口径）"]],
+  rec:["订房后截图：订单页 + 退订条款 + 同房型在售页","被毁约先找平台客服（有赔付规则），同时 12315 小程序投诉","砍价聊天记录、电话录音都留着"],
+  pit:["「节假日要加钱」不是店家说了算——超指导价上限即可投诉","2025 国庆霞浦民宿入住率 90.55%，越晚订越被动"],
+  src:[["霞浦县政府·民宿毁约处罚公示（2023-05）","http://www.xiapu.gov.cn/ztzl/zllwlbgz/xxgs/202305/t20230504_1754949.htm"],["霞浦县市监局·节假日价格规则（2024-05）","http://www.xiapu.gov.cn/zwgk/gkzl/bmzfxxgk/zfbm/xsgj/gkml_25160/zdgkxx/202405/t20240513_1936413.htm"],["霞浦县市监局·退订阶梯（2025-07）","http://www.xiapu.gov.cn/zwgk/gkzl/bmzfxxgk/zfbm/xsgj/gkml_25160/zdgkxx/202507/t20250723_2081827.htm"]]
+},
+"pit-sunrise-logistics": {
+  tone:"d2", ic:"🌅", t:"看日出的早餐后勤", s:"民宿早餐 07:00 才开 · 凌晨店在县城",
+  tag:["早去","看时间"],
+  rows:[["日出","10/2 约 05:52；三沙出发 04:40，县城出发要再早 40 分钟"],["民宿早餐","普遍 07:00 开餐——拍完日出回来正好"],["凌晨店","林明发糊汤包店：凌晨 3 点开工、约上午 10 点收摊（福建日报 2022 记者实地），在县城农贸市场东侧巷内——住三沙不顺路"],["未核实","阿福包店、东门头包子糊汤均被自媒体称「24 小时」，单源未核实，行前电话确认"]],
+  rec:["前一晚买好面包牛奶放包里，日出后回三沙金沙街吃锅边","带外套，花竹山上风大"],
+  pit:["别为了「24 小时糊汤店」专程半夜进县城——两条来源都未核实"],
+  src:[["福建日报·霞浦糊汤包（2022-11-15）","https://www.fjdaily.com/app/content/2022-11/15/content_1667282.html"],["日出时刻（00cha 工具站）","http://richu.00cha.net/ten_1791_ym202610.html"]]
+},
+"pit-tide": {
+  tone:"d2", ic:"🌊", t:"潮汐：10/1–3 不是大潮", s:"下尾岛只在退潮前后约 2 小时值得上",
+  tag:["看时间","天气敏感"],
+  rows:[["农历","10/1–10/3 = 八月廿一至廿三，大潮（八月十五 = 9/25）已过"],["影响","滩涂纹理、火烧云规模可能不如初一/十五前后；摄影大片别期待过高"],["下尾岛","海蚀洞只在退潮前后约 2 小时能上，中午先查潮汐表再决定去不去"],["小皓/东壁","小皓退潮至七分最好看；东壁反而涨潮时海面反光好"]],
+  rec:["装「潮汐表」类 App（福建海洋预报台也有官方预报），前一晚查北岐/下尾岛低潮时刻","低潮在白天的日子优先排滩涂点"],
+  pit:["涨潮上礁石拍照有被困风险——霞浦有过涨潮困人救援报道","滩涂别走太远，泥会陷"],
+  src:[["日出日落/农历（00cha 工具站）","http://richu.00cha.net/ten_1791_ym202610.html"],["霞浦县融媒体中心","https://www.ndwww.cn/xspd/xpxw/2023/0828/264047.shtml"]]
+},
+"pit-taikanglu-traffic": {
+  tone:"d1", ic:"🚦", t:"太康路：全线禁停 + 两个拥堵时段", s:"午市最空 · 晚高峰别开车进县城",
+  tag:["看时间","人多"],
+  rows:[["禁停","太康路全线禁停；府前路全线禁停（2025 交警口径）"],["拥堵","早高峰 7:30–9:30；晚 17:30–20:30 最堵"],["本行程","D1 午饭 11:45 到太康路正好错峰；D2 早 07:30 后别开车进县城"]],
+  rec:["县城内打车/步行，别自己开车找车位","17:00 前离开县城去车站"],
+  pit:["2026 管制通告出发前重查"],
+  src:[["霞浦县 2025 国庆管制（县融媒）","https://ndwww.cn/xw/ndxw/2025/1001/314822.shtml"]]
+},
+"pit-taimushan-line": {
+  tone:"d3", ic:"⛰️", t:"太姥山：一线天、排队与物价", s:"最窄 20–30cm · 10 点后排队 · 水 10 元",
+  tag:["早去","人多"],
+  rows:[["一线天","最窄处 UGC 称 20–30cm，需侧身收腹；体型宽（UGC 称 200 斤慎入）、背大包、有幽闭恐惧的量力而行"],["排队","节假日 7 点前进园几乎不排，10 点后一线天排长队（UGC）"],["物价","山上水 10 元/瓶；一线天前存包 5 元（UGC）"],["新设施","2025 年新增扶梯（五百罗汉堂→一片瓦）+ 轨道车（九鲤湖↔白云寺），收费未查到"]],
+  rec:["07:00 进园直奔一线天，趁没人","水和干粮山下买；背包进洞前存包"],
+  pit:["洞内湿滑、台阶陡，穿防滑鞋","带老人走轻松休闲线，别挑战秘境寻幽全程"],
+  src:[["福建日报太姥山攻略（2024-11-24）","https://www.fjdaily.com/app/content/2024-11/24/content_2936678.html"]]
+},
+"pit-yushan-holiday": {
+  tone:"d1", ic:"🏝️", t:"国庆别临时起意去嵛山岛", s:"2025 前 3 天破 3 万人次 · 民宿全满",
+  tag:["人多","要预约","末班早"],
+  rows:[["2025 实况","国庆前 3 天岛上破 3 万人次、船票紧张、民宿全满（福州晚报/福鼎市政府）"],["船班","三沙方向去程末班约 12:00；渔井 9:00/14:00/16:30（以码头公示为准）"],["信号","天湖草场 UGC 称信号弱"]],
+  rec:["想去就住岛一晚 + 提前订船票民宿，半天来回不现实","本行程不含嵛山岛——放进「多一天」"],
+  pit:["没订到岛上住宿就别上岛","台风天船会停航"],
+  src:[["福州晚报（2025-09-27）","https://news.fznews.com.cn/dsxw/20250927/91rD4mQzwx.shtml"],["福鼎市政府（2025-10-10）","http://www.fuding.gov.cn/zwgk/xzdt/202510/t20251010_2308262.htm"]]
+},
+"pit-yangjiaxi-feng": {
+  tone:"d2", ic:"🍁", t:"杨家溪：国庆没有红叶", s:"赏枫在 12 月 · 牵牛图是付费摆拍",
+  tag:["季节性","别踩坑"],
+  rows:[["红叶","枫香林红叶季在 12 月，国庆去只有古榕绿叶"],["摆拍","「老农牵牛过榕林」「赶鹅」是付费摆拍场景，摆拍人休息就扑空"],["门票","50 元；7:00 前 / 17:00 后免（福建旅游资讯口径）"]],
+  rec:["当「千年古榕群」顺路景点看，1–1.5 小时","想看红叶 12 月再来"],
+  pit:["网上「杨家溪红枫大片」多为 12 月旧图，别被季节差骗了"],
+  src:[["福建旅游资讯·杨家溪","http://www.fjta.com/scenic/description/140"]]
+},
+"pit-typhoon": {
+  tone:"d3", ic:"🌀", t:"10 月初仍是台风季尾端", s:"2026 年 7–9 月白水洋 4 次闭园",
+  tag:["天气敏感"],
+  rows:[["先例","2026 年 7/9、8/8、8/23、9/1 白水洋·鸳鸯溪因台风 4 次发闭园公告"],["高铁","台风天沿海高铁可能限速/停运（2026-09-03 福建有高速管制与列车调整先例）"],["应对窗口","出发前 3 天台风路径基本明朗"]],
+  rec:["出发前 3 天开始盯：台风路径、景区公告、12306 停运信息","买好可退改的票（8 天外退票免费）","真撞台风：霞浦县城逛九大馆/太康路吃一轮，太姥山改期"],
+  pit:["海岛（嵛山岛）台风天船停航，别硬闯"],
+  src:[["白水洋景区官方公告","https://www.ningde.gov.cn/"],["东南网·福建交通管制先例（2026-09-03）","https://nd.fjsen.com/wap/2026-09/03/content_32246908.htm"]]
+},
+"pit-signal": {
+  tone:"d2", ic:"📶", t:"手机信号：海上选移动", s:"嵛山岛天湖草场 UGC 称信号弱",
+  tag:["别踩坑"],
+  rows:[["沿海覆盖","宁德海域 5G 覆盖以移动证据最全（滨海旅游航线、海上养殖区均有官方/媒体报告）"],["弱区","嵛山岛天湖草场、部分滩涂机位 UGC 称信号弱"],["支付","村里小摊刷码依赖信号——回到现金那条"]],
+  rec:["双卡双待把移动设为主卡（如有）","上岛/下滩涂前下好离线地图与潮汐表","民宿 Wi-Fi 名与密码入住就拍照存好"],
+  pit:["苹果单卡用户在滩涂刷不出码别慌，备现金"],
+  src:[["中国日报·宁德滨海旅游 5G（2026-09-08）","https://cnews.chinadaily.com.cn/a/202609/08/WS6a9fad6ce4b09a165c788a61.html"],["宁德网·移动海域覆盖（2025-09-26）","https://www.ndwww.cn/xw/ndxw/2025/0926/314576.shtml"]]
+},
+"pit-cash": {
+  tone:"d2", ic:"💴", t:"备一点现金", s:"渔港小摊/突突车/村里小卖部用得上",
+  tag:["别踩坑"],
+  rows:[["场景","三沙突突车、金沙街早餐摊、村里小卖部、滩涂边卖水老人"],["网点","村里没有银行网点，最近的 ATM 在三沙镇区"],["信号","弱信号区刷码失败时现金兜底"]],
+  rec:["杭州出发前取 300–500 元现金，拆零","县城银行网点齐全，D1 中午可补"],
+  pit:["别带大额整钞，小摊找不开"],
+  src:[["宁德网·三沙支付场景报道","https://www.ndwww.cn/"]]
+},
+/* ================= 美食（f- 前缀走美食排版） ================= */
+"f-xinjincheng": {
+  tone:"d1", ic:"🦀", t:"新金城·平价海鲜大牌档", s:"太康路 610 号好旺佳 A 幢 · 人均 ¥121",
+  tag:["评分 携程 5.0","点评 23 条","推荐 ★★★★★"],
+  img:["images/food/f-haixian-platter.jpg","海鲜拼盘（参考图，非本店实拍）· N509FZ / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Jitang_Cuan_Haibang_at_Juchunyuan,_Fuzhou_(20250127115522).jpg"],
+  cat:"海鲜排档",
+  rows:[["人均","¥121（携程用户反馈）"],["口碑","携程 5.0 分（23 条点评，2026-09-15 抓取）；携程美食林「宁德当地风味餐厅榜」No.6"],["推荐指数","★★★★★ · 节假日排队"],["招牌","广蒸青斑鱼、太平燕鱼面、锅贝炖蛋、葱油碎螺、海蛎煎；青斑鱼问时价"],["营业","10:00–次日 03:00（POI 口径，未核实）"],["怎么去","太康路 610 号好旺佳 A 幢 112–120，地址栏直接写「海鲜排档一条街」"],["顺路","Day 1 中午"]],
+  shop:[["真实评价 · 正面","“口感出众的海鲜餐厅，广蒸青斑鱼是招牌。” —— 携程美食林榜语"],["真实评价 · 正面","“推荐两家人气王餐厅：新金城和舌尖上，两家并排着。” —— UGC 街景实测"],["真实评价 · 注意","未查到该店的具体差评原文；样本 23 条，节假日需排队。—— 2026/09 查询"]],
+  rec:["顺路安排：Day 1 中午","午市 11:00–13:30 最空；海鲜先问价再下单"],
+  pit:["样本仅 23 条，5.0 分≠必吃，只代表目前没人给差评","上榜理由：携程美食林宁德当地风味餐厅榜 No.6"],
+  src:[["携程·新金城","https://gs.ctrip.com/html5/you/foods/xiapu1154/8297071.html"],["携程美食林·霞浦榜单","https://gs.ctrip.com/html5/you/foods/1154/list-c4938.html"]]
+},
+"f-shejianshang": {
+  tone:"d1", ic:"🐟", t:"舌尖上 de 海鲜馆（总店）", s:"太康路 610 号好万佳 A 号楼 113 · 人均 ¥136",
+  tag:["评分 携程 4.0","点评 39 条","推荐 ★★★★☆"],
+  img:["images/food/f-haixian.jpg","海鲜（参考图，非本店实拍）· YEUalichangpsia / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3_Shenzhen_DMD_%E6%9D%B1%E9%96%80%E7%94%BA%E7%BE%8E%E9%A3%9F%E8%A1%97_Dong_Men_Ding_Food_Street_steamed_crabs_Feb_2017_IX1_(2).jpg"],
+  cat:"海鲜排档",
+  rows:[["人均","¥136（携程用户反馈）"],["口碑","携程 4.0 分（39 条）；美食林「宁德当地风味餐厅榜」No.3"],["推荐指数","★★★★☆ · 节假日排队久"],["招牌","清蒸本地大黄鱼、皮皮虾、鱼丸汤"],["营业","10:00–23:30（POI 口径，未核实）"],["怎么去","太康路 610 号好万佳 A 号楼 113，与新金城并排"],["顺路","Day 1 中午"]],
+  shop:[["真实评价 · 正面","“虽然是个网红但是有真实力，就餐环境也很好。”“海鲜菜肴色味俱佳，当地人的夜宵圣地。” —— 携程用户/榜语"],["真实评价 · 吐槽","“最近不知道为什么有点咸了。”“唯一缺点就是节假日排队可能会比较久。” —— 携程用户"],["真实评价 · 正面","“第二天中午外面赶回来都过了 2 点，店里还让我们赶快点菜，同时帮我们把 4 盒打包的剩菜也热了。” —— 携程用户（日期未显示，谨慎参考）"]],
+  rec:["顺路安排：Day 1 中午","网红店排队久就换隔壁新金城，同一条街"],
+  pit:["近期有「偏咸」反馈，下单可提醒少盐","人均是全线最高一档（¥136），点菜控制住"],
+  src:[["携程美食林·霞浦榜单","https://gs.ctrip.com/html5/you/foods/1154/list-c4938.html"],["携程·霞浦美食列表","https://gs.ctrip.com/html5/you/foods/xiapu1154.html"]]
+},
+"f-xinmeiweiyuan": {
+  tone:"d1", ic:"🦐", t:"新美味园·海鲜夜档（总店）", s:"太康路 610 号一带 · 人均 ¥95",
+  tag:["评分 携程 4.5","点评 榜语未给条数","推荐 ★★★★☆"],
+  img:["images/food/f-crab.jpg","蟹（参考图，非本店实拍）· YEUalichangpsia / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3ASZ_%E6%B7%B1%E5%9C%B3_Shenzhen_DMD_%E6%9D%B1%E9%96%80%E7%94%BA%E7%BE%8E%E9%A3%9F%E8%A1%97_Dong_Men_Ding_Food_Street_steamed_crabs_Feb_2017_IX1_%282%29.jpg"],
+  cat:"海鲜排档",
+  rows:[["人均","¥95（携程用户反馈）"],["口碑","携程 4.5 分；美食林「宁德当地风味餐厅榜」No.1"],["推荐指数","★★★★☆ · 夜档排队"],["招牌","剑蛏、红膏蟹、海鲜夜档"],["营业","夜档为主（POI 口径，未核实）"],["怎么去","太康路 610 号一带"],["顺路","Day 1 中午 / 夜宵"]],
+  shop:[["真实评价 · 正面","“新鲜海鲜做入味菜肴，当地人宵夜的佳选。” —— 携程美食林榜语（No.1）"],["真实评价 · 吐槽","“口味会有一点点偏甜……装潢差一点，人所以整体价格比舌尖上便宜。” —— 十六番用户"]],
+  rec:["顺路安排：Day 1 中午 / 夜宵","口味偏甜，江浙沪友好"],
+  pit:["Trip.com 帖「人均 50 海鲜自由」含推广性质，以 ¥95 为准","剑蛏 130–150 元/斤，点之前确认"],
+  src:[["携程美食林·霞浦榜单","https://gs.ctrip.com/html5/you/foods/1154/list-c4938.html"]]
+},
+"f-sansha-shejianshang": {
+  tone:"d1", ic:"🐠", t:"舌尖上三沙平价海鲜排档", s:"三沙镇金沙街 48 号 · 人均 ¥70",
+  tag:["评分 携程 4.5","点评 5 条","推荐 ★★★★☆"],
+  img:["images/food/f-yu.jpg","清蒸鱼（参考图，非本店实拍）· Apeach316 / Wikimedia Commons · CC BY-SA 2.0","https://commons.wikimedia.org/wiki/File:Cantonese_style_steamed_fish_and_special_side_dishes_in_lunch.jpg"],
+  cat:"海鲜排档",
+  rows:[["人均","¥70（携程）；注意：去哪儿旧口径 ¥112 · 3 分，两平台冲突，以现场菜单为准"],["口碑","携程 4.5 分（5 条，样本极小）"],["推荐指数","★★★★☆ · 巷子深"],["招牌","手工目鱼饼、葱油剑蛏、清蒸大黄鱼、海鲜鱼面、白蒸野生墨鱼"],["营业","09:30–13:30 / 16:30–22:00（POI 口径）"],["怎么去","三沙镇金沙街 48 号；距「三沙火车站快线金沙街口站」161m"],["顺路","Day 1 晚饭"]],
+  shop:[["真实评价 · 正面","“老板人很实在，食材新鲜度能打，价格也公道……清蒸鱼只用当天的海鱼。” —— 携程用户（5 分）"],["真实评价 · 正面","“价格都标得清清楚楚，这点太拉好感了！你们是不是也特烦那种菜单上不写价的店？” —— 携程用户（4 分）"],["真实评价 · 吐槽","“还是买回自己煮便宜。可以到路边的小饭店，如连江小海鲜，味道好价格也便宜。” —— 去哪儿用户（2017，旧口径）"]],
+  rec:["顺路安排：Day 1 晚饭","目鱼饼和剑蛏是点单率最高的两样"],
+  pit:["携程 5 条样本极小；巷子深、装修旧","两平台人均差 ¥42，点菜前先翻菜单"],
+  src:[["携程美食·霞浦列表","https://gs.ctrip.com/html5/you/foods/xiapu1154.html"],["去哪儿·该店旧页","https://touch.go.qunar.com/poi/15397629"]]
+},
+"f-sansha-zaocan": {
+  tone:"d2", ic:"🥣", t:"三沙金沙街早餐摊", s:"锅边 · 豹纹肉粽 · 海蛎油饼",
+  tag:["评分 UGC 口径","推荐 ★★★★☆"],
+  img:["images/food/f-yutangmian.jpg","汤粉（参考图，非本摊实拍）· Peachyeung316 / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Noodles_soup_with_fish_eggs_and_fish_dumplings_with_octopus_ball.jpg"],
+  cat:"霞浦早餐",
+  rows:[["人均","约 ¥10–20（UGC 估计）"],["口碑","UGC 单源：「金沙街的锅边、豹纹肉粽、海蛎油饼，便宜又好吃」"],["推荐指数","★★★★☆ · 跟着本地人排队"],["招牌","锅边、豹纹肉粽、海蛎油饼、闽南糊"],["营业","清晨起（各摊不同，未查到）"],["怎么去","三沙镇金沙街（霞浦交警管制通告可印证此街存在）"],["顺路","Day 2 早饭"]],
+  shop:[["真实评价 · 正面","“早餐：三沙金沙街的『锅边』、豹纹肉粽、海蛎油饼，便宜又好吃！” —— UGC（十六番系）"],["真实评价 · 注意","摊位无店名无门牌、营业时间未查到——2026/09 查询"]],
+  rec:["顺路安排：Day 2 早饭（拍完花竹日出回来）","备现金，小摊不一定支持扫码"],
+  pit:["单源 UGC，摊位出摊情况以当天为准","闽南糊不是所有人都吃得惯（有 UGC 差评）"],
+  src:[["霞浦县融媒体中心（闽南糊口径）","https://www.ndwww.cn/xspd/xpxw/2023/0828/264047.shtml"]]
+},
+"f-sansha-jingdian": {
+  tone:"d2", ic:"🍲", t:"三沙经典小吃（太康店）", s:"太康路 × 金山路 · 人均 ¥30",
+  tag:["评分 携程 4.2","点评 19 条","推荐 ★★★★☆"],
+  img:["images/food/f-street-food.jpg","小吃摊（参考图，非本店实拍）· Balon Greyjoy / Wikimedia Commons · CC0","https://commons.wikimedia.org/wiki/File%3A20181124_Ueno_Park_seafood_stall.jpg"],
+  cat:"霞浦小吃",
+  rows:[["人均","¥30（携程用户反馈）"],["口碑","携程 4.2 分（19 条）"],["推荐指数","★★★★☆ · 旺季排队半小时"],["招牌","煎闽南糊、海蛎煎、海鲜锅边、炒甜黄粿、地瓜杯、鸡卷"],["营业","08:30–次日 01:30（POI 口径）"],["怎么去","县城太康路与金山路交叉口旁"],["顺路","Day 2 中午备选"]],
+  shop:[["真实评价 · 正面","“大众点评前十都可以点，都不贵，十几二十块钱，都来点尝尝。”“排队半小时，吃完我只想说——值！” —— 携程/UGC 用户"],["真实评价 · 吐槽","“闽南糊有点不太吃的来；海蛎煎太油了，不过味道不错。” —— 十六番用户（2024-07）"]],
+  rec:["顺路安排：Day 2 中午备选","一次点多份小吃分着吃，单价都十几二十"],
+  pit:["海蛎煎偏油；闽南糊口感见仁见智","旺季排队约半小时"],
+  src:[["携程美食·霞浦列表","https://gs.ctrip.com/html5/you/foods/xiapu1154.html"],["十六番·霞浦本地店清单","http://live.16fan.com/info/535088.html"]]
+},
+"f-yujia": {
+  tone:"d2", ic:"🍠", t:"芋家人芋头饭（百丽花园店）", s:"霞浦县城 · 人均 ¥51",
+  tag:["评分 携程 4.1","点评 7 条","推荐 ★★★★☆"],
+  img:["images/food/f-taro-cake.jpg","芋头（参考图，非本店实拍）· Dllu / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3ATaro_Cake_dllu.jpg"],
+  cat:"闽菜家常",
+  rows:[["人均","¥51（携程用户反馈）"],["口碑","携程 4.1 分（7 条，样本极小）"],["推荐指数","★★★★☆ · 换口味之选"],["招牌","芋头饭（福鼎槟榔芋）"],["营业","10:30–16:00 / 16:30–20:30（POI 口径）"],["怎么去","霞浦县城百丽花园"],["顺路","Day 2 中午"]],
+  shop:[["真实评价 · 注意","好评/差评原文未取到（携程 7 条点评页未展开）；评分与人均为 POI 口径。—— 2026/09 查询"]],
+  rec:["顺路安排：Day 2 中午","连吃两顿海鲜后换换口味的选择"],
+  pit:["两段制营业，14 点后午市将收","样本 7 条，分数参考意义有限"],
+  src:[["携程美食·霞浦列表","https://gs.ctrip.com/html5/you/foods/xiapu1154.html"]]
+},
+"f-roupian-xiapu": {
+  tone:"d2", ic:"🍜", t:"福鼎正宗肉片（府前路店）", s:"府前路 259 号 · 人均 ¥13",
+  tag:["评分 携程 4.2","点评 6 条","推荐 ★★★☆☆"],
+  img:["images/food/f-wonton.jpg","肉片汤（参考图，非本店实拍）· Rocky Masum / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3AWonton.jpg"],
+  cat:"福鼎肉片",
+  rows:[["人均","¥13（携程用户反馈）"],["口碑","携程 4.2 分（6 条，样本极小）"],["推荐指数","★★★☆☆ · 快、便宜"],["招牌","福鼎肉片（记得加黄椒和本地醋）"],["营业","08:00–23:00（POI 口径）"],["怎么去","府前路 259 号（东门菜市场对面）"],["顺路","Day 2 中午·快"]],
+  shop:[["真实评价 · 吐槽","“（霞浦的福鼎肉片）还是在福鼎吃的好吃，肉片吃起来面粉感有点强，黄椒醋也差点意思。” —— 十六番用户（2024-07，针对霞浦分店整体的泛指评价）"]],
+  rec:["顺路安排：Day 2 中午赶时间吃","真正好吃的肉片在 Day 3 福鼎市区，这顿当垫肚子"],
+  pit:["UGC 普遍认为霞浦分店粉感偏重","样本 6 条"],
+  src:[["携程美食·霞浦列表","https://gs.ctrip.com/html5/you/foods/xiapu1154.html"],["十六番·霞浦本地店清单","http://live.16fan.com/info/535088.html"]]
+},
+"f-roupian-fuding": {
+  tone:"d3", ic:"🥩", t:"福鼎肉片（品类卡）", s:"发源地原味 · 黄椒 + 本地醋",
+  tag:["评分 官方名小吃","推荐 ★★★★★"],
+  img:["images/food/f-hundun.jpg","福鼎肉片（参考图）· Grueslayer / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:FOOD_Wonton_Soup.jpg"],
+  cat:"福鼎肉片",
+  rows:[["人均","约 ¥15/碗（UGC）"],["口碑","福鼎城市名片：「中国十大特色地域小吃」；闽浙两省注册门店 5000 多家（福鼎市烹饪协会口径）"],["推荐指数","★★★★★ · 到福鼎必吃"],["招牌","肉片 + 黄椒 + 本地醋；官方配比肉:地瓜粉 = 1:0.7，取猪后腿瘦肉"],["营业","各家不同，早到晚都有"],["怎么去","太姥山镇（玉池南路一带）、福鼎市区（中山中路/锦宁路）"],["顺路","Day 2 晚 / Day 3 午"]],
+  shop:[["真实评价 · 正面","“每样都好吃！Q 弹劲道滑溜！汤也好喝！加点醋，再加点福建特色的黄辣椒酱，直接光盘。” —— UGC（评老福鼎祖传肉片·太姥山分店）"]],
+  rec:["顺路安排：Day 2 晚（太姥山镇）/ Day 3 午（福鼎市区）","无单一指定店：认排队多的本地店"],
+  pit:["霞浦分店普遍被嫌粉感重——到福鼎再吃正式的","黄椒偏辣，少放"],
+  src:[["福鼎市政府·福鼎美食","http://www.fuding.gov.cn/zjfd/mlfd/fdms/"],["携程美食·福鼎列表","https://gs.ctrip.com/html5/you/foods/490.html"]]
+},
+"f-anai": {
+  tone:"d3", ic:"🍖", t:"阿耐·福鼎非遗猪头肉（太姥山店）", s:"太姥山镇 · 卤味酸辣口",
+  tag:["评分 UGC 强推","推荐 ★★★★☆"],
+  img:["images/food/f-luwei.jpg","卤味（参考图，非本店实拍）· Yun Huang Yong / Wikimedia Commons · CC BY 2.0","https://commons.wikimedia.org/wiki/File:2007-10-24_Lou_Mei_in_Taipei.jpg"],
+  cat:"福鼎小吃",
+  rows:[["人均","未查到（卤味按盘计）"],["口碑","UGC 单源强推；「不到阿耐，不懂福鼎」是本地流传语（自媒体口径）"],["推荐指数","★★★★☆ · 晚饭/夜宵"],["招牌","卤猪头肉、卤鸡骨架（酸辣口）、炸牡蛎、煎芋头饼、拌面"],["营业","未查到，建议 20:00 前去"],["怎么去","太姥山镇，距太姥邱记约 193m"],["顺路","Day 2 晚"]],
+  shop:[["真实评价 · 正面","“卤猪头肉、卤鸡骨架：强烈推荐！完全和温州的卤味是两个味道！福鼎的居然是酸辣口的，特别入味，特别上头，好吃！可以双拼～里面可以拌千页豆腐。” —— UGC（Trip.com 游记）"],["真实评价 · 正面","“炸牡蛎：炸得很酥脆，蘸点醋。”“煎芋头饼：很扎实，喜欢芋头的必点。” —— 同上"],["真实评价 · 注意","来源未提及任何缺点，也未给价格与营业时间——如实标注。—— 2026/09 查询"]],
+  rec:["顺路安排：Day 2 晚","卤味双拼 + 拌面，人均别点过量"],
+  pit:["无平台评分，UGC 单源；口味偏酸辣，不吃辣慎点"],
+  src:[["携程·太姥邱记附近美食（POI 距离口径）","https://you.ctrip.com/food/fuding613/11167741.html"]]
+},
+"f-qiuji": {
+  tone:"d3", ic:"🥟", t:"太姥邱记小吃（太姥山店）", s:"玉池南路 193 号 · 人均 ¥27",
+  tag:["评分 携程 5 条","点评 5 条","推荐 ★★★★☆"],
+  img:["images/food/f-xiaolongbao.jpg","小笼包（参考图，非本店实拍）· Darrylsnow / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Xiaolongbao-breakfast.jpg"],
+  cat:"福鼎小吃",
+  rows:[["人均","¥27（携程用户反馈）"],["口碑","携程 5 条点评；官方第二批「福鼎十大名小吃」小笼包代表企业（2024-09，37 家参评各项得分前 2 且 >90 分）"],["推荐指数","★★★★☆ · 上山前垫饱"],["招牌","小笼珍珠包、太姥百年肉燕、福鼎肉片、蜜汁鸡翅、深海鳘鱼片、鱼片汤、牛肉丸"],["营业","未查到（建议电话确认：0593-7267888）"],["怎么去","太姥山镇玉池南路 193 号"],["顺路","Day 3 早饭"]],
+  shop:[["真实评价 · 正面","“店面比较醒目，夜里门面很亮眼。” —— 去哪儿用户（2017-02，旧口径）"],["真实评价 · 注意","携程 5 条点评未取到原文；官方名小吃名单可作口味背书。—— 2026/09 查询"]],
+  rec:["顺路安排：Day 3 早饭（06:30）","若没开门，隔壁 126m 老福鼎祖传肉片、122m 李记扁食（UGC：皮非常薄）"],
+  pit:["样本极小；营业时间未查到","官方名单是 2024 年评选，品质以当下为准"],
+  src:[["携程·太姥邱记小吃","https://you.ctrip.com/food/fuding613/11167741.html"],["福鼎市政府·名小吃相关公示（2024-09）","http://www.fuding.gov.cn/zwgk/bmdt/202409/t20240904_1969486.htm"]]
+},
+"f-agu": {
+  tone:"d3", ic:"🍡", t:"阿古牛肉丸（一建店）", s:"南大路 · 人均 ¥53",
+  tag:["评分 携程 14 条","点评 14 条","推荐 ★★★★☆"],
+  img:["images/food/f-beef-ball.jpg","牛肉丸（参考图，非本店实拍）· DragonSamYU / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3ABeef_Ball_Soup_-_20170301.jpg"],
+  cat:"福鼎小吃",
+  rows:[["人均","¥53（携程用户反馈）"],["口碑","携程 14 条点评（未显示总分）；官方「十大名小吃」牛肉丸代表企业之一（福鼎市彭记阿古牛肉店）"],["推荐指数","★★★★☆ · 本地家常"],["招牌","牛肉丸、牛肉水粉、挂霜芋、芋头煎、鸡翅膀、拌牛杂"],["营业","未查到（POI 未标注）"],["怎么去","福鼎市区南大路桐山建工商住楼 A 幢 108 号"],["顺路","Day 3 午饭"]],
+  shop:[["真实评价 · 注意","点评原文未取到（携程 14 条未展开）；官方名单背书。—— 2026/09 查询"]],
+  rec:["顺路安排：Day 3 午饭","挂霜芋是槟榔芋做的甜品，别错过"],
+  pit:["营业时间未查到，午市去最稳","官方名单为 2024 年评选"],
+  src:[["携程·阿古牛肉丸","https://you.ctrip.com/food/fuding613/11109839-dianping.html"],["福鼎市政府·名小吃相关公示（2024-09）","http://www.fuding.gov.cn/zwgk/bmdt/202409/t20240904_1969486.htm"]]
+},
+"f-dingpei": {
+  tone:"d3", ic:"🥣", t:"鼎培肉片（人民剧场对面）", s:"中山中路 · 人均 ¥16",
+  tag:["评分 携程 4.0","点评 4 条","推荐 ★★★★☆"],
+  img:["images/food/f-wonton.jpg","肉片汤（参考图，非本店实拍）· Rocky Masum / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3AWonton.jpg"],
+  cat:"福鼎肉片",
+  rows:[["人均","¥16（携程用户反馈）"],["口碑","携程 4.0 分（4 条，样本极小）；老牌肉片店"],["推荐指数","★★★★☆ · 快"],["招牌","拌肉片、肉片汤、肉片水粿、肉筋、包子、鸡翅、芋头条"],["营业","未查到（POI 未标注）"],["怎么去","福鼎市区中山中路，市政府西北约 40m；电话 13616099908"],["顺路","Day 3 午饭·快"]],
+  shop:[["真实评价 · 注意","点评原文未取到（4 条样本）。同价位替代：阿山肉片（锦宁路 106 号，¥16）。—— 2026/09 查询"]],
+  rec:["顺路安排：Day 3 午饭赶时间吃","拌肉片比汤肉片更入味"],
+  pit:["样本 4 条；营业时间未查到"],
+  src:[["携程美食·福鼎附近列表","https://gs.ctrip.com/html5/you/foods/poiAround/613/16284196-32604077-food.html"]]
+},
+"f-tongshanxi": {
+  tone:"d3", ic:"🍗", t:"桐山溪西小吃美食街（街区卡）", s:"蜜汁鸡翅 · 点头米粉汤 · 畲家乌米饭",
+  tag:["评分 官方街区","推荐 ★★★★☆"],
+  img:["images/food/f-luwei.jpg","蜜汁卤味（参考图）· Yun Huang Yong / Wikimedia Commons · CC BY 2.0","https://commons.wikimedia.org/wiki/File:2007-10-24_Lou_Mei_in_Taipei.jpg"],
+  cat:"福鼎小吃",
+  rows:[["人均","小吃每样约 ¥10–20（UGC 口径）"],["口碑","福建省政府 2023 年第二批省级特色步行街；2021-11-20 福鼎三条官方美食示范街之一"],["推荐指数","★★★★☆ · 下午逛吃"],["招牌","蜜汁鸡翅、点头米粉汤、畲家乌米饭、福鼎肉片；蜜汁鸡翅官方代表企业：鼎韵食膳、鼎享翅"],["营业","街区全天，摊店各家不同"],["怎么去","福鼎市区龙山溪水系景观轴 + 西园主街区；桐山大桥西侧口 10:00–21:00 易堵，步行进出"],["顺路","Day 3 下午"]],
+  shop:[["真实评价 · 正面","“福鼎海鲜最负盛名的一条街（指姊妹街石湖）……物美价廉。” —— 东南网（2022-01）"],["真实评价 · 注意","街区店摊无逐家评分；褚翅（¥47，携程 3.0·3 条）号称人气老店但评分垫底，别专程。—— 2026/09 查询"]],
+  rec:["顺路安排：Day 3 下午","蜜汁鸡翅认排队多的摊位；留胃到上车前"],
+  pit:["14 点后部分小吃店午休","国庆 16:00–19:00 石湖一带会堵（交警口径）"],
+  src:[["福建省政府·特色步行街（2023-04-17）","http://www.fujian.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/wvjj/202304/t20230417_6149788.htm"],["东南网·福鼎美食街（2022-01-10）","http://nd.fjsen.com/2022-01/10/content_30934375.htm"]]
+},
+"f-white-tea": {
+  tone:"d3", ic:"🍵", t:"福鼎白茶（购买指南卡）", s:"买新茶 · 认溯源码 · 别赌老白茶",
+  tag:["评分 人类非遗","推荐 ★★★★☆"],
+  img:["images/food/f-white-tea.jpg","白牡丹茶汤（参考图）· soultea.de/André Helbig / Wikimedia Commons · CC BY-SA 3.0","https://commons.wikimedia.org/wiki/File%3AFrisch_aufgebr%C3%BChter_wei%C3%9Fer_Tee_Pai_Mu_Tan.jpg"],
+  cat:"手信",
+  rows:[["人均","口粮新茶几十–几百元/饼"],["口碑","福鼎白茶制作技艺入选人类非遗；国家地理标志保护产品"],["推荐指数","★★★★☆ · 手信首选"],["招牌","白毫银针、白牡丹、寿眉、贡眉——四者是「品类」不是「等级」（GB/T 22291）"],["营业","茶店一般 9:00–21:00（未核实）"],["怎么去","福鼎市区品牌专卖店；点头镇茶青交易市场距市区远，不专程"],["顺路","Day 3 手信"]],
+  shop:[["真实评价 · 注意","“市面上一大半老白茶都是做旧、虚标年份的”——自媒体口径（页面自标 AI 生成），只作风险提示，不作事实。—— 2026/09 查询"]],
+  rec:["顺路安排：Day 3 手信","口粮买当年新茶；送礼选品牌店带溯源码的","「中国白茶城」在政和县不在福鼎，别导航错"],
+  pit:["景区/车站旁「茶农直销老白茶」谨慎","品牌线索（品品香/绿雪芽/六妙）来自企业站自述，未核实"],
+  src:[["福鼎市政府·白茶溯源（2025-08-01）","http://www.fuding.gov.cn/ztzl/fdbc/bczx/202508/t20250801_2140734.htm"],["中国茶叶流通协会","https://www.ctma.com.cn/"]]
+},
+"f-linmingfa": {
+  tone:"d2", ic:"🥟", t:"林明发糊汤包店", s:"县城农贸市场东侧巷内 · 凌晨 3 点开工",
+  tag:["评分 官媒实地","推荐 ★★★★★"],
+  img:["images/food/f-zaocan.jpg","中式早餐（参考图，非本店实拍）· N509FZ / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Breakfast_selections_at_a_restaurant_near_Wanshousi,_Beijing_(20230313082120).jpg"],
+  cat:"霞浦早餐",
+  rows:[["人均","约 ¥10–15（糊汤 + 肉包；UGC 实测一顿多品 43 元）"],["口碑","福建日报 2022-11 记者实地采访：夫妻店，经营 22 年；平时一天卖 700 多个包子、300 多碗糊汤，旺季翻倍"],["推荐指数","★★★★★ · 赶日出救星"],["招牌","糊汤（米粉 + 虾仁干 + 花蛤干 + 瘦肉勾薄芡、加鱼露）、肉包"],["营业","凌晨 3 点开工，约上午 10 点收摊（官媒口径）"],["怎么去","霞浦县城农贸市场东侧巷弄中段"],["顺路","住县城时的日出日早饭"]],
+  shop:[["真实评价 · 正面","“清晨 5 点多，市民小阮『率团』来到林明发店里。” —— 福建日报（2022-11，记者实地）"],["真实评价 · 注意","“（霞浦）人口味就是偏甜，海鲜都是甜辣居多。” —— 十六番用户"]],
+  rec:["顺路安排：住县城时的 Day 2 早饭","05:30 前去不用排队"],
+  pit:["住三沙/东壁则不顺路（开车 28–35 分钟）","约 10 点收摊，睡过头就没了"],
+  src:[["福建日报·霞浦糊汤包（2022-11-15）","https://www.fjdaily.com/app/content/2022-11/15/content_1667282.html"],["宁德网/霞浦县融媒体中心·糊汤（2023-08-28）","https://www.ndwww.cn/xspd/xpxw/2023/0828/264047.shtml"]]
+},
+/* ================= 撤下名单 ================= */
+"f-zhengxiaoer": {
+  tone:"d1", ic:"🚫", t:"郑小二滩涂海鲜（总店）", s:"已撤下 · 营销过重",
+  tag:["评分 携程 4.0","点评 17 条","已撤下推荐"],
+  img:["images/food/f-seafood.jpg","海鲜（参考图）· N509FZ / Wikimedia Commons · CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File%3AJitang_Cuan_Haibang_at_Juchunyuan%2C_Fuzhou_%2820250127115522%29.jpg"],
+  cat:"海鲜排档",
+  rows:[["人均","¥94（携程用户反馈）"],["口碑","携程 4.0 分（17 条）；但头条同账号 2025-08~09 连发近十篇雷同推广帖（「本地食客推荐」「10 年老字号亲测」等标题模式），独立口碑无法分辨"],["推荐指数","已撤下 · 替代：新金城（5.0）"],["招牌","大小剑蛏、碎螺"],["营业","未查到"],["怎么去","太康路一带"],["顺路","—"]],
+  shop:[["真实评价 · 正面","“海鲜品种多，味道还可以，吃饭的好去处。” —— 携程用户「浦阳的江」（4 分）"],["真实评价 · 吐槽","携程点评仅 1 条好评展示，未查到差评；问题在营销帖淹没了真实口碑。—— 2026/09 复查"]],
+  rec:["替代：新金城（携程 5.0 · 23 条）"],
+  pit:["头条推广帖是自媒体营销内容，不能当独立口碑"],
+  src:[["携程·郑小二","https://gs.ctrip.com/html5/you/foods/Hitchin53726/17181397.html"]]
+},
+"f-yunman": {
+  tone:"d1", ic:"🚫", t:"云缦观海民宿餐厅（东壁）", s:"已撤下 · 东壁最低分",
+  tag:["评分 携程 3.7","点评 6 条","已撤下推荐"],
+  cat:"海鲜排档",
+  rows:[["人均","¥123（携程用户反馈）"],["口碑","携程 3.7 分（6 条）——东壁片区最低分"],["推荐指数","已撤下 · 替代：三沙镇区排档（约 ¥70）"],["招牌","海景位"],["营业","未查到"],["怎么去","东壁村"],["顺路","—"]],
+  shop:[["真实评价 · 注意","东壁村餐厅整体偏贵（¥94–130），这家评分还垫底；拍日落不需要进店。—— 2026/09 复查"]],
+  rec:["替代：回三沙镇区吃（便宜一截）"],
+  pit:["海景位溢价明显"],
+  src:[["携程美食·霞浦列表","https://gs.ctrip.com/html5/you/foods/xiapu1154.html"]]
+},
+"f-wujinxi": {
+  tone:"d1", ic:"🚫", t:"无尽夕·落日海景餐厅（东壁）", s:"已撤下 · 0 点评最贵",
+  tag:["评分 暂无点评","已撤下推荐"],
+  cat:"海鲜排档",
+  rows:[["人均","¥130（携程用户反馈）"],["口碑","携程暂无点评——0 样本且是东壁最贵一档"],["推荐指数","已撤下 · 国庆假期不做小白鼠"],["招牌","落日海景位"],["营业","未查到"],["怎么去","东壁村"],["顺路","—"]],
+  shop:[["真实评价 · 注意","无任何点评可参考（2026-09-15 抓取）。—— 2026/09 复查"]],
+  rec:["日落在栈道免费看，不必为窗位付 ¥130"],
+  pit:["0 点评 + 最高人均，风险自担"],
+  src:[["携程美食·霞浦列表","https://gs.ctrip.com/html5/you/foods/xiapu1154.html"]]
+},
+"f-dafengshou": {
+  tone:"d1", ic:"🚫", t:"大丰收", s:"已撤下 · UGC 原话「真的别去」",
+  tag:["评分 UGC 差评","已撤下推荐"],
+  cat:"海鲜排档",
+  rows:[["人均","未查到"],["口碑","十六番用户原话「真的别去」；无任何平台数据对冲"],["推荐指数","已撤下"],["招牌","—"],["营业","未查到"],["怎么去","—"],["顺路","—"]],
+  shop:[["真实评价 · 吐槽","“大丰收：真的别去。” —— 十六番用户（2024-07 清单帖）"]],
+  rec:["替代：太康路三家人气店任选"],
+  pit:["UGC 单源差评 + 无平台数据，直接绕道"],
+  src:[["十六番·霞浦本地店清单","http://live.16fan.com/info/535088.html"]]
+},
+"f-shengyan": {
+  tone:"d1", ic:"🚫", t:"生腌大叔", s:"已撤下 · 不入味 + 生腌门槛",
+  tag:["评分 UGC 差评","已撤下推荐"],
+  cat:"生腌",
+  rows:[["人均","未查到"],["口碑","「腌不够时间，有点不够入味，建议买回来后再腌一会，酒味重，汤汁味道不错」"],["推荐指数","已撤下"],["招牌","生腌"],["营业","未查到"],["怎么去","—"],["顺路","—"]],
+  shop:[["真实评价 · 吐槽","“腌不够时间，有点不够入味……酒味重。” —— 十六番用户（2024-07）"]],
+  rec:["生腌本身有食品安全门槛，外地胃别在旅途中赌"],
+  pit:["肠胃弱的旅客慎试一切生腌"],
+  src:[["十六番·霞浦本地店清单","http://live.16fan.com/info/535088.html"]]
+},
+"f-wuji": {
+  tone:"d1", ic:"🚫", t:"吴记鸡架肉饭", s:"已撤下 · 一小盘一百多",
+  tag:["评分 UGC 褒贬","已撤下推荐"],
+  cat:"简餐",
+  rows:[["人均","「一小盘一百多」（UGC）"],["口碑","味道被认可（酸辣口），但价格劝退"],["推荐指数","已撤下 · 性价比不达标"],["招牌","鸡架肉饭（酸辣口）"],["营业","未查到"],["怎么去","—"],["顺路","—"]],
+  shop:[["真实评价 · 吐槽","“味道很好，酸辣口的，一小盘一百多，感觉有点小贵但是还可以接受。” —— 十六番用户（2024-07）"]],
+  rec:["同预算去吃海鲜排档更值"],
+  pit:["「按只报价」类风险的简餐版——下单前问价"],
+  src:[["十六番·霞浦本地店清单","http://live.16fan.com/info/535088.html"]]
+},
+"f-agui": {
+  tone:"d2", ic:"🚫", t:"阿贵包店", s:"已撤下 · 肉包皮太厚",
+  tag:["评分 UGC 差评","已撤下推荐"],
+  cat:"霞浦早餐",
+  rows:[["人均","糊汤 3 元/碗"],["口碑","糊汤可以喝，包子不行"],["推荐指数","已撤下 · 替代：林明发糊汤包店"],["招牌","糊汤（3 元）、肉皮汤尚可"],["营业","未查到"],["怎么去","霞浦县城"],["顺路","—"]],
+  shop:[["真实评价 · 吐槽","“肉包不太好吃，皮太厚了；糊汤挺不错的，3/碗；肉皮汤还可以。” —— 十六番用户（2024-07）"]],
+  rec:["喝糊汤可以，吃肉包去林明发"],
+  pit:["只喝糊汤、别点肉包"],
+  src:[["十六番·霞浦本地店清单","http://live.16fan.com/info/535088.html"],["福建日报·霞浦糊汤包（2022-11-15）","https://www.fjdaily.com/app/content/2022-11/15/content_1667282.html"]]
+}
+};
+const modal = document.getElementById("modal");
+const mh = document.getElementById("mh");
+const mhic = document.getElementById("mh-ic");
+const mht = document.getElementById("mh-t");
+const mhs = document.getElementById("mh-s");
+const mhbody = document.getElementById("mh-body");
+
+function kvHTML(rows){
+  return `<div class="row">${rows.map(r=>`<span class="kv"><b>${r[0]}</b>：${r[1]}</span>`).join("")}</div>`;
+}
+/* ---- 美食弹窗：从既有数据里解析出 评分 / 好评率 / 推荐指数，再拼专用的排版 ---- */
+function foodTag(d,prefix){
+  const t = (d.tag||[]).find(x=>x.indexOf(prefix)===0);
+  return t ? t.slice(prefix.length).trim() : "";
+}
+const FOOD_CATS = {};
+Object.keys(MODALS).forEach(id=>{
+  const d = MODALS[id];
+  if(id.indexOf("f-")===0 && d.cat){ (FOOD_CATS[d.cat] = FOOD_CATS[d.cat] || []).push(id); }
+});
+function rateClass(n){ return n>=75 ? "" : (n>=55 ? "mid" : "low"); }
+function foodRow(d,k){
+  const r = (d.rows||[]).find(x=>x[0]===k);
+  return r ? r[1] : "";
+}
+function foodHTML(id,d){
+  const score = foodTag(d,"评分");
+  const good  = foodTag(d,"好评率");
+  const stars = foodTag(d,"推荐");
+  const gnum  = parseInt(good,10) || 0;
+  const price = foodRow(d,"人均");
+  const queue = (foodRow(d,"推荐指数").split("·")[1]||"").trim();
+  const sig   = foodRow(d,"招牌");
+  const credit= (d.rows||[]).find(x=>x[0]==="口碑");
+  const priceJPY = (price.match(/^[^（(]+/)||[""])[0].trim();
+  const priceCNY = (price.match(/[（(]([^）)]+)[）)]/)||["",""])[1];
+
+  // 招牌 → 菜品胶囊（格式为「菜品、菜品；说明」，只取「；」之前的部分，并滤掉营业/付款之类的非菜品）
+  const NON_DISH = /(营业|预约|席位|支持|禁止|收费|加收|必须|免费|无休|不定休)/;
+  const sigHead = sig.split("；")[0];
+  const dishes = sigHead.split(/[、，]/).map(x=>x.trim())
+                    .filter(x=>x && x.length<=16 && !/[。！]/.test(x));
+  const onlyDishes = dishes.filter(x=>!NON_DISH.test(x));
+  const dishList = onlyDishes.length ? onlyDishes : (dishes.length ? dishes : (sig?[sig]:[]));
+
+  let h = "";
+  if(d.img){
+    const cap = d.img[1] + (d.img[2] ? ` · <a href="${d.img[2]}" target="_blank" rel="noopener">原图与授权</a>` : "");
+    h += `<div class="fhero"><img src="${d.img[0]}" alt="${d.t}" loading="lazy"><div class="cap">📷 ${cap}</div></div>`;
+  }
+  // 评分面板
+  h += `<div class="fstats">
+    <div class="st"><b>${score||"—"}</b><i>平台评分<br>（携程 5 分制）</i></div>
+    <div class="st"><b>${good||"—"}</b><i>好评率（平台口径）</i><div class="bar ${gnum<55?'warn':''}"><i style="width:${gnum}%"></i></div></div>
+    <div class="st"><b class="fstars2 sm">${stars||((d.tag||[]).some(t=>t.indexOf("已撤下推荐")===0)?"已撤下":"—")}</b><i>推荐指数<br>${queue?queue:"按口碑 × 顺路 × 排队"}</i></div>
+    <div class="st"><b>${priceJPY||"—"}</b><i>人均 ${priceCNY?priceCNY:""}</i></div>
+  </div>`;
+  if(credit) h += `<div class="verdict">📊 <b>口碑拆解：</b>${credit[1]}</div>`;
+  const recs = d.rec || [];
+  if(recs.length) h += `<div class="verdict">🗓️ <b>顺路安排：</b>${recs[0].replace(/^顺路安排：/,"")}</div>`;
+
+  h += `<h5>🍽️ 招牌 & 必点</h5>`;
+  h += `<div class="dishes">${dishList.map(x=>`<span class="d">${x}</span>`).join("")}</div>`;
+  if(sig && dishList.join("、") !== sig) h += `<p class="muted" style="margin-top:6px">${sig}</p>`;
+  if(recs.length>1) h += `<h5>🧾 点单 & 注意</h5><ul>${recs.slice(1).map(x=>`<li class="rec">${x}</li>`).join("")}</ul>`;
+
+  // 好评 / 差评
+  const revs = d.shop || [];
+  if(revs.length){
+    h += `<h5>${d.cat==="便利店"?"🛒 买什么 & 怎么买":"💬 真实评价（好评 / 差评）"}</h5><div class="revcards">`;
+    revs.forEach((r,i)=>{
+      const positive = /正面|好评/.test(r[0]) || (!/吐槽|差评/.test(r[0]) && i===0 && revs.length>1);
+      const body = r[1].split("——");
+      const quote = body[0].trim();
+      const meta = (body[1]||"").trim();
+      const sc = (meta.match(/([\d.]+)\s*分/)||["",""])[1];
+      const dt = (meta.match(/(\d{4}\/\d{2})/)||["",""])[1];
+      h += `<div class="rev ${positive?"":"bad"}">
+        <div class="rh"><span class="sc">${sc?sc+" 分":(positive?"好评":"差评")}</span>
+        <b>${r[0].replace("真实评价 · ","")}</b>${dt?`<span>· ${dt}</span>`:""}</div>
+        <p>${quote}</p>
+        <div class="rmt">${meta?meta:"—— 公开评价（携程 / 大众点评 / UGC）"}</div>
+      </div>`;
+    });
+    h += `</div>`;
+  }
+  // 实用信息
+  const infoKeys = ["营业","定休","座位","预约","付款","怎么去","顺路"];
+  const info = (d.rows||[]).filter(r=>infoKeys.indexOf(r[0])>=0);
+  if(info.length) h += `<h5>📋 实用信息</h5>` + kvHTML(info);
+  if(d.pit) h += `<h5>⚠️ 缺点 & 避坑</h5><ul>${d.pit.map(x=>`<li class="pit">${x}</li>`).join("")}</ul>`;
+  // 同品类其他选择
+  const sibs = (FOOD_CATS[d.cat]||[]).filter(x=>x!==id);
+  if(sibs.length){
+    h += `<h5>🔀 同品类其他选择（${d.cat}）</h5><div class="jump">` + sibs.map(x=>{
+      const s = MODALS[x], g = foodTag(s,"好评率"), st = foodTag(s,"推荐");
+      return `<div class="j" data-jump="${x}"><b>${s.t}</b><span class="g">好评率 ${g||"—"}</span> · <span>${st}</span></div>`;
+    }).join("") + `</div>`;
+  }
+  if(d.src) h += `<div class="src">📎 参考来源：${d.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join(" · ")}</div>`;
+  return h;
+}
+function badgeClass(t){
+  const RED  = ["踩雷","避雷","谨慎","别踩坑","限时","当天往返太赶","不推荐","看时间","人多","已撤下","季节性","天气敏感","要预约","末班早","已售完"];
+  const GRN  = ["推荐","必去","必玩","必吃","主力","省钱","已核对","最值得","免费","世界遗产","首选","经典","亲子友好","非遗","主打"];
+  const BLU  = ["必打卡","必体验","夜景","出片","顺路","本地","海景","江景","改风景","雨天备选","甜品","早去","散步","CityWalk","citywalk","小众","滩涂","日出"];
+  if(RED.indexOf(t)>=0) return "r";
+  if(GRN.indexOf(t)>=0) return "g";
+  if(BLU.indexOf(t)>=0) return "b";
+  return "o";
+}
+function openModal(id){
+  const d = MODALS[id];
+  if(!d) return;
+  mh.className = "modal-head " + (d.tone||"d1");
+  mhic.textContent = d.ic;
+  mht.textContent = d.t;
+  mhs.textContent = d.s;
+  let h = "";
+  if(id.indexOf("f-")===0){
+    h = foodHTML(id,d);
+  }else{
+    h += `<div class="row">${d.tag.map(t=>`<span class="badge ${badgeClass(t)}">${t}</span>`).join("")}</div>`;
+    if(d.img) h += `<div class="mphoto"><img src="${d.img[0]}" alt="${d.t}" loading="lazy"><div class="cap">📷 ${d.img[1]}</div></div>`;
+    if(d.rows) h += kvHTML(d.rows);
+    if(d.shop) h += `<h5>🏪 店名对比</h5><ul class="shops">${d.shop.map((x,i)=>`<li class="rec"><span class="num">${i+1}</span><span class="lab">${x[0]}</span>：${x[1]}</li>`).join("")}</ul>`;
+    if(d.rec) h += `<h5>👍 推荐理由 / 怎么做</h5><ul>${d.rec.map(x=>`<li class="rec">${x}</li>`).join("")}</ul>`;
+    if(d.pit) h += `<h5>⚠️ 注意 & 避坑</h5><ul>${d.pit.map(x=>`<li class="pit">${x}</li>`).join("")}</ul>`;
+    if(d.src) h += `<div class="src">📎 参考来源：${d.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join(" · ")}</div>`;
+  }
+  mhbody.innerHTML = h;
+  mhbody.scrollTop = 0;
+  const card = document.querySelector(".modal-card");
+  if(card) card.scrollTop = 0;
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.querySelectorAll("[data-modal]").forEach(el=>{
+  el.addEventListener("click",e=>{ e.stopPropagation(); openModal(el.getAttribute("data-modal")); });
+});
+mhbody.addEventListener("click",e=>{
+  const j = e.target.closest("[data-jump]");
+  if(j){ openModal(j.getAttribute("data-jump")); }
+});
+document.getElementById("mh-x").addEventListener("click",closeModal);
+modal.addEventListener("click",e=>{ if(e.target===modal) closeModal(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeModal(); });
+/* 深链：直接打开某张卡片，例如 …攻略.html#f-example */
+function openFromHash(){
+  const id = decodeURIComponent(location.hash.replace(/^#/,""));
+  if(id && MODALS[id] && !modal.classList.contains("open")) openModal(id);
+}
+window.addEventListener("hashchange",()=>{ if(!location.hash) closeModal(); else openFromHash(); });
+openFromHash();
+
+/* ============ 宁德定制：携程口径的美食弹窗（覆盖 template 的 foodHTML） ============
+   注：本文件在 build 时注入到 template 引擎 JS 之后；
+   function 声明同名后者覆盖前者，因此运行时使用本实现。
+   与模板版的差异：
+   - 评分面板：评分（携程 5 分制）/ 点评数 / 推荐指数 / 人均 —— 去掉「好评率」条形图（宁德无好评率抽样数据）
+   - 评价卡：区分 好评 / 差评 / 说明（「注意」类条目不再渲染成红色差评卡）
+   - 同品类跳转行：显示评分而非好评率
+*/
+function foodHTML(id,d){
+  const score = foodTag(d,"评分");
+  const cnt   = foodTag(d,"点评");
+  const stars = foodTag(d,"推荐");
+  const demoted = (d.tag||[]).some(t=>t.indexOf("已撤下推荐")===0);
+  const price = foodRow(d,"人均");
+  const queue = (foodRow(d,"推荐指数").split("·")[1]||"").trim();
+  const sig   = foodRow(d,"招牌");
+  const credit= (d.rows||[]).find(x=>x[0]==="口碑");
+  const priceMain = (price.match(/^[^（(]+/)||[""])[0].trim();
+  const priceNote = (price.match(/[（(]([^）)]+)[）)]/)||["",""])[1];
+
+  const NON_DISH = /(营业|预约|席位|支持|禁止|收费|加收|必须|免费|无休|不定休)/;
+  const sigHead = sig.split("；")[0];
+  const dishes = sigHead.split(/[、，]/).map(x=>x.trim())
+                    .filter(x=>x && x.length<=16 && !/[。！]/.test(x));
+  const onlyDishes = dishes.filter(x=>!NON_DISH.test(x));
+  const dishList = onlyDishes.length ? onlyDishes : (dishes.length ? dishes : (sig?[sig]:[]));
+
+  let h = "";
+  if(d.img){
+    const cap = d.img[1] + (d.img[2] ? ` · <a href="${d.img[2]}" target="_blank" rel="noopener">原图与授权</a>` : "");
+    h += `<div class="fhero"><img src="${d.img[0]}" alt="${d.t}" loading="lazy"><div class="cap">📷 ${cap}</div></div>`;
+  }
+  h += `<div class="fstats">
+    <div class="st"><b>${score||"—"}</b><i>评分<br>（携程 5 分制 / 口径见行）</i></div>
+    <div class="st"><b>${cnt||"—"}</b><i>点评数<br>（宁德样本普遍很小）</i></div>
+    <div class="st"><b class="fstars2 sm">${stars||(demoted?"已撤下":"—")}</b><i>推荐指数<br>${queue?queue:"口碑 × 顺路 × 样本量"}</i></div>
+    <div class="st"><b>${priceMain||"—"}</b><i>人均 ${priceNote?priceNote:""}</i></div>
+  </div>`;
+  if(credit) h += `<div class="verdict">📊 <b>口碑拆解：</b>${credit[1]}</div>`;
+  const recs = d.rec || [];
+  if(recs.length) h += `<div class="verdict">🗓️ <b>顺路安排：</b>${recs[0].replace(/^顺路安排：/,"")}</div>`;
+
+  h += `<h5>🍽️ 招牌 & 必点</h5>`;
+  h += `<div class="dishes">${dishList.map(x=>`<span class="d">${x}</span>`).join("")}</div>`;
+  if(sig && dishList.join("、") !== sig) h += `<p class="muted" style="margin-top:6px">${sig}</p>`;
+  if(recs.length>1) h += `<h5>🧾 点单 & 注意</h5><ul>${recs.slice(1).map(x=>`<li class="rec">${x}</li>`).join("")}</ul>`;
+
+  const revs = d.shop || [];
+  if(revs.length){
+    h += `<h5>💬 真实评价（好评 / 差评 / 说明）</h5><div class="revcards">`;
+    revs.forEach((r,i)=>{
+      const isBad = /吐槽|差评/.test(r[0]);
+      const isPos = /正面|好评/.test(r[0]) || (!isBad && !/注意|提示|说明/.test(r[0]) && i===0 && revs.length>1);
+      const body = r[1].split("——");
+      const quote = body[0].trim();
+      const meta = (body[1]||"").trim();
+      const sc = (meta.match(/([\d.]+)\s*分/)||["",""])[1];
+      const dt = (meta.match(/(\d{4}\/\d{2})/)||["",""])[1];
+      const label = sc ? sc+" 分" : (isBad ? "差评" : (isPos ? "好评" : "说明"));
+      h += `<div class="rev ${isBad?"bad":""}">
+        <div class="rh"><span class="sc">${label}</span>
+        <b>${r[0].replace("真实评价 · ","")}</b>${dt?`<span>· ${dt}</span>`:""}</div>
+        <p>${quote}</p>
+        <div class="rmt">${meta?meta:"—— 公开评价（携程 / 大众点评 / UGC）"}</div>
+      </div>`;
+    });
+    h += `</div>`;
+  }
+  const infoKeys = ["营业","定休","座位","预约","付款","怎么去","顺路"];
+  const info = (d.rows||[]).filter(r=>infoKeys.indexOf(r[0])>=0);
+  if(info.length) h += `<h5>📋 实用信息</h5>` + kvHTML(info);
+  if(d.pit) h += `<h5>⚠️ 缺点 & 避坑</h5><ul>${d.pit.map(x=>`<li class="pit">${x}</li>`).join("")}</ul>`;
+  const sibs = (FOOD_CATS[d.cat]||[]).filter(x=>x!==id);
+  if(sibs.length){
+    h += `<h5>🔀 同品类其他选择（${d.cat}）</h5><div class="jump">` + sibs.map(x=>{
+      const s = MODALS[x], sc2 = foodTag(s,"评分"), st = foodTag(s,"推荐");
+      const sdm = (s.tag||[]).some(t=>t.indexOf("已撤下推荐")===0);
+      return `<div class="j" data-jump="${x}"><b>${s.t}</b><span class="g">${sc2||"—"}</span> · <span>${sdm?"已撤下":st}</span></div>`;
+    }).join("") + `</div>`;
+  }
+  if(d.src) h += `<div class="src">📎 参考来源：${d.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join(" · ")}</div>`;
+  return h;
+}
+
+</script>
+</body>
+</html>
