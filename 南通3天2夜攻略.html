@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南通 · 3天2夜（杭州高铁往返）· 濱河老城 + 狼山江海</title>
+<style>
+  :root{
+    --ink:#2b2b2b; --muted:#6b6b6b; --line:#e8e3da;
+    --shu:#a8452c; --shu-d:#7f3320; --shu-l:#f6e5de;
+    --ai:#3f7f8c; --ai-d:#1e4351; --ai-l:#e2edf0;
+    --gold:#c99a3f; --gold-l:#f3e6c8;
+    --green:#2f7a5f; --green-d:#1f5741;
+    --cream:#faf7f2; --cream2:#f3ece1; --yt:#8c6b3f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.7}
+  .wrap{max-width:940px;margin:0 auto;padding:22px 16px 70px}
+
+  /* ---------- Banner ---------- */
+  .banner{background:linear-gradient(135deg,#1e4351,#3f7f8c 45%,#a8452c 130%);color:#fff;border-radius:20px;padding:28px 26px;position:relative;overflow:hidden}
+  .banner h1{font-size:29px;letter-spacing:1.5px}
+  .banner .sub{margin-top:8px;opacity:.95;font-size:14.5px}
+  .banner .slogan{margin-top:14px;display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:999px;font-size:14px}
+  .banner .deco{position:absolute;right:-24px;top:-30px;font-size:112px;opacity:.16}
+
+  /* ---------- Sticky nav ---------- */
+  .topnav{position:sticky;top:10px;z-index:200;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px;padding:10px;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+  .topnav a{text-decoration:none;color:var(--ai-d);font-size:13.5px;font-weight:600;padding:6px 13px;border-radius:999px;background:var(--cream);border:1px solid transparent;transition:.2s}
+  .topnav a:hover{background:var(--gold-l);border-color:var(--gold)}
+
+  /* ---------- Section ---------- */
+  section{margin-top:28px}
+  h2{display:flex;align-items:center;gap:10px;font-size:22px;color:var(--ai-d);border-left:6px solid var(--shu);padding-left:12px;margin-bottom:14px}
+  h2 .tag{font-size:13px;color:#fff;background:var(--shu);border-radius:999px;padding:2px 10px;font-weight:500;white-space:nowrap}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .card p{font-size:14.5px;color:#3a3a3a}
+  .card p+p{margin-top:8px}
+  .muted{font-size:13.5px;color:var(--muted)}
+  .hl{background:linear-gradient(transparent 62%,var(--gold-l) 62%);font-weight:600}
+
+  /* ---------- Table ---------- */
+  .tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+  .tbl th,.tbl td{border-bottom:1px dashed var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+  .tbl th{color:var(--ai-d);font-weight:700;white-space:nowrap}
+  .tbl tr:last-child td{border-bottom:none}
+  .tbl .d{color:var(--shu);font-weight:700;white-space:nowrap}
+
+  /* ---------- Day ---------- */
+  .day{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:20px;box-shadow:0 3px 14px rgba(0,0,0,.05)}
+  .day-head{display:flex;align-items:center;gap:12px;padding:16px 20px;color:#fff}
+  .day-head.d1{background:linear-gradient(135deg,#3f7f8c,#1e4351)}
+  .day-head.d2{background:linear-gradient(135deg,#a8452c,#7f3320)}
+  .day-head.d3{background:linear-gradient(135deg,#2f7a5f,#1f5741)}
+  .day-head.d4{background:linear-gradient(135deg,#c99a3f,#a87a2b)}
+  .day-head.d5{background:linear-gradient(135deg,#4a5a63,#2b373d)}
+  .day-head .num{font-size:23px;font-weight:700}
+  .day-head .t{font-size:18px;font-weight:600}
+  .day-head .route{font-size:12.5px;opacity:.92;margin-left:auto;text-align:right}
+  .day-body{padding:16px 20px}
+  .geo{background:var(--cream2);border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;font-size:13.5px;color:var(--muted);margin-bottom:14px}
+  .geo .lab{cursor:pointer;border-bottom:1px dotted var(--gold);color:var(--ai-d);font-weight:600}
+  .geo .lab:hover{background:var(--gold-l);border-radius:4px}
+  .timeblock{display:grid;grid-template-columns:86px 1fr;gap:4px 12px;padding:10px 0;border-top:1px dashed var(--line)}
+  .timeblock:first-of-type{border-top:none}
+  .slot{font-weight:700;color:var(--ai-d);font-size:14px;padding-top:2px}
+  .slot small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+  .what{font-size:15px}
+  .what b{color:var(--ai-d)}
+  .why{color:var(--muted);font-size:13.5px;margin-top:3px}
+  .sched-title{font-size:14px;color:var(--shu);font-weight:700;margin:16px 0 4px;display:flex;align-items:center;gap:8px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .split .box{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--cream)}
+  .split .box h4{font-size:14px;color:var(--shu);margin-bottom:6px}
+  .split .box ul{list-style:none}
+  .split .box li{font-size:13.5px;color:#3a3a3a;padding:4px 0 4px 18px;position:relative}
+  .split .box li::before{content:"・";position:absolute;left:2px;color:var(--gold);font-weight:700}
+
+  /* ---------- Clickable spot cards ---------- */
+  .spot{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--ai);border-radius:14px;padding:13px 15px;margin:12px 0;cursor:pointer;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .spot:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(0,0,0,.10)}
+  .spot .ic{font-size:26px;flex:0 0 auto}
+  .spot .body{flex:1;min-width:0}
+  .spot .body .t{font-size:16px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .spot .body .s{font-size:13px;color:var(--muted);margin-top:3px}
+  .spot .arrow{color:var(--gold);font-size:18px;flex:0 0 auto}
+  .spot .ph{width:96px;height:68px;flex:0 0 auto;border-radius:10px;overflow:hidden;background:#e9e5dd}
+  .spot .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .badge{font-size:11px;font-weight:600;border-radius:999px;padding:1px 8px;white-space:nowrap}
+  .badge.g{background:#e2f0e9;color:var(--green)}
+  .badge.o{background:#f6ead2;color:#a87a2b}
+  .badge.r{background:#f5e0da;color:var(--shu)}
+  .badge.b{background:var(--ai-l);color:var(--ai-d)}
+
+  /* ---------- Photos ---------- */
+  .mphoto{margin:0 0 14px;border-radius:12px;overflow:hidden;background:#eee}
+  .mphoto img{width:100%;display:block}
+  .mphoto .cap{font-size:12px;color:var(--muted);padding:6px 10px;background:var(--cream)}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(206px,1fr));gap:12px}
+  .gallery figure{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .gallery img{width:100%;height:148px;object-fit:cover;display:block}
+  .gallery figcaption{font-size:11.5px;color:var(--muted);padding:8px 10px;line-height:1.65}
+  .gallery figcaption b{color:var(--ai-d);display:block;font-size:13.5px;margin-bottom:2px}
+
+  /* ---------- Restaurant list ---------- */
+  .rest{margin-top:14px}
+  .rest h4{font-size:15px;color:var(--gold);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .rest h4 .rname{color:var(--ink);font-size:16px}
+  .rest ul{list-style:none}
+  .rest li{font-size:14px;padding:8px 0 8px 24px;position:relative;color:#444;border-bottom:1px dashed var(--line)}
+  .rest li:last-child{border-bottom:none}
+  .rest li::before{content:"";position:absolute;left:2px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--ai)}
+  .rest li.pit::before{background:var(--shu)}
+  .rest li .lab{font-weight:700;margin-right:6px;color:var(--ai-d);cursor:pointer;border-bottom:1px dotted var(--gold)}
+  .rest li.pit .lab{color:var(--shu)}
+  .rest li .lab:hover{background:var(--gold-l);border-radius:4px}
+
+  /* ---------- Chips ---------- */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .chip{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;transition:.18s}
+  .chip:hover{background:var(--gold-l);border-color:var(--gold)}
+  .chip b{color:var(--ai-d)}
+
+  /* ---------- 美食清单 ---------- */
+  .foodlegend{font-size:13.5px;color:var(--muted);line-height:1.8}
+  .foodlegend b{color:var(--ink)}
+  .quick{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:8px}
+  .quick .q{border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:var(--cream)}
+  .quick .q b{display:block;font-size:13.5px;color:var(--shu-d)}
+  .quick .q span{font-size:13px;color:#3a3a3a;line-height:1.6}
+  .fgroup{margin-top:20px}
+  .fgroup>h3{font-size:16.5px;color:var(--shu-d);display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+  .fgroup>h3 span{font-size:12.5px;font-weight:400;color:var(--muted)}
+  .fgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));margin-top:10px}
+  .fcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 15px;cursor:pointer;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+  .fcard:hover{border-color:var(--gold);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+  .fcard .fn{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .fcard .fn b{font-size:15.5px;color:var(--ai-d)}
+  .fcard .fn .fc{font-size:12px;color:var(--muted)}
+  .fcard .fl{font-size:13px;color:#46423c;margin-top:6px;line-height:1.7}
+  .fcard .fl .k{color:var(--muted)}
+  .fcard .fwarn{color:#9c3f2b}
+  .fstars{color:#d39021;letter-spacing:1.5px;font-size:14px;white-space:nowrap}
+  .fgood{color:var(--green);font-weight:700}
+  .fquote{font-size:12.6px;color:#5b5650;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:7px 10px;margin-top:8px;line-height:1.65}
+  .fquote em{font-style:normal;color:var(--muted);font-size:11.5px;display:block;margin-top:3px}
+  @media(max-width:700px){.fgrid{grid-template-columns:1fr}}
+
+  /* ---------- 店铺卡片：一张图 + 推荐指数 + 好评率（Day 模块用） ---------- */
+  .restnote{font-size:13px;color:var(--muted);margin:2px 0 10px;line-height:1.75}
+  .restnote b{color:var(--ink)}
+  .restfoot{font-size:11.8px;color:var(--muted);margin-top:12px;line-height:1.75;border-top:1px dashed var(--line);padding-top:9px}
+  .foodgroup{margin:16px 0 4px}
+  .foodgroup>h5{font-size:14.5px;color:var(--shu-d);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+  .foodgroup>h5 span{font-size:12px;font-weight:400;color:var(--muted)}
+  .sgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(256px,1fr));margin-top:9px}
+  .scard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column}
+  .scard:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.11);border-color:var(--gold)}
+  .scard .cover{position:relative;height:146px;background:var(--cream2);overflow:hidden;flex:0 0 auto}
+  .scard .cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+  .scard:hover .cover img{transform:scale(1.06)}
+  .scard .cover .lv{position:absolute;left:8px;top:8px;background:rgba(24,30,38,.74);color:#ffd98f;font-size:12.5px;font-weight:700;letter-spacing:1px;padding:2px 9px;border-radius:999px}
+  .scard .cover .rt{position:absolute;right:8px;top:8px;background:rgba(46,125,91,.93);color:#fff;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px}
+  .scard .cover .rt.mid{background:rgba(201,154,63,.95)}
+  .scard .cover .rt.low{background:rgba(180,71,47,.93)}
+  .scard .cover .cr{position:absolute;left:0;right:0;bottom:0;padding:16px 8px 4px;background:linear-gradient(transparent,rgba(0,0,0,.66));color:#fff;font-size:9.5px;text-align:right;opacity:.95}
+  .scard .cb{padding:11px 12px 12px;display:flex;flex-direction:column;flex:1}
+  .scard .cname{font-size:15px;font-weight:700;color:var(--ai-d);line-height:1.4}
+  .scard .cmeta{font-size:11.8px;color:var(--muted);margin-top:4px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .scard .cmeta .sc{color:#a87a2b;font-weight:700}
+  .scard .cline{font-size:12.6px;color:#46423c;line-height:1.62;margin-top:6px}
+  .scard .cline .k{color:var(--muted)}
+  .scard .cline.warn{color:#9c3f2b}
+  .scard .cmore{margin-top:auto;padding-top:8px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:11.8px;color:var(--muted)}
+  .scard .cmore .cta{color:var(--shu);font-weight:700}
+
+  /* 美食清单大卡加封面图 */
+  .fcard{padding:0 15px 13px;overflow:hidden}
+  .fcard .fcover{height:134px;margin:0 -15px 11px;background:var(--cream2);overflow:hidden;position:relative}
+  .fcard .fcover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+  .fcard:hover .fcover img{transform:scale(1.05)}
+  .fcard .fcover .lv{position:absolute;left:9px;top:9px;background:rgba(24,30,38,.74);color:#ffd98f;font-size:12.5px;font-weight:700;letter-spacing:1px;padding:2px 9px;border-radius:999px}
+  .fcard .fcover .rt{position:absolute;right:9px;top:9px;background:rgba(46,125,91,.93);color:#fff;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px}
+  .fcard .fcover .rt.mid{background:rgba(201,154,63,.95)}
+  .fcard .fcover .rt.low{background:rgba(180,71,47,.93)}
+  .fcard .fcover .cr{position:absolute;left:0;right:0;bottom:0;padding:16px 9px 4px;background:linear-gradient(transparent,rgba(0,0,0,.66));color:#fff;font-size:9.5px;text-align:right}
+
+  /* ---------- 美食弹窗：首图 + 评分面板 + 好评/差评 ---------- */
+  .fhero{margin:0 0 12px;border-radius:12px;overflow:hidden;background:var(--cream2)}
+  .fhero img{width:100%;display:block;max-height:330px;object-fit:cover}
+  .fhero .cap{font-size:11.5px;color:var(--muted);padding:6px 10px;background:var(--cream);line-height:1.7}
+  .fhero .cap a{color:var(--ai);text-decoration:none}
+  .fstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(126px,1fr));gap:8px;margin:12px 0 2px}
+  .fstats .st{background:var(--cream);border:1px solid var(--line);border-radius:11px;padding:8px 9px;text-align:center}
+  .fstats .st b{display:block;font-size:16px;color:var(--ai-d);line-height:1.35}
+  .fstats .st .sm{font-size:13px;letter-spacing:.5px}
+  .fstats .st i{display:block;font-size:11.5px;color:var(--muted);font-style:normal;margin-top:2px;line-height:1.5}
+  .fstats .st .bar{height:6px;border-radius:99px;background:#e7e2d8;margin-top:6px;overflow:hidden}
+  .fstats .st .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#4fae7f)}
+  .fstats .st .bar.warn i{background:linear-gradient(90deg,#a8452c,#d3836f)}
+  .fstars2{color:#d39021;letter-spacing:1.5px}
+  .verdict{background:var(--gold-l);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:9px 12px;font-size:13.5px;color:#4a4237;margin:12px 0 0;line-height:1.75}
+  .dishes{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 2px}
+  .dishes .d{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--ai-d);font-weight:600}
+  .revcards{display:grid;gap:9px;margin-top:6px}
+  .rev{border:1px solid var(--line);border-left:4px solid var(--green);border-radius:0 10px 10px 0;background:#fbfdfc;padding:9px 12px}
+  .rev.bad{border-left-color:var(--shu);background:#fdf9f8}
+  .rev .rh{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:4px}
+  .rev .rh .sc{font-weight:700;color:#fff;background:var(--green);border-radius:999px;padding:1px 8px}
+  .rev.bad .rh .sc{background:var(--shu)}
+  .rev p{font-size:13.8px;color:#3f3b36;line-height:1.78;margin:0}
+  .rev .rmt{font-size:11.5px;color:var(--muted);margin-top:5px}
+  .jump{display:grid;gap:7px;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));margin-top:6px}
+  .jump .j{border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:12.6px;cursor:pointer;background:var(--cream);transition:.16s}
+  .jump .j:hover{border-color:var(--gold);background:#fff}
+  .jump .j b{display:block;color:var(--ai-d);font-size:13px;font-weight:600}
+  .jump .j span{color:var(--muted)}
+  .jump .j .g{color:var(--green);font-weight:700}
+
+  /* ---------- Tips ---------- */
+  .tips .card ul{list-style:none}
+  .tips .card li{font-size:14px;padding:6px 0 6px 26px;position:relative;color:#444}
+  .tips .card li::before{content:"❗";position:absolute;left:2px;top:7px;font-size:13px}
+  .tips .card li .lab{font-weight:700;color:var(--shu);cursor:pointer;border-bottom:1px dotted var(--gold);margin-left:4px}
+  .tips .card li .lab:hover{background:var(--gold-l);border-radius:4px}
+
+  /* ---------- Source tier ---------- */
+  .tier{display:grid;grid-template-columns:92px 1fr;gap:10px 14px;font-size:13.5px;padding:9px 0;border-top:1px dashed var(--line)}
+  .tier:first-child{border-top:none}
+  .tier .lv{font-weight:700;color:var(--ai-d)}
+  .tier .lv.a{color:var(--green)}
+  .tier .lv.b{color:var(--ai)}
+  .tier .lv.c{color:#a87a2b}
+  .tier .lv.d{color:var(--shu)}
+
+  /* ---------- Footer ---------- */
+  .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:34px;line-height:1.9}
+  .foot a{color:var(--ai);text-decoration:none}
+
+  /* ---------- Modal ---------- */
+  .modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(18,26,34,.58);backdrop-filter:blur(3px)}
+  .modal.open{display:flex}
+  .modal-card{background:#fff;width:100%;max-width:620px;max-height:88vh;overflow-y:auto;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:pop .22s ease}
+  @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal-head{position:sticky;top:0;background:linear-gradient(135deg,var(--ai-d),var(--ai));color:#fff;padding:18px 22px;display:flex;align-items:center;gap:12px;border-radius:18px 18px 0 0;z-index:2}
+  .modal-head.d1{background:linear-gradient(135deg,#3f7f8c,#1e4351)}
+  .modal-head.d2{background:linear-gradient(135deg,#a8452c,#7f3320)}
+  .modal-head.d3{background:linear-gradient(135deg,#2f7a5f,#1f5741)}
+  .modal-head.d4{background:linear-gradient(135deg,#c99a3f,#a87a2b)}
+  .modal-head.d5{background:linear-gradient(135deg,#4a5a63,#2b373d)}
+  .modal-head .ic{font-size:28px}
+  .modal-head .ht{flex:1}
+  .modal-head .ht .t{font-size:19px;font-weight:700}
+  .modal-head .ht .s{font-size:12.5px;opacity:.92}
+  .modal-close{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:22px;width:36px;height:36px;border-radius:50%;cursor:pointer;line-height:1}
+  .modal-close:hover{background:rgba(255,255,255,.35)}
+  .modal-body{padding:20px 22px}
+  .modal-body .row{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  .modal-body .kv{background:var(--cream);border-radius:10px;padding:8px 12px;font-size:13px}
+  .modal-body .kv b{color:var(--ai-d)}
+  .modal-body h5{font-size:14px;color:var(--gold);margin:14px 0 6px}
+  .modal-body p{font-size:14.5px;color:#3a3a3a;margin-bottom:6px}
+  .modal-body ul{list-style:none;margin:4px 0}
+  .modal-body ul li{font-size:14.5px;color:#3a3a3a;padding:6px 0 6px 24px;position:relative}
+  .modal-body ul li::before{content:"✓";position:absolute;left:2px;top:6px;color:var(--green);font-weight:700}
+  .modal-body ul li.rec::before{content:"👍";color:var(--green)}
+  .modal-body ul li.pit::before{content:"⚠️";color:var(--shu)}
+  .modal-body ul li .lab{color:var(--ai-d);font-weight:700}
+  .modal-body ul li.pit .lab{color:var(--shu)}
+  .modal-body ul.shops li::before{content:"🏪";color:var(--gold)}
+  .modal-body ul.shops li .num{display:inline-block;min-width:20px;text-align:center;background:var(--gold);color:#fff;border-radius:999px;font-size:12px;font-weight:700;padding:1px 6px;margin-right:6px}
+  .modal-body .src{font-size:12px;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:10px;line-height:1.9}
+  .modal-body .src a{color:var(--ai);text-decoration:none}
+
+  @media(max-width:600px){
+    .day-head{flex-wrap:wrap}
+    .day-head .route{width:100%;text-align:left;margin-left:0}
+    .timeblock{grid-template-columns:1fr;gap:2px}
+    .slot{margin-bottom:2px}
+    .split{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+    .gallery img{height:112px}
+    .spot .ph{width:74px;height:56px}
+    .sgrid{grid-template-columns:1fr}
+    .scard{flex-direction:row}
+    .scard .cover{width:118px;height:118px;flex:0 0 118px}
+    .scard .cb{padding:10px 11px}
+    .fstats{grid-template-columns:repeat(2,1fr)}
+    .jump{grid-template-columns:1fr}
+    .modal-head{padding:14px 16px}
+    .modal-body{padding:16px}
+    .banner h1{font-size:23px}
+  }
+
+  /* ==MEALS-CSS-START== */
+  /* ---- 按餐次的「吃什么」时间轴 ---- */
+  .meals{margin-top:6px}
+  .meal{position:relative;border-left:2px solid var(--line);padding:0 0 14px 18px;margin-left:5px}
+  .meal:last-child{border-left-color:transparent;padding-bottom:2px}
+  .meal:before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--shu);box-shadow:0 0 0 3px #fff,0 0 0 4px var(--shu-l)}
+  .mhead{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:3px}
+  .mtime{font-size:12.5px;font-weight:700;color:#fff;background:var(--shu-d);border-radius:7px;padding:2px 8px;letter-spacing:.4px}
+  .mname{font-size:15.5px;font-weight:700;color:var(--ai-d)}
+  .mwhere{font-size:12px;color:var(--muted);background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:1px 9px}
+  .mnote{font-size:13px;color:#4a4640;line-height:1.72;margin:3px 0 9px}
+  .mnote b{color:var(--shu-d)}
+  /* 封面上的档位徽章：必须限定在 .scard .cover 内，否则会覆盖 #precheck
+     的 .tier 网格行（曾导致「行前必查清单」整块塌陷到首屏底部） */
+  .scard .cover .tier{position:absolute;left:8px;bottom:8px;background:rgba(201,154,63,.94);color:#fff;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px}
+  .scard .cover .tier.s{background:rgba(180,71,47,.94)}
+  .scard .cover .tier.c{background:rgba(90,96,105,.9)}
+  .mlinks{font-size:12.5px;color:var(--muted);margin:2px 0 0;line-height:1.9}
+  .mlinks .lab{cursor:pointer;color:var(--ai-d);font-weight:600;border-bottom:1px dotted var(--gold);padding-bottom:1px}
+  .mlinks .lab:hover{background:var(--gold-l);border-radius:4px}
+  /* ---- 餐次内的「品类」分组小标题 ---- */
+  .mcats{display:grid;gap:12px;margin-top:2px}
+  .mcat-row{border-top:1px dashed var(--line);padding-top:9px}
+  .mcat-row:first-child{border-top:none;padding-top:0}
+  .mcat{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+  .mcat .cn{font-size:13.5px;font-weight:700;color:var(--shu-d)}
+  .mcat .cn:before{content:"◆";font-size:9px;color:var(--gold);margin-right:5px;vertical-align:1px}
+  .mcat .ch{font-size:12px;color:var(--muted);line-height:1.6}
+  .mcat .cnt{font-size:11.5px;color:var(--muted);background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin-left:auto}
+  .mcat-row .sgrid{margin-top:0}
+  .demote{display:grid;gap:9px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));margin-top:10px}
+  .dcard{background:#fff;border:1px solid var(--line);border-left:4px solid #a8452c;border-radius:12px;padding:11px 13px;cursor:pointer;transition:.18s}
+  .dcard:hover{box-shadow:0 6px 16px rgba(0,0,0,.09)}
+  .dcard .dn{font-size:14px;font-weight:700;color:var(--ai-d)}
+  .dcard .ds{font-size:12px;color:var(--muted);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap}
+  .dcard .ds b{color:#a8452c}
+  .dcard .dr{font-size:12.4px;color:#5a5650;line-height:1.6;margin-top:6px}
+  /* ==MEALS-CSS-END== */
+</style>
+</head>
+<body>
+<div class="wrap"><div class="banner"><h1>stub</h1></div><section id="plan"><div class="card"><p id="stub">APPEND</p></div></section></div>
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <div class="modal-head" id="mh">
+      <div class="ic" id="mh-ic">📍</div>
+      <div class="ht"><div class="t" id="mh-t">标题</div><div class="s" id="mh-s">副标题</div></div>
+      <button class="modal-close" id="mh-x">×</button>
+    </div>
+    <div class="modal-body" id="mh-body"></div>
+  </div>
+</div>
+
+<script>
+const MODALS = {
+"stub": { tone:"d1", ic:"📍", t:"stub", s:"stub", tag:["推荐"], rows:[["地址","x"]], rec:["a"], src:[["来源","https://example.com"]] }
+};
+
+const modal = document.getElementById("modal");
+const mh = document.getElementById("mh");
+const mhic = document.getElementById("mh-ic");
+const mht = document.getElementById("mh-t");
+const mhs = document.getElementById("mh-s");
+const mhbody = document.getElementById("mh-body");
+
+function kvHTML(rows){
+  return `<div class="row">${rows.map(r=>`<span class="kv"><b>${r[0]}</b>：${r[1]}</span>`).join("")}</div>`;
+}
+/* ---- 美食弹窗：从既有数据里解析出 评分 / 好评率 / 推荐指数，再拼专用的排版 ---- */
+function foodTag(d,prefix){
+  const t = (d.tag||[]).find(x=>x.indexOf(prefix)===0);
+  return t ? t.slice(prefix.length).trim() : "";
+}
+const FOOD_CATS = {};
+Object.keys(MODALS).forEach(id=>{
+  const d = MODALS[id];
+  if(id.indexOf("f-")===0 && d.cat){ (FOOD_CATS[d.cat] = FOOD_CATS[d.cat] || []).push(id); }
+});
+function rateClass(n){ return n>=75 ? "" : (n>=55 ? "mid" : "low"); }
+function foodRow(d,k){
+  const r = (d.rows||[]).find(x=>x[0]===k);
+  return r ? r[1] : "";
+}
+function foodHTML(id,d){
+  const score = foodTag(d,"评分");                              // 3.46
+  const good  = foodTag(d,"好评率");                                 // 79%
+  const stars = foodTag(d,"推荐");                                   // ★★★★☆
+  const gnum  = parseInt(good,10) || 0;
+  const price = foodRow(d,"人均");
+  const queue = (foodRow(d,"推荐指数").split("·")[1]||"").trim();
+  const sig   = foodRow(d,"招牌");
+  const credit= (d.rows||[]).find(x=>x[0]==="口碑");
+  const priceJPY = (price.match(/^[^（(]+/)||[""])[0].trim();
+  const priceCNY = (price.match(/[（(]([^）)]+)[）)]/)||["",""])[1];
+
+  // 招牌 → 菜品胶囊（格式为「菜品、菜品；说明」，只取「；」之前的部分，并滤掉营业/付款之类的非菜品）
+  const NON_DISH = /(营业|预约|席位|支持|禁止|收费|加收|必须|免费|无休|不定休)/;
+  const sigHead = sig.split("；")[0];
+  const dishes = sigHead.split(/[、，]/).map(x=>x.trim())
+                    .filter(x=>x && x.length<=16 && !/[。！]/.test(x));
+  const onlyDishes = dishes.filter(x=>!NON_DISH.test(x));
+  const dishList = onlyDishes.length ? onlyDishes : (dishes.length ? dishes : (sig?[sig]:[]));
+
+  let h = "";
+  if(d.img){
+    const cap = d.img[1] + (d.img[2] ? ` · <a href="${d.img[2]}" target="_blank" rel="noopener">原图与授权</a>` : "");
+    h += `<div class="fhero"><img src="${d.img[0]}" alt="${d.t}" loading="lazy"><div class="cap">📷 ${cap}</div></div>`;
+  }
+  // 评分面板
+  h += `<div class="fstats">
+    <div class="st"><b>${score||"—"}</b><i>本地口碑评分<br>（评分来源见弹窗底部）</i></div>
+    <div class="st"><b class="${gnum>=75?'':(gnum>=55?'':'')}">${good||"—"}</b><i>好评率（最新约 20 条）</i><div class="bar ${gnum<55?'warn':''}"><i style="width:${gnum}%"></i></div></div>
+    <div class="st"><b class="fstars2 sm">${stars||((d.tag||[]).some(t=>t.indexOf("已撤下推荐")===0)?"已撤下":"—")}</b><i>推荐指数<br>${queue?queue:"按口碑 × 顺路 × 排队"}</i></div>
+    <div class="st"><b>${priceJPY||"—"}</b><i>人均 ${priceCNY?priceCNY:""}</i></div>
+  </div>`;
+  if(credit) h += `<div class="verdict">📊 <b>口碑拆解：</b>${credit[1]}</div>`;
+  const recs = d.rec || [];
+  if(recs.length) h += `<div class="verdict">🗓️ <b>顺路安排：</b>${recs[0].replace(/^顺路安排：/,"")}</div>`;
+
+  h += `<h5>🍽️ 招牌 & 必点</h5>`;
+  h += `<div class="dishes">${dishList.map(x=>`<span class="d">${x}</span>`).join("")}</div>`;
+  if(sig && dishList.join("、") !== sig) h += `<p class="muted" style="margin-top:6px">${sig}</p>`;
+  if(recs.length>1) h += `<h5>🧾 点单 & 注意</h5><ul>${recs.slice(1).map(x=>`<li class="rec">${x}</li>`).join("")}</ul>`;
+
+  // 好评 / 差评
+  const revs = d.shop || [];
+  if(revs.length){
+    h += `<h5>${d.cat==="便利店"?"🛒 买什么 & 怎么买":"💬 真实评价（好评 / 差评）"}</h5><div class="revcards">`;
+    revs.forEach((r,i)=>{
+      const positive = /正面|好评/.test(r[0]) || (!/吐槽|差评/.test(r[0]) && i===0 && revs.length>1);
+      const body = r[1].split("——");
+      const quote = body[0].trim();
+      const meta = (body[1]||"").trim();
+      const sc = (meta.match(/([\d.]+)\s*分/)||["",""])[1];
+      const dt = (meta.match(/(\d{4}\/\d{2})/)||["",""])[1];
+      h += `<div class="rev ${positive?"":"bad"}">
+        <div class="rh"><span class="sc">${sc?sc+" 分":(positive?"好评":"差评")}</span>
+        <b>${r[0].replace("真实评价 · ","")}</b>${dt?`<span>· ${dt}</span>`:""}</div>
+        <p>${quote}</p>
+        <div class="rmt">${meta?meta:"—— 本地口碑 / 公开评价"}</div>
+      </div>`;
+    });
+    h += `</div>`;
+  }
+  // 实用信息
+  const infoKeys = ["营业","定休","座位","预约","付款","怎么去","顺路"];
+  const info = (d.rows||[]).filter(r=>infoKeys.indexOf(r[0])>=0);
+  if(info.length) h += `<h5>📋 实用信息</h5>` + kvHTML(info);
+  if(d.pit) h += `<h5>⚠️ 缺点 & 避坑</h5><ul>${d.pit.map(x=>`<li class="pit">${x}</li>`).join("")}</ul>`;
+  // 同品类其他选择
+  const sibs = (FOOD_CATS[d.cat]||[]).filter(x=>x!==id);
+  if(sibs.length){
+    h += `<h5>🔀 同品类其他选择（${d.cat}）</h5><div class="jump">` + sibs.map(x=>{
+      const s = MODALS[x], g = foodTag(s,"好评率"), st = foodTag(s,"推荐");
+      return `<div class="j" data-jump="${x}"><b>${s.t}</b><span class="g">好评率 ${g||"—"}</span> · <span>${st}</span></div>`;
+    }).join("") + `</div>`;
+  }
+  if(d.src) h += `<div class="src">📎 参考来源：${d.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join(" · ")}</div>`;
+  return h;
+}
+function badgeClass(t){
+  const RED  = ["踩雷","避雷","谨慎","别踩坑","限时","当天往返太赶","不推荐","看时间","人多","已撤下","季节性","天气敏感"];
+  const GRN  = ["推荐","必去","必玩","必吃","主力","省钱","已核对","最值得","免费","世界遗产","首选","经典","亲子友好"];
+  const BLU  = ["必打卡","必体验","夜景","出片","顺路","本地","湖景","江景","改风景","雨天备选","甜品","早去","散步","CityWalk","citywalk","小众"];
+  if(RED.indexOf(t)>=0) return "r";
+  if(GRN.indexOf(t)>=0) return "g";
+  if(BLU.indexOf(t)>=0) return "b";
+  return "o";
+}
+function openModal(id){
+  const d = MODALS[id];
+  if(!d) return;
+  mh.className = "modal-head " + (d.tone||"d1");
+  mhic.textContent = d.ic;
+  mht.textContent = d.t;
+  mhs.textContent = d.s;
+  let h = "";
+  if(id.indexOf("f-")===0){
+    h = foodHTML(id,d);
+  }else{
+    h += `<div class="row">${d.tag.map(t=>`<span class="badge ${badgeClass(t)}">${t}</span>`).join("")}</div>`;
+    if(d.img) h += `<div class="mphoto"><img src="${d.img[0]}" alt="${d.t}" loading="lazy"><div class="cap">📷 ${d.img[1]}</div></div>`;
+    if(d.rows) h += kvHTML(d.rows);
+    if(d.shop) h += `<h5>🏪 店名对比</h5><ul class="shops">${d.shop.map((x,i)=>`<li class="rec"><span class="num">${i+1}</span><span class="lab">${x[0]}</span>：${x[1]}</li>`).join("")}</ul>`;
+    if(d.rec) h += `<h5>👍 推荐理由 / 怎么做</h5><ul>${d.rec.map(x=>`<li class="rec">${x}</li>`).join("")}</ul>`;
+    if(d.pit) h += `<h5>⚠️ 注意 & 避坑</h5><ul>${d.pit.map(x=>`<li class="pit">${x}</li>`).join("")}</ul>`;
+    if(d.src) h += `<div class="src">📎 参考来源：${d.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join(" · ")}</div>`;
+  }
+  mhbody.innerHTML = h;
+  mhbody.scrollTop = 0;
+  const card = document.querySelector(".modal-card");
+  if(card) card.scrollTop = 0;
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.querySelectorAll("[data-modal]").forEach(el=>{
+  el.addEventListener("click",e=>{ e.stopPropagation(); openModal(el.getAttribute("data-modal")); });
+});
+mhbody.addEventListener("click",e=>{
+  const j = e.target.closest("[data-jump]");
+  if(j){ openModal(j.getAttribute("data-jump")); }
+});
+document.getElementById("mh-x").addEventListener("click",closeModal);
+modal.addEventListener("click",e=>{ if(e.target===modal) closeModal(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeModal(); });
+/* 深链：直接打开某张卡片，例如 …攻略.html#f-daruma */
+function openFromHash(){
+  const id = decodeURIComponent(location.hash.replace(/^#/,""));
+  if(id && MODALS[id] && !modal.classList.contains("open")) openModal(id);
+}
+window.addEventListener("hashchange",()=>{ if(!location.hash) closeModal(); else openFromHash(); });
+openFromHash();
+
+</script>
+</body>
+</html>

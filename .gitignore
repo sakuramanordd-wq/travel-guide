@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+research/_raw/
+research/.cache/
